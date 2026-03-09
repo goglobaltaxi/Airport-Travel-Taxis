@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import MainLayout from '@/components/MainLayout';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -56,7 +54,7 @@ export const metadata: Metadata = {
         },
     },
     verification: {
-        google: '',
+        google: 'YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE', // JANI: Paste your Google Search Console code here
     },
 };
 
@@ -67,10 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <JsonLd />
             </head>
             <body>
-                <Navbar />
-                <main className="min-h-screen">{children}</main>
-                <Footer />
-                <WhatsAppButton />
+                <MainLayout>{children}</MainLayout>
             </body>
         </html>
     );

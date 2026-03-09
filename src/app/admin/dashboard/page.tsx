@@ -38,6 +38,20 @@ export default function AdminDashboard() {
         setLoading(false);
     };
 
+    const formatTimeWithAMPM = (timeStr: string) => {
+        if (!timeStr) return '';
+        try {
+            const [hours, minutes] = timeStr.split(':');
+            const h = parseInt(hours, 10);
+            const m = parseInt(minutes, 10);
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            const hr12 = h % 12 || 12;
+            return `${hr12}:${m.toString().padStart(2, '0')} ${ampm}`;
+        } catch {
+            return timeStr;
+        }
+    };
+
     const statCards = [
         { label: 'Today\'s Activity', val: stats.total, icon: TrendingUp, color: 'text-primary-600', bg: 'bg-primary-50' },
         { label: 'Awaiting Action', val: stats.pending, icon: Clock, color: 'text-amber-600', bg: 'bg-amber-50' },
@@ -95,7 +109,8 @@ export default function AdminDashboard() {
                                         </div>
                                     </div>
                                     <div className="text-right">
-                                        <p className="text-sm font-bold text-surface-900">{booking.pickup_date}</p>
+                                        <p className="text-sm font-bold text-surface-900">{new Date(booking.pickup_date).toLocaleDateString()}</p>
+                                        <p className="text-xs text-surface-500 font-medium mb-1">{formatTimeWithAMPM(booking.pickup_time)}</p>
                                         <span className={`text-[10px] font-bold uppercase tracking-widest ${
                                             booking.status === 'pending' ? 'text-amber-600' : 'text-blue-600'
                                         }`}>

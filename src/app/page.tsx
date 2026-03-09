@@ -37,11 +37,11 @@ export default function HomePage() {
 
                             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl text-surface-900 leading-[1.1] mb-6 font-medium tracking-tight">
                                 Professional <br />
-                                <span className="text-primary-600 italic font-semibold">Chauffeur Service.</span>
+                                <span className="text-gold-600 italic font-semibold">Chauffeur Service.</span>
                             </h1>
 
                             <p className="text-lg text-surface-600 leading-relaxed mb-8 max-w-xl">
-                                The leading **chauffeur service in Riyadh**, Jeddah, and across the Gulf. Experience seamless comfortable transfers, city-to-city rides, and professional **private chauffeur service Dubai**.
+                                The leading <strong className="text-surface-900 font-bold">chauffeur service in Riyadh</strong>, Jeddah, and across the Gulf. Experience seamless comfortable transfers, city-to-city rides, and professional <strong className="text-surface-900 font-bold">private chauffeur service Dubai</strong>.
                             </p>
 
                             <div className="mb-10 p-4 bg-white/60 backdrop-blur-md rounded-xl border border-primary-200/50 flex gap-3 text-left max-w-xl">
@@ -56,9 +56,9 @@ export default function HomePage() {
                             {/* Trust Features */}
                             <div className="flex flex-wrap items-center gap-6 mb-12">
                                 {[
-                                    { icon: <Shield className="w-5 h-5 text-primary-600" />, text: 'Fully Insured' },
-                                    { icon: <Clock className="w-5 h-5 text-primary-600" />, text: 'On-time Guarantee' },
-                                    { icon: <Globe className="w-5 h-5 text-primary-600" />, text: 'Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain' },
+                                    { icon: <Shield className="w-5 h-5 text-gold-600" />, text: 'Fully Insured' },
+                                    { icon: <Clock className="w-5 h-5 text-gold-600" />, text: 'On-time Guarantee' },
+                                    { icon: <Globe className="w-5 h-5 text-gold-600" />, text: 'Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain' },
                                 ].map((feature, i) => (
                                     <div key={i} className="flex items-center gap-2">
                                         {feature.icon}
@@ -195,7 +195,7 @@ export default function HomePage() {
                                 Professional <span className="text-primary-600">Chauffeur Service</span> across Major Cities
                             </h2>
                             <p className="text-surface-600 mb-8 leading-relaxed">
-                                We specialize in providing a reliable **chauffeur service in Riyadh**, professional **chauffeur service Jeddah**, and high-standard **private chauffeur service Dubai**. Whether you need a corporate ride in Dammam or a **Mecca chauffeur service** for pilgrimage, our vetted drivers ensure comfort and safety.
+                                We specialize in providing a reliable <strong className="text-surface-900 font-bold">chauffeur service in Riyadh</strong>, professional <strong className="text-surface-900 font-bold">chauffeur service Jeddah</strong>, and high-standard <strong className="text-surface-900 font-bold">private chauffeur service Dubai</strong>. Whether you need a corporate ride in Dammam or a <strong className="text-surface-900 font-bold">Mecca chauffeur service</strong> for pilgrimage, our vetted drivers ensure comfort and safety.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {[

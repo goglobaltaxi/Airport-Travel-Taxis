@@ -67,34 +67,47 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!name || !phone) {
-            alert('Please fill in contact details');
+        if (!name || !email || !phone) {
+            alert('Please fill in all contact details');
             return;
         }
 
         setIsSubmitting(true);
 
-        try {
-            const { error } = await supabase.from('bookings').insert([
-                {
-                    pickup_location: pickup,
-                    dropoff_location: dropoff,
-                    pickup_date: date,
-                    pickup_time: time,
-                    passengers: parseInt(passengers),
-                    vehicle_type: selectedVehicle?.category || 'Economy',
-                    customer_name: name,
-                    customer_email: email,
-                    customer_phone: phone,
-                    status: 'pending'
-                }
-            ]);
+        const bookingData = {
+            pickup_location: pickup,
+            dropoff_location: dropoff,
+            pickup_date: date,
+            pickup_time: time,
+            passengers: parseInt(passengers),
+            vehicle_type: selectedVehicle?.category || 'Economy',
+            customer_name: name,
+            customer_email: email,
+            customer_phone: phone,
+            status: 'pending'
+        };
 
+        try {
+            // 1. Save to Supabase
+            const { error } = await supabase.from('bookings').insert([bookingData]);
             if (error) throw error;
+
+            // 2. Send email notification (awaited with logging)
+            try {
+                const emailRes = await fetch('/api/booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(bookingData),
+                });
+                const emailData = await emailRes.json();
+                console.log('📧 Email API response:', emailRes.status, emailData);
+            } catch (emailErr) {
+                console.error('📧 Email automation error:', emailErr);
+            }
 
             setSubmitted(true);
             
-            // Redirect to WhatsApp
+            // 3. Redirect to WhatsApp
             const message = `Hi, I'd like to book a ride:\n\nName: ${name}\nPickup: ${pickup}\nDrop-off: ${dropoff}\nDate: ${date}\nTime: ${time}\nPassengers: ${passengers}\nVehicle: ${selectedVehicle?.category || 'Economy'}`;
             window.open(`https://wa.me/923057262461?text=${encodeURIComponent(message)}`, '_blank');
 
@@ -177,12 +190,26 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                 </div>
             </div>
 
+            <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                    { icon: <Check className="w-3.5 h-3.5" />, label: 'Licensed Service' },
+                    { icon: <Clock className="w-3.5 h-3.5" />, label: '24/7 Support' },
+                    { icon: <Car className="w-3.5 h-3.5" />, label: 'Vetted Drivers' },
+                    { icon: <Users className="w-3.5 h-3.5" />, label: '50K+ Happy Clients' },
+                ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-1.5 px-3 py-2 bg-white/50 backdrop-blur-sm border border-surface-200 rounded-lg shadow-sm">
+                        <div className="text-primary-600">{item.icon}</div>
+                        <span className="text-[10px] font-bold text-surface-700 uppercase tracking-wider">{item.label}</span>
+                    </div>
+                ))}
+            </div>
+
             <div className="mb-6 p-4 bg-primary-50 rounded-xl border border-primary-200 flex gap-3 text-left">
                 <div className="text-primary-600 shrink-0 mt-0.5">
                     <div className="w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center font-bold text-sm">i</div>
                 </div>
                 <p className="text-sm text-surface-700 leading-relaxed">
-                    <strong>Important:</strong> This service focuses on pre-booked transportation including airport transfers, intercity travel, cross-border journeys, and VIP Umrah transfers. Local street taxi hailing and short-distance city rides are not part of the service.
+                    <strong>Service Scope:</strong> Pre-booked airport transfers, intercity travel, and cross-border journeys. Street taxi hailing is not available.
                 </p>
             </div>
 
@@ -209,20 +236,20 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                         <MapPin className="w-4 h-4 text-primary-600" /> Pickup From
                                     </label>
                                     <div className="relative group">
-                                        <select 
+                                        <input 
                                             required 
+                                            type="text"
+                                            list="locations-list"
+                                            placeholder="Enter hotel, airport or address"
                                             value={pickup} 
                                             onChange={(e) => setPickup(e.target.value)} 
-                                            className="input-field pl-4 pr-10 appearance-none bg-white cursor-pointer group-hover:border-primary-300 transition-colors"
-                                        >
-                                            <option value="">Choose pickup location</option>
+                                            className="input-field pl-4 bg-white group-hover:border-primary-300 transition-colors"
+                                        />
+                                        <datalist id="locations-list">
                                             {locations.map((loc) => (
-                                                <option key={`p-${loc}`} value={loc}>{loc}</option>
+                                                <option key={`l-${loc}`} value={loc} />
                                             ))}
-                                        </select>
-                                        <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-surface-400">
-                                            <ChevronRight className="w-4 h-4 rotate-90" />
-                                        </div>
+                                        </datalist>
                                     </div>
                                 </div>
 
@@ -231,20 +258,15 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                         <MapPin className="w-4 h-4 text-red-500" /> Drop-off To
                                     </label>
                                     <div className="relative group">
-                                        <select 
+                                        <input 
                                             required 
+                                            type="text"
+                                            list="locations-list"
+                                            placeholder="Enter destination or hotel"
                                             value={dropoff} 
                                             onChange={(e) => setDropoff(e.target.value)} 
-                                            className="input-field pl-4 pr-10 appearance-none bg-white cursor-pointer group-hover:border-primary-300 transition-colors"
-                                        >
-                                            <option value="">Choose destination</option>
-                                            {locations.map((loc) => (
-                                                <option key={`d-${loc}`} value={loc}>{loc}</option>
-                                            ))}
-                                        </select>
-                                        <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-surface-400">
-                                            <ChevronRight className="w-4 h-4 rotate-90" />
-                                        </div>
+                                            className="input-field pl-4 bg-white group-hover:border-primary-300 transition-colors"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -274,6 +296,9 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                         onChange={(e) => setTime(e.target.value)} 
                                         className="input-field px-4 bg-white cursor-pointer" 
                                     />
+                                    <p className="text-[10px] text-surface-500 font-medium leading-tight">
+                                        * Please enter the local time of your pickup location.
+                                    </p>
                                 </div>
 
                                 <div className="space-y-2">
@@ -301,7 +326,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 {allVehicles.map((v) => (
                                     <div 
                                         key={v.id}
-                                        onClick={() => setVehicle(v.id)}
+                                        onClick={() => {
+                                            setVehicle(v.id);
+                                            setTimeout(() => setStep(3), 300); // 300ms delay for a smooth visual feedback
+                                        }}
                                         className={`
                                             relative cursor-pointer rounded-xl p-4 border-2 transition-all duration-300
                                             ${vehicle === v.id 
@@ -379,9 +407,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <label className="label-text flex items-center gap-2">
-                                            <Mail className="w-4 h-4 text-primary-600" /> Email (Optional)
+                                            <Mail className="w-4 h-4 text-primary-600" /> Email Address
                                         </label>
                                         <input 
+                                            required
                                             type="email" 
                                             placeholder="john@example.com" 
                                             value={email} 

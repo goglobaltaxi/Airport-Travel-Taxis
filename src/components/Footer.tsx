@@ -129,11 +129,11 @@ export default function Footer() {
                         © {new Date().getFullYear()} Airport Travel Taxis. All rights reserved.
                     </p>
                     <div className="flex gap-6">
-                        <Link href="#" className="text-sm text-surface-600 hover:text-surface-400 transition-colors">
+                        <Link href="/privacy-policy" className="text-sm text-surface-600 hover:text-surface-400 transition-colors">
                             Privacy Policy
                         </Link>
-                        <Link href="#" className="text-sm text-surface-600 hover:text-surface-400 transition-colors">
-                            Terms of Service
+                        <Link href="/terms-and-conditions" className="text-sm text-surface-600 hover:text-surface-400 transition-colors">
+                            Terms & Conditions
                         </Link>
                     </div>
                 </div>

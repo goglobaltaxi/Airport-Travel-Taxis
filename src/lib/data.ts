@@ -1,4 +1,19 @@
 // ─── Fleet Vehicles ────────────────────────────────────────────────
+import { extraCities, extraRoutes, extraAirports, borderCrossings } from './extendedData';
+
+// Deduplicate and combine data
+const deduplicateBySlug = <T extends { slug: string }>(items: T[]): T[] => {
+    const seen = new Set<string>();
+    return items.filter((item) => {
+        const slug = item.slug.trim().toLowerCase();
+        if (seen.has(slug)) {
+            return false;
+        }
+        seen.add(slug);
+        return true;
+    });
+};
+
 export interface Vehicle {
     id: string;
     name: string;
@@ -213,7 +228,7 @@ export interface Airport {
     faq: { question: string; answer: string }[];
 }
 
-export const airports: Airport[] = [
+const baseAirports: Airport[] = [
     {
         slug: 'dubai-airport-taxi',
         name: 'Dubai International Airport',
@@ -401,7 +416,7 @@ export interface Route {
     relatedRoutes?: { name: string; slug: string; }[];
 }
 
-export const routes: Route[] = [
+const baseRoutes: Route[] = [
     {
         slug: 'dubai-to-abu-dhabi-taxi',
         from: 'Dubai',
@@ -537,9 +552,9 @@ export interface City {
     bookingInfo?: string;
 }
 
-export const cities: City[] = [
+const baseCities: City[] = [
     {
-        slug: 'dubai-taxi',
+        slug: 'dubai',
         name: 'Dubai',
         country: 'United Arab Emirates',
         description: 'Reliable taxi and chauffeur services in Dubai. Airport transfers, city tours, and inter-city rides available.',
@@ -564,7 +579,7 @@ export const cities: City[] = [
         bookingInfo: 'You can arrange a taxi transfer within Dubai or to any nearby city or airport through our platform. Our drivers are available 24 hours a day, 7 days a week.',
     },
     {
-        slug: 'abu-dhabi-taxi',
+        slug: 'abu-dhabi',
         name: 'Abu Dhabi',
         country: 'United Arab Emirates',
         description: 'Reliable taxi service in Abu Dhabi. Transfers to Yas Island, Saadiyat, Louvre, and more.',
@@ -588,7 +603,7 @@ export const cities: City[] = [
         bookingInfo: 'Transportation within Abu Dhabi, to nearby cities, or to Zayed International Airport can be arranged through our platform at any time of day.',
     },
     {
-        slug: 'riyadh-taxi',
+        slug: 'riyadh',
         name: 'Riyadh',
         country: 'Saudi Arabia',
         description: 'Professional transportation service in Riyadh. Corporate transfers, airport rides, and city-wide coverage.',
@@ -612,7 +627,7 @@ export const cities: City[] = [
         bookingInfo: 'Arrange a city taxi, inter-city transfer, or airport pickup in Riyadh anytime. Our drivers operate 24/7 across all areas of the city.',
     },
     {
-        slug: 'doha-taxi',
+        slug: 'doha',
         name: 'Doha',
         country: 'Qatar',
         description: 'Reliable taxi and chauffeur service in Doha. The Pearl, Souq Waqif, and West Bay covered.',
@@ -636,7 +651,7 @@ export const cities: City[] = [
         bookingInfo: 'Book a city ride, hotel transfer, or airport pickup in Doha at any time through our platform. We are available 24 hours a day.',
     },
     {
-        slug: 'jeddah-taxi',
+        slug: 'jeddah',
         name: 'Jeddah',
         country: 'Saudi Arabia',
         description: 'Taxi service in Jeddah covering airport transfers, Hajj/Umrah transport, and city rides.',
@@ -660,7 +675,7 @@ export const cities: City[] = [
         bookingInfo: 'Arrange a taxi in Jeddah for hotel transfers, Makkah pilgrim trips, airport pickups, or inter-city travel. Our service operates 24/7.',
     },
     {
-        slug: 'kuwait-city-taxi',
+        slug: 'kuwait-city',
         name: 'Kuwait City',
         country: 'Kuwait',
         description: 'Professional taxi and transfer service in Kuwait City. Airport, corporate, and city rides.',
@@ -684,7 +699,7 @@ export const cities: City[] = [
         bookingInfo: 'Book a taxi in Kuwait City for airport pickups, business trips, hotel drop-offs, or inter-city travel. Our team is available 24/7.',
     },
     {
-        slug: 'muscat-taxi',
+        slug: 'muscat',
         name: 'Muscat',
         country: 'Oman',
         description: 'Comfortable taxi service in Muscat. Airport transfers, tours, and inter-city rides.',
@@ -708,7 +723,7 @@ export const cities: City[] = [
         bookingInfo: 'Arrange a city taxi or airport transfer in Muscat at any time. Our service operates throughout Oman for both short and long-distance trips.',
     },
     {
-        slug: 'dammam-taxi',
+        slug: 'dammam',
         name: 'Dammam',
         country: 'Saudi Arabia',
         description: 'Taxi and transfer service in Dammam & Eastern Province. Serving Khobar, Dhahran, and beyond.',
@@ -962,12 +977,10 @@ export const navLinks = [
     { label: 'Contact', href: '/contact' },
 ];
 
-// ─── Extended Data ────────────────────────────────────────────────────
-import { extraCities, extraRoutes, extraAirports, borderCrossings } from './extendedData';
 
-airports.push(...(extraAirports as any));
-routes.push(...(extraRoutes as any));
-cities.push(...(extraCities as any));
+export const airports: Airport[] = deduplicateBySlug([...baseAirports, ...(extraAirports as any)]);
+export const routes: Route[] = deduplicateBySlug([...baseRoutes, ...(extraRoutes as any)]);
+export const cities: City[] = deduplicateBySlug([...baseCities, ...(extraCities as any)]);
 
 export { borderCrossings };
 export type { Border } from './extendedData';

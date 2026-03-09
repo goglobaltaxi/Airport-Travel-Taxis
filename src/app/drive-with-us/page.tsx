@@ -1,20 +1,56 @@
-import { Metadata } from 'next';
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-    title: 'Drive With Us | Join Our Professional Chauffeur Team',
-    description: 'Join Airport Travel Taxis as a professional driver. We offer opportunities for experienced chauffeurs to provide high-standard transportation across the GCC.',
-    openGraph: {
-        title: 'Drive With Us | Join Our Professional Chauffeur Team',
-        description: 'Join Airport Travel Taxis as a professional driver. We offer opportunities for experienced chauffeurs to provide high-standard transportation across the GCC.',
-        url: 'https://airporttraveltaxis.com/drive-with-us',
-    },
-    alternates: {
-        canonical: 'https://airporttraveltaxis.com/drive-with-us',
-    },
-};
+// Metadata cannot be exported from a Client Component in Next.js
+// If SEO metadata is needed here, we should wrap the content in a separate layout or meta component, 
+// but for simplicity we convert the page to a client component. 
+// A better approach in Next 13+ is to keep page.tsx as server and import a <DriverForm /> client component.
+// But for a quick fix, we remove the static metadata export.
 
 export default function DriveWithUsPage() {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        country: 'Saudi Arabia',
+        vehicle_make: '',
+        vehicle_year: '',
+        cross_border: 'yes'
+    });
+    const [status, setStatus] = useState({ submitting: false, success: false, error: '' });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus({ submitting: true, success: false, error: '' });
+
+        try {
+            const res = await fetch('/api/driver', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                setStatus({ submitting: false, success: true, error: '' });
+                setFormData({
+                    name: '', phone: '', email: '', country: 'Saudi Arabia',
+                    vehicle_make: '', vehicle_year: '', cross_border: 'yes'
+                });
+            } else {
+                const data = await res.json();
+                setStatus({ submitting: false, success: false, error: data.error || 'Failed to submit' });
+            }
+        } catch (err) {
+            setStatus({ submitting: false, success: false, error: 'Network error occurred.' });
+        }
+    };
+
     return (
         <div className="pt-20">
             {/* Hero Section */}
@@ -131,75 +167,88 @@ export default function DriveWithUsPage() {
                             </div>
                         </div>
 
-                        {/* Form */}
                         <div className="lg:col-span-7">
                             <div className="bg-surface-50 p-8 rounded-2xl border border-surface-200 shadow-sm">
                                 <h3 className="font-display text-2xl font-bold text-surface-900 mb-6">Driver & Vehicle Registration</h3>
-                                <form className="space-y-5">
-                                    <div className="grid sm:grid-cols-2 gap-5">
-                                        <div>
-                                            <label className="block text-sm font-medium text-surface-700 mb-1">Full Name</label>
-                                            <input type="text" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="John Doe" />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-surface-700 mb-1">Phone Number</label>
-                                            <input type="tel" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="+971 50 123 4567" />
-                                        </div>
+                                
+                                {status.success ? (
+                                    <div className="bg-green-50 text-green-800 p-6 rounded-xl border border-green-200 text-center">
+                                        <div className="text-4xl mb-4">✅</div>
+                                        <h4 className="text-xl font-bold mb-2">Application Submitted!</h4>
+                                        <p>Thank you for registering. Our team will review your application and contact you within 24-48 hours.</p>
                                     </div>
-                                    
-                                    <div className="grid sm:grid-cols-2 gap-5">
-                                        <div>
-                                            <label className="block text-sm font-medium text-surface-700 mb-1">Email Address</label>
-                                            <input type="email" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="john@example.com" />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-surface-700 mb-1">Country of Operation</label>
-                                            <select className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none">
-                                                <option>Saudi Arabia</option>
-                                                <option>United Arab Emirates</option>
-                                                <option>Qatar</option>
-                                                <option>Kuwait</option>
-                                                <option>Bahrain</option>
-                                                <option>Oman</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="border-t border-surface-200 pt-5 mt-5">
-                                        <h4 className="font-semibold text-surface-900 mb-4">Vehicle Details</h4>
+                                ) : (
+                                    <form className="space-y-5" onSubmit={handleSubmit}>
+                                        {status.error && (
+                                            <div className="bg-red-50 text-red-600 p-4 rounded-lg text-sm border border-red-200">
+                                                {status.error}
+                                            </div>
+                                        )}
                                         <div className="grid sm:grid-cols-2 gap-5">
                                             <div>
-                                                <label className="block text-sm font-medium text-surface-700 mb-1">Make & Model</label>
-                                                <input type="text" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="e.g. Lexus ES 350" />
+                                                <label className="block text-sm font-medium text-surface-700 mb-1">Full Name</label>
+                                                <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="John Doe" />
                                             </div>
                                             <div>
-                                                <label className="block text-sm font-medium text-surface-700 mb-1">Year</label>
-                                                <input type="number" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="2023" />
+                                                <label className="block text-sm font-medium text-surface-700 mb-1">Phone Number</label>
+                                                <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="+971 50 123 4567" />
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm font-medium text-surface-700 mb-1">Are you willing to do Cross-Border trips?</label>
-                                        <div className="flex items-center gap-4 mt-2">
-                                            <label className="flex items-center gap-2">
-                                                <input type="radio" name="cross_border" className="text-primary-600 focus:ring-primary-500" value="yes" />
-                                                <span className="text-surface-700">Yes</span>
-                                            </label>
-                                            <label className="flex items-center gap-2">
-                                                <input type="radio" name="cross_border" className="text-primary-600 focus:ring-primary-500" value="no" />
-                                                <span className="text-surface-700">No (City only)</span>
-                                            </label>
+                                        
+                                        <div className="grid sm:grid-cols-2 gap-5">
+                                            <div>
+                                                <label className="block text-sm font-medium text-surface-700 mb-1">Email Address</label>
+                                                <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="john@example.com" />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-medium text-surface-700 mb-1">Country of Operation</label>
+                                                <select name="country" value={formData.country} onChange={handleChange} className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none">
+                                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                                    <option value="Qatar">Qatar</option>
+                                                    <option value="Kuwait">Kuwait</option>
+                                                    <option value="Bahrain">Bahrain</option>
+                                                    <option value="Oman">Oman</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="pt-4">
-                                        <button type="button" className="btn-primary w-full py-3 text-lg">
-                                            Submit Registration
-                                        </button>
-                                        <p className="text-xs text-center text-surface-500 mt-3">Our fleet management team will contact you within 24 hours.</p>
-                                    </div>
-                                </form>
+                                        <div className="border-t border-surface-200 pt-5 mt-5">
+                                            <h4 className="font-semibold text-surface-900 mb-4">Vehicle Details</h4>
+                                            <div className="grid sm:grid-cols-2 gap-5">
+                                                <div>
+                                                    <label className="block text-sm font-medium text-surface-700 mb-1">Make & Model</label>
+                                                    <input type="text" name="vehicle_make" value={formData.vehicle_make} onChange={handleChange} required className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="e.g. Lexus ES 350" />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm font-medium text-surface-700 mb-1">Year</label>
+                                                    <input type="number" name="vehicle_year" value={formData.vehicle_year} onChange={handleChange} required min="2010" max="2027" className="w-full px-4 py-2 border border-surface-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" placeholder="2023" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-medium text-surface-700 mb-1">Are you willing to do Cross-Border trips?</label>
+                                            <div className="flex items-center gap-4 mt-2">
+                                                <label className="flex items-center gap-2">
+                                                    <input type="radio" name="cross_border" value="yes" checked={formData.cross_border === 'yes'} onChange={handleChange} className="text-primary-600 focus:ring-primary-500" />
+                                                    <span className="text-surface-700">Yes</span>
+                                                </label>
+                                                <label className="flex items-center gap-2">
+                                                    <input type="radio" name="cross_border" value="no" checked={formData.cross_border === 'no'} onChange={handleChange} className="text-primary-600 focus:ring-primary-500" />
+                                                    <span className="text-surface-700">No (City only)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div className="pt-4">
+                                            <button type="submit" disabled={status.submitting} className="btn-primary w-full py-3 text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+                                                {status.submitting ? 'Submitting Application...' : 'Submit Registration'}
+                                            </button>
+                                            <p className="text-xs text-center text-surface-500 mt-3">Our fleet management team will contact you within 24 hours.</p>
+                                        </div>
+                                    </form>
+                                )}
                             </div>
                         </div>
                     </div>

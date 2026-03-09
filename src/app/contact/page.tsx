@@ -1,19 +1,56 @@
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Contact Us | 24/7 Customer Support for Taxi Bookings',
-    description: 'Get in touch with our team for inquiries regarding pre-booked airport transfers, intercity travel, or corporate transportation across the GCC countries.',
-    openGraph: {
-        title: 'Contact Us | 24/7 Customer Support for Taxi Bookings',
-        description: 'Get in touch with our team for inquiries regarding pre-booked airport transfers, intercity travel, or corporate transportation across the GCC countries.',
-        url: 'https://airporttraveltaxis.com/contact',
-    },
-    alternates: {
-        canonical: 'https://airporttraveltaxis.com/contact',
-    },
-};
+import { useState } from 'react';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError('');
+
+        if (!formData.name || !formData.email || !formData.message) {
+            setError('Please fill in all required fields.');
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || 'Failed to send message');
+            }
+
+            setSubmitted(true);
+        } catch (err: unknown) {
+            const errorMessage = err instanceof Error ? err.message : 'Something went wrong. Please try WhatsApp instead.';
+            setError(errorMessage);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className="pt-20">
             {/* Hero */}
@@ -33,41 +70,129 @@ export default function ContactPage() {
                     <div className="grid lg:grid-cols-2 gap-12">
                         {/* Contact Form */}
                         <div className="glass-card p-8">
-                            <h2 className="font-display text-2xl text-surface-900 mb-6">Send us a Message</h2>
-                            <form className="space-y-5">
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="label-text">Full Name</label>
-                                        <input type="text" className="input-field" placeholder="Your name" />
+                            {submitted ? (
+                                <div className="text-center py-12 animate-fade-in">
+                                    <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <CheckCircle className="w-10 h-10" />
                                     </div>
-                                    <div>
-                                        <label className="label-text">Email</label>
-                                        <input type="email" className="input-field" placeholder="your@email.com" />
-                                    </div>
-                                </div>
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="label-text">Phone</label>
-                                        <input type="tel" className="input-field" placeholder="+971 XX XXX XXXX" />
-                                    </div>
-                                    <div>
-                                        <label className="label-text">Subject</label>
-                                        <select className="input-field">
-                                            <option value="">Select subject</option>
-                                            <option>Booking Inquiry</option>
-                                            <option>Corporate Account</option>
-                                            <option>Partnership</option>
-                                            <option>Complaint</option>
-                                            <option>Other</option>
-                                        </select>
+                                    <h3 className="font-display text-2xl text-surface-900 mb-3">Message Sent!</h3>
+                                    <p className="text-surface-600 mb-6">
+                                        Thank you for reaching out. We&apos;ll respond within 24 hours. A confirmation email has been sent to <strong>{formData.email}</strong>.
+                                    </p>
+                                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                                        <button
+                                            onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); }}
+                                            className="btn-secondary"
+                                        >
+                                            Send Another Message
+                                        </button>
+                                        <a
+                                            href="https://wa.me/923057262461"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-primary inline-flex items-center justify-center gap-2"
+                                        >
+                                            💬 Chat on WhatsApp
+                                        </a>
                                     </div>
                                 </div>
-                                <div>
-                                    <label className="label-text">Message</label>
-                                    <textarea className="input-field min-h-[120px]" placeholder="How can we help you?" />
-                                </div>
-                                <button type="submit" className="btn-primary w-full">Send Message</button>
-                            </form>
+                            ) : (
+                                <>
+                                    <h2 className="font-display text-2xl text-surface-900 mb-6">Send us a Message</h2>
+
+                                    {error && (
+                                        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
+                                            {error}
+                                        </div>
+                                    )}
+
+                                    <form onSubmit={handleSubmit} className="space-y-5">
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="label-text">Full Name *</label>
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    value={formData.name}
+                                                    onChange={handleChange}
+                                                    className="input-field"
+                                                    placeholder="Your name"
+                                                    required
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="label-text">Email *</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                    className="input-field"
+                                                    placeholder="your@email.com"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            <div>
+                                                <label className="label-text">Phone</label>
+                                                <input
+                                                    type="tel"
+                                                    name="phone"
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
+                                                    className="input-field"
+                                                    placeholder="+971 XX XXX XXXX"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="label-text">Subject</label>
+                                                <select
+                                                    name="subject"
+                                                    value={formData.subject}
+                                                    onChange={handleChange}
+                                                    className="input-field"
+                                                >
+                                                    <option value="">Select subject</option>
+                                                    <option>Booking Inquiry</option>
+                                                    <option>Corporate Account</option>
+                                                    <option>Partnership</option>
+                                                    <option>Complaint</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label className="label-text">Message *</label>
+                                            <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                className="input-field min-h-[120px]"
+                                                placeholder="How can we help you?"
+                                                required
+                                            />
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-70"
+                                        >
+                                            {isSubmitting ? (
+                                                <>
+                                                    <Loader2 className="w-5 h-5 animate-spin" />
+                                                    Sending...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Send className="w-5 h-5" />
+                                                    Send Message
+                                                </>
+                                            )}
+                                        </button>
+                                    </form>
+                                </>
+                            )}
                         </div>
 
                         {/* Contact Info */}
@@ -78,7 +203,8 @@ export default function ContactPage() {
                                     {[
                                         { icon: '📞', label: 'Phone', value: 'Available on WhatsApp', href: 'https://wa.me/923057262461' },
                                         { icon: '💬', label: 'WhatsApp', value: 'Chat on WhatsApp', href: 'https://wa.me/923057262461' },
-                                        { icon: '📧', label: 'Email', value: 'info@airporttraveltaxis.com', href: 'mailto:info@airporttraveltaxis.com' },
+                                        { icon: '📧', label: 'General', value: 'info@airporttraveltaxis.com', href: 'mailto:info@airporttraveltaxis.com' },
+                                        { icon: '🚖', label: 'Bookings', value: 'booking@airporttraveltaxis.com', href: 'mailto:booking@airporttraveltaxis.com' },
                                         { icon: '🕐', label: 'Hours', value: '24/7 - 365 days', href: '#' },
                                     ].map((item) => (
                                         <li key={item.label}>
