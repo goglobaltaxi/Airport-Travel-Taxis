@@ -149,7 +149,7 @@ export async function POST(req: NextRequest) {
                             For immediate assistance or to expedite your application, contact us directly on WhatsApp:
                         </p>
                         <div style="text-align: center; margin: 24px 0;">
-                            <a href="https://wa.me/923057262461" 
+                            <a href="https://wa.me/966569487569" 
                                style="display: inline-block; padding: 14px 36px; background: #25d366; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px;">
                                 💬 Chat on WhatsApp
                             </a>

@@ -109,7 +109,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
             
             // 3. Redirect to WhatsApp
             const message = `Hi, I'd like to book a ride:\n\nName: ${name}\nPickup: ${pickup}\nDrop-off: ${dropoff}\nDate: ${date}\nTime: ${time}\nPassengers: ${passengers}\nVehicle: ${selectedVehicle?.category || 'Economy'}`;
-            window.open(`https://wa.me/923057262461?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/966569487569?text=${encodeURIComponent(message)}`, '_blank');
 
         } catch (error) {
             console.error('Error saving booking:', error);
@@ -144,7 +144,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                         Book New Ride
                     </button>
                     <a 
-                        href={`https://wa.me/923057262461`}
+                        href={`https://wa.me/966569487569`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary inline-flex items-center justify-center gap-2"

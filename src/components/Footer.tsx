@@ -79,7 +79,7 @@ export default function Footer() {
                         <h4 className="font-display font-semibold text-white mt-6 mb-4">Contact</h4>
                         <ul className="space-y-2">
                             <li className="text-sm text-surface-500">
-                                <a href="https://wa.me/923057262461" className="hover:text-primary-400 transition-colors flex items-center gap-2">
+                                <a href="https://wa.me/966569487569" className="hover:text-primary-400 transition-colors flex items-center gap-2">
                                     <span>📞 Chat on WhatsApp</span>
                                 </a>
                             </li>

@@ -268,7 +268,7 @@ export default function HomePage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/booking" className="btn-primary bg-white !text-primary-600 hover:!bg-surface-100 shadow-lg">Get Quote</Link>
                         <a
-                            href="https://wa.me/923057262461"
+                            href="https://wa.me/966569487569"
                             target="_blank"
                             className="btn-secondary !border-white/40 !text-white hover:!bg-white/10"
                         >
@@ -312,7 +312,7 @@ export default function HomePage() {
                             name: 'Airport Travel Taxis',
                             description: 'Pre-booked airport taxi and transfer services across Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain.',
                             url: 'https://airporttraveltaxis.com',
-                            telephone: '+923057262461',
+                            telephone: '+966569487569',
                             email: 'info@airporttraveltaxis.com',
                             areaServed: gccCountries.map((c) => ({
                                 '@type': 'Country',
