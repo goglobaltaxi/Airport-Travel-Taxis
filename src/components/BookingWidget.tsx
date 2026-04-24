@@ -126,6 +126,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
         setIsSubmitting(true);
 
+        // Capture utm_source from URL
+        const params = new URLSearchParams(window.location.search);
+        const utm_source = params.get('utm_source') || 'direct';
+
         const bookingData = {
             pickup_location: pickup,
             dropoff_location: dropoff,
@@ -140,7 +144,8 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
             payment_method: paymentMethod,
             flight_number: flightNumber || null,
             promo_code: promoApplied?.code || null,
-            status: 'pending'
+            status: 'pending',
+            utm_source: utm_source
         };
 
         setSubmitError('');
