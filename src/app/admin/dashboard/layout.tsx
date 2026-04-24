@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Calendar, Users, LogOut, ChevronRight, Mail, Car, BarChart2, DollarSign, Star, FileText, Tag } from 'lucide-react';
+import { LayoutDashboard, Calendar, Users, LogOut, ChevronRight, Mail, Car, BarChart2, DollarSign, Star, FileText, Tag, Shield } from 'lucide-react';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<any>(null);
@@ -24,6 +24,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
     useEffect(() => {
         setMounted(true);
+        
+        // Request Notification Permission
+        if (typeof window !== 'undefined' && 'Notification' in window) {
+            if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+                Notification.requestPermission();
+            }
+        }
+
         const checkUser = async () => {
             const { data: { session } } = await supabase.auth.getSession();
             if (!session) {
@@ -46,14 +54,33 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         });
 
         // Realtime unread badge updates
-        const channel = supabase
+        const msgChannel = supabase
             .channel('messages-unread')
             .on('postgres_changes', { event: '*', schema: 'public', table: 'contact_messages' }, fetchUnread)
             .subscribe();
 
+        // Realtime Booking Notifications
+        const bookingChannel = supabase
+            .channel('new-bookings')
+            .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'bookings' }, (payload) => {
+                const newBooking = payload.new;
+                if (typeof window !== 'undefined' && Notification.permission === 'granted') {
+                    new Notification('New Booking Received! 🚖', {
+                        body: `${newBooking.customer_name} from ${newBooking.pickup_location}`,
+                        icon: '/icons/icon-192x192.png'
+                    });
+                    
+                    // Optional: Play a subtle notification sound
+                    const audio = new Audio('/notification.mp3');
+                    audio.play().catch(e => console.log('Audio play blocked'));
+                }
+            })
+            .subscribe();
+
         return () => {
             subscription.unsubscribe();
-            supabase.removeChannel(channel);
+            supabase.removeChannel(msgChannel);
+            supabase.removeChannel(bookingChannel);
         };
     }, [router]);
 
@@ -77,6 +104,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         { name: 'Drivers',    icon: Car,             href: '/admin/dashboard/drivers/' },
         { name: 'Messages',   icon: Mail,            href: '/admin/dashboard/messages/' },
         { name: 'Analytics',  icon: BarChart2,       href: '/admin/dashboard/analytics/' },
+        { name: 'Reports',    icon: FileText,        href: '/admin/dashboard/reports/' },
+        { name: 'Blacklist',  icon: Shield,          href: '/admin/dashboard/blacklist/' },
         { name: 'Pricing',    icon: DollarSign,      href: '/admin/dashboard/pricing/' },
         { name: 'Reviews',    icon: Star,            href: '/admin/dashboard/reviews/' },
         { name: 'Blog',       icon: FileText,        href: '/admin/dashboard/blog/' },

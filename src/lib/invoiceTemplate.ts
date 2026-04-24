@@ -179,18 +179,39 @@ export function generateInvoiceEmail(data: BookingData): string {
             </table>
         </div>
 
-        ${hasPrice ? `
-        <div class="price-box">
-            <div>
-                <div class="price-label">Total Amount</div>
-                <div class="price-note">All inclusive — no hidden charges</div>
+        ${hasPrice ? (() => {
+            const totalPrice = Number(data.price);
+            const vatRate = data.vat_rate || 0;
+            const hasVat = vatRate > 0;
+            const subtotal = hasVat ? totalPrice / (1 + vatRate / 100) : totalPrice;
+            const vatAmount = totalPrice - subtotal;
+            const currency = data.currency || 'SAR';
+
+            return `
+            <div class="price-box" style="display: block;">
+                ${hasVat ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="price-label" style="font-size: 11px;">Subtotal</div>
+                    <div style="color: #94a3b8; font-weight: 600;">${currency} ${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+                    <div class="price-label" style="font-size: 11px;">VAT (${vatRate}%)</div>
+                    <div style="color: #94a3b8; font-weight: 600;">${currency} ${vatAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                </div>
+                ` : ''}
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div class="price-label">Total Amount</div>
+                        <div class="price-note">All inclusive — no hidden charges</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="price-amount">${currency} ${totalPrice.toLocaleString()}</div>
+                        <div class="price-note">${hasVat ? 'Including VAT' : 'No Tax Applicable'}</div>
+                    </div>
+                </div>
             </div>
-            <div style="text-align:right;">
-                <div class="price-amount">${data.currency || 'SAR'} ${Number(data.price).toLocaleString()}</div>
-                <div class="price-note">Incl. VAT</div>
-            </div>
-        </div>
-        ${generateCurrencyTable(Number(data.price), data.currency || 'SAR')}` : `
+            ${generateCurrencyTable(totalPrice, currency)}`;
+        })() : `
         <div class="no-price">
             Price will be confirmed by our team shortly via WhatsApp or email.
         </div>`}
@@ -288,18 +309,39 @@ export function generateQuotationEmail(data: BookingData): string {
             </table>
         </div>
 
-        ${hasPrice ? `
-        <div class="price-box">
-            <div>
-                <div class="price-label">Quoted Price</div>
-                <div class="price-note">All inclusive — no hidden charges</div>
+        ${hasPrice ? (() => {
+            const totalPrice = Number(data.price);
+            const vatRate = data.vat_rate || 0;
+            const hasVat = vatRate > 0;
+            const subtotal = hasVat ? totalPrice / (1 + vatRate / 100) : totalPrice;
+            const vatAmount = totalPrice - subtotal;
+            const currency = data.currency || 'SAR';
+
+            return `
+            <div class="price-box" style="display: block;">
+                ${hasVat ? `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="price-label" style="font-size: 11px;">Subtotal</div>
+                    <div style="color: #94a3b8; font-weight: 600;">${currency} ${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+                    <div class="price-label" style="font-size: 11px;">VAT (${vatRate}%)</div>
+                    <div style="color: #94a3b8; font-weight: 600;">${currency} ${vatAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                </div>
+                ` : ''}
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div class="price-label">Quoted Price</div>
+                        <div class="price-note">All inclusive — no hidden charges</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="price-amount">${currency} ${totalPrice.toLocaleString()}</div>
+                        <div class="price-note">${hasVat ? 'Including VAT' : 'No Tax Applicable'}</div>
+                    </div>
+                </div>
             </div>
-            <div style="text-align:right;">
-                <div class="price-amount">${data.currency || 'SAR'} ${Number(data.price).toLocaleString()}</div>
-                <div class="price-note">Incl. VAT</div>
-            </div>
-        </div>
-        ${generateCurrencyTable(Number(data.price), data.currency || 'SAR')}` : `
+            ${generateCurrencyTable(totalPrice, currency)}`;
+        })() : `
         <div class="no-price">
             Our team will provide a competitive price quote within 2 hours via WhatsApp or email.
         </div>`}

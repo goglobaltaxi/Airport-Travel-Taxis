@@ -70,13 +70,34 @@ export default function BookingsManagement() {
     };
 
     const updateStatus = async (id: string, status: string) => {
+        const booking = bookings.find(b => b.id === id);
+        
         const { error } = await supabase
             .from('bookings')
             .update({ status })
             .eq('id', id);
 
-        if (error) showToast('❌ Error updating status');
-        else { showToast('✅ Status updated'); fetchBookings(); }
+        if (error) {
+            showToast('❌ Error updating status');
+        } else {
+            showToast(`✅ Status updated to ${status}`);
+            
+            // Auto Receipt Email on Completion
+            if (status === 'completed' && booking && booking.customer_email) {
+                try {
+                    fetch('/api/receipt', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ booking }),
+                    });
+                    showToast('📧 Receipt email sent to customer');
+                } catch (err) {
+                    console.error('Failed to trigger receipt email:', err);
+                }
+            }
+            
+            fetchBookings();
+        }
     };
 
     const copyToClipboard = async (booking: any) => {
