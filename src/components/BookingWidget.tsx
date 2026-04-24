@@ -126,9 +126,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
         setIsSubmitting(true);
 
-        // Capture utm_source from URL
+        // Capture utm_source and referral from URL
         const params = new URLSearchParams(window.location.search);
         const utm_source = params.get('utm_source') || 'direct';
+        const referred_by = params.get('ref') || null;
 
         const bookingData = {
             pickup_location: pickup,
@@ -145,7 +146,8 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
             flight_number: flightNumber || null,
             promo_code: promoApplied?.code || null,
             status: 'pending',
-            utm_source: utm_source
+            utm_source: utm_source,
+            referred_by: referred_by
         };
 
         setSubmitError('');
