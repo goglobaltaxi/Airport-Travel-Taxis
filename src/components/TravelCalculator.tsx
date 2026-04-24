@@ -136,7 +136,7 @@ export default function TravelCalculator() {
         <div className="w-full max-w-4xl mx-auto my-12">
             <div className="bg-surface-50 rounded-3xl border border-surface-200 p-8 shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="p-3 bg-primary-600 rounded-xl text-white shadow-lg shadow-primary-600/20">
+                    <div className="p-3 bg-primary-900 rounded-xl text-gold-400 shadow-lg shadow-primary-900/20 border border-primary-800">
                         <Calculator className="w-6 h-6" />
                     </div>
                     <div>
@@ -150,7 +150,7 @@ export default function TravelCalculator() {
                     <div className="relative" ref={pickupRef}>
                         <label className="block text-xs font-bold text-surface-400 uppercase tracking-widest mb-2 ml-1">Pickup Location</label>
                         <div className="relative group">
-                            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-600 transition-colors" />
+                            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-900 transition-colors" />
                             <input
                                 type="text"
                                 value={pickup}
@@ -160,7 +160,7 @@ export default function TravelCalculator() {
                                 }}
                                 onFocus={() => setShowPickupSuggestions(true)}
                                 placeholder="Starting City or Airport"
-                                className="w-full pl-12 pr-4 py-4 bg-white border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 transition-all text-surface-900 placeholder:text-surface-400 font-medium"
+                                className="w-full pl-12 pr-4 py-4 bg-white border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-900/20 focus:border-primary-900 transition-all text-surface-900 placeholder:text-surface-400 font-medium"
                             />
                             {pickup && (
                                 <button onClick={() => setPickup('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600">
@@ -195,7 +195,7 @@ export default function TravelCalculator() {
                     <div className="relative" ref={destRef}>
                         <label className="block text-xs font-bold text-surface-400 uppercase tracking-widest mb-2 ml-1">Destination</label>
                         <div className="relative group">
-                            <Navigation className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-600 transition-colors" />
+                            <Navigation className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-900 transition-colors" />
                             <input
                                 type="text"
                                 value={destination}
@@ -205,7 +205,7 @@ export default function TravelCalculator() {
                                 }}
                                 onFocus={() => setShowDestSuggestions(true)}
                                 placeholder="Arrival City or Border"
-                                className="w-full pl-12 pr-4 py-4 bg-white border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 transition-all text-surface-900 placeholder:text-surface-400 font-medium"
+                                className="w-full pl-12 pr-4 py-4 bg-white border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-900/20 focus:border-primary-900 transition-all text-surface-900 placeholder:text-surface-400 font-medium"
                             />
                             {destination && (
                                 <button onClick={() => setDestination('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600">
@@ -248,7 +248,7 @@ export default function TravelCalculator() {
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div className="flex items-center gap-4">
-                                    <div className="p-4 bg-primary-50 rounded-2xl text-primary-600">
+                                    <div className="p-4 bg-gold-50 shadow-sm border border-gold-200 rounded-2xl text-gold-600">
                                         <Ruler className="w-8 h-8" />
                                     </div>
                                     <div>
@@ -257,7 +257,7 @@ export default function TravelCalculator() {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <div className="p-4 bg-primary-50 rounded-2xl text-primary-600">
+                                    <div className="p-4 bg-gold-50 shadow-sm border border-gold-200 rounded-2xl text-gold-600">
                                         <Clock className="w-8 h-8" />
                                     </div>
                                     <div>

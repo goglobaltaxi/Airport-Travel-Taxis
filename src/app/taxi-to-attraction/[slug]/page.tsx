@@ -48,7 +48,7 @@ export default function AttractionTaxiPage({ params }: { params: { slug: string 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for families visiting major attractions.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for families visiting major attractions.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for entertainment trips.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your theme park visit.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for tourist groups and families.' },

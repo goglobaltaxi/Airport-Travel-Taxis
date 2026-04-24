@@ -2,25 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { corporateChauffeurPages } from '@/lib/corporateData';
-import BookingWidget from '@/components/BookingWidget';
-import {
-    MapPin,
-    Clock,
-    Car,
-    ShieldCheck,
-    ChevronRight,
-    Briefcase,
-    Building2,
-    Calendar,
-    Plane,
-    ArrowRight,
-    Info,
-    CalendarDays,
-} from 'lucide-react';
+import { MapPin, Car, ChevronRight, MessageSquare, CheckCircle2, Briefcase } from 'lucide-react';
 
-interface Props {
-    params: { city: string };
-}
+interface Props { params: { city: string }; }
 
 export async function generateStaticParams() {
     return corporateChauffeurPages.map((page) => ({ city: page.slug }));
@@ -29,18 +13,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const page = corporateChauffeurPages.find((p) => p.slug === params.city);
     if (!page) return {};
-
     return {
         title: page.title,
-        description: page.overview,
-        openGraph: {
-            title: `${page.title} | Airport Travel Taxis`,
-            description: page.overview,
-            url: `https://airporttraveltaxis.com/corporate-chauffeur-${page.slug}`,
-        },
-        alternates: {
-            canonical: `https://airporttraveltaxis.com/corporate-chauffeur-${page.slug}`,
-        },
+        description: `Corporate chauffeur service in ${page.city}. Private car for business meetings, airport transfers, and office trips. Message us on WhatsApp to get a quote.`,
+        openGraph: { title: page.title, description: page.overview, url: `https://airporttraveltaxis.com/corporate-chauffeur-${page.slug}` },
+        alternates: { canonical: `https://airporttraveltaxis.com/corporate-chauffeur-${page.slug}` },
     };
 }
 
@@ -48,226 +25,132 @@ export default function CorporateChauffeurPage({ params }: Props) {
     const page = corporateChauffeurPages.find((p) => p.slug === params.city);
     if (!page) notFound();
 
-    const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Professional comfort for business executives.' },
-        { name: 'BMW', type: 'Executive Sedan', desc: 'Refined and reliable inter-city business travel.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Sleek and professional road transportation.' },
-        { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and comfortable SUV for corporate teams.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for group business travel and event support.' },
-        { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Efficient and professional city transit.' },
-        { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Premium transport for up to 8 professional passengers.' },
-        { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for corporate delegations and larger teams.' },
-        { name: 'Executive Bus', type: 'Coach', desc: 'Professional transport for large corporate groups and summits.' },
-        { name: 'Camry', type: 'Standard Sedan', desc: 'Practical and reliable for city business trips.' },
-        { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for professional group road travel.' },
-        { name: 'Hiace', type: 'Passenger Van', desc: 'Efficient group transportation for corporate events.' },
-        { name: 'Coaster', type: 'Minibus', desc: 'Trusted transport for larger employee or delegation groups.' },
-    ];
+    const faqs = [
+        { question: `Can you pick us up from our office in ${page.city}?`, answer: "Yes, we pick up from offices, hotels, or any address in the city." },
+        { question: "Is the car private or shared?", answer: "All cars are fully private. No other passengers will be in your car." },
+        { question: "Can I book for a group of business travelers?", answer: "Yes. Tell us your group size on WhatsApp and we will send the right vehicle." },
+        { question: "Do you do airport transfers for business trips?", answer: "Yes, this is one of the most common bookings we handle." },
+        { question: "Are drivers punctual?", answer: "Yes, drivers are time-aware and plan for traffic in advance." },
+        { question: "Can I book on short notice?", answer: "We try our best. Message us on WhatsApp and we will check availability." },
+        { question: "Do drivers speak English?", answer: "Yes, all drivers communicate clearly in English or Arabic." },
+        { question: "Can I book a return trip?", answer: "Yes, mention both trips when you message us and we will arrange it." },
+        ...(page.faq || [])
+    ].slice(0, 10);
 
     return (
         <div className="pt-20">
-            {/* Hero */}
             <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium">
-                        <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
-                        <ChevronRight className="w-4 h-4" />
-                        <span className="text-surface-900">Corporate Chauffeur {page.city}</span>
-                    </div>
-
-                    <div className="grid lg:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-4">
-                                <Briefcase className="w-4 h-4 text-primary-600" />
-                                <span className="text-sm text-primary-700 font-medium tracking-tight">Business & Executive Transportation</span>
-                            </div>
-                            <h1 className="font-display text-4xl lg:text-5xl text-surface-900 mb-6 leading-tight">
-                                Corporate Chauffeur Service <span className="text-primary-600">{page.city}</span>
-                            </h1>
-                            <p className="text-surface-600 text-lg leading-relaxed mb-8">{page.overview}</p>
-
-                            <div className="flex flex-wrap gap-2">
-                                {['Business Travel', 'Executive Chauffeur', 'Corporate Events', 'Airport Transfers', 'Professional Service'].map((tag) => (
-                                    <span key={tag} className="text-xs font-semibold bg-white border border-surface-200 text-surface-700 rounded-full px-4 py-1.5 shadow-sm">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="lg:sticky lg:top-24">
-                            <BookingWidget />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Common Uses */}
-            <section className="section-padding bg-white border-y border-surface-200">
-                <div className="container-custom mx-auto">
-                    <div className="grid md:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 className="font-display text-3xl text-surface-900 mb-6 italic">Common Uses</h2>
-                            <p className="text-surface-600 leading-relaxed text-lg mb-8">
-                                Our corporate chauffeur services in {page.city} are designed to support the dynamic needs of business organizations and individual professionals. We handle the logistical details of your road travel, allowing you to focus on your professional objectives.
-                            </p>
-                            <div className="grid gap-4">
-                                {page.commonUses.map((use, i) => (
-                                    <div key={i} className="flex items-start gap-4 p-4 bg-surface-50 rounded-2xl border border-surface-100">
-                                        <div className="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center flex-shrink-0 font-bold text-sm">
-                                            {i + 1}
-                                        </div>
-                                        <p className="text-surface-700 font-medium">{use}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="bg-primary-900 rounded-[40px] p-10 text-white relative overflow-hidden shadow-2xl">
-                            <div className="relative z-10">
-                                <Briefcase className="w-12 h-12 text-primary-400 mb-6" />
-                                <h3 className="font-display text-3xl mb-4 italic">Professional Standard</h3>
-                                <p className="text-primary-200 leading-relaxed mb-8">
-                                    We prioritize punctuality and reliability for every corporate booking, recognizing the importance of your business commitments in {page.city}.
-                                </p>
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <ShieldCheck className="w-5 h-5 text-primary-400" />
-                                        <span className="text-sm font-medium">Reliable Punctuality</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <ShieldCheck className="w-5 h-5 text-primary-400" />
-                                        <span className="text-sm font-medium">Professional Chauffeurs</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <ShieldCheck className="w-5 h-5 text-primary-400" />
-                                        <span className="text-sm font-medium">All Major Business Districts Covered</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Pickup Locations */}
-            <section className="section-padding bg-surface-50">
-                <div className="container-custom mx-auto">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <h2 className="font-display text-3xl text-surface-900 mb-4">Pickup Locations</h2>
-                        <p className="text-surface-500">We offer executive pickups across all major commercial and transit points in {page.city}.</p>
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {page.pickupLocations.map((loc, i) => (
-                            <div key={i} className="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm flex items-start gap-4">
-                                <div className="p-2 bg-primary-50 rounded-lg text-primary-600">
-                                    {loc.toLowerCase().includes('airport') ? <Plane className="w-5 h-5" /> :
-                                     loc.toLowerCase().includes('office') || loc.toLowerCase().includes('district') ? <Briefcase className="w-5 h-5" /> :
-                                     loc.toLowerCase().includes('hotel') ? <Building2 className="w-5 h-5" /> :
-                                     <MapPin className="w-5 h-5" />}
-                                </div>
-                                <p className="text-surface-700 font-bold text-sm uppercase tracking-tight leading-tight">{loc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Vehicle Options */}
-            <section className="section-padding bg-white">
-                <div className="container-custom mx-auto">
-                    <div className="flex items-end justify-between mb-12 gap-6">
-                        <div className="max-w-xl">
-                            <h2 className="font-display text-3xl text-surface-900 mb-4">Available Fleet</h2>
-                            <p className="text-surface-500">Choose from our variety of professional vehicles maintained for executive and business travel.</p>
-                        </div>
-                        <Link href="/fleet" className="text-primary-600 font-bold flex items-center gap-2 hover:gap-3 transition-all mb-2">
-                            View All Vehicles <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                        {vehicles.map((v) => (
-                            <div key={v.name} className="bg-surface-50 border border-surface-200 rounded-2xl p-5 hover:border-primary-300 transition-colors">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <div className="p-2 bg-white rounded-lg border border-surface-200">
-                                        <Car className="w-5 h-5 text-primary-600" />
-                                    </div>
-                                    <p className="font-bold text-surface-900">{v.name}</p>
-                                </div>
-                                <p className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-2">{v.type}</p>
-                                <p className="text-surface-600 text-sm leading-relaxed">{v.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Travel Tips */}
-            <section className="section-padding bg-surface-50 text-surface-900">
                 <div className="container-custom mx-auto max-w-4xl">
-                    <div className="bg-white border border-surface-200 rounded-[32px] overflow-hidden shadow-sm">
-                        <div className="bg-primary-600 p-8 text-white">
-                            <div className="flex items-center gap-3 mb-2">
-                                <CalendarDays className="w-6 h-6" />
-                                <h2 className="font-display text-2xl">Business Travel Tips</h2>
-                            </div>
-                            <p className="text-primary-100">Guidance for coordinating your corporate transportation effectively.</p>
+                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium flex-wrap">
+                        <Link href="/" className="hover:text-gold-600 transition-colors">Home</Link>
+                        <ChevronRight className="w-4 h-4" />
+                        <span className="text-surface-900 truncate">Corporate Chauffeur {page.city}</span>
+                    </div>
+                    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
+                        <div className="inline-flex items-center gap-2 mb-4 text-sm font-semibold text-primary-900 bg-surface-100 px-4 py-1.5 rounded-full border border-surface-200">
+                            <Briefcase className="w-4 h-4 text-gold-500" />
+                            Business & Corporate Travel
                         </div>
-                        <div className="p-8 grid sm:grid-cols-2 gap-8">
-                            {page.travelTips.map((tip, i) => (
-                                <div key={i} className="flex items-start gap-4">
-                                    <Info className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                                    <p className="text-surface-700 font-medium">{tip}</p>
-                                </div>
+                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
+                            Corporate Chauffeur Service in {page.city}
+                        </h1>
+                        <p className="text-surface-700 text-lg leading-relaxed mb-6">
+                            We provide private car service for business travelers in {page.city}. This is for airport transfers, client meetings, and office-to-office trips. To get the exact quote, you can contact on WhatsApp.
+                        </p>
+                        <a href="https://wa.me/966569487569" className="btn-primary inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg">
+                            <MessageSquare className="w-5 h-5" />
+                            Get a quote on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section-padding bg-white border-b border-surface-200">
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">About This Service</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                This is a private car service for business use in {page.city}. It is for people who need a reliable driver who shows up on time and takes them to the right place.
+                            </p>
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Common Situations</h2>
+                            <ul className="space-y-3">
+                                {(page.commonUses || ['Airport transfers', 'Office visits', 'Client meetings', 'Corporate events']).slice(0, 5).map((use, i) => (
+                                    <li key={i} className="flex gap-3">
+                                        <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
+                                        <p className="text-surface-600">{use}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="bg-surface-50 p-6 md:p-8 rounded-2xl border border-surface-200">
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Good to Know</h2>
+                            <ul className="space-y-3 mb-6">
+                                <li className="flex items-start gap-2 text-surface-600"><CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />Drivers know the city well and plan for traffic.</li>
+                                <li className="flex items-start gap-2 text-surface-600"><CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />Sedans, SUVs, and vans are available depending on your group.</li>
+                                <li className="flex items-start gap-2 text-surface-600"><CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />All vehicles are clean and air-conditioned.</li>
+                                <li className="flex items-start gap-2 text-surface-600"><CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />Service is available 24 hours, including early morning flights.</li>
+                            </ul>
+                            {page.pickupLocations && page.pickupLocations.length > 0 && (
+                                <>
+                                    <h3 className="font-semibold text-primary-900 mb-3">Pickup Points</h3>
+                                    <ul className="space-y-2">
+                                        {page.pickupLocations.slice(0, 4).map((loc, i) => (
+                                            <li key={i} className="flex items-center gap-2 text-surface-600 text-sm">
+                                                <MapPin className="w-4 h-4 text-gold-500 shrink-0" />
+                                                {loc}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )}
+                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-4 block">
+                                Message now to check availability <ChevronRight className="w-4 h-4 inline" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section-padding bg-primary-900 text-white text-center">
+                <div className="container-custom mx-auto max-w-2xl">
+                    <h2 className="font-display text-3xl mb-4 text-gold-400">Want to know the fare?</h2>
+                    <p className="text-surface-300 leading-relaxed mb-8">Send your pickup address and drop-off location on WhatsApp. We will reply fast. To get exact fare and availability, message on WhatsApp.</p>
+                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                        <MessageSquare className="w-5 h-5 text-green-600" />
+                        Contact now for quick response
+                    </a>
+                </div>
+            </section>
+
+            <section className="section-padding bg-surface-50 border-t border-surface-200">
+                <div className="container-custom mx-auto max-w-3xl">
+                    <h2 className="font-display text-2xl text-surface-900 mb-8">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        {faqs.map((item, i) => (
+                            <div key={i} className="bg-white border border-surface-200 rounded-2xl p-6">
+                                <h3 className="font-bold text-surface-900 mb-2">{item.question}</h3>
+                                <p className="text-surface-600">{item.answer}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {page.relatedPages && page.relatedPages.length > 0 && (
+                <section className="section-padding bg-white border-t border-surface-200">
+                    <div className="container-custom mx-auto max-w-4xl">
+                        <h2 className="font-display text-2xl text-surface-900 mb-6">Related Services</h2>
+                        <div className="flex flex-wrap gap-3">
+                            {page.relatedPages.map((rel) => (
+                                <Link key={rel.url} href={rel.url} className="text-gold-600 hover:text-gold-500 font-semibold text-sm border border-gold-200 rounded-full px-4 py-2 hover:bg-gold-50 transition-colors">
+                                    {rel.name}
+                                </Link>
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* FAQs */}
-            <section className="section-padding bg-white">
-                <div className="container-custom mx-auto max-w-3xl">
-                    <div className="text-center mb-12">
-                        <h2 className="font-display text-3xl text-surface-900 mb-4">Frequently Asked Questions</h2>
-                        <p className="text-surface-500">Common questions about our corporate chauffeur services.</p>
-                    </div>
-                    <div className="space-y-4">
-                        {page.faq.map((item, i) => (
-                            <div key={i} className="bg-surface-50 border border-surface-200 rounded-2xl p-6 hover:bg-white hover:shadow-lg transition-all">
-                                <h3 className="font-bold text-surface-900 mb-3 flex items-start gap-3">
-                                    <span className="text-primary-600 font-black">Q.</span>
-                                    {item.question}
-                                </h3>
-                                <div className="flex items-start gap-3">
-                                    <span className="text-surface-400 font-black">A.</span>
-                                    <p className="text-surface-600 leading-relaxed font-medium">{item.answer}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Related Pages */}
-            <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <h2 className="font-display text-3xl text-surface-900 mb-8 text-center italic">Related Services</h2>
-                    <div className="grid sm:grid-cols-3 gap-6">
-                        {page.relatedPages.map((rel) => (
-                            <Link
-                                key={rel.url}
-                                href={rel.url}
-                                className="group bg-white border border-surface-200 hover:border-primary-500 rounded-2xl p-6 transition-all shadow-sm hover:-translate-y-1"
-                            >
-                                <div className="flex items-center justify-between mb-4">
-                                    <ChevronRight className="w-4 h-4 text-surface-300 group-hover:translate-x-1 group-hover:text-primary-600 transition-all ml-auto" />
-                                </div>
-                                <h3 className="font-bold text-surface-900 group-hover:text-primary-600 transition-colors uppercase tracking-tight">{rel.name}</h3>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                </section>
+            )}
         </div>
     );
 }

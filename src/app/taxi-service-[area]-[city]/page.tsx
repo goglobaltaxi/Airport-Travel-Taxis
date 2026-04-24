@@ -69,7 +69,7 @@ export default function DistrictTaxiPage({ params }: Props) {
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious SUV for families and groups.' },
         { name: 'GMC', type: 'Large SUV', desc: 'Ideal for group travel and airport transfers.' },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Efficient and professional city transit.' },
-        { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Premium transport for up to 8 passengers.' },
+        { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Executive transport for up to 8 passengers.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger teams and delegations.' },
         { name: 'Executive Bus', type: 'Coach', desc: 'Professional transport for large corporate groups.' },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Practical and reliable for local district trips.' },

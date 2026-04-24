@@ -1,16 +1,15 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import BookingWidget from '@/components/BookingWidget';
 import FAQ from '@/components/FAQ';
 import RouteFinder from '@/components/RouteFinder';
-import { ChevronRight, MapPin, Clock, Info, ShieldCheck, Car, CheckCircle2, Navigation, Map } from 'lucide-react';
+import { ChevronRight, MapPin, Clock, Info, Car, CheckCircle2, Navigation, Map, MessageSquare } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Taxi from Kuwait to Saudi Arabia | Book Online',
-    description: 'Book a professional taxi from Kuwait to Saudi Arabia. We provide safe, pre-booked 24/7 transportation with professional chauffeurs across the GCC countries.',
+    description: 'Direct taxi service from Kuwait to Saudi Arabia. Simple private car travel with border help. Message us on WhatsApp to get a quote today.',
     openGraph: {
         title: 'Taxi from Kuwait to Saudi Arabia | Book Online',
-        description: 'Book a professional taxi from Kuwait to Saudi Arabia. We provide safe, pre-booked 24/7 transportation with professional chauffeurs across the GCC countries.',
+        description: 'Direct taxi service from Kuwait to Saudi Arabia. Simple private car travel with border help. Message us on WhatsApp to get a quote today.',
         url: 'https://airporttraveltaxis.com/taxi-from-kuwait-to-saudi-arabia',
     },
     alternates: {
@@ -19,173 +18,170 @@ export const metadata: Metadata = {
 };
 
 export default function CrossBorderRoutePage() {
-    const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan' },
-        { name: 'Cadillac Escalade', type: 'Large SUV' },
-        { name: 'GMC', type: 'Large SUV' },
-        { name: 'Ford Taurus', type: 'Standard Sedan' },
-        { name: 'BMW', type: 'Executive Sedan' },
-        { name: 'Genesis', type: 'Executive Sedan' },
-        { name: 'Mercedes Vito', type: 'Passenger Van' },
-        { name: 'Mercedes Sprinter', type: 'Minibus' },
-        { name: 'Executive Bus', type: 'Coach' },
-        { name: 'Camry', type: 'Standard Sedan' },
-        { name: 'Staria', type: 'Passenger Van' },
-        { name: 'Hiace', type: 'Passenger Van' },
-        { name: 'Coaster', type: 'Minibus' }
-    ];
-
     return (
         <div className="pt-20">
-            {/* Header Section */}
+            {/* DIRECT ANSWER (TOP) */}
             <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium">
-                        <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
-                        <ChevronRight className="w-4 h-4" />
-                        <span className="text-surface-900 truncate">Taxi from Kuwait to Saudi Arabia Border</span>
-                    </div>
-
-                    <div className="grid lg:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-4">
-                                <Map className="w-4 h-4 text-primary-600" />
-                                <span className="text-sm text-primary-700 font-medium tracking-tight">Cross-Border Transfer</span>
-                            </div>
-                            <h1 className="font-display text-4xl lg:text-5xl text-surface-900 mb-6 leading-tight">
-                                Taxi from Kuwait to Saudi Arabia Border
-                            </h1>
-                            
-                            <div className="mb-6 p-5 bg-white border border-primary-200 rounded-2xl shadow-sm">
-                                <h3 className="font-bold text-surface-900 flex items-center gap-2 mb-2">
-                                    <Info className="w-5 h-5 text-primary-600" />
-                                    Important Service Notice
-                                </h3>
-                                <p className="text-surface-700 text-sm leading-relaxed mb-3">
-                                    Airport Travel Taxis provides <strong>pre-booked cross-border transportation</strong>.
-                                </p>
-                                <p className="text-surface-600 text-sm leading-relaxed">
-                                    <strong>We do NOT provide:</strong> Short-distance city rides, local street hailing, or ride-hailing services. All journeys must be scheduled in advance.
-                                </p>
-                            </div>
-
-                            <p className="text-surface-600 text-lg leading-relaxed mb-8">
-                                Arrange your road travel between neighboring GCC countries. Our professional drivers and maintained vehicles ensure a reliable, structured international transfer.
-                            </p>
-                        </div>
-
-                        <div className="lg:sticky lg:top-24">
-                            <BookingWidget />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Travel Details Content */}
-            <section className="section-padding bg-white border-y border-surface-200">
-                <div className="container-custom mx-auto max-w-5xl">
-                    <div className="grid gap-8">
-                        {/* Route Overview & Border Process */}
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-surface-50 border border-surface-200 rounded-2xl p-8">
-                                <h2 className="font-display text-2xl text-surface-900 mb-4">Route Overview</h2>
-                                <p className="text-surface-700 leading-relaxed">
-                                    Traveling south from Kuwait into Saudi Arabia is a straightforward highway journey utilizing pre-booked vehicles. Our service ensures structured planning for your transit into the Kingdom.
-                                </p>
-                            </div>
-                            <div className="bg-surface-50 border border-surface-200 rounded-2xl p-8">
-                                <h2 className="font-display text-2xl text-surface-900 mb-4 flex items-center gap-2">
-                                    <Navigation className="w-6 h-6 text-primary-600" />
-                                    Border Crossing Process
-                                </h2>
-                                <p className="text-surface-700 leading-relaxed">
-                                    Exit Kuwaiti customs and proceed to Saudi entry checks. The driver will manage the vehicle documentation while passengers handle their personal passport and visa checks.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Pickup & Time Info */}
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="border border-surface-200 rounded-2xl p-8">
-                                <h3 className="font-display text-2xl text-surface-900 mb-4 flex items-center gap-2">
-                                    <MapPin className="w-6 h-6 text-primary-600" />
-                                    Pickup Locations
-                                </h3>
-                                <p className="text-surface-600 leading-relaxed">
-                                    We arrange collections from Kuwait City, Kuwait International Airport (KWI), and major hotels.
-                                </p>
-                            </div>
-                            <div className="border border-surface-200 rounded-2xl p-8">
-                                <h3 className="font-display text-2xl text-surface-900 mb-4 flex items-center gap-2">
-                                    <Clock className="w-6 h-6 text-primary-600" />
-                                    Travel Distance and Time
-                                </h3>
-                                <p className="text-surface-600 leading-relaxed">
-                                    From Kuwait City to the Nuwaiseeb border is roughly 100 kilometers, typically a 1 to 1.5 hour drive. Journey times into Saudi Arabia depend entirely on your destination.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Vehicle Options */}
-            <section className="section-padding bg-surface-50">
-                <div className="container-custom mx-auto">
-                    <div className="max-w-xl mb-12">
-                        <h2 className="font-display text-3xl text-surface-900 mb-4">Vehicle Options</h2>
-                        <p className="text-surface-500">Professional fleet options for your pre-booked long-distance journey.</p>
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {vehicles.map((v) => (
-                            <div key={v.name} className="bg-white border border-surface-200 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-                                <div className="p-2 bg-surface-100 rounded-lg shrink-0">
-                                    <Car className="w-5 h-5 text-primary-600" />
-                                </div>
-                                <div>
-                                    <p className="font-bold text-surface-900 leading-tight">{v.name}</p>
-                                    <p className="text-[10px] font-bold text-primary-600 uppercase tracking-widest leading-tight">{v.type}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Travel Tips */}
-            <section className="section-padding bg-white border-y border-surface-200">
                 <div className="container-custom mx-auto max-w-4xl">
-                    <div className="bg-primary-900 rounded-[32px] p-8 md:p-12 text-white shadow-xl">
-                        <div className="flex items-center gap-3 mb-8">
-                            <ShieldCheck className="w-8 h-8 text-primary-300" />
-                            <h2 className="font-display text-3xl">Travel Tips</h2>
-                        </div>
-                        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
-                            {["Confirm your entry status for Saudi Arabia in advance.","Pre-arrange the specific drop-off location with your driver.","Carry the required travel documentation physically, not just digitally."].map((tip, i) => (
-                                <div key={i} className="flex items-start gap-4">
-                                    <CheckCircle2 className="w-6 h-6 text-primary-400 shrink-0 mt-0.5" />
-                                    <p className="text-primary-50 font-medium leading-relaxed">{tip}</p>
-                                </div>
-                            ))}
+                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium">
+                        <Link href="/" className="hover:text-gold-600 transition-colors">Home</Link>
+                        <ChevronRight className="w-4 h-4" />
+                        <span className="text-surface-900 truncate">Kuwait to Saudi Arabia</span>
+                    </div>
+
+                    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
+                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
+                            Taxi from Kuwait to Saudi Arabia
+                        </h1>
+                        <p className="text-surface-700 text-lg leading-relaxed mb-6">
+                            Travel time from Kuwait to Saudi Arabia depends on your exact drop-off city. The drive to the Nuwaiseeb border takes about 1.5 hours. Passing the border is easy with driver help. To get the exact quote, you can contact on WhatsApp.
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8">
+                                <MessageSquare className="w-5 h-5" />
+                                Get a quote on WhatsApp
+                            </a>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* SIMPLE INTRO & HOW THIS TRIP WORKS */}
+            <section className="section-padding bg-white border-b border-surface-200">
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">About This Route</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                This service is a private car ride from anywhere in Kuwait to any city in Saudi Arabia. It is for people who want a direct road trip without changing cars.
+                            </p>
+                            
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">How This Trip Works</h2>
+                            <ul className="space-y-4">
+                                <li className="flex gap-3">
+                                    <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Pickup:</strong> The driver picks you up from your home, hotel, or Kuwait airport.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Car className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Travel:</strong> You sit back while we drive south towards the border.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Navigation className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Border:</strong> You exit Kuwait and enter Saudi Arabia. The driver guides you.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Map className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Drop-off:</strong> We drive straight to your Saudi location and drop you at the door.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div className="bg-surface-50 p-6 md:p-8 rounded-2xl border border-surface-200">
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Travel Time</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                Travel time depends on traffic, your Saudi destination, and border checks. Weekends might take a little longer at customs.
+                            </p>
+                            
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Border Process</h2>
+                            <ul className="space-y-3 mb-6">
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                    You must show your passport and visa at the Kuwait exit.
+                                </li>
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                    Then, you do the same at the Saudi entry point.
+                                </li>
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                    Our drivers do this trip often and will tell you exactly where to go.
+                                </li>
+                            </ul>
+                            
+                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors">
+                                Message now to check availability <ChevronRight className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* BOOKING / GET QUOTE SECTION */}
+            <section className="section-padding bg-primary-900 text-white text-center">
+                <div className="container-custom mx-auto max-w-2xl">
+                    <h2 className="font-display text-3xl mb-4 text-gold-400">Want to know the fare?</h2>
+                    <p className="text-surface-300 leading-relaxed mb-8">
+                        Click the WhatsApp button below. Send your pickup location, drop-off city, and travel date. We will reply fast. To get exact fare and availability, message on WhatsApp.
+                    </p>
+                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                        <MessageSquare className="w-5 h-5 text-green-600" />
+                        Contact now for quick response
+                    </a>
                 </div>
             </section>
 
             {/* FAQs */}
-            <section className="section-padding bg-surface-50">
+            <section className="section-padding bg-surface-50 border-t border-surface-200">
                 <div className="container-custom mx-auto max-w-3xl">
-                    <FAQ items={[{"question":"Do you offer local rides within Kuwait?","answer":"No, Airport Travel Taxis focuses solely on pre-booked cross-border and long-distance travel."},{"question":"Is drop-off handled directly?","answer":"Yes, the pre-booked vehicle drops you off at your designated address in Saudi Arabia."},{"question":"Can I book a minibus?","answer":"Yes, minibuses and passenger vans are available for larger groups."}]} title="Frequently Asked Questions" />
+                    <FAQ 
+                        title="Frequently Asked Questions" 
+                        items={[
+                            {
+                                "question": "Do I need a hard copy of my visa?",
+                                "answer": "Yes, always carry printed copies for the border."
+                            },
+                            {
+                                "question": "Can you pick me up from Kuwait Airport?",
+                                "answer": "Yes, the driver will meet you outside arrivals."
+                            },
+                            {
+                                "question": "How do I book this trip?",
+                                "answer": "Send your details on WhatsApp and we will confirm."
+                            },
+                            {
+                                "question": "Will I change cars at the border?",
+                                "answer": "No, you stay in the same car for the whole trip."
+                            },
+                            {
+                                "question": "How long does border crossing take?",
+                                "answer": "It usually takes 30 to 60 minutes."
+                            },
+                            {
+                                "question": "Can I travel at night?",
+                                "answer": "Yes, our drivers are available 24 hours."
+                            },
+                            {
+                                "question": "Do drivers speak English?",
+                                "answer": "Yes, drivers communicate clearly in English or Arabic."
+                            },
+                            {
+                                "question": "Can I stop for food?",
+                                "answer": "Yes, you can ask the driver to stop for a quick break."
+                            },
+                            {
+                                "question": "How much luggage can I bring?",
+                                "answer": "It depends on the car. Tell us your bags when you message on WhatsApp."
+                            },
+                            {
+                                "question": "What if my flight is late?",
+                                "answer": "Let us know on WhatsApp, and we will adjust the pickup time."
+                            }
+                        ]} 
+                    />
                 </div>
             </section>
 
             {/* Search Route */}
             <section className="section-padding bg-white border-t border-surface-200">
                 <div className="container-custom mx-auto">
+                    <div className="text-center mb-6">
+                        <p className="text-surface-600">Most people prefer direct taxi for this route. Search other routes below.</p>
+                    </div>
                     <RouteFinder />
                 </div>
             </section>
         </div>
     );
 }
-

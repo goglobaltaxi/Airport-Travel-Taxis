@@ -60,10 +60,10 @@ export default function DriveWithUsPage() {
                         Partner With Us
                     </span>
                     <h1 className="font-display text-4xl lg:text-5xl lg:leading-tight text-surface-900 mb-6">
-                        Drive With The Gulf&apos;s Premium <span className="text-primary-600">Executive Network</span>
+                        Drive With The Gulf&apos;s Executive <span className="text-primary-600">Executive Network</span>
                     </h1>
                     <p className="text-xl text-surface-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-                        Turn your premium vehicle into a highly profitable asset. We partner with professional drivers and fleet owners across Saudi Arabia, UAE, Qatar, Bahrain, Kuwait to serve VIP clientele.
+                        Turn your executive vehicle into a highly profitable asset. We partner with professional drivers and fleet owners across Saudi Arabia, UAE, Qatar, Bahrain, Kuwait to serve VIP clientele.
                     </p>
                     <a href="#registration-form" className="btn-primary py-3 px-8 text-lg inline-flex items-center gap-2">
                         Register Your Vehicle
@@ -86,7 +86,7 @@ export default function DriveWithUsPage() {
                         <div>
                             <h2 className="text-lg font-bold text-surface-900 mb-2">Partner Benefits Overview</h2>
                             <p className="text-surface-700 leading-relaxed">
-                                We specialize in high-ticket transfers including cross-border trips, airport meet & greets, and VIP hourly rentals. Unlike standard ride-hailing apps, our partners benefit from scheduled rides, premium booking fees, corporate clients, no surge-chasing, and dedicated support. Ideal for owners of Sedans, SUVs, and Luxury Vans.
+                                We specialize in high-ticket transfers including cross-border trips, airport meet & greets, and VIP hourly rentals. Unlike standard ride-hailing apps, our partners benefit from scheduled rides, executive booking fees, corporate clients, no surge-chasing, and dedicated support. Ideal for owners of Sedans, SUVs, and Luxury Vans.
                             </p>
                         </div>
                     </div>
@@ -113,7 +113,7 @@ export default function DriveWithUsPage() {
                         </div>
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-surface-200">
                             <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mb-6">👔</div>
-                            <h3 className="text-xl font-bold text-surface-900 mb-3">Premium Clientele</h3>
+                            <h3 className="text-xl font-bold text-surface-900 mb-3">Executive Clientele</h3>
                             <p className="text-surface-600 leading-relaxed">
                                 Serve corporate executives, diplomats, and VIP tourists who respect your service and vehicle. We strictly vet our clients to ensure a professional environment.
                             </p>
@@ -161,7 +161,7 @@ export default function DriveWithUsPage() {
                             <h3 className="text-xl font-bold text-surface-900 mb-4">Accepted Categories</h3>
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-3 py-1 bg-surface-100 border border-surface-200 rounded-lg text-sm font-medium text-surface-700">Business Sedans</span>
-                                <span className="px-3 py-1 bg-surface-100 border border-surface-200 rounded-lg text-sm font-medium text-surface-700">Premium SUVs</span>
+                                <span className="px-3 py-1 bg-surface-100 border border-surface-200 rounded-lg text-sm font-medium text-surface-700">Executive SUVs</span>
                                 <span className="px-3 py-1 bg-surface-100 border border-surface-200 rounded-lg text-sm font-medium text-surface-700">Luxury Vehicles</span>
                                 <span className="px-3 py-1 bg-surface-100 border border-surface-200 rounded-lg text-sm font-medium text-surface-700">Executive Vans</span>
                             </div>

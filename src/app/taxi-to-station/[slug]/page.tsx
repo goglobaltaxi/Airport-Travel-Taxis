@@ -48,7 +48,7 @@ export default function StationTaxiPage({ params }: { params: { slug: string } }
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for travel to major railway hubs.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major railway hubs.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for station transfers.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the station.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for groups with luggage.' },

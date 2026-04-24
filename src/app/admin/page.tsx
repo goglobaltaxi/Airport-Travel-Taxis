@@ -11,9 +11,9 @@ export default function AdminIndex() {
         const checkAuth = async () => {
             const { data: { session } } = await supabase.auth.getSession();
             if (session) {
-                router.replace('/admin/dashboard/bookings');
+                router.replace('/admin/dashboard/bookings/');
             } else {
-                router.replace('/admin/login');
+                router.replace('/admin/login/');
             }
         };
         checkAuth();

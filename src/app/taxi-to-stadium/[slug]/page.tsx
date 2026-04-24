@@ -48,7 +48,7 @@ export default function StadiumTaxiPage({ params }: { params: { slug: string } }
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for travel to major sports events.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major sports events.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for stadium VIPs.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the sports venue.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for groups and fan parties.' },

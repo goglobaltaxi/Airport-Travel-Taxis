@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import MainLayout from '@/components/MainLayout';
 import JsonLd from '@/components/JsonLd';
+import CookieBanner from '@/components/CookieBanner';
 
 export const metadata: Metadata = {
     title: {
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    verification: {
-        google: 'YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE', // JANI: Paste your Google Search Console code here
-    },
+    ...(process.env.GOOGLE_SITE_VERIFICATION && {
+        verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
+    }),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -63,9 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <head>
                 <JsonLd />
+                <link rel="manifest" href="/manifest.json" />
+                <meta name="theme-color" content="#0f172a" />
             </head>
             <body>
                 <MainLayout>{children}</MainLayout>
+                <CookieBanner />
             </body>
         </html>
     );

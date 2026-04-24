@@ -47,7 +47,7 @@ export default function LandmarkTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for visits to iconic landmarks.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for visits to iconic landmarks.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for sightseeing.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your landmark tour.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for tourist groups.' },

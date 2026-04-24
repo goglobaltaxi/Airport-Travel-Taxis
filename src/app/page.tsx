@@ -2,7 +2,7 @@ import BookingWidget from '@/components/BookingWidget';
 import ServiceCard from '@/components/ServiceCard';
 import FleetCard from '@/components/FleetCard';
 import RouteCard from '@/components/RouteCard';
-import TestimonialSlider from '@/components/TestimonialSlider';
+import TestimonialsWrapper from '@/components/TestimonialsWrapper';
 import FAQ from '@/components/FAQ';
 import Link from 'next/link';
 import { services, vehicles, popularRoutes, stats, generalFAQ, gccCountries } from '@/lib/data';
@@ -288,7 +288,7 @@ export default function HomePage() {
                         <p className="text-surface-600">Trusted by thousands of travelers across the region.</p>
                     </div>
                     <div className="max-w-3xl mx-auto">
-                        <TestimonialSlider />
+                        <TestimonialsWrapper />
                     </div>
                 </div>
             </section>

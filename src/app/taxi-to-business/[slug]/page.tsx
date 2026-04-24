@@ -47,7 +47,7 @@ export default function BusinessTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort and professional appearance for business travel.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort and professional appearance for business travel.' },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Executive choice for high-profile meetings and corporate visits.' },
         { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined comfort for a professional arrival.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for business teams.' },

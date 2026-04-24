@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'VIP Chauffeur Service | Executive Travel & Transfers',
-    description: 'Experience our VIP chauffeur service for executive travel. Professional drivers and premium vehicles for all your pre-booked transportation needs in the GCC.',
+    description: 'Experience our VIP chauffeur service for executive travel. Professional drivers and executive vehicles for all your pre-booked transportation needs in the GCC.',
     openGraph: {
         title: 'VIP Chauffeur Service | Executive Travel & Transfers',
-        description: 'Experience our VIP chauffeur service for executive travel. Professional drivers and premium vehicles for all your pre-booked transportation needs in the GCC.',
+        description: 'Experience our VIP chauffeur service for executive travel. Professional drivers and executive vehicles for all your pre-booked transportation needs in the GCC.',
         url: 'https://airporttraveltaxis.com/vip-chauffeur',
     },
     alternates: {
@@ -21,7 +21,7 @@ export default function VIPChauffeurPage() {
             <section className="section-padding bg-surface-900 text-white pb-16">
                 <div className="container-custom mx-auto max-w-4xl text-center">
                     <span className="inline-block py-1 px-3 rounded-full bg-surface-800 text-surface-300 text-sm font-semibold mb-6 border border-surface-700">
-                        Elite Service
+                        VIP Service
                     </span>
                     <h1 className="font-display text-4xl lg:text-5xl lg:leading-tight text-white mb-6">
                         Discreet & Professional <span className="text-primary-500">VIP Chauffeurs</span>
@@ -44,7 +44,7 @@ export default function VIPChauffeurPage() {
                         <div className="bg-surface-100 rounded-3xl p-8 lg:p-12 border border-surface-200">
                             <h3 className="font-display text-2xl font-bold text-surface-900 mb-6">The Gulf Standard in VIP Travel</h3>
                             <p className="text-surface-700 leading-relaxed mb-6">
-                                We go beyond simple A-to-B transportation. Our Elite VIP Chauffeur tier is designed to act as your mobile office and secure transit zone. From the moment you land at King Khalid International Airport in Riyadh or DXB in Dubai, your dedicated chauffeur manages the logistics.
+                                We go beyond simple A-to-B transportation. Our VIP VIP Chauffeur tier is designed to act as your mobile office and secure transit zone. From the moment you land at King Khalid International Airport in Riyadh or DXB in Dubai, your dedicated chauffeur manages the logistics.
                             </p>
                             <p className="text-surface-700 leading-relaxed">
                                 Our VIP chauffeurs sign strict NDAs, are heavily vetted through background checks, and are trained in defensive driving protocols for ultimate peace of mind.
@@ -69,8 +69,8 @@ export default function VIPChauffeurPage() {
                                         <span className="text-xl">🚗</span>
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-surface-900 mb-1">Latest Elite Fleets</h4>
-                                        <p className="text-surface-600 text-sm leading-relaxed">We utilize top-tier vehicles such as the latest Mercedes S-Class, BMW 7-Series, and premium SUVs with privacy partitioning.</p>
+                                        <h4 className="text-lg font-bold text-surface-900 mb-1">Latest VIP Fleets</h4>
+                                        <p className="text-surface-600 text-sm leading-relaxed">We utilize top-tier vehicles such as the latest Mercedes S-Class, BMW 7-Series, and executive SUVs with privacy partitioning.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">

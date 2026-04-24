@@ -58,7 +58,7 @@ export default function ServicePage({ params }: Props) {
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and comfortable SUV for families and teams.' },
         { name: 'GMC', type: 'Large SUV', desc: 'Ideal for group travel and event support.' },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Efficient and professional city movements.' },
-        { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Premium transport for up to 8 passengers.' },
+        { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Executive transport for up to 8 passengers.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for delegations and larger professional groups.' },
         { name: 'Executive Bus', type: 'Coach', desc: 'Professional transport for large groups and summits.' },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Practical and reliable for city-to-city trips.' },

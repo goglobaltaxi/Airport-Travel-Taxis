@@ -53,7 +53,7 @@ export default function UniversityTaxiPage({ params }: { params: { slug: string 
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers for visiting academic teams.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger student delegations or events.' },
         { name: 'Toyota Coaster', type: 'Minibus', desc: 'Spacious transport for large university groups.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for visiting professors and guests.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for visiting professors and guests.' },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'High-standard executive travel for campus dignitaries.' },
         { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined and comfortable for professional arrivals.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious for parents or academic guests with luggage.' },

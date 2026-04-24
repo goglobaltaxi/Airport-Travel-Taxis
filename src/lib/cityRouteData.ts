@@ -145,7 +145,7 @@ export const cityRoutePages: CityRoutePage[] = [
         faq: [
             { question: 'How long is the drive from Abu Dhabi to Al Ain?', answer: 'The journey typically takes 1 hour and 45 minutes.' },
             { question: 'Can the taxi pick up from Abu Dhabi Airport?', answer: 'Yes, we provide direct transfers from Zayed International Airport to Al Ain.' },
-            { question: 'Are luxury sedans available for this route?', answer: 'Yes, we offer Mercedes S-Class and BMW for a premium travel experience.' },
+            { question: 'Are luxury sedans available for this route?', answer: 'Yes, we offer Mercedes S-Class and BMW for a executive travel experience.' },
             { question: 'Can we visit Jebel Hafeet as part of the trip?', answer: 'Yes, customized trips to Al Ain landmarks can be arranged.' },
             { question: 'Is the service available for corporate travelers?', answer: 'Yes, we specialize in corporate transfers between Abu Dhabi and Al Ain.' },
         ],

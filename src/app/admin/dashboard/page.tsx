@@ -8,9 +8,11 @@ import { Calendar, Users, CheckCircle, Clock, ArrowRight, TrendingUp } from 'luc
 export default function AdminDashboard() {
     const [stats, setStats] = useState({
         total: 0,
+        today: 0,
         pending: 0,
         assigned: 0,
-        completed: 0
+        completed: 0,
+        unreadMessages: 0,
     });
     const [recentBookings, setRecentBookings] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
@@ -21,19 +23,23 @@ export default function AdminDashboard() {
 
     const fetchData = async () => {
         setLoading(true);
-        const { data, error } = await supabase
-            .from('bookings')
-            .select('*')
-            .order('created_at', { ascending: false });
+        const todayStr = new Date().toISOString().split('T')[0];
 
-        if (!error && data) {
+        const [{ data: bookings }, { count: unreadMessages }] = await Promise.all([
+            supabase.from('bookings').select('*').order('created_at', { ascending: false }),
+            supabase.from('contact_messages').select('*', { count: 'exact', head: true }).neq('status', 'read'),
+        ]);
+
+        if (bookings) {
             setStats({
-                total: data.length,
-                pending: data.filter(b => b.status === 'pending').length,
-                assigned: data.filter(b => b.status === 'assigned').length,
-                completed: data.filter(b => b.status === 'completed').length,
+                total: bookings.length,
+                today: bookings.filter(b => b.created_at?.startsWith(todayStr)).length,
+                pending: bookings.filter(b => b.status === 'pending').length,
+                assigned: bookings.filter(b => b.status === 'assigned').length,
+                completed: bookings.filter(b => b.status === 'completed').length,
+                unreadMessages: unreadMessages || 0,
             });
-            setRecentBookings(data.slice(0, 5));
+            setRecentBookings(bookings.slice(0, 5));
         }
         setLoading(false);
     };
@@ -53,10 +59,10 @@ export default function AdminDashboard() {
     };
 
     const statCards = [
-        { label: 'Today\'s Activity', val: stats.total, icon: TrendingUp, color: 'text-primary-600', bg: 'bg-primary-50' },
+        { label: 'Total Bookings', val: stats.total, icon: TrendingUp, color: 'text-primary-600', bg: 'bg-primary-50' },
+        { label: 'Today\'s Bookings', val: stats.today, icon: Calendar, color: 'text-indigo-600', bg: 'bg-indigo-50' },
         { label: 'Awaiting Action', val: stats.pending, icon: Clock, color: 'text-amber-600', bg: 'bg-amber-50' },
-        { label: 'Active Leads', val: stats.assigned, icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
-        { label: 'Success Fulfilled', val: stats.completed, icon: CheckCircle, color: 'text-green-600', bg: 'bg-green-50' },
+        { label: 'Completed', val: stats.completed, icon: CheckCircle, color: 'text-green-600', bg: 'bg-green-50' },
     ];
 
     if (loading) {
@@ -90,7 +96,7 @@ export default function AdminDashboard() {
                 <div className="lg:col-span-2 space-y-6">
                     <div className="flex items-center justify-between">
                         <h3 className="text-xl font-display font-bold text-surface-900">Recent Inquiries</h3>
-                        <Link href="/admin/dashboard/bookings" className="text-sm font-bold text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                        <Link href="/admin/dashboard/bookings/" className="text-sm font-bold text-primary-600 hover:text-primary-700 flex items-center gap-1">
                             View all <ArrowRight size={16} />
                         </Link>
                     </div>
@@ -123,17 +129,30 @@ export default function AdminDashboard() {
                     </div>
                 </div>
 
-                {/* System Tasks */}
+                {/* Action Items */}
                 <div className="space-y-6">
-                    <h3 className="text-xl font-display font-bold text-surface-900">System Tasks</h3>
-                    <div className="space-y-4">
-                        <div className="p-5 bg-white border border-surface-200 rounded-2xl shadow-sm border-l-4 border-l-primary-600">
-                            <h4 className="font-bold text-surface-900 mb-1">Account Ready</h4>
-                            <p className="text-sm text-surface-600">Your admin account is active. Send your email to finalize configuration.</p>
+                    <h3 className="text-xl font-display font-bold text-surface-900">Action Required</h3>
+                    <div className="space-y-3">
+                        <div className={`p-4 bg-white border rounded-2xl shadow-sm border-l-4 ${stats.pending > 0 ? 'border-l-amber-500 border-amber-200' : 'border-l-green-500 border-green-200'}`}>
+                            <div className="flex items-center justify-between">
+                                <h4 className="font-bold text-surface-900 text-sm">Pending Bookings</h4>
+                                <span className={`text-lg font-black ${stats.pending > 0 ? 'text-amber-600' : 'text-green-600'}`}>{stats.pending}</span>
+                            </div>
+                            <p className="text-xs text-surface-500 mt-1">{stats.pending > 0 ? `${stats.pending} bookings need assignment` : 'All bookings handled ✓'}</p>
                         </div>
-                        <div className="p-5 bg-white border border-surface-200 rounded-2xl shadow-sm border-l-4 border-l-amber-600">
-                            <h4 className="font-bold text-surface-900 mb-1">Check Pending</h4>
-                            <p className="text-sm text-surface-600">You have {stats.pending} bookings waiting for assignment.</p>
+                        <div className={`p-4 bg-white border rounded-2xl shadow-sm border-l-4 ${stats.unreadMessages > 0 ? 'border-l-red-500 border-red-200' : 'border-l-green-500 border-green-200'}`}>
+                            <div className="flex items-center justify-between">
+                                <h4 className="font-bold text-surface-900 text-sm">Unread Messages</h4>
+                                <span className={`text-lg font-black ${stats.unreadMessages > 0 ? 'text-red-600' : 'text-green-600'}`}>{stats.unreadMessages}</span>
+                            </div>
+                            <p className="text-xs text-surface-500 mt-1">{stats.unreadMessages > 0 ? `${stats.unreadMessages} messages waiting for reply` : 'Inbox clear ✓'}</p>
+                        </div>
+                        <div className={`p-4 bg-white border rounded-2xl shadow-sm border-l-4 ${stats.today > 0 ? 'border-l-blue-500 border-blue-200' : 'border-l-surface-300 border-surface-200'}`}>
+                            <div className="flex items-center justify-between">
+                                <h4 className="font-bold text-surface-900 text-sm">Today's New Bookings</h4>
+                                <span className={`text-lg font-black ${stats.today > 0 ? 'text-blue-600' : 'text-surface-400'}`}>{stats.today}</span>
+                            </div>
+                            <p className="text-xs text-surface-500 mt-1">{stats.today > 0 ? `${stats.today} bookings received today` : 'No bookings today yet'}</p>
                         </div>
                     </div>
                 </div>

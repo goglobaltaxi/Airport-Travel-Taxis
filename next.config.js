@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    experimental: {
+        serverComponentsExternalPackages: ['puppeteer-core', '@sparticuz/chromium-min'],
+    },
     images: {
         formats: ['image/avif', 'image/webp'],
         minimumCacheTTL: 60,

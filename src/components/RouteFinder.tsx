@@ -171,7 +171,7 @@ export default function RouteFinder() {
                     <div className="relative" ref={pickupRef}>
                         <label className="block text-xs font-bold text-surface-400 uppercase tracking-widest mb-2 ml-1">Starting Point</label>
                         <div className="relative group">
-                            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-600 transition-colors" />
+                            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-900 transition-colors" />
                             <input
                                 type="text"
                                 value={pickup}
@@ -181,7 +181,7 @@ export default function RouteFinder() {
                                 }}
                                 onFocus={() => setShowPickupSuggestions(true)}
                                 placeholder="Start Location (City, Airport...)"
-                                className="w-full pl-12 pr-4 py-4 bg-surface-50 border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 transition-all text-surface-900 placeholder:text-surface-400"
+                                className="w-full pl-12 pr-4 py-4 bg-surface-50 border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-900/20 focus:border-primary-900 transition-all text-surface-900 placeholder:text-surface-400"
                             />
                             {pickup && (
                                 <button onClick={() => setPickup('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600">
@@ -219,7 +219,7 @@ export default function RouteFinder() {
                     <div className="relative" ref={destRef}>
                         <label className="block text-xs font-bold text-surface-400 uppercase tracking-widest mb-2 ml-1">Destination</label>
                         <div className="relative group">
-                            <Navigation className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-600 transition-colors" />
+                            <Navigation className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-surface-400 group-focus-within:text-primary-900 transition-colors" />
                             <input
                                 type="text"
                                 value={destination}
@@ -229,7 +229,7 @@ export default function RouteFinder() {
                                 }}
                                 onFocus={() => setShowDestSuggestions(true)}
                                 placeholder="Destination (City, Border...)"
-                                className="w-full pl-12 pr-4 py-4 bg-surface-50 border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 transition-all text-surface-900 placeholder:text-surface-400"
+                                className="w-full pl-12 pr-4 py-4 bg-surface-50 border border-surface-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-900/20 focus:border-primary-900 transition-all text-surface-900 placeholder:text-surface-400"
                             />
                             {destination && (
                                 <button onClick={() => setDestination('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-surface-400 hover:text-surface-600">
@@ -277,18 +277,18 @@ export default function RouteFinder() {
                                         className="group flex items-center justify-between p-4 rounded-2xl border border-surface-200 hover:border-primary-300 hover:bg-primary-50/30 transition-all bg-white shadow-sm"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className="p-3 bg-surface-100 rounded-xl text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+                                            <div className="p-3 bg-surface-100 rounded-xl text-primary-900 group-hover:bg-primary-900 group-hover:text-white transition-colors border border-transparent group-hover:border-primary-800">
                                                 <Search className="w-5 h-5" />
                                             </div>
                                             <div>
                                                 <div className="flex items-center gap-2 mb-0.5">
-                                                    <span className="text-xs font-bold text-primary-600 bg-primary-50 px-2 py-0.5 rounded-md uppercase tracking-tighter">{result.type}</span>
+                                                    <span className="text-xs font-bold text-gold-600 bg-gold-50 px-2 py-0.5 rounded-md uppercase tracking-tighter border border-gold-200">{result.type}</span>
                                                     <p className="font-bold text-surface-900">{result.title}</p>
                                                 </div>
                                                 <p className="text-sm text-surface-500">{result.description}</p>
                                             </div>
                                         </div>
-                                        <ChevronRight className="w-5 h-5 text-surface-300 group-hover:text-primary-600 group-hover:translate-x-1 transition-all" />
+                                        <ChevronRight className="w-5 h-5 text-surface-300 group-hover:text-gold-500 group-hover:translate-x-1 transition-all" />
                                     </Link>
                                 ))
                             ) : (

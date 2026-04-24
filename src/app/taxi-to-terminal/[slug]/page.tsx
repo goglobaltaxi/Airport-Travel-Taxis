@@ -47,7 +47,7 @@ export default function TerminalTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for travel to major airport terminals.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major airport terminals.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for official flight departures.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the airport terminal.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for travelers with heavy luggage.' },

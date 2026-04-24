@@ -10,12 +10,12 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
-                                <span className="text-white font-bold text-lg">A</span>
+                            <div className="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center border border-primary-800">
+                                <span className="text-gold-400 font-bold text-lg">A</span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="font-display font-bold text-white text-lg leading-tight">Airport Travel Taxis</span>
-                                <span className="text-primary-400 text-xs font-semibold tracking-wider uppercase">TAXIS</span>
+                                <span className="font-display font-bold text-white text-lg leading-tight tracking-tight">Airport Travel</span>
+                                <span className="text-gold-500 text-xs font-bold tracking-widest uppercase">TAXIS</span>
                             </div>
                         </Link>
                         <p className="text-surface-500 text-sm leading-relaxed mb-4">
@@ -34,7 +34,7 @@ export default function Footer() {
                         <ul className="space-y-2.5">
                             {airports.map((airport) => (
                                 <li key={airport.slug}>
-                                    <Link href={`/airport/${airport.slug}`} className="text-sm text-surface-500 hover:text-primary-400 transition-colors">
+                                    <Link href={`/airport/${airport.slug}`} className="text-sm text-surface-500 hover:text-gold-400 transition-colors">
                                         {airport.city} Airport ({airport.code})
                                     </Link>
                                 </li>
@@ -48,7 +48,7 @@ export default function Footer() {
                         <ul className="space-y-2.5">
                             {routes.map((route) => (
                                 <li key={route.slug}>
-                                    <Link href={`/routes/${route.slug}`} className="text-sm text-surface-500 hover:text-primary-400 transition-colors">
+                                    <Link href={`/routes/${route.slug}`} className="text-sm text-surface-500 hover:text-gold-400 transition-colors">
                                         {route.from} → {route.to}
                                     </Link>
                                 </li>
@@ -69,7 +69,7 @@ export default function Footer() {
                                 { label: 'Contact', href: '/contact' },
                             ].map((link) => (
                                 <li key={link.href}>
-                                    <Link href={link.href} className="text-sm text-surface-500 hover:text-primary-400 transition-colors">
+                                    <Link href={link.href} className="text-sm text-surface-500 hover:text-gold-400 transition-colors">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -79,12 +79,12 @@ export default function Footer() {
                         <h4 className="font-display font-semibold text-white mt-6 mb-4">Contact</h4>
                         <ul className="space-y-2">
                             <li className="text-sm text-surface-500">
-                                <a href="https://wa.me/966569487569" className="hover:text-primary-400 transition-colors flex items-center gap-2">
+                                <a href="https://wa.me/966569487569" className="hover:text-gold-400 transition-colors flex items-center gap-2">
                                     <span>📞 Chat on WhatsApp</span>
                                 </a>
                             </li>
                             <li className="text-sm text-surface-500">📧 info@airporttraveltaxis.com</li>
-                            <li className="text-sm text-surface-500 font-medium text-primary-400">Available 24/7</li>
+                            <li className="text-sm text-surface-500 font-medium text-gold-400">Available 24/7</li>
                             <li className="pt-2 flex flex-col gap-3">
                                 <a href="https://www.instagram.com/airporttraveltaxis/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-surface-500 hover:text-[#E4405F] transition-colors">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

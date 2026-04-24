@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { borderCrossings, routes } from '@/lib/data';
-import BookingWidget from '@/components/BookingWidget';
+import { borderCrossings } from '@/lib/data';
 import FAQ from '@/components/FAQ';
+import RouteFinder from '@/components/RouteFinder';
 import { notFound } from 'next/navigation';
-import StructuredInformationBlocks from '@/components/StructuredInformationBlocks';
-import { ChevronRight, ShieldCheck, FileText, Globe, Clock, MapPin } from 'lucide-react';
+import { ChevronRight, MapPin, Car, MessageSquare, CheckCircle2, Globe } from 'lucide-react';
 
 export async function generateStaticParams() {
     return borderCrossings.map((border) => ({ slug: border.slug }));
@@ -16,10 +15,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!border) return {};
     return {
         title: `${border.name} Taxi Service | Cross-Border Gulf`,
-        description: border.description,
+        description: `Direct taxi service crossing ${border.name}. Private car, driver guides you through the border. Message us on WhatsApp to get a quote.`,
         openGraph: {
-            title: `${border.name} Taxi & Transfer Service | Airport Travel Taxis`,
-            description: border.description,
+            title: `${border.name} Taxi Service`,
+            description: `Direct taxi service crossing ${border.name}. Private car, driver guides you through the border.`,
             url: `https://airporttraveltaxis.com/border/${border.slug}`,
         },
         alternates: {
@@ -32,227 +31,170 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
     const border = borderCrossings.find((b) => b.slug === params.slug);
     if (!border) notFound();
 
+    const baseFaqs = [
+        { question: "Do I need a hard copy of my visa?", answer: "Yes, always carry printed copies for the border crossing." },
+        { question: "Will I change cars at the border?", answer: "No, you stay in the same car for the whole trip." },
+        { question: "How long does the border crossing take?", answer: "It usually takes 30 to 60 minutes, sometimes more on busy days." },
+        { question: "Does the driver help at customs?", answer: "Yes, drivers do this trip regularly and guide you clearly." },
+        { question: "Can I travel at night?", answer: "Yes, drivers are available 24 hours every day." },
+        { question: "How do I book this trip?", answer: "Send your details on WhatsApp and we will confirm the ride." },
+        { question: "Can I stop for food during the trip?", answer: "Yes, just ask your driver to stop for a short break." },
+        { question: "Is this a shared taxi?", answer: "No, this is always a private car just for you and your group." },
+        { question: "Do drivers speak English?", answer: "Yes, drivers communicate clearly in English or Arabic." },
+        { question: "What documents do I need?", answer: "Bring your passport, visa, and any entry permits. Carry printed copies." },
+    ];
+
+    const mergedFaqs = [...baseFaqs, ...(border.faq || [])].slice(0, 10);
+
     return (
         <div className="pt-20">
-            {/* Hero */}
+            {/* DIRECT ANSWER (TOP) */}
             <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6">
-                        <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
-                        <span>/</span>
-                        <span>Borders</span>
-                        <span>/</span>
-                        <span className="text-surface-900">{border.name}</span>
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium flex-wrap">
+                        <Link href="/" className="hover:text-gold-600 transition-colors">Home</Link>
+                        <ChevronRight className="w-4 h-4" />
+                        <span className="text-surface-900 truncate">{border.name}</span>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-4">
-                                <span className="text-sm text-primary-700 font-medium">🌍 Official Border Crossing</span>
-                            </div>
-                            <h1 className="font-display text-3xl lg:text-[42px] lg:leading-[48px] text-surface-900 mb-4">
-                                {border.name} <span className="text-primary-600">Taxi Transfer</span>
-                            </h1>
-                            <p className="text-surface-600 text-lg leading-relaxed mb-6">{border.longDescription}</p>
-
-                             {/* Border Transfer Essentials Block */}
-                             <div className="bg-primary-50 rounded-xl p-5 mb-8 border border-primary-100">
-                                 <h2 className="font-semibold text-primary-900 mb-3 flex items-center gap-2">
-                                     <span className="bg-primary-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">⭐</span>
-                                     Border Transfer Essentials
-                                 </h2>
-                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                                     <div className="flex items-start gap-2">
-                                         <FileText className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
-                                         <span className="text-sm text-surface-700">Customs Documentation Handled</span>
-                                     </div>
-                                     <div className="flex items-start gap-2">
-                                         <Globe className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
-                                         <span className="text-sm text-surface-700">Cross-Border Permits Ready</span>
-                                     </div>
-                                     <div className="flex items-start gap-2">
-                                         <ShieldCheck className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
-                                         <span className="text-sm text-surface-700">Experienced Border Drivers</span>
-                                     </div>
-                                     <div className="flex items-start gap-2">
-                                         <Clock className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
-                                         <span className="text-sm text-surface-700">24/7 Crossing Support</span>
-                                     </div>
-                                 </div>
-                                 <a href="#booking-widget" className="w-full btn-primary !py-2.5 text-sm flex items-center justify-center gap-2 text-center">
-                                     Book My Cross-Border Taxi <ChevronRight className="w-4 h-4" />
-                                 </a>
-                             </div>
-
-                            {/* Services */}
-                            <div className="glass-card p-6">
-                                <h3 className="font-display text-lg text-surface-900 mb-4">Service Included</h3>
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                    {border.services.map((service) => (
-                                        <div key={service} className="flex items-center gap-2">
-                                            <span className="text-green-600">✓</span>
-                                            <span className="text-surface-700 text-sm">{service}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
+                        <div className="inline-flex items-center gap-2 mb-4 text-sm font-semibold text-primary-900 bg-surface-100 px-4 py-1.5 rounded-full border border-surface-200">
+                            <Globe className="w-4 h-4 text-gold-500" />
+                            Official Border Crossing
                         </div>
-
-                        <div className="sticky top-24" id="booking-widget">
-                            <BookingWidget compact />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Structured Information Blocks */}
-            <StructuredInformationBlocks 
-                startLocation={border.name}
-                endLocation="International Transit Destination"
-                type="Cross-Border Transfer"
-                travelTime="Variable (Subject to Border Control)"
-                pickup="Scheduled Airport or City Location"
-                dropoff="International Destination Address"
-                relatedLinks={[
-                    { name: 'GCC Travel Guide', url: '/gcc-travel-cross-border-taxi' },
-                    { name: 'Riyadh to Doha Route', url: '/routes/riyadh-to-doha-taxi' },
-                    { name: 'Dammam to Bahrain Route', url: '/routes/bahrain-to-saudi-arabia-taxi' }
-                ]}
-            />
-
-            {/* Border Crossing Process */}
-            <section className="py-16 bg-white border-t border-surface-200">
-                <div className="container-custom mx-auto">
-                    <div className="max-w-4xl">
-                        <h2 className="font-display text-2xl lg:text-3xl text-surface-900 mb-6 flex items-center gap-3">
-                            <span className="p-2 bg-primary-100 rounded-lg"><Clock className="w-6 h-6 text-primary-600" /></span>
-                            Border Crossing Process
-                        </h2>
-                        <div className="prose prose-surface max-w-none">
-                            <p className="text-surface-600 text-lg leading-relaxed">
-                                {border.crossingProcess}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Travel Routes */}
-            {/* Travel Routes */}
-            <section className="py-16 bg-surface-50 border-y border-surface-200">
-                <div className="container-custom mx-auto">
-                    <h2 className="font-display text-2xl lg:text-3xl text-surface-900 mb-8">
-                        Common Transfer Routes via <span className="text-primary-600">{border.name}</span>
-                    </h2>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                        {border.popularRoutes.map((route) => (
-                            <div key={route} className="bg-white p-4 rounded-xl border border-surface-200 shadow-sm flex items-center gap-3">
-                                <MapPin className="w-4 h-4 text-primary-600" />
-                                <span className="text-surface-700 font-medium text-sm">{route}</span>
-                            </div>
-                        ))}
-                    </div>
-                    {/* Internal Links to related services */}
-                    <div className="flex flex-wrap gap-x-6 gap-y-3 mt-8 border-t border-surface-200 pt-6">
-                        <span className="text-surface-500 text-sm font-semibold w-full lg:w-auto">Popular Connections:</span>
-                        <Link href="/routes/riyadh-to-doha-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Riyadh to Doha</Link>
-                        <Link href="/routes/bahrain-to-saudi-arabia-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Dammam to Bahrain</Link>
-                        <Link href="/routes/kuwait-city-to-riyadh-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Kuwait to Riyadh</Link>
-                        <Link href="/airport/riyadh-airport-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Riyadh Airport</Link>
-                        <Link href="/airport/doha-airport-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Doha Airport</Link>
-                        <Link href="/airport/kuwait-airport-taxi" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Kuwait Airport</Link>
-                        <Link href="/city/dubai" className="text-primary-600 hover:text-primary-700 font-medium text-sm">Dubai Chauffeur</Link>
-                    </div>
-
-                    {/* Dynamically Added Missing Routes */}
-                    <div className="flex flex-wrap items-center gap-3 mt-4">
-                        <span className="text-surface-500 text-sm font-semibold w-full lg:w-auto">Featured Border Routes:</span>
-                        {routes
-                            .filter((r) => border.popularRoutes.some((pr) => pr.toLowerCase().includes(r.from.toLowerCase()) && pr.toLowerCase().includes(r.to.toLowerCase())))
-                            .slice(0, 6)
-                            .map((r) => (
-                                <Link key={`feat-${r.slug}`} href={`/routes/${r.slug}`} className="text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                    {r.from} to {r.to} taxi
-                                </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Vehicle Options */}
-            <section className="py-16 bg-white border-t border-surface-200">
-                <div className="container-custom mx-auto">
-                    <h2 className="font-display text-2xl lg:text-3xl text-surface-900 mb-8 text-center text-balance">Professional Vehicle Options</h2>
-                    <div className="glass-card p-8 bg-surface-50 border border-surface-200 rounded-3xl">
-                        <p className="text-surface-600 text-lg leading-relaxed mb-10 text-center max-w-3xl mx-auto">
-                            {border.vehiclesInfo}
+                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
+                            {border.name} Taxi Transfer
+                        </h1>
+                        <p className="text-surface-700 text-lg leading-relaxed mb-6">
+                            This service takes you through {border.name} in a private car. The driver knows this crossing well and will guide you. Border wait times vary by day. To get the exact quote, you can contact on WhatsApp.
                         </p>
-                        <div className="grid sm:grid-cols-3 gap-6 text-center">
-                            <div className="p-6 bg-white rounded-2xl border border-surface-100 shadow-sm">
-                                <h4 className="font-semibold text-primary-900 mb-2">Individual Travelers</h4>
-                                <p className="text-xs text-surface-500 uppercase tracking-wider mb-2 font-medium">Suitable Sedan & Coupe</p>
-                                <p className="text-sm text-surface-600">Mercedes S-Class, BMW, Genesis, Ford Taurus, Camry</p>
-                            </div>
-                            <div className="p-6 bg-white rounded-2xl border border-surface-100 shadow-sm">
-                                <h4 className="font-semibold text-primary-900 mb-2">Family Travel</h4>
-                                <p className="text-xs text-surface-500 uppercase tracking-wider mb-2 font-medium">Spacious SUV & MPV</p>
-                                <p className="text-sm text-surface-600">GMC, Cadillac Escalade, Hyundai Staria</p>
-                            </div>
-                            <div className="p-6 bg-white rounded-2xl border border-surface-100 shadow-sm">
-                                <h4 className="font-semibold text-primary-900 mb-2">Group Transfers</h4>
-                                <p className="text-xs text-surface-500 uppercase tracking-wider mb-2 font-medium">Vans & Group Vehicles</p>
-                                <p className="text-sm text-surface-600">Mercedes Vito, Mercedes Sprinter, Hiace, Coaster, Executive Bus</p>
-                            </div>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
+                                <MessageSquare className="w-5 h-5" />
+                                Get a quote on WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* FAQ */}
-            <section className="section-padding bg-surface-50">
-                <div className="container-custom mx-auto">
-                    <FAQ items={border.faq} title={`${border.name} FAQ`} />
+            {/* HOW IT WORKS */}
+            <section className="section-padding bg-white border-b border-surface-200">
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">About This Service</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                This is a private car service that crosses {border.name} between {border.countryA} and {border.countryB}. You stay in the same car the whole way. It is for people who want a simple, direct road trip with no transfers.
+                            </p>
+
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">How This Trip Works</h2>
+                            <ul className="space-y-4">
+                                <li className="flex gap-3">
+                                    <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Pickup:</strong> Driver picks you up from your home, hotel, or airport.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Car className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Travel:</strong> You drive towards the border crossing point.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Globe className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Border:</strong> You show your documents at exit and entry checkpoints. The driver will tell you where to go.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Drop-off:</strong> The driver takes you directly to your final destination.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-surface-50 p-6 md:p-8 rounded-2xl border border-surface-200">
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Border Process</h2>
+                            <ul className="space-y-3 mb-6">
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
+                                    You exit {border.countryA} with a passport stamp.
+                                </li>
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
+                                    You enter {border.countryB} with a visa or entry stamp.
+                                </li>
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
+                                    The driver handles vehicle paperwork while you do the passport checks.
+                                </li>
+                                <li className="flex items-start gap-2 text-surface-600">
+                                    <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-0.5" />
+                                    Drivers usually help at the border — they know what to expect.
+                                </li>
+                            </ul>
+
+                            {border.popularRoutes && border.popularRoutes.length > 0 && (
+                                <>
+                                    <h2 className="font-display text-xl text-primary-900 mb-3">Common Routes via This Border</h2>
+                                    <ul className="space-y-2 mb-6">
+                                        {border.popularRoutes.slice(0, 4).map((route) => (
+                                            <li key={route} className="flex items-center gap-2 text-surface-600">
+                                                <MapPin className="w-4 h-4 text-gold-500 shrink-0" />
+                                                <span className="text-sm">{route}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )}
+
+                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-2">
+                                Message now to check availability <ChevronRight className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-             {/* Booking Bottom Section */}
-             <section className="section-padding bg-primary-900 text-white relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-primary-400 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-                    <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-600 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
-                </div>
-                
-                <div className="container-custom mx-auto text-center relative z-10">
-                    <h2 className="font-display text-3xl lg:text-4xl mb-6">Arrange Your Border Taxi Transfer</h2>
-                    <p className="text-primary-100 text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
-                        {border.bookingInfo}
+            {/* BOOKING / GET QUOTE */}
+            <section className="section-padding bg-primary-900 text-white text-center">
+                <div className="container-custom mx-auto max-w-2xl">
+                    <h2 className="font-display text-3xl mb-4 text-gold-400">Want to know the fare?</h2>
+                    <p className="text-surface-300 leading-relaxed mb-8">
+                        Click the WhatsApp button below. Send your pickup location, drop-off city, and travel date. We will reply fast. To get exact fare and availability, message on WhatsApp.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="#hero" className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-900 font-bold rounded-xl transition-all hover:bg-primary-50">
-                            Book This Border Route
-                        </Link>
-                        <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary-400 text-white font-bold rounded-xl transition-all hover:border-white">
-                            Contact Support
-                        </Link>
+                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                        <MessageSquare className="w-5 h-5 text-green-600" />
+                        Contact now for quick response
+                    </a>
+                </div>
+            </section>
+
+            {/* FAQs */}
+            <section className="section-padding bg-surface-50 border-t border-surface-200">
+                <div className="container-custom mx-auto max-w-3xl">
+                    <FAQ title="Frequently Asked Questions" items={mergedFaqs} />
+                </div>
+            </section>
+
+            {/* Route Finder */}
+            <section className="section-padding bg-white border-t border-surface-200">
+                <div className="container-custom mx-auto">
+                    <div className="text-center mb-6">
+                        <p className="text-surface-600">Most people prefer direct taxi for this crossing. Search any route below.</p>
                     </div>
+                    <RouteFinder />
                 </div>
             </section>
 
             {/* Other Borders */}
-            <section className="section-padding bg-surface-100">
+            <section className="section-padding bg-surface-100 border-t border-surface-200">
                 <div className="container-custom mx-auto">
-                    <h2 className="font-display text-2xl text-surface-900 mb-6">Explore Other Border Crossings</h2>
+                    <h2 className="font-display text-2xl text-surface-900 mb-6">Other Border Crossings</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {borderCrossings.filter((b) => b.slug !== border.slug).map((b) => (
-                            <Link key={b.slug} href={`/border/${b.slug}`} className="glass-card-hover p-5 bg-white border border-surface-200 rounded-2xl">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <span className="font-semibold text-surface-900">🌍 {b.name}</span>
+                            <Link key={b.slug} href={`/border/${b.slug}`} className="glass-card-hover p-5 bg-white border border-surface-200 rounded-2xl flex items-center justify-between">
+                                <div>
+                                    <p className="font-semibold text-surface-900">🌍 {b.name}</p>
+                                    <p className="text-xs text-surface-500 mt-1">{b.countryA} — {b.countryB}</p>
                                 </div>
-                                <div className="flex items-center justify-between mt-2">
-                                    <span className="text-xs text-surface-500 font-medium italic">{[b.countryA, b.countryB].join(' - ')}</span>
-                                    <ChevronRight className="w-4 h-4 text-primary-600" />
-                                </div>
+                                <ChevronRight className="w-4 h-4 text-gold-600 shrink-0" />
                             </Link>
                         ))}
                     </div>
@@ -260,30 +202,10 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
             </section>
 
             {/* Schema */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([
-                        {
-                            '@context': 'https://schema.org',
-                            '@type': 'Service',
-                            name: `${border.name} Border Transfer Service`,
-                            description: border.description,
-                            provider: { '@type': 'LocalBusiness', name: 'Airport Travel Taxis', url: 'https://airporttraveltaxis.com' },
-                            areaServed: [border.countryA, border.countryB].map((country) => ({ '@type': 'Country', name: country }))
-                        },
-                        {
-                            '@context': 'https://schema.org',
-                            '@type': 'FAQPage',
-                            mainEntity: border.faq.map((f) => ({
-                                '@type': 'Question',
-                                name: f.question,
-                                acceptedAnswer: { '@type': 'Answer', text: f.answer },
-                            })),
-                        },
-                    ]),
-                }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+                { '@context': 'https://schema.org', '@type': 'Service', name: `${border.name} Border Transfer Service`, description: `Private taxi crossing ${border.name} between ${border.countryA} and ${border.countryB}.`, provider: { '@type': 'LocalBusiness', name: 'Airport Travel Taxis', url: 'https://airporttraveltaxis.com' }, areaServed: [border.countryA, border.countryB].map((c) => ({ '@type': 'Country', name: c })) },
+                { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: mergedFaqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) },
+            ]) }} />
         </div>
     );
 }

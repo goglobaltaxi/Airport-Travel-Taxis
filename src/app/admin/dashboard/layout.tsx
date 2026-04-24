@@ -4,23 +4,33 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LayoutDashboard, Calendar, Users, LogOut, ChevronRight, Mail } from 'lucide-react';
+import { LayoutDashboard, Calendar, Users, LogOut, ChevronRight, Mail, Car, BarChart2, DollarSign, Star, FileText, Tag } from 'lucide-react';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [mounted, setMounted] = useState(false);
+    const [unreadCount, setUnreadCount] = useState(0);
     const router = useRouter();
     const pathname = usePathname();
+
+    const fetchUnread = async () => {
+        const { count } = await supabase
+            .from('contact_messages')
+            .select('*', { count: 'exact', head: true })
+            .neq('status', 'read');
+        setUnreadCount(count || 0);
+    };
 
     useEffect(() => {
         setMounted(true);
         const checkUser = async () => {
             const { data: { session } } = await supabase.auth.getSession();
             if (!session) {
-                router.push('/admin/login');
+                router.push('/admin/login/');
             } else {
                 setUser(session.user);
+                fetchUnread();
             }
             setLoading(false);
         };
@@ -29,13 +39,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
             if (!session) {
-                router.push('/admin/login');
+                router.push('/admin/login/');
             } else if (session) {
                 setUser(session.user);
             }
         });
 
-        return () => subscription.unsubscribe();
+        // Realtime unread badge updates
+        const channel = supabase
+            .channel('messages-unread')
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'contact_messages' }, fetchUnread)
+            .subscribe();
+
+        return () => {
+            subscription.unsubscribe();
+            supabase.removeChannel(channel);
+        };
     }, [router]);
 
     const handleSignOut = async () => {
@@ -52,10 +71,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     }
 
     const menuItems = [
-        { name: 'Dashboard', icon: LayoutDashboard, href: '/admin/dashboard' },
-        { name: 'Bookings', icon: Calendar, href: '/admin/dashboard/bookings' },
-        { name: 'Leads', icon: Users, href: '/admin/dashboard/leads' },
-        { name: 'Messages', icon: Mail, href: '/admin/dashboard/messages' },
+        { name: 'Dashboard',  icon: LayoutDashboard, href: '/admin/dashboard/' },
+        { name: 'Bookings',   icon: Calendar,        href: '/admin/dashboard/bookings/' },
+        { name: 'Leads',      icon: Users,           href: '/admin/dashboard/leads/' },
+        { name: 'Drivers',    icon: Car,             href: '/admin/dashboard/drivers/' },
+        { name: 'Messages',   icon: Mail,            href: '/admin/dashboard/messages/' },
+        { name: 'Analytics',  icon: BarChart2,       href: '/admin/dashboard/analytics/' },
+        { name: 'Pricing',    icon: DollarSign,      href: '/admin/dashboard/pricing/' },
+        { name: 'Reviews',    icon: Star,            href: '/admin/dashboard/reviews/' },
+        { name: 'Blog',       icon: FileText,        href: '/admin/dashboard/blog/' },
+        { name: 'Promos',     icon: Tag,             href: '/admin/dashboard/promos/' },
     ];
 
     const currentTitle = menuItems.find(m => pathname.startsWith(m.href))?.name || 'Control Panel';
@@ -72,19 +97,25 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <nav className="flex-1 p-4 space-y-2">
                     {menuItems.map((item) => {
                         const Icon = item.icon;
-                        const isActive = pathname === item.href || (item.href !== '/admin/dashboard' && pathname.startsWith(item.href));
+                        const isActive = pathname === item.href || (item.href !== '/admin/dashboard/' && pathname.startsWith(item.href));
+                        const badge = item.name === 'Messages' && unreadCount > 0 ? unreadCount : null;
                         return (
                             <Link
                                 key={item.name}
                                 href={item.href}
                                 className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 ${
-                                    isActive 
-                                        ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/20' 
+                                    isActive
+                                        ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/20'
                                         : 'text-surface-400 hover:bg-surface-800 hover:text-white'
                                 }`}
                             >
                                 <Icon size={20} />
-                                <span className="font-medium">{item.name}</span>
+                                <span className="font-medium flex-1">{item.name}</span>
+                                {badge && (
+                                    <span className="bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0">
+                                        {badge > 9 ? '9+' : badge}
+                                    </span>
+                                )}
                             </Link>
                         );
                     })}

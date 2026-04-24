@@ -49,7 +49,7 @@ export default function PortTaxiPage({ params }: { params: { slug: string } }) {
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for transfers to ports and terminals.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for transfers to ports and terminals.' },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for maritime passengers.' },
         { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the port.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for cruise groups with luggage.' },

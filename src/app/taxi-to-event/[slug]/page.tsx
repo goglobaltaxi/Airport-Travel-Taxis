@@ -49,7 +49,7 @@ export default function EventTaxiPage({ params }: { params: { slug: string } }) 
     const vehicles = [
         { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable for individuals and small groups.' },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for business or event travel.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Premium comfort for corporate guests and delegates.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for corporate guests and delegates.' },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Executive choice for high-profile events.' },
         { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Comfortable and spacious for event arrivals.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious for groups or guests with extra gear.' },

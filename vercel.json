@@ -1,4 +1,5 @@
 {
+    "installCommand": "npm ci --omit=optional",
     "headers": [
         {
             "source": "/(.*)",
@@ -23,5 +24,11 @@
     ],
     "rewrites": [],
     "redirects": [],
-    "trailingSlash": true
+    "trailingSlash": true,
+    "crons": [
+        {
+            "path": "/api/reminders?secret=REPLACE_WITH_YOUR_CRON_SECRET",
+            "schedule": "0 8 * * *"
+        }
+    ]
 }

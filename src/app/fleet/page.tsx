@@ -26,7 +26,7 @@ export default function FleetPage() {
                         Our <span className="text-primary-600">Fleet</span>
                     </h1>
                     <p className="text-surface-600 max-w-2xl mx-auto text-lg">
-                        Choose from our range of premium vehicles. Each car is meticulously maintained, thoroughly cleaned, and driven by a professional chauffeur.
+                        Choose from our range of executive vehicles. Each car is meticulously maintained, thoroughly cleaned, and driven by a professional chauffeur.
                     </p>
                 </div>
             </section>

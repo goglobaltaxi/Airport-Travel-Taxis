@@ -21,13 +21,13 @@ export default function EventsWeddingsPage() {
             <section className="section-padding bg-surface-100 pb-16">
                 <div className="container-custom mx-auto max-w-4xl text-center">
                     <span className="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-6">
-                        Premium Event Logistics
+                        Executive Event Logistics
                     </span>
                     <h1 className="font-display text-4xl lg:text-5xl lg:leading-tight text-surface-900 mb-6">
                         Luxury Transportation For <span className="text-primary-600">Weddings & Events</span>
                     </h1>
                     <p className="text-xl text-surface-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-                        Make your special day flawless with our premium chauffeur services. We offer organized transport solutions for wedding VIPs, guests, and corporate events across the region.
+                        Make your special day flawless with our executive chauffeur services. We offer organized transport solutions for wedding VIPs, guests, and corporate events across the region.
                     </p>
                     <Link href="/contact" className="btn-primary py-3 px-8 text-lg inline-flex items-center gap-2">
                         Request Event Quote
@@ -46,7 +46,7 @@ export default function EventsWeddingsPage() {
                             <span className="text-primary-600 font-bold tracking-wider uppercase text-sm mb-3 block">For VIPs</span>
                             <h2 className="font-display text-3xl font-bold text-surface-900 mb-6">Bridal & VIP Transport</h2>
                             <p className="text-surface-600 leading-relaxed mb-6">
-                                Arrive at your venue in undeniable style. Our premium luxury sedans and executive SUVs are meticulously prepared for the bride, groom, and immediate VIP family members. 
+                                Arrive at your venue in undeniable style. Our executive luxury sedans and executive SUVs are meticulously prepared for the bride, groom, and immediate VIP family members. 
                             </p>
                             <ul className="space-y-4">
                                 <li className="flex gap-3 items-start">
@@ -110,7 +110,7 @@ export default function EventsWeddingsPage() {
              <section className="py-12 bg-surface-50 border-t border-surface-200">
                 <div className="container-custom mx-auto max-w-4xl text-center">
                     <p className="text-surface-500 text-sm leading-relaxed">
-                        Airport Travel Taxis operates a vetted fleet of high-end vehicles specifically adapted for elite weddings, diplomatic events, and corporate roadshows across Saudi Arabia (Riyadh, Makkah, Jeddah), UAE (Dubai, Abu Dhabi), and major hubs like Doha, Kuwait City, and Bahrain. We coordinate seamlessly with event planners and personal assistants to execute flawless ground transportation.
+                        Airport Travel Taxis operates a vetted fleet of high-end vehicles specifically adapted for VIP weddings, diplomatic events, and corporate roadshows across Saudi Arabia (Riyadh, Makkah, Jeddah), UAE (Dubai, Abu Dhabi), and major hubs like Doha, Kuwait City, and Bahrain. We coordinate seamlessly with event planners and personal assistants to execute flawless ground transportation.
                     </p>
                 </div>
             </section>

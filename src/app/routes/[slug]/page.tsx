@@ -1,16 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { routes } from '@/lib/data';
-import BookingWidget from '@/components/BookingWidget';
 import FAQ from '@/components/FAQ';
-import { notFound } from 'next/navigation';
-import { ChevronRight } from 'lucide-react';
-import TravelKnowledge from '@/components/TravelKnowledge';
-import AuthorityTrust from '@/components/AuthorityTrust';
-import StructuredInformationBlocks from '@/components/StructuredInformationBlocks';
 import RouteFinder from '@/components/RouteFinder';
+import { notFound } from 'next/navigation';
+import { ChevronRight, MapPin, Navigation, Car, Map, MessageSquare, CheckCircle2 } from 'lucide-react';
 import DynamicRouteSuggestions from '@/components/DynamicRouteSuggestions';
-import TravelCalculator from '@/components/TravelCalculator';
 
 export async function generateStaticParams() {
     return routes.map((route) => ({ slug: route.slug }));
@@ -20,8 +15,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const route = routes.find((r) => r.slug === params.slug);
     if (!route) return {};
     
-    const pageTitle = `Taxi from ${route.from} to ${route.to} | Professional Service`;
-    const pageDescription = `Book a professional taxi from ${route.from} to ${route.to}. We provide safe, pre-booked 24/7 transportation with professional chauffeurs across the Gulf region.`;
+    const pageTitle = `Taxi from ${route.from} to ${route.to} | Book Online`;
+    const pageDescription = `Direct taxi service from ${route.from} to ${route.to}. Simple private car travel. Message us on WhatsApp to get a quote today.`;
     
     return {
         title: pageTitle,
@@ -41,176 +36,199 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
     const route = routes.find((r) => r.slug === params.slug);
     if (!route) notFound();
 
+    const isCrossBorder = route.fromCountry !== route.toCountry;
+
+    const baseFaqs = [
+        {
+            "question": "Can you pick me up from the airport?",
+            "answer": "Yes, the driver will meet you outside arrivals."
+        },
+        {
+            "question": "How do I book this trip?",
+            "answer": "Send your details on WhatsApp and we will confirm."
+        },
+        {
+            "question": "Will I change cars during the trip?",
+            "answer": "No, you stay in the same car for the whole trip."
+        },
+        {
+            "question": "Can I travel at night?",
+            "answer": "Yes, our drivers are available 24 hours."
+        },
+        {
+            "question": "Do drivers speak English?",
+            "answer": "Yes, drivers communicate clearly in English or Arabic."
+        },
+        {
+            "question": "Can I stop for food or rest?",
+            "answer": "Yes, you can ask the driver to stop for a quick break."
+        },
+        {
+            "question": "How much luggage can I bring?",
+            "answer": "It depends on the car. Tell us your bags when you message on WhatsApp."
+        },
+        {
+            "question": "What if my flight is late?",
+            "answer": "Let us know on WhatsApp, and we will adjust the pickup time."
+        }
+    ];
+
+    if (isCrossBorder) {
+        baseFaqs.unshift(
+            {
+                "question": "Do I need a hard copy of my visa?",
+                "answer": "Yes, always carry printed copies for the border."
+            },
+            {
+                "question": "How long does border crossing take?",
+                "answer": "It usually takes 30 to 60 minutes."
+            }
+        );
+    } else {
+        baseFaqs.unshift(
+            {
+                "question": "Is this a direct point-to-point service?",
+                "answer": "Yes, we drive you directly to your exact location."
+            },
+            {
+                "question": "Can I request a child seat?",
+                "answer": "Yes, please mention it when you message us on WhatsApp."
+            }
+        );
+    }
+
+    const mergedFaqs = [...baseFaqs, ...(route.faq || [])].slice(0, 10);
+
     return (
         <div className="pt-20">
-            {/* Hero */}
+            {/* DIRECT ANSWER (TOP) */}
             <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6">
-                        <Link href="/" className="hover:text-primary-600 transition-colors">Home</Link>
-                        <span>/</span>
-                        <span>Routes</span>
-                        <span>/</span>
-                        <span className="text-surface-900">{route.from} to {route.to}</span>
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium flex-wrap">
+                        <Link href="/" className="hover:text-gold-600 transition-colors">Home</Link>
+                        <ChevronRight className="w-4 h-4" />
+                        <Link href="/routes" className="hover:text-gold-600 transition-colors">Routes</Link>
+                        <ChevronRight className="w-4 h-4" />
+                        <span className="text-surface-900 truncate">{route.from} to {route.to}</span>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-start">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 mb-4">
-                                <span className="text-sm text-primary-700 font-medium">
-                                    {route.fromCountry === route.toCountry ? '🏙️ Inter-City' : '🌍 Cross-Border'}
-                                </span>
-                            </div>
-                            <h1 className="font-display text-3xl lg:text-[42px] lg:leading-[48px] text-surface-900 mb-4">
-                                {route.from} to {route.to} <span className="text-primary-600">Taxi Service</span>
-                            </h1>
-                            <p className="text-surface-600 text-lg leading-relaxed mb-6">{route.longDescription}</p>
-
-                            {/* Journey Essentials Block */}
-                            <div className="bg-primary-50 rounded-xl p-5 mb-8 border border-primary-100">
-                                <h2 className="font-semibold text-primary-900 mb-2 flex items-center gap-2">
-                                    <span className="bg-primary-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">⭐</span>
-                                    Journey Essentials
-                                </h2>
-                                <p className="text-surface-700 text-sm leading-relaxed mb-4">
-                                    Premium private taxi transfer from <strong>{route.from}</strong> to <strong>{route.to}</strong>. Enjoy a seamless door-to-door journey with professional chauffeurs.
-                                </p>
-                                <ul className="text-xs text-primary-800 grid grid-cols-2 gap-2 font-medium">
-                                    <li className="flex items-center gap-1">📍 Distance: {route.distance}</li>
-                                    <li className="flex items-center gap-1">⏱️ Duration: {route.duration}</li>
-                                    <li className="flex items-center gap-1">🚙 Premium Fleet</li>
-                                    <li className="flex items-center gap-1">🛡️ Fully Insured</li>
-                                </ul>
-                                <a 
-                                    href="#booking-widget"
-                                    className="mt-4 w-full bg-primary-600 text-white py-2 rounded-lg text-sm font-bold hover:bg-primary-700 transition-all flex items-center justify-center gap-2 text-center"
-                                >
-                                    Book This Route Now <ChevronRight className="w-4 h-4" />
-                                </a>
-                            </div>
-
-                            {/* Route Info Cards */}
-                            <div className="grid grid-cols-2 gap-4 mb-8">
-                                <div className="glass-card p-4 text-center">
-                                    <p className="text-2xl font-bold text-surface-900">{route.distance}</p>
-                                    <p className="text-sm text-surface-500">Distance</p>
-                                </div>
-                                <div className="glass-card p-4 text-center">
-                                    <p className="text-2xl font-bold text-surface-900">{route.duration}</p>
-                                    <p className="text-sm text-surface-500">Duration</p>
-                                </div>
-                            </div>
-
-                            {/* Highlights */}
-                            <div className="glass-card p-6 mb-8">
-                                <h3 className="font-display text-lg text-surface-900 mb-4">Route Highlights</h3>
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                    {route.highlights.map((highlight) => (
-                                        <div key={highlight} className="flex items-center gap-2">
-                                            <span className="text-green-600">✓</span>
-                                            <span className="text-surface-700 text-sm">{highlight}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Distance & Travel Time Details */}
-                            {route.highways && (
-                                <div className="glass-card p-6 mb-8">
-                                    <h3 className="font-display text-lg text-surface-900 mb-4">Distance and Travel Time</h3>
-                                    <p className="text-surface-600 text-sm leading-relaxed mb-4">
-                                        The approximate distance for this journey is <strong>{route.distance}</strong>, with an estimated travel time of <strong>{route.duration}</strong>.
-                                    </p>
-                                    <div className="bg-surface-50 rounded-lg p-4 border border-surface-100">
-                                        <p className="text-xs text-surface-500 uppercase tracking-wider font-semibold mb-1">Primary Roads</p>
-                                        <p className="text-surface-800 text-sm">{route.highways}</p>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Vehicle Options */}
-                            {route.vehiclesInfo && (
-                                <div className="glass-card p-6 mb-8">
-                                    <h3 className="font-display text-lg text-surface-900 mb-4">Vehicle Options</h3>
-                                    <p className="text-surface-600 text-sm leading-relaxed mb-4">{route.vehiclesInfo}</p>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                        {['Mercedes S-Class', 'Cadillac Escalade', 'GMC', 'Ford Taurus', 'BMW', 'Genesis', 'Mercedes Vito', 'Mercedes Sprinter', 'Executive Bus', 'Camry', 'Staria', 'Hiace', 'Coaster'].map(v => (
-                                            <div key={v} className="bg-primary-50 text-primary-700 text-[10px] font-bold py-1 px-2 rounded-md border border-primary-100 text-center uppercase tracking-tight">
-                                                {v}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Border Information */}
-                            {route.borderInfo && (
-                                <div className="glass-card p-6 mb-8 border-l-4 border-l-primary-600">
-                                    <h3 className="font-display text-lg text-surface-900 mb-2">Border Information</h3>
-                                    <p className="text-surface-600 text-sm leading-relaxed mb-0 whitespace-pre-line">{route.borderInfo}</p>
-                                </div>
-                            )}
-
-                            {/* Travel Use Cases */}
-                            {route.useCases && (
-                                <div className="glass-card p-6 mb-8">
-                                    <h3 className="font-display text-lg text-surface-900 mb-2">Travel Use Cases</h3>
-                                    <p className="text-surface-600 text-sm leading-relaxed mb-0">{route.useCases}</p>
-                                </div>
-                            )}
-
-                            {/* Internal Route Links */}
-                            {route.relatedRoutes && (
-                                <div className="glass-card p-6">
-                                    <h3 className="font-display text-lg text-surface-900 mb-4">Related Routes</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {route.relatedRoutes.map((r) => (
-                                            <Link 
-                                                key={r.slug} 
-                                                href={`/routes/${r.slug}`}
-                                                className="text-xs bg-surface-100 hover:bg-primary-600 hover:text-white transition-all text-surface-700 font-medium py-1.5 px-3 rounded-full border border-surface-200"
-                                            >
-                                                {r.name}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="sticky top-24" id="booking-widget">
-                            <BookingWidget compact />
-                            {/* Booking CTA for AI Optimization */}
-                            <div className="mt-6 p-6 bg-primary-900 text-white rounded-2xl">
-                                <h4 className="font-display text-lg mb-2">Ready to Book?</h4>
-                                <p className="text-primary-100 text-sm mb-4 leading-relaxed">
-                                    Contact our support team for trip arrangements or request a ride directly through our portal. We are available 24/7.
-                                </p>
-                                <Link href="/contact" className="w-full btn-primary !bg-white !text-primary-900 text-center block !py-3">
-                                    Contact Support
-                                </Link>
-                            </div>
+                    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
+                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
+                            Taxi from {route.from} to {route.to}
+                        </h1>
+                        <p className="text-surface-700 text-lg leading-relaxed mb-6">
+                            Travel time from {route.from} to {route.to} takes about {route.duration}. {isCrossBorder ? 'Passing the border is easy with driver help. ' : 'The journey is direct via highway. '} 
+                            To get the exact quote, you can contact on WhatsApp.
+                        </p>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
+                                <MessageSquare className="w-5 h-5" />
+                                Get a quote on WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Structured Information Blocks */}
-            <StructuredInformationBlocks 
-                startLocation={route.from}
-                endLocation={route.to}
-                type={route.fromCountry === route.toCountry ? 'Inter-City Transfer' : 'Cross-Border Transfer'}
-                travelTime={route.duration}
-                pickup="Hotel, Airport, or Residential Address"
-                dropoff="Direct Door-to-Door Destination"
-                relatedLinks={route.relatedRoutes ? route.relatedRoutes.map(r => ({ name: r.name, url: `/routes/${r.slug}` })) : []}
-            />
+            {/* SIMPLE INTRO & HOW THIS TRIP WORKS */}
+            <section className="section-padding bg-white border-b border-surface-200">
+                <div className="container-custom mx-auto max-w-4xl">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">About This Route</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                This service is a private car ride from {route.from} to {route.to}. It is for people who want a direct road trip without changing cars.
+                            </p>
+                            
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">How This Trip Works</h2>
+                            <ul className="space-y-4">
+                                <li className="flex gap-3">
+                                    <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Pickup:</strong> The driver picks you up from your home, hotel, or airport in {route.from}.</p>
+                                </li>
+                                <li className="flex gap-3">
+                                    <Car className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Travel:</strong> You sit back while we drive towards {route.to}.</p>
+                                </li>
+                                {isCrossBorder && (
+                                    <li className="flex gap-3">
+                                        <Navigation className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                        <p className="text-surface-600"><strong>Border:</strong> You exit {route.fromCountry} and enter {route.toCountry}. The driver guides you.</p>
+                                    </li>
+                                )}
+                                <li className="flex gap-3">
+                                    <Map className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                                    <p className="text-surface-600"><strong>Drop-off:</strong> We drive straight to your location in {route.to} and drop you at the door.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div className="bg-surface-50 p-6 md:p-8 rounded-2xl border border-surface-200">
+                            <h2 className="font-display text-2xl text-primary-900 mb-4">Travel Time</h2>
+                            <p className="text-surface-600 leading-relaxed mb-6">
+                                Travel time depends on traffic and your exact drop-off area. {isCrossBorder && 'Weekends might take a little longer at customs.'}
+                            </p>
+                            
+                            {isCrossBorder && (
+                                <>
+                                    <h2 className="font-display text-2xl text-primary-900 mb-4">Border Process</h2>
+                                    <ul className="space-y-3 mb-6">
+                                        <li className="flex items-start gap-2 text-surface-600">
+                                            <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                            You must show your passport and visa at the {route.fromCountry} exit.
+                                        </li>
+                                        <li className="flex items-start gap-2 text-surface-600">
+                                            <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                            Then, you do the same at the {route.toCountry} entry point.
+                                        </li>
+                                        <li className="flex items-start gap-2 text-surface-600">
+                                            <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0" />
+                                            Our drivers do this trip often and will tell you exactly where to go.
+                                        </li>
+                                    </ul>
+                                </>
+                            )}
+                            
+                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-2">
+                                Message now to check availability <ChevronRight className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            {/* Route Finder Integration */}
-            <section className="bg-surface-50 py-12 border-y border-surface-200">
+            {/* BOOKING / GET QUOTE SECTION */}
+            <section className="section-padding bg-primary-900 text-white text-center">
+                <div className="container-custom mx-auto max-w-2xl">
+                    <h2 className="font-display text-3xl mb-4 text-gold-400">Want to know the fare?</h2>
+                    <p className="text-surface-300 leading-relaxed mb-8">
+                        Click the WhatsApp button below. Send your pickup location, drop-off city, and travel date. We will reply fast. To get exact fare and availability, message on WhatsApp.
+                    </p>
+                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                        <MessageSquare className="w-5 h-5 text-green-600" />
+                        Contact now for quick response
+                    </a>
+                </div>
+            </section>
+
+            {/* FAQs */}
+            <section className="section-padding bg-surface-50 border-t border-surface-200">
+                <div className="container-custom mx-auto max-w-3xl">
+                    <FAQ 
+                        title="Frequently Asked Questions" 
+                        items={mergedFaqs} 
+                    />
+                </div>
+            </section>
+
+            {/* Search Route */}
+            <section className="section-padding bg-white border-t border-surface-200">
                 <div className="container-custom mx-auto">
+                    <div className="text-center mb-6">
+                        <p className="text-surface-600">Most people prefer direct taxi for this route. Search other routes below.</p>
+                    </div>
                     <RouteFinder />
-                    <TravelCalculator />
                 </div>
             </section>
 
@@ -222,53 +240,6 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                 destinationCity={route.to} 
             />
 
-            {/* FAQ */}
-            <section className="section-padding bg-white">
-                <div className="container-custom mx-auto">
-                    <FAQ items={route.faq} title={`${route.from} to ${route.to} FAQ`} />
-                </div>
-            </section>
-
-            {/* Travel Knowledge */}
-            <TravelKnowledge context={`${route.from} to ${route.to}`} distanceFilter={route.from} />
-
-            {/* Authority & Trust Sections */}
-            <AuthorityTrust section3={false} />
-
-            {/* Other Routes */}
-            <section className="section-padding bg-surface-100">
-                <div className="container-custom mx-auto">
-                    <h2 className="font-display text-2xl text-surface-900 mb-6">Other Popular Routes</h2>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {routes.filter((r) => r.slug !== route.slug).map((r) => (
-                            <Link key={r.slug} href={`/routes/${r.slug}`} className="glass-card-hover p-5">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <span className="font-medium text-surface-900">{r.from}</span>
-                                    <span className="text-surface-400">→</span>
-                                    <span className="font-medium text-surface-900">{r.to}</span>
-                                </div>
-                                <div className="flex items-center justify-end mt-2">
-                                    <span className="text-xs text-surface-500">{r.duration}</span>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Dynamically Added Missing Routes */}
-                    <div className="flex flex-wrap gap-3 mt-8 border-t border-surface-200 pt-8">
-                        <span className="text-surface-500 text-sm font-semibold w-full">Related Transfer Routes:</span>
-                        {routes
-                            .filter((r) => r.slug !== route.slug && (r.from === route.from || r.to === route.to))
-                            .slice(0, 6)
-                            .map((r) => (
-                                <Link key={`feat-${r.slug}`} href={`/routes/${r.slug}`} className="text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                    {r.from} to {r.to} taxi
-                                </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Schema */}
             <script
                 type="application/ld+json"
@@ -278,7 +249,7 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                             '@context': 'https://schema.org',
                             '@type': 'Service',
                             name: `${route.from} to ${route.to} Taxi Service`,
-                            description: route.description,
+                            description: `Direct taxi ride from ${route.from} to ${route.to}. Professional drivers providing simple point to point travel.`,
                             provider: { '@type': 'LocalBusiness', name: 'Airport Travel Taxis', url: 'https://airporttraveltaxis.com' },
                             areaServed: [
                                 { '@type': 'City', name: route.from },
@@ -288,7 +259,7 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                         {
                             '@context': 'https://schema.org',
                             '@type': 'FAQPage',
-                            mainEntity: route.faq.map((f) => ({
+                            mainEntity: mergedFaqs.map((f) => ({
                                 '@type': 'Question',
                                 name: f.question,
                                 acceptedAnswer: { '@type': 'Answer', text: f.answer },

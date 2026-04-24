@@ -36,7 +36,7 @@ export default function StructuredInformationBlocks({
                         {/* BLOCK 1: Quick Summary */}
                         <div className="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm">
                             <h3 className="flex items-center gap-2 font-display text-xl text-surface-900 mb-4 tracking-tight uppercase italic">
-                                <Info className="w-5 h-5 text-primary-600" />
+                                <Info className="w-5 h-5 text-gold-500" />
                                 Quick Summary
                             </h3>
                             <p className="text-surface-600 leading-relaxed font-medium">
@@ -48,20 +48,20 @@ export default function StructuredInformationBlocks({
                         {/* BLOCK 2: Travel Facts */}
                         <div className="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm">
                             <h3 className="flex items-center gap-2 font-display text-xl text-surface-900 mb-4 tracking-tight uppercase italic">
-                                <Clock className="w-5 h-5 text-primary-600" />
+                                <Clock className="w-5 h-5 text-gold-500" />
                                 Travel Facts
                             </h3>
                             <ul className="space-y-3">
                                 <li className="flex items-center gap-3 text-surface-700 font-medium">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
                                     Estimated travel time: {travelTime}
                                 </li>
                                 <li className="flex items-center gap-3 text-surface-700 font-medium">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
                                     Typical pickup: {pickup}
                                 </li>
                                 <li className="flex items-center gap-3 text-surface-700 font-medium">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600"></span>
+                                    <span className="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
                                     Typical drop-off: {dropoff}
                                 </li>
                             </ul>
@@ -72,7 +72,7 @@ export default function StructuredInformationBlocks({
                         {/* BLOCK 3: Common Travel Scenarios */}
                         <div className="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm text-surface-900">
                             <h3 className="flex items-center gap-2 font-display text-xl mb-4 tracking-tight uppercase italic">
-                                <Globe className="w-5 h-5 text-primary-600" />
+                                <Globe className="w-5 h-5 text-gold-500" />
                                 Common Travel Scenarios
                             </h3>
                             <p className="text-surface-600 leading-relaxed font-medium mb-4">
@@ -87,7 +87,7 @@ export default function StructuredInformationBlocks({
                                 ].map((item) => (
                                     <div key={item.scenario} className="flex flex-col gap-1">
                                         <div className="flex items-center gap-1.5 text-surface-900 font-bold text-sm">
-                                            <CheckCircle2 className="w-3.5 h-3.5 text-primary-600" />
+                                            <CheckCircle2 className="w-3.5 h-3.5 text-gold-500" />
                                             {item.scenario}
                                         </div>
                                         <span className="text-[11px] text-surface-500 ml-5">{item.context}</span>

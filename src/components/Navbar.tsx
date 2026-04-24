@@ -26,12 +26,12 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-all">
-                            <span className="text-white font-bold text-lg">A</span>
+                        <div className="w-10 h-10 bg-primary-900 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-all border border-primary-800">
+                            <span className="text-gold-400 font-bold text-lg">A</span>
                         </div>
                         <div className="flex flex-col">
-                            <span className="font-display font-bold text-surface-900 text-lg leading-tight">Airport Travel</span>
-                            <span className="text-primary-600 text-xs font-semibold tracking-wider uppercase">TAXIS</span>
+                            <span className="font-display font-bold text-surface-900 text-lg leading-tight tracking-tight">Airport Travel</span>
+                            <span className="text-gold-600 text-xs font-bold tracking-widest uppercase">TAXIS</span>
                         </div>
                     </Link>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
                             >
                                 <Link
                                     href={link.href}
-                                    className="px-4 py-2 text-sm font-medium text-surface-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-surface-100"
+                                    className="px-4 py-2 text-sm font-medium text-surface-700 hover:text-gold-600 transition-colors rounded-lg hover:bg-surface-100"
                                 >
                                     {link.label}
                                     {link.children && (
@@ -63,7 +63,7 @@ export default function Navbar() {
                                             <Link
                                                 key={child.label}
                                                 href={child.href}
-                                                className="block px-4 py-2.5 text-sm text-surface-700 hover:text-primary-600 hover:bg-surface-100 transition-colors"
+                                                className="block px-4 py-2.5 text-sm text-surface-700 hover:text-gold-600 hover:bg-surface-100 transition-colors"
                                             >
                                                 {child.label}
                                             </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
                                 <Link
                                     href={link.href}
                                     onClick={() => !link.children && setIsMobileOpen(false)}
-                                    className="block px-4 py-3 text-surface-700 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-colors font-medium"
+                                    className="block px-4 py-3 text-surface-700 hover:text-gold-600 hover:bg-surface-100 rounded-lg transition-colors font-medium"
                                 >
                                     {link.label}
                                 </Link>
@@ -117,7 +117,7 @@ export default function Navbar() {
                                                 key={child.label}
                                                 href={child.href}
                                                 onClick={() => setIsMobileOpen(false)}
-                                                className="block px-4 py-2 text-sm text-surface-600 hover:text-primary-600 hover:bg-surface-100 rounded-lg transition-colors"
+                                                className="block px-4 py-2 text-sm text-surface-600 hover:text-gold-600 hover:bg-surface-100 rounded-lg transition-colors"
                                             >
                                                 {child.label}
                                             </Link>

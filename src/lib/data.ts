@@ -371,7 +371,7 @@ const baseAirports: Airport[] = [
         country: 'Oman',
         code: 'MCT',
         description: 'Comfortable airport transfers at Muscat International Airport (MCT). Discover Oman\'s beauty from the moment you arrive.',
-        longDescription: 'Muscat International Airport, with its stunning Omani architecture, welcomes travelers to the Sultanate of Oman. Our professional transfer service matches the airport\'s elegance with premium vehicles and courteous drivers who showcase true Omani hospitality.',
+        longDescription: 'Muscat International Airport, with its stunning Omani architecture, welcomes travelers to the Sultanate of Oman. Our professional transfer service matches the airport\'s elegance with executive vehicles and courteous drivers who showcase true Omani hospitality.',
         services: ['Meet & Greet', 'Flight Tracking', '24/7 Service', 'Omani Hospitality', 'Tour Packages', 'Long Distance Transfers'],
         popularRoutes: [
             { to: 'Old Muscat', duration: '20 min' },
