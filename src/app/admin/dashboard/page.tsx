@@ -91,31 +91,31 @@ export default function AdminDashboard() {
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                 {/* Recent Activity */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-2 space-y-4 md:space-y-6">
                     <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-display font-bold text-surface-900">Recent Inquiries</h3>
+                        <h3 className="text-lg md:text-xl font-display font-bold text-surface-900">Recent Inquiries</h3>
                         <Link href="/admin/dashboard/bookings/" className="text-sm font-bold text-primary-600 hover:text-primary-700 flex items-center gap-1">
                             View all <ArrowRight size={16} />
                         </Link>
                     </div>
-                    
+
                     <div className="glass-card overflow-hidden">
                         <div className="divide-y divide-surface-100">
                             {recentBookings.map((booking) => (
-                                <div key={booking.id} className="p-5 flex items-center justify-between hover:bg-surface-50 transition-colors">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-surface-100 rounded-full flex items-center justify-center text-surface-400">
-                                            <Calendar size={20} />
+                                <div key={booking.id} className="p-3 md:p-5 flex items-start sm:items-center justify-between gap-3 hover:bg-surface-50 transition-colors">
+                                    <div className="flex items-center gap-3 min-w-0">
+                                        <div className="w-9 h-9 md:w-12 md:h-12 bg-surface-100 rounded-full flex items-center justify-center text-surface-400 shrink-0">
+                                            <Calendar size={16} />
                                         </div>
-                                        <div>
-                                            <p className="font-bold text-surface-900">{booking.customer_name}</p>
-                                            <p className="text-xs text-surface-500">{booking.pickup_location} → {booking.dropoff_location}</p>
+                                        <div className="min-w-0">
+                                            <p className="font-bold text-surface-900 text-sm md:text-base truncate">{booking.customer_name}</p>
+                                            <p className="text-xs text-surface-500 truncate">{booking.pickup_location} → {booking.dropoff_location}</p>
                                         </div>
                                     </div>
-                                    <div className="text-right">
-                                        <p className="text-sm font-bold text-surface-900">{new Date(booking.pickup_date).toLocaleDateString()}</p>
+                                    <div className="text-right shrink-0">
+                                        <p className="text-xs md:text-sm font-bold text-surface-900">{new Date(booking.pickup_date).toLocaleDateString()}</p>
                                         <p className="text-xs text-surface-500 font-medium mb-1">{formatTimeWithAMPM(booking.pickup_time)}</p>
                                         <span className={`text-[10px] font-bold uppercase tracking-widest ${
                                             booking.status === 'pending' ? 'text-amber-600' : 'text-blue-600'

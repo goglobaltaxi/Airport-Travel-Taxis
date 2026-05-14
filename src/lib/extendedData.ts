@@ -839,6 +839,216 @@ export const extraCities = [
             { "question": "Can I travel to Saudi Arabia from Manama?", "answer": "Yes. We provide cross-border transfers from Manama to Dammam, Khobar, and Riyadh via the King Fahd Causeway." }
         ],
         "bookingInfo": "Arrange a taxi in Manama for airport pickups, hotel transfers, business meetings, or cross-border trips to Saudi Arabia. We operate around the clock."
+    },
+    {
+        "slug": "dubai-taxi",
+        "name": "Dubai Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Professional taxi service in Dubai. Airport transfers, hotel pickups, inter-city rides, and corporate travel across Dubai.",
+        "longDescription": "Dubai is the most visited city in the UAE and one of the busiest travel hubs in the world. Our taxi service covers every district of Dubai, including Downtown Dubai, Dubai Marina, Palm Jumeirah, Deira, Jumeirah, Business Bay, and Dubai International Financial Centre. We provide reliable door-to-door transfers for tourists, business travellers, and residents, with 24/7 availability and a modern fleet of well-maintained vehicles.",
+        "popularRoutes": [
+            { "to": "Abu Dhabi", "slug": "dubai-to-abu-dhabi-taxi" },
+            { "to": "Dubai Airport", "slug": "dubai-airport-taxi" }
+        ],
+        "attractions": [
+            "Burj Khalifa",
+            "Dubai Mall",
+            "Palm Jumeirah",
+            "Dubai Marina",
+            "Dubai International Airport"
+        ],
+        "airportCode": "DXB",
+        "airportName": "Dubai International Airport",
+        "airportSlug": "dubai-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Toyota Camry, Ford Taurus, Mercedes S-Class, or BMW 7 Series. Families can use the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Dubai taxi services are used for airport pickups at Dubai International Airport (DXB), hotel transfers across the city, corporate travel to business districts, sightseeing tours to landmarks such as the Burj Khalifa, and inter-emirate trips to Sharjah, Abu Dhabi, and Ajman.",
+        "faq": [
+            { "question": "How do I book a taxi in Dubai?", "answer": "Book online through our platform or via WhatsApp. We will confirm your driver and pickup details before your trip." },
+            { "question": "Can taxis pick up from hotels in Dubai?", "answer": "Yes. We provide pickups from all major hotels across Dubai including those in Downtown, Marina, and Jumeirah." },
+            { "question": "Do you serve Dubai International Airport?", "answer": "Yes. We serve Dubai International Airport (DXB) with meet and greet and door-to-door transfers." },
+            { "question": "What vehicles are available in Dubai?", "answer": "We offer sedans, executive saloons, SUVs, and passenger vans to suit all group sizes and budgets." }
+        ],
+        "bookingInfo": "Arrange a taxi in Dubai for airport transfers, hotel pickups, business meetings, or inter-city trips. Our service is available 24/7."
+    },
+    {
+        "slug": "abu-dhabi-taxi",
+        "name": "Abu Dhabi Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Professional taxi service in Abu Dhabi. Airport transfers, hotel pickups, Yas Island, Saadiyat Island, and corporate travel.",
+        "longDescription": "Abu Dhabi is the capital of the United Arab Emirates and a major hub for business, culture, and tourism. Our taxi service covers all areas of Abu Dhabi including the city centre, Corniche, Khalidiyah, Yas Island, Saadiyat Island, Al Reem Island, and the areas surrounding Zayed International Airport. We provide reliable door-to-door transfers for residents, tourists, and business travellers with a modern, air-conditioned fleet.",
+        "popularRoutes": [
+            { "to": "Dubai", "slug": "dubai-to-abu-dhabi-taxi" },
+            { "to": "Abu Dhabi Airport", "slug": "abu-dhabi-airport-taxi" }
+        ],
+        "attractions": [
+            "Sheikh Zayed Grand Mosque",
+            "Yas Island",
+            "Saadiyat Island",
+            "Abu Dhabi Corniche",
+            "Zayed International Airport"
+        ],
+        "airportCode": "AUH",
+        "airportName": "Zayed International Airport",
+        "airportSlug": "abu-dhabi-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can use the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Abu Dhabi taxi services are used for airport pickups at Zayed International Airport, hotel transfers, corporate travel to government and financial districts, trips to Yas Island and Saadiyat Island, and inter-city travel to Dubai and Al Ain.",
+        "faq": [
+            { "question": "How do I book a taxi in Abu Dhabi?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup time before the trip." },
+            { "question": "Can taxis pick up from Abu Dhabi hotels?", "answer": "Yes. We provide pickups from all hotels across Abu Dhabi including those in the Corniche and Al Reem Island areas." },
+            { "question": "Do you serve Zayed International Airport?", "answer": "Yes. We provide meet and greet and door-to-door service at Zayed International Airport (AUH)." },
+            { "question": "What vehicles are available in Abu Dhabi?", "answer": "We offer a full range from economy sedans to executive saloons, SUVs, and group vans." }
+        ],
+        "bookingInfo": "Arrange a taxi in Abu Dhabi for airport transfers, hotel pickups, island visits, or inter-city travel. Our service is available 24/7."
+    },
+    {
+        "slug": "riyadh-taxi",
+        "name": "Riyadh Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional taxi service in Riyadh. Airport transfers, hotel pickups, corporate travel, and cross-city rides across the capital.",
+        "longDescription": "Riyadh is the capital of Saudi Arabia and the country's largest city. Our taxi service covers all major districts of Riyadh including Olaya, KAFD, Diplomatic Quarter, Al Muruj, Sulaimania, and the areas surrounding King Khalid International Airport. We provide reliable door-to-door transfers for business travellers, residents, and visitors with professional drivers and a modern fleet.",
+        "popularRoutes": [
+            { "to": "Jeddah", "slug": "riyadh-to-jeddah-taxi" },
+            { "to": "Riyadh Airport", "slug": "riyadh-airport-taxi" }
+        ],
+        "attractions": [
+            "Kingdom Centre Tower",
+            "Al Faisaliah Tower",
+            "Diriyah",
+            "King Fahd Road",
+            "King Khalid International Airport"
+        ],
+        "airportCode": "RUH",
+        "airportName": "King Khalid International Airport",
+        "airportSlug": "riyadh-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can use the GMC Yukon XL or Cadillac Escalade. For larger groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Riyadh taxi services are used for airport pickups at King Khalid International Airport, hotel transfers, corporate travel to the Olaya and KAFD business districts, visits to Diriyah and other landmarks, and long-distance rides to Jeddah, Dammam, and other Saudi cities.",
+        "faq": [
+            { "question": "How do I book a taxi in Riyadh?", "answer": "Book online or by WhatsApp. We will confirm your driver and pickup details for a smooth transfer." },
+            { "question": "Can taxis pick up from hotels in Riyadh?", "answer": "Yes. We provide pickups from all hotels and corporate offices in Riyadh." },
+            { "question": "Do you serve King Khalid International Airport?", "answer": "Yes. We serve King Khalid International Airport (RUH) with meet and greet service and door-to-door transfers." },
+            { "question": "What vehicles are available in Riyadh?", "answer": "We offer sedans, SUVs, executive saloons, and group vans suitable for all travel needs." }
+        ],
+        "bookingInfo": "Arrange a taxi in Riyadh for airport pickups, hotel transfers, business meetings, or inter-city travel. Our service is available 24/7."
+    },
+    {
+        "slug": "jeddah-taxi",
+        "name": "Jeddah Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional taxi service in Jeddah. Airport transfers, hotel pickups, Corniche rides, Umrah pilgrim transport, and corporate travel.",
+        "longDescription": "Jeddah is Saudi Arabia's main Red Sea port city and a major gateway for Umrah pilgrims heading to Makkah and Madinah. Our taxi service covers all areas of Jeddah including Al Balad, Al Hamra, Corniche, Tahlia Street, and the areas surrounding King Abdulaziz International Airport. We provide reliable door-to-door transfers for pilgrims, tourists, business travellers, and residents.",
+        "popularRoutes": [
+            { "to": "Makkah", "slug": "jeddah-to-makkah-taxi" },
+            { "to": "Madinah", "slug": "jeddah-to-madinah-taxi" }
+        ],
+        "attractions": [
+            "King Fahd Fountain",
+            "Al Balad Historic District",
+            "Jeddah Corniche",
+            "King Abdulaziz International Airport",
+            "Red Sea Mall"
+        ],
+        "airportCode": "JED",
+        "airportName": "King Abdulaziz International Airport",
+        "airportSlug": "jeddah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Toyota Camry, Ford Taurus, or Mercedes S-Class. Families can use the GMC Yukon XL or Cadillac Escalade. For Umrah pilgrim groups, the Mercedes Sprinter, Toyota Hiace, Coaster, or a High-standard Bus are available.",
+        "travelUses": "Jeddah taxi services are used for airport pickups at King Abdulaziz International Airport, Umrah pilgrim transport to Makkah and Madinah, hotel transfers along the Corniche and Tahlia Street, corporate travel, and visits to the historic Al Balad district.",
+        "faq": [
+            { "question": "How do I book a taxi in Jeddah?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup details before your trip." },
+            { "question": "Do you provide Umrah transport from Jeddah?", "answer": "Yes. We provide pilgrim transport from Jeddah to Makkah and Madinah, available 24/7." },
+            { "question": "Do you cover King Abdulaziz International Airport?", "answer": "Yes. We serve King Abdulaziz International Airport (JED) with meet and greet and door-to-door transfers." },
+            { "question": "What vehicles are suitable for pilgrim groups?", "answer": "For pilgrim groups we offer the Mercedes Sprinter, Toyota Hiace, Coaster, and High-standard Bus." }
+        ],
+        "bookingInfo": "Arrange a taxi in Jeddah for airport transfers, Umrah pilgrim transport, hotel transfers, or long-distance rides. Our service is available 24/7."
+    },
+    {
+        "slug": "dammam-taxi",
+        "name": "Dammam Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional taxi service in Dammam. Airport transfers, hotel pickups, corporate travel, and cross-border trips to Bahrain.",
+        "longDescription": "Dammam is the capital of Saudi Arabia's Eastern Province and a major industrial and commercial hub. Our taxi service covers all areas of Dammam including Al Shati, Al Muraikabat, Al Faisaliyah, and the areas surrounding King Fahd International Airport. We also provide cross-border transfers to Bahrain via the King Fahd Causeway and connections to Khobar and Jubail.",
+        "popularRoutes": [
+            { "to": "Riyadh", "slug": "dammam-to-riyadh-taxi" },
+            { "to": "Bahrain", "slug": "bahrain-to-saudi-arabia-taxi" }
+        ],
+        "attractions": [
+            "Dammam Corniche",
+            "King Fahd International Airport",
+            "Al Shula District",
+            "Al Nakheel Mall",
+            "Half Moon Bay"
+        ],
+        "airportCode": "DMM",
+        "airportName": "King Fahd International Airport",
+        "airportSlug": "dammam-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can use the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Dammam taxi services are used for airport pickups at King Fahd International Airport, hotel transfers, corporate travel to industrial areas, cross-border trips to Bahrain via the King Fahd Causeway, and connections to Khobar and Jubail.",
+        "faq": [
+            { "question": "How do I book a taxi in Dammam?", "answer": "Book online or by WhatsApp. We will confirm your driver and route before your trip." },
+            { "question": "Do you offer transfers to Bahrain from Dammam?", "answer": "Yes. We provide cross-border transfers from Dammam to Manama via the King Fahd Causeway." },
+            { "question": "Do you serve King Fahd International Airport?", "answer": "Yes. We serve King Fahd International Airport (DMM) with meet and greet and door-to-door service." },
+            { "question": "What vehicles are available in Dammam?", "answer": "We offer sedans, SUVs, executive saloons, and passenger vans for all group sizes." }
+        ],
+        "bookingInfo": "Arrange a taxi in Dammam for airport transfers, hotel pickups, corporate travel, or cross-border trips to Bahrain. Our service is available 24/7."
+    },
+    {
+        "slug": "doha-taxi",
+        "name": "Doha Taxi Service",
+        "country": "Qatar",
+        "description": "Professional taxi service in Doha. Airport transfers, hotel pickups, corporate travel, and city-wide coverage across Qatar's capital.",
+        "longDescription": "Doha is the capital of Qatar and one of the fastest-growing cities in the Gulf. Our taxi service covers all areas of Doha including West Bay, The Pearl, Lusail, Souq Waqif, Msheireb, and the areas surrounding Hamad International Airport. We provide reliable door-to-door transfers for business travellers, tourists, and residents with a professional fleet of modern vehicles.",
+        "popularRoutes": [
+            { "to": "Riyadh", "slug": "doha-to-riyadh-taxi" },
+            { "to": "Doha Airport", "slug": "doha-airport-taxi" }
+        ],
+        "attractions": [
+            "Souq Waqif",
+            "The Pearl-Qatar",
+            "Museum of Islamic Art",
+            "West Bay Skyline",
+            "Hamad International Airport"
+        ],
+        "airportCode": "DOH",
+        "airportName": "Hamad International Airport",
+        "airportSlug": "doha-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can use the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter, Toyota Hiace, or a High-standard Bus are available.",
+        "travelUses": "Doha taxi services are used for airport pickups at Hamad International Airport, hotel transfers in West Bay and The Pearl, corporate travel to business districts, sightseeing visits to Souq Waqif and cultural attractions, and rides to Lusail and other parts of Qatar.",
+        "faq": [
+            { "question": "How do I book a taxi in Doha?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup details before your trip." },
+            { "question": "Can taxis pick up from hotels in Doha?", "answer": "Yes. We provide pickups from all hotels and residences across Doha including West Bay and The Pearl." },
+            { "question": "Do you serve Hamad International Airport?", "answer": "Yes. We serve Hamad International Airport (DOH) with meet and greet and door-to-door transfers." },
+            { "question": "What vehicles are available in Doha?", "answer": "We offer sedans, SUVs, and passenger vans to suit all group sizes and travel requirements." }
+        ],
+        "bookingInfo": "Arrange a taxi in Doha for airport transfers, hotel pickups, corporate travel, or city sightseeing. Our service is available 24/7."
+    },
+    {
+        "slug": "bahrain-taxi",
+        "name": "Bahrain Taxi Service",
+        "country": "Bahrain",
+        "description": "Professional taxi service in Bahrain. Airport transfers, hotel pickups, cross-border trips to Saudi Arabia, and island-wide coverage.",
+        "longDescription": "Bahrain is an island nation in the Arabian Gulf and a key financial and business hub in the GCC. Our taxi service covers all areas of Bahrain including Manama, Seef, Juffair, Diplomatic Area, Muharraq, Riffa, and the areas surrounding Bahrain International Airport. We also provide cross-border transfers to the Eastern Province of Saudi Arabia via the King Fahd Causeway.",
+        "popularRoutes": [
+            { "to": "Dammam", "slug": "bahrain-to-saudi-arabia-taxi" },
+            { "to": "Bahrain Airport", "slug": "manama-airport-taxi" }
+        ],
+        "attractions": [
+            "Bahrain Fort",
+            "Al-Fatih Grand Mosque",
+            "Bab Al Bahrain",
+            "King Fahd Causeway",
+            "Bahrain International Airport"
+        ],
+        "airportCode": "BAH",
+        "airportName": "Bahrain International Airport",
+        "airportSlug": "manama-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can use the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Bahrain taxi services are used for airport pickups at Bahrain International Airport, hotel transfers in Seef and Juffair, corporate travel to the Diplomatic Area, cross-border transfers to Dammam and Khobar via the King Fahd Causeway, and tourism visits across the island.",
+        "faq": [
+            { "question": "How do I book a taxi in Bahrain?", "answer": "Book online or via WhatsApp. We will confirm your driver and booking details before pickup." },
+            { "question": "Can I travel to Saudi Arabia from Bahrain?", "answer": "Yes. We provide cross-border transfers from Bahrain to Dammam, Khobar, and Riyadh via the King Fahd Causeway." },
+            { "question": "Do you serve Bahrain International Airport?", "answer": "Yes. We serve Bahrain International Airport (BAH) with meet and greet and door-to-door transfers." },
+            { "question": "What vehicles are available in Bahrain?", "answer": "We offer sedans, executive saloons, SUVs, and group vans suitable for all travel requirements." }
+        ],
+        "bookingInfo": "Arrange a taxi in Bahrain for airport transfers, hotel pickups, cross-border trips to Saudi Arabia, or island-wide travel. Our service is available 24/7."
     }
 ];
 export const extraRoutes = [
@@ -3155,6 +3365,63 @@ export const extraRoutes = [
         ],
         "faq": [
             { "question": "How long does it take from Muscat to Sohar?", "answer": "The trip usually takes about 2 hours and 30 minutes." }
+        ]
+    },
+    {
+        "slug": "riyadh-to-bahrain-taxi",
+        "from": "Riyadh",
+        "to": "Bahrain",
+        "fromCountry": "Saudi Arabia",
+        "toCountry": "Bahrain",
+        "distance": "480 km",
+        "duration": "5h",
+        "description": "Private taxi and transfer service from Riyadh to Bahrain. Cross-border ground transport via the King Fahd Causeway.",
+        "longDescription": "The trip starts in Riyadh, the capital of Saudi Arabia, and ends in Manama, Bahrain, crossing via the Eastern Province and the iconic King Fahd Causeway. We provide door-to-door pickup from any location in Riyadh, including hotels and residential areas. The journey typically takes around 5 hours depending on traffic conditions and causeway crossing times. Our professional chauffeurs handle all logistics including border documentation support.",
+        "highways": "Highway 40 (Riyadh to Dammam) and Highway 25 to the King Fahd Causeway.",
+        "vehiclesInfo": "We offer a variety of vehicles for this cross-border route. Individual and business travellers can choose from the Ford Taurus, BMW, Genesis, or Mercedes S-Class. Families find the GMC Yukon XL or Cadillac Escalade ideal for the journey. For groups, we provide the Mercedes Vito, Mercedes Sprinter, Hiace, or a High-standard Bus. All vehicles are modern and fully air-conditioned.",
+        "borderInfo": "This route crosses the King Fahd Causeway, which connects the Eastern Province of Saudi Arabia to Bahrain. Passengers must have a valid passport and the required entry permit for Bahrain. The causeway crossing includes Saudi exit checks and Bahraini entry procedures, which typically takes 30 to 60 minutes. Our drivers are fully experienced with this crossing and will assist you throughout.",
+        "useCases": "This route is popular with business professionals commuting between Riyadh and Manama, families on cross-border visits, and tourists exploring the Gulf. It provides a comfortable private alternative to flying and is especially convenient for those who prefer a door-to-door experience without airport transfers at both ends.",
+        "highlights": [
+            "Door-to-Door Private Transfer",
+            "Professional Drivers",
+            "King Fahd Causeway Border Assistance",
+            "Modern Vehicle Fleet",
+            "Flexible Rest Stops",
+            "24/7 Availability"
+        ],
+        "faq": [
+            { "question": "How long does the trip from Riyadh to Bahrain take?", "answer": "The journey typically takes about 5 hours, including the King Fahd Causeway crossing." },
+            { "question": "What vehicles are available?", "answer": "We offer a range of vehicles including the Ford Taurus, GMC, Mercedes S-Class, and larger vans like the Mercedes Sprinter." },
+            { "question": "Can the driver pick up from a hotel or airport in Riyadh?", "answer": "Yes, we offer door-to-door service and can pick you up from any hotel, residence, or airport in Riyadh." },
+            { "question": "Are cross-border trips to Bahrain possible?", "answer": "Yes, we specialise in cross-border transfers between Saudi Arabia and Bahrain via the King Fahd Causeway." },
+            { "question": "Is luggage assistance included?", "answer": "Yes, our drivers assist with luggage loading and unloading at both ends of the journey." }
+        ],
+        "relatedRoutes": [
+            { "name": "Riyadh to Dammam Taxi", "slug": "dammam-to-riyadh-taxi" },
+            { "name": "Bahrain to Saudi Arabia Taxi", "slug": "bahrain-to-saudi-arabia-taxi" },
+            { "name": "Riyadh Airport Taxi", "slug": "riyadh-airport-taxi" }
+        ]
+    },
+    {
+        "slug": "muscat-airport-taxi",
+        "from": "Muscat Airport",
+        "to": "Muscat City",
+        "fromCountry": "Oman",
+        "toCountry": "Oman",
+        "distance": "35 km",
+        "duration": "30 min",
+        "description": "Professional taxi service at Muscat International Airport (MCT). Meet & greet, flight tracking, and door-to-door transfers across Oman.",
+        "longDescription": "Muscat International Airport (MCT) is Oman's main international gateway. Our professional transfer service covers all arrivals and departures with meet & greet service, real-time flight tracking, and comfortable vehicles. We serve all major areas of Muscat including Old Muscat, Al Qurum, Muttrah, Seeb, and Madinat Sultan Qaboos, as well as long-distance routes to Nizwa, Sohar, and the UAE border.",
+        "highlights": ["Meet & Greet Service", "Flight Tracking", "24/7 Availability", "Long-Distance Routes Available", "Door-to-Door Service", "Professional Chauffeurs"],
+        "faq": [
+            { "question": "Where do I meet my driver at Muscat Airport?", "answer": "Your driver will be in the arrivals hall with a name sign after you exit customs and baggage claim." },
+            { "question": "Do you cover transfers to Dubai from Muscat Airport?", "answer": "Yes, we offer cross-border transfers from Muscat Airport directly to Dubai via the Hatta or Al Ain border." },
+            { "question": "Is free waiting time included?", "answer": "Yes, we provide 60 minutes of complimentary waiting time from the moment your flight lands." },
+            { "question": "Can I book a tour from Muscat Airport?", "answer": "Yes, we can arrange city tours and transfers to heritage sites like Nizwa from the airport." }
+        ],
+        "relatedRoutes": [
+            { "name": "Muscat to Dubai Taxi", "slug": "muscat-to-dubai-taxi" },
+            { "name": "Muscat to Nizwa Taxi", "slug": "muscat-to-nizwa-taxi" }
         ]
     }
 ];

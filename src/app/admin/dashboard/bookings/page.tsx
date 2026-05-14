@@ -393,20 +393,20 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                     ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 items-center justify-between glass-card p-4">
-                    <div className="relative w-full sm:w-96">
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between glass-card p-3 md:p-4">
+                    <div className="relative w-full sm:w-64 md:w-80 lg:w-96">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-400" size={18} />
                         <input
                             type="search"
                             placeholder="Search by name or location..."
-                            className="input-field pl-10 h-11"
+                            className="input-field pl-10 h-10 md:h-11"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
                     <div className="flex gap-2">
-                        <button onClick={fetchBookings} className="btn-secondary h-11 px-6">Refresh</button>
-                        <button onClick={exportCSV} className="btn-secondary h-11 px-6 flex items-center gap-2"><FileText size={16} /> Export CSV</button>
+                        <button onClick={fetchBookings} className="btn-secondary h-10 md:h-11 px-3 md:px-6 text-sm">Refresh</button>
+                        <button onClick={exportCSV} className="btn-secondary h-10 md:h-11 px-3 md:px-6 flex items-center gap-2 text-sm"><FileText size={16} /> <span className="hidden sm:inline">Export</span> CSV</button>
                     </div>
                 </div>
             </div>
@@ -422,7 +422,7 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                                 <th className="px-6 py-4">Route Details</th>
                                 <th className="px-6 py-4">Date / Time</th>
                                 <th className="px-6 py-4">Status</th>
-                                <th className="px-6 py-4 text-right">Actions</th>
+                                <th className="px-6 py-4 text-right min-w-[280px]">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-surface-100">
@@ -528,7 +528,7 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                                             </div>
                                         </td>
                                         <td className="px-6 py-4 text-right">
-                                            <div className="flex items-center justify-end gap-2">
+                                            <div className="flex flex-wrap items-center justify-end gap-2">
                                                 <button 
                                                     onClick={() => copyToClipboard(booking)}
                                                     className="p-2 bg-surface-100 text-surface-600 rounded-lg hover:bg-surface-200 hover:text-surface-900 transition-all shadow-sm"
