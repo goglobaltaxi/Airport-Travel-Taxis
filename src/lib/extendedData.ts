@@ -1049,6 +1049,756 @@ export const extraCities = [
             { "question": "What vehicles are available in Bahrain?", "answer": "We offer sedans, executive saloons, SUVs, and group vans suitable for all travel requirements." }
         ],
         "bookingInfo": "Arrange a taxi in Bahrain for airport transfers, hotel pickups, cross-border trips to Saudi Arabia, or island-wide travel. Our service is available 24/7."
+    },
+    {
+        "slug": "sharjah-taxi",
+        "name": "Sharjah Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Professional private taxi service in Sharjah, UAE. We cover Sharjah International Airport, hotel transfers, business travel, and city-wide pickups across the emirate.",
+        "longDescription": "Sharjah is the cultural capital of the UAE and the third largest emirate, home to world-class museums, beautiful corniche areas, and bustling traditional markets. Our taxi service covers all districts of Sharjah including Al Nahda, Al Majaz, Al Khan, Muwaileh, and the areas surrounding Sharjah International Airport. We also provide intercity transfers to Dubai, Ajman, and other UAE emirates for both business and leisure travellers.",
+        "popularRoutes": [
+            { "to": "Dubai", "slug": "sharjah-to-dubai-taxi" },
+            { "to": "Sharjah Airport", "slug": "sharjah-airport-taxi" }
+        ],
+        "attractions": [
+            "Sharjah Art Museum",
+            "Al Noor Island",
+            "Sharjah Corniche",
+            "Blue Souk",
+            "Al Majaz Waterfront"
+        ],
+        "airportCode": "SHJ",
+        "airportName": "Sharjah International Airport",
+        "airportSlug": "sharjah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter, Toyota Hiace, or a High-standard Bus are available.",
+        "travelUses": "Sharjah taxi services are used for airport pickups at Sharjah International Airport, hotel transfers in Al Majaz and Al Khan, corporate travel to business zones, cultural visits to Sharjah Art Museum and the Blue Souk, and intercity transfers to Dubai and Ajman.",
+        "faq": [
+            { "question": "How do I book a taxi in Sharjah?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details ahead of your trip." },
+            { "question": "Do you serve Sharjah International Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers to and from Sharjah International Airport (SHJ)." },
+            { "question": "Can I travel from Sharjah to Dubai?", "answer": "Yes. We offer intercity transfers between Sharjah and Dubai, including pickups from hotels and residences." },
+            { "question": "What vehicles are available in Sharjah?", "answer": "We offer sedans, executive saloons, SUVs, and passenger vans to suit all group sizes and travel needs." }
+        ],
+        "bookingInfo": "Book a taxi in Sharjah for airport transfers, city travel, or intercity rides to Dubai and beyond. Our private chauffeur service is available 24/7."
+    },
+    {
+        "slug": "ajman-taxi",
+        "name": "Ajman Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Reliable private taxi service in Ajman, UAE. We provide airport transfers via Dubai International Airport, hotel pickups, and transfers across the emirate and to neighbouring cities.",
+        "longDescription": "Ajman is the smallest emirate in the UAE and sits conveniently between Sharjah and Umm Al Quwain along the Arabian Gulf coast. Our taxi service covers all parts of Ajman including Ajman Corniche, the city centre, residential districts, and industrial areas. As Ajman does not have its own commercial airport, we provide seamless connections to Dubai International Airport (DXB) and Sharjah International Airport (SHJ) for all flight-related transfers.",
+        "popularRoutes": [
+            { "to": "Dubai Airport", "slug": "dubai-airport-taxi" },
+            { "to": "Dubai", "slug": "ajman-to-dubai-taxi" }
+        ],
+        "attractions": [
+            "Ajman Corniche",
+            "Ajman Museum",
+            "Ajman City Centre",
+            "Ajman Beach",
+            "Ajman Fish Market"
+        ],
+        "airportCode": "DXB",
+        "airportName": "Dubai International Airport",
+        "airportSlug": "dubai-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Ajman taxi services are used for airport transfers to Dubai International Airport, hotel pickups along the Ajman Corniche, business trips to Sharjah and Dubai, and leisure travel across the northern UAE emirates.",
+        "faq": [
+            { "question": "How do I book a taxi in Ajman?", "answer": "Book online or via WhatsApp and we will assign a driver and confirm your pickup details promptly." },
+            { "question": "Which airport serves Ajman?", "answer": "The nearest major airport to Ajman is Dubai International Airport (DXB). We provide direct transfers between Ajman and DXB." },
+            { "question": "Can I travel from Ajman to Dubai by taxi?", "answer": "Yes. We provide direct intercity transfers between Ajman and all areas of Dubai, including the airport." },
+            { "question": "What vehicles are available in Ajman?", "answer": "We offer sedans, SUVs, and vans to accommodate individuals, families, and groups of any size." }
+        ],
+        "bookingInfo": "Arrange a taxi in Ajman for airport connections to Dubai, intercity travel, or local transfers across the emirate. Our service operates 24/7."
+    },
+    {
+        "slug": "ras-al-khaimah-taxi",
+        "name": "Ras Al Khaimah Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Professional private taxi service in Ras Al Khaimah (RAK), UAE. Airport transfers, resort pickups, adventure tourism transfers, and city-wide coverage across the emirate.",
+        "longDescription": "Ras Al Khaimah is one of the most scenic emirates in the UAE, offering stunning mountain landscapes, pristine beaches, and a growing tourism scene centred around Jebel Jais — the highest peak in the UAE. Our taxi service covers all areas of RAK including the city centre, Al Hamra Village, Al Marjan Island, and the surrounding Ras Al Khaimah International Airport. We also provide intercity transfers to Dubai and other UAE emirates.",
+        "popularRoutes": [
+            { "to": "Dubai", "slug": "ras-al-khaimah-to-dubai-taxi" },
+            { "to": "RAK Airport", "slug": "ras-al-khaimah-airport-taxi" }
+        ],
+        "attractions": [
+            "Jebel Jais",
+            "Al Hamra Village",
+            "RAK City Centre",
+            "Al Marjan Island",
+            "Dhayah Fort"
+        ],
+        "airportCode": "RKT",
+        "airportName": "Ras Al Khaimah International Airport",
+        "airportSlug": "ras-al-khaimah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "RAK taxi services are used for airport pickups at Ras Al Khaimah International Airport, resort transfers to Al Hamra and Al Marjan Island, adventure tourism trips to Jebel Jais, corporate travel, and intercity transfers to Dubai and Sharjah.",
+        "faq": [
+            { "question": "How do I book a taxi in Ras Al Khaimah?", "answer": "Book online or via WhatsApp. We will confirm your driver and trip details before pickup." },
+            { "question": "Do you serve Ras Al Khaimah International Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Ras Al Khaimah International Airport (RKT)." },
+            { "question": "Can I get a taxi from RAK to Dubai?", "answer": "Yes. We operate direct intercity transfers from Ras Al Khaimah to Dubai, including airport drops and hotel pickups." },
+            { "question": "What vehicles are available in RAK?", "answer": "We offer sedans, SUVs, and passenger vans suitable for individuals, families, and larger groups." }
+        ],
+        "bookingInfo": "Book a taxi in Ras Al Khaimah for airport transfers, resort pickups, Jebel Jais trips, or intercity rides to Dubai. Available 24/7."
+    },
+    {
+        "slug": "fujairah-taxi",
+        "name": "Fujairah Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Dependable private taxi service in Fujairah, UAE. Airport transfers, hotel pickups, heritage site visits, and intercity transfers across the UAE's east coast emirate.",
+        "longDescription": "Fujairah is the only emirate in the UAE located entirely on the Gulf of Oman coast, offering a unique mix of ancient forts, diving spots, and dramatic mountain scenery. Our taxi service covers Fujairah City, Dibba, Khor Fakkan, Kalba, and the areas surrounding Fujairah International Airport. We provide reliable transfers for tourists, business travellers, and residents throughout the emirate and to major cities across the UAE.",
+        "popularRoutes": [
+            { "to": "Dubai", "slug": "fujairah-to-dubai-taxi" },
+            { "to": "Fujairah Airport", "slug": "fujairah-airport-taxi" }
+        ],
+        "attractions": [
+            "Fujairah Fort",
+            "Al Bidyah Mosque",
+            "Fujairah Corniche",
+            "Khor Fakkan Beach",
+            "Wadi Wurayah"
+        ],
+        "airportCode": "FJR",
+        "airportName": "Fujairah International Airport",
+        "airportSlug": "fujairah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Fujairah taxi services are used for airport transfers at Fujairah International Airport, hotel and resort pickups, heritage visits to Fujairah Fort and Al Bidyah Mosque, east coast beach trips, and intercity rides to Dubai and Sharjah.",
+        "faq": [
+            { "question": "How do I book a taxi in Fujairah?", "answer": "Book online or via WhatsApp. We will confirm your driver and booking details ahead of your pickup." },
+            { "question": "Do you serve Fujairah International Airport?", "answer": "Yes. We provide door-to-door and meet and greet transfers at Fujairah International Airport (FJR)." },
+            { "question": "Can I get a taxi from Fujairah to Dubai?", "answer": "Yes. We offer direct intercity transfers between Fujairah and Dubai, typically taking around 1.5 to 2 hours." },
+            { "question": "What vehicles are available in Fujairah?", "answer": "We offer sedans, executive cars, SUVs, and group vans for all travel requirements in Fujairah." }
+        ],
+        "bookingInfo": "Book a taxi in Fujairah for airport transfers, hotel pickups, sightseeing tours, or cross-emirate travel. Our service is available 24/7."
+    },
+    {
+        "slug": "al-ain-taxi",
+        "name": "Al Ain Taxi Service",
+        "country": "United Arab Emirates",
+        "description": "Professional private taxi service in Al Ain, UAE. Airport transfers, city tours, resort pickups, and intercity transfers between Al Ain and Abu Dhabi or Dubai.",
+        "longDescription": "Al Ain is the garden city of the UAE and a UNESCO World Heritage destination, famous for its ancient oases, archaeological sites, and the majestic Jebel Hafeet mountain. Our taxi service covers Al Ain City, Jebel Hafeet, Hili, Mezyad, and Al Ain International Airport. We also provide reliable intercity transfers to Abu Dhabi and Dubai for business and leisure travellers.",
+        "popularRoutes": [
+            { "to": "Abu Dhabi", "slug": "al-ain-to-abu-dhabi-taxi" },
+            { "to": "Al Ain Airport", "slug": "al-ain-airport-taxi" }
+        ],
+        "attractions": [
+            "Al Ain Zoo",
+            "Jebel Hafeet",
+            "Al Ain Oasis",
+            "Qasr Al Muwaiji",
+            "Al Ain National Museum"
+        ],
+        "airportCode": "AAN",
+        "airportName": "Al Ain International Airport",
+        "airportSlug": "al-ain-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Al Ain taxi services are used for airport pickups at Al Ain International Airport, hotel transfers in the city centre, cultural visits to Al Ain Oasis and Qasr Al Muwaiji, Jebel Hafeet scenic trips, and intercity rides to Abu Dhabi and Dubai.",
+        "faq": [
+            { "question": "How do I book a taxi in Al Ain?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your journey begins." },
+            { "question": "Do you serve Al Ain International Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Al Ain International Airport (AAN)." },
+            { "question": "Can I get a taxi from Al Ain to Abu Dhabi?", "answer": "Yes. We operate direct intercity transfers from Al Ain to Abu Dhabi and Dubai for both business and leisure travellers." },
+            { "question": "What vehicles are available in Al Ain?", "answer": "We offer sedans, SUVs, and passenger vans suitable for individuals, families, and groups of any size." }
+        ],
+        "bookingInfo": "Arrange a taxi in Al Ain for airport transfers, city sightseeing, or intercity rides to Abu Dhabi and Dubai. Our chauffeur service runs 24/7."
+    },
+    {
+        "slug": "abha-taxi",
+        "name": "Abha Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional private taxi service in Abha, Saudi Arabia. Airport transfers, mountain resort pickups, sightseeing tours, and city-wide coverage in the Asir region.",
+        "longDescription": "Abha is the capital of Asir Province and one of Saudi Arabia's most popular highland destinations, known for its cool climate, green mountains, and vibrant cultural heritage. Our taxi service covers Abha City, Al Soudah, Green Mountain, and the surrounding Abha Regional Airport. We provide comfortable and reliable transfers for tourists, families, and business travellers exploring the scenic Asir region.",
+        "popularRoutes": [
+            { "to": "Khamis Mushait", "slug": "abha-to-khamis-mushait-taxi" },
+            { "to": "Abha Airport", "slug": "abha-airport-taxi" }
+        ],
+        "attractions": [
+            "Abha Palace",
+            "Green Mountain",
+            "Asir National Park",
+            "Al Soudah Park",
+            "Shada Heritage Village"
+        ],
+        "airportCode": "AHB",
+        "airportName": "Abha Regional Airport",
+        "airportSlug": "abha-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Abha taxi services are used for airport pickups at Abha Regional Airport, hotel transfers in Abha City, tourism visits to Asir National Park and Al Soudah, mountain resort rides, and intercity transfers to Khamis Mushait and surrounding areas.",
+        "faq": [
+            { "question": "How do I book a taxi in Abha?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup details before your trip." },
+            { "question": "Do you serve Abha Regional Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Abha Regional Airport (AHB)." },
+            { "question": "Can I visit Asir National Park by taxi from Abha?", "answer": "Yes. We offer dedicated sightseeing transfers to Asir National Park, Al Soudah, and other Abha attractions." },
+            { "question": "What vehicles are available in Abha?", "answer": "We offer sedans, SUVs, and passenger vans for individuals, families, and group travellers in the Asir region." }
+        ],
+        "bookingInfo": "Book a taxi in Abha for airport transfers, mountain resort pickups, Asir sightseeing, or intercity travel. Our service is available 24/7."
+    },
+    {
+        "slug": "khamis-mushait-taxi",
+        "name": "Khamis Mushait Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Reliable private taxi service in Khamis Mushait, Saudi Arabia. Airport transfers via Abha Regional Airport, city transfers, and connections to Abha and other Asir region destinations.",
+        "longDescription": "Khamis Mushait is a major city in the Asir region of southwestern Saudi Arabia, situated close to Abha and sharing the same regional airport. The city is known for its traditional markets, proximity to Al Namas, and the lush highland scenery of the Asir mountains. Our taxi service covers Khamis Mushait City, its commercial and residential districts, and provides seamless connections to Abha Regional Airport and surrounding areas.",
+        "popularRoutes": [
+            { "to": "Abha", "slug": "khamis-mushait-to-abha-taxi" },
+            { "to": "Abha Airport", "slug": "abha-airport-taxi" }
+        ],
+        "attractions": [
+            "Khamis Mushait Souk",
+            "Al Namas",
+            "Asir Region Highlands",
+            "Al Soudah Park",
+            "Habala Village"
+        ],
+        "airportCode": "AHB",
+        "airportName": "Abha Regional Airport",
+        "airportSlug": "abha-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Khamis Mushait taxi services are used for airport transfers via Abha Regional Airport, intercity travel to Abha and Al Namas, market visits to Khamis Mushait Souk, and sightseeing across the Asir region.",
+        "faq": [
+            { "question": "How do I book a taxi in Khamis Mushait?", "answer": "Book online or via WhatsApp. We will confirm your driver and trip details prior to pickup." },
+            { "question": "Which airport serves Khamis Mushait?", "answer": "Khamis Mushait is served by Abha Regional Airport (AHB). We provide direct transfers between the city and the airport." },
+            { "question": "Can I travel from Khamis Mushait to Abha by taxi?", "answer": "Yes. We offer frequent direct transfers between Khamis Mushait and Abha City for business and leisure travellers." },
+            { "question": "What vehicles are available in Khamis Mushait?", "answer": "We provide sedans, executive cars, SUVs, and group vans for all travel requirements in and around Khamis Mushait." }
+        ],
+        "bookingInfo": "Arrange a taxi in Khamis Mushait for airport connections, intercity travel to Abha, or Asir region sightseeing. Our service operates 24/7."
+    },
+    {
+        "slug": "buraidah-taxi",
+        "name": "Buraidah Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional private taxi service in Buraidah, Saudi Arabia. Airport transfers, city-wide pickups, and connections across the Al Qassim region.",
+        "longDescription": "Buraidah is the capital of Al Qassim Province and one of Saudi Arabia's fastest-growing cities, famous for its date markets, agricultural heritage, and vibrant commercial activity. Our taxi service covers all districts of Buraidah, its commercial zones, and the areas surrounding Prince Nayef bin Abdulaziz Regional Airport. We provide reliable ground transportation for business travellers, families, and tourists visiting the Al Qassim region.",
+        "popularRoutes": [
+            { "to": "Riyadh", "slug": "buraidah-to-riyadh-taxi" },
+            { "to": "Buraidah Airport", "slug": "buraidah-airport-taxi" }
+        ],
+        "attractions": [
+            "Al Qassim Date Markets",
+            "Buraidah Corniche",
+            "Al Qassim Village",
+            "Unaizah Old Town",
+            "Al Rass Heritage Sites"
+        ],
+        "airportCode": "ELQ",
+        "airportName": "Prince Nayef bin Abdulaziz Regional Airport",
+        "airportSlug": "buraidah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Buraidah taxi services are used for airport pickups at Prince Nayef bin Abdulaziz Regional Airport, business travel across Al Qassim, visits to the famous date markets, intercity transfers to Riyadh and Madinah, and city-wide transportation.",
+        "faq": [
+            { "question": "How do I book a taxi in Buraidah?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your journey." },
+            { "question": "Do you serve Prince Nayef bin Abdulaziz Regional Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Prince Nayef bin Abdulaziz Regional Airport (ELQ)." },
+            { "question": "Can I travel from Buraidah to Riyadh by taxi?", "answer": "Yes. We offer direct intercity transfers from Buraidah to Riyadh and other major Saudi cities." },
+            { "question": "What vehicles are available in Buraidah?", "answer": "We offer sedans, SUVs, and passenger vans to accommodate individuals, families, and groups." }
+        ],
+        "bookingInfo": "Book a taxi in Buraidah for airport transfers, Al Qassim city travel, or intercity rides to Riyadh. Our chauffeur service is available 24/7."
+    },
+    {
+        "slug": "hail-taxi",
+        "name": "Hail Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Reliable private taxi service in Hail, Saudi Arabia. Airport transfers, heritage site visits, city-wide coverage, and intercity connections across the Hail region.",
+        "longDescription": "Hail is a historic city in northwestern Saudi Arabia and a UNESCO-recognised rock art destination, home to ancient Jubbah inscriptions and traditional Najdi architecture. Our taxi service covers Hail City, Jubbah, Shuwaymis, and the areas around Hail Regional Airport. We provide dependable private transfers for tourists, heritage visitors, business travellers, and residents throughout the Hail region.",
+        "popularRoutes": [
+            { "to": "Riyadh", "slug": "hail-to-riyadh-taxi" },
+            { "to": "Hail Airport", "slug": "hail-airport-taxi" }
+        ],
+        "attractions": [
+            "Jubbah Rock Art",
+            "Hail Heritage Village",
+            "A'arif Fort",
+            "Shuwaymis Petroglyphs",
+            "Hail Regional Museum"
+        ],
+        "airportCode": "HAS",
+        "airportName": "Hail Regional Airport",
+        "airportSlug": "hail-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Hail taxi services are used for airport pickups at Hail Regional Airport, heritage tourism transfers to Jubbah and Shuwaymis, hotel pickups in Hail City, business travel, and intercity rides to Riyadh and Madinah.",
+        "faq": [
+            { "question": "How do I book a taxi in Hail?", "answer": "Book online or via WhatsApp. We will confirm your driver and trip details before your pickup." },
+            { "question": "Do you serve Hail Regional Airport?", "answer": "Yes. We provide door-to-door and meet and greet transfers at Hail Regional Airport (HAS)." },
+            { "question": "Can I visit the Jubbah rock art sites by taxi from Hail?", "answer": "Yes. We offer dedicated heritage tour transfers to Jubbah and other rock art destinations near Hail." },
+            { "question": "What vehicles are available in Hail?", "answer": "We offer sedans, SUVs, and group vans for all travel requirements in the Hail region." }
+        ],
+        "bookingInfo": "Arrange a taxi in Hail for airport transfers, heritage site visits, or intercity travel to Riyadh. Our service is available 24/7."
+    },
+    {
+        "slug": "al-ahsa-taxi",
+        "name": "Al Ahsa Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional private taxi service in Al Ahsa, Saudi Arabia. Airport transfers, UNESCO World Heritage site visits, city-wide coverage, and connections across the Eastern Province.",
+        "longDescription": "Al Ahsa (also known as Al Hasa) is a historic oasis region in the Eastern Province of Saudi Arabia and a UNESCO World Heritage Site, renowned for its vast date palm plantations, ancient forts, and geological wonders. Our taxi service covers Al Hofuf, Al Mubarraz, Uqair, and the areas around Al-Ahsa International Airport. We provide reliable transportation for heritage tourists, business travellers, and residents throughout the Al Ahsa Governorate.",
+        "popularRoutes": [
+            { "to": "Dammam", "slug": "al-ahsa-to-dammam-taxi" },
+            { "to": "Al Ahsa Airport", "slug": "al-ahsa-airport-taxi" }
+        ],
+        "attractions": [
+            "Al Ahsa Oasis (UNESCO)",
+            "Qara Cave",
+            "Al Ahsa Mall",
+            "Jawatha Archaeological Site",
+            "Ibrahim Palace"
+        ],
+        "airportCode": "HOF",
+        "airportName": "Al-Ahsa International Airport",
+        "airportSlug": "al-ahsa-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Al Ahsa taxi services are used for airport pickups at Al-Ahsa International Airport, heritage visits to the Al Ahsa Oasis and Qara Cave, hotel transfers, business travel to the Eastern Province, and intercity rides to Dammam and Khobar.",
+        "faq": [
+            { "question": "How do I book a taxi in Al Ahsa?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your journey." },
+            { "question": "Do you serve Al-Ahsa International Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Al-Ahsa International Airport (HOF)." },
+            { "question": "Can I travel from Al Ahsa to Dammam by taxi?", "answer": "Yes. We offer direct intercity transfers from Al Ahsa to Dammam, Khobar, and other Eastern Province cities." },
+            { "question": "What vehicles are available in Al Ahsa?", "answer": "We offer sedans, SUVs, and passenger vans for individuals, families, and groups travelling in the Al Ahsa region." }
+        ],
+        "bookingInfo": "Book a taxi in Al Ahsa for airport transfers, UNESCO heritage tours, or intercity rides to Dammam. Our chauffeur service operates 24/7."
+    },
+    {
+        "slug": "sohar-taxi",
+        "name": "Sohar Taxi Service",
+        "country": "Oman",
+        "description": "Dependable private taxi service in Sohar, Oman. Airport transfers, industrial port area pickups, city-wide coverage, and intercity transfers between Sohar and Muscat.",
+        "longDescription": "Sohar is a major industrial and commercial city on the Batinah coast of Oman, home to one of the region's busiest ports and a rapidly expanding industrial estate. Our taxi service covers Sohar City, Sohar Port and Freezone, surrounding residential areas, and Sohar Airport. We provide professional ground transportation for business professionals, port workers, and leisure travellers along the northern Omani coast.",
+        "popularRoutes": [
+            { "to": "Muscat", "slug": "sohar-to-muscat-taxi" },
+            { "to": "Sohar Airport", "slug": "sohar-airport-taxi" }
+        ],
+        "attractions": [
+            "Sohar Fort",
+            "Sohar Port",
+            "Sohar Industrial Estate",
+            "Sohar Beach",
+            "Sohar Souq"
+        ],
+        "airportCode": "OHS",
+        "airportName": "Sohar Airport",
+        "airportSlug": "sohar-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Sohar taxi services are used for airport pickups at Sohar Airport, business transfers to Sohar Port and Freezone, hotel pickups in the city centre, leisure trips along Sohar Beach, and intercity transfers to Muscat and the UAE border.",
+        "faq": [
+            { "question": "How do I book a taxi in Sohar?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup details before your journey." },
+            { "question": "Do you serve Sohar Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Sohar Airport (OHS)." },
+            { "question": "Can I get a taxi from Sohar to Muscat?", "answer": "Yes. We operate direct intercity transfers between Sohar and Muscat for business and leisure travellers." },
+            { "question": "What vehicles are available in Sohar?", "answer": "We offer sedans, executive cars, SUVs, and passenger vans for all group sizes and travel needs." }
+        ],
+        "bookingInfo": "Book a taxi in Sohar for airport transfers, port business trips, or intercity rides to Muscat. Our service is available 24/7."
+    },
+    {
+        "slug": "nizwa-taxi",
+        "name": "Nizwa Taxi Service",
+        "country": "Oman",
+        "description": "Professional private taxi service in Nizwa, Oman. City transfers, heritage fort tours, Jebel Akhdar mountain trips, and airport connections via Muscat International Airport.",
+        "longDescription": "Nizwa is one of Oman's most historic cities and a cultural jewel of the interior, home to the iconic Nizwa Fort, a thriving traditional souq, and gateway access to the stunning Jebel Akhdar mountain range. Our taxi service covers Nizwa City, Bahla, Jebel Akhdar, and provides transfers to and from Muscat International Airport for travellers connecting through the capital. We offer comfortable, air-conditioned vehicles suited for both heritage tourism and everyday travel.",
+        "popularRoutes": [
+            { "to": "Muscat", "slug": "nizwa-to-muscat-taxi" },
+            { "to": "Muscat Airport", "slug": "muscat-airport-taxi" }
+        ],
+        "attractions": [
+            "Nizwa Fort",
+            "Nizwa Souq",
+            "Jebel Akhdar",
+            "Bahla Fort",
+            "Al Hamra Village"
+        ],
+        "airportCode": "MCT",
+        "airportName": "Muscat International Airport",
+        "airportSlug": "muscat-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Nizwa taxi services are used for heritage tourism visits to Nizwa Fort and Bahla Fort, day trips to Jebel Akhdar, intercity transfers to Muscat, airport connections via Muscat International Airport, and local city transportation.",
+        "faq": [
+            { "question": "How do I book a taxi in Nizwa?", "answer": "Book online or via WhatsApp. We confirm your driver and trip details before your pickup." },
+            { "question": "Which airport is nearest to Nizwa?", "answer": "The nearest major airport is Muscat International Airport (MCT). We provide direct transfers between Nizwa and Muscat Airport." },
+            { "question": "Can I visit Jebel Akhdar by taxi from Nizwa?", "answer": "Yes. We offer dedicated mountain transfers to Jebel Akhdar and can arrange full-day sightseeing trips from Nizwa." },
+            { "question": "What vehicles are available for Nizwa trips?", "answer": "We offer sedans, SUVs, and group vans. For Jebel Akhdar, we recommend 4WD SUVs suited for mountain terrain." }
+        ],
+        "bookingInfo": "Arrange a taxi in Nizwa for heritage tours, Jebel Akhdar trips, or airport transfers via Muscat. Our service operates 24/7."
+    },
+    {
+        "slug": "salalah-taxi",
+        "name": "Salalah Taxi Service",
+        "country": "Oman",
+        "description": "Professional private taxi service in Salalah, Oman. Airport transfers, Khareef season tourism, beach visits, and city-wide coverage in the Dhofar region.",
+        "longDescription": "Salalah is the capital of the Dhofar Governorate in southern Oman, renowned for its lush monsoon landscapes during the Khareef season, frankincense heritage, and stunning Indian Ocean beaches. Our taxi service covers Salalah City, Al Mughsail, Raysut, Mirbat, and Salalah Airport. We provide comfortable and reliable transfers for tourists, business visitors, and residents exploring this unique and verdant corner of the Arabian Peninsula.",
+        "popularRoutes": [
+            { "to": "Muscat", "slug": "salalah-to-muscat-taxi" },
+            { "to": "Salalah Airport", "slug": "salalah-airport-taxi" }
+        ],
+        "attractions": [
+            "Dhofar Mountains",
+            "Al Mughsail Beach",
+            "Frankincense Land (UNESCO)",
+            "Salalah Beach",
+            "Wadi Darbat"
+        ],
+        "airportCode": "SLL",
+        "airportName": "Salalah Airport",
+        "airportSlug": "salalah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Salalah taxi services are used for airport pickups at Salalah Airport, Khareef season tourism transfers, beach excursions to Al Mughsail, frankincense heritage site visits, hotel pickups in the city centre, and intercity trips across the Dhofar region.",
+        "faq": [
+            { "question": "How do I book a taxi in Salalah?", "answer": "Book online or via WhatsApp. We will confirm your driver and pickup details ahead of your trip." },
+            { "question": "Do you serve Salalah Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Salalah Airport (SLL)." },
+            { "question": "What is the best way to explore Salalah by taxi?", "answer": "We offer full-day city and nature tours covering Al Mughsail, Wadi Darbat, and Dhofar mountain viewpoints." },
+            { "question": "What vehicles are available in Salalah?", "answer": "We offer sedans, SUVs, and passenger vans to suit individual travellers, families, and groups." }
+        ],
+        "bookingInfo": "Book a taxi in Salalah for airport transfers, Khareef tourism, beach excursions, or Dhofar sightseeing. Our service is available 24/7."
+    },
+    {
+        "slug": "sur-taxi",
+        "name": "Sur Taxi Service",
+        "country": "Oman",
+        "description": "Reliable private taxi service in Sur, Oman. City transfers, turtle reserve visits, dhow factory tours, and airport connections via Muscat International Airport.",
+        "longDescription": "Sur is a historic port city on Oman's eastern coast, famous for its traditional dhow building industry, the spectacular Ras Al Jinz Turtle Reserve, and stunning coastal scenery. Our taxi service covers Sur City, Ras Al Jinz, Bilad Sur, and provides airport transfers to and from Muscat International Airport. We cater to eco-tourists, heritage enthusiasts, and business travellers visiting this picturesque corner of Oman.",
+        "popularRoutes": [
+            { "to": "Muscat", "slug": "sur-to-muscat-taxi" },
+            { "to": "Muscat Airport", "slug": "muscat-airport-taxi" }
+        ],
+        "attractions": [
+            "Ras Al Jinz Turtle Reserve",
+            "Sur Dhow Factory",
+            "Bilad Sur Fort",
+            "Sur Corniche",
+            "Ayjah Lighthouse"
+        ],
+        "airportCode": "MCT",
+        "airportName": "Muscat International Airport",
+        "airportSlug": "muscat-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Sur taxi services are used for eco-tourism transfers to Ras Al Jinz Turtle Reserve, heritage visits to the dhow factory and Bilad Sur Fort, intercity transfers to Muscat, airport connections via Muscat International Airport, and local city transport.",
+        "faq": [
+            { "question": "How do I book a taxi in Sur?", "answer": "Book online or via WhatsApp. We confirm your driver and booking details before your pickup." },
+            { "question": "Which airport serves Sur, Oman?", "answer": "The nearest airport to Sur is Muscat International Airport (MCT). We provide direct transfers between Sur and Muscat." },
+            { "question": "Can I visit Ras Al Jinz Turtle Reserve by taxi from Sur?", "answer": "Yes. We offer dedicated transfers to Ras Al Jinz and can coordinate timings with the reserve's guided turtle-watching sessions." },
+            { "question": "What vehicles are available in Sur?", "answer": "We provide sedans, SUVs, and group vans for comfortable travel along Sur's coastal roads and to Muscat." }
+        ],
+        "bookingInfo": "Arrange a taxi in Sur for Ras Al Jinz turtle tours, dhow factory visits, or airport transfers to Muscat. Our service operates 24/7."
+    },
+    {
+        "slug": "lusail-taxi",
+        "name": "Lusail Taxi Service",
+        "country": "Qatar",
+        "description": "Professional private taxi service in Lusail, Qatar. Airport transfers via Hamad International Airport, marina pickups, stadium transfers, and city-wide coverage in Qatar's newest smart city.",
+        "longDescription": "Lusail is Qatar's futuristic planned city situated north of Doha, featuring the iconic Lusail Stadium, a vibrant marina district, luxury residential zones, and world-class shopping. Our taxi service covers all neighbourhoods of Lusail including Marina, Fox Hills, Al Erkyah, and the Lusail Promenade, with seamless connections to Hamad International Airport and central Doha. We provide premium private transfers for residents, business visitors, and tourists exploring this modern city.",
+        "popularRoutes": [
+            { "to": "Doha", "slug": "lusail-to-doha-taxi" },
+            { "to": "Doha Airport", "slug": "doha-airport-taxi" }
+        ],
+        "attractions": [
+            "Lusail Marina",
+            "Lusail Stadium",
+            "Lusail Promenade",
+            "Place Vendome Mall",
+            "Lusail Waterfront"
+        ],
+        "airportCode": "DOH",
+        "airportName": "Hamad International Airport",
+        "airportSlug": "doha-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Lusail taxi services are used for airport transfers via Hamad International Airport, hotel and residence pickups in the marina and Fox Hills, corporate travel to Lusail business districts, event transfers to Lusail Stadium, and intercity rides to Doha.",
+        "faq": [
+            { "question": "How do I book a taxi in Lusail?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your trip." },
+            { "question": "Do you provide transfers from Lusail to Hamad International Airport?", "answer": "Yes. We offer direct transfers between all Lusail neighbourhoods and Hamad International Airport (DOH)." },
+            { "question": "Can I get a taxi from Lusail Marina to Doha?", "answer": "Yes. We operate frequent transfers between Lusail Marina and all areas of Doha including the city centre and The Pearl." },
+            { "question": "What vehicles are available in Lusail?", "answer": "We offer executive sedans, SUVs, and passenger vans for individuals, families, and group travel in Lusail." }
+        ],
+        "bookingInfo": "Book a taxi in Lusail for airport transfers, marina pickups, or intercity rides to Doha. Our premium chauffeur service is available 24/7."
+    },
+    {
+        "slug": "al-wakrah-taxi",
+        "name": "Al Wakrah Taxi Service",
+        "country": "Qatar",
+        "description": "Reliable private taxi service in Al Wakrah, Qatar. Airport transfers via Hamad International Airport, heritage souq visits, stadium transfers, and connections to Doha and across Qatar.",
+        "longDescription": "Al Wakrah is a historic coastal city south of Doha, known for its beautifully restored traditional souq, the stunning Al Janoub Stadium, and a peaceful beachfront atmosphere. Our taxi service covers Al Wakrah City, Al Wakrah Souq, Al Janoub Stadium, and surrounding residential districts, with direct connections to Hamad International Airport and Doha city centre. We provide comfortable and punctual private transfers for residents, tourists, and event attendees.",
+        "popularRoutes": [
+            { "to": "Doha", "slug": "al-wakrah-to-doha-taxi" },
+            { "to": "Doha Airport", "slug": "doha-airport-taxi" }
+        ],
+        "attractions": [
+            "Al Wakrah Souq",
+            "Al Janoub Stadium",
+            "Al Wakrah Beach",
+            "Al Wakrah Old Town",
+            "Al Wukair Area"
+        ],
+        "airportCode": "DOH",
+        "airportName": "Hamad International Airport",
+        "airportSlug": "doha-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Al Wakrah taxi services are used for airport pickups via Hamad International Airport, transfers to and from Al Janoub Stadium events, heritage souq visits, beach outings, and intercity rides to Doha and Lusail.",
+        "faq": [
+            { "question": "How do I book a taxi in Al Wakrah?", "answer": "Book online or via WhatsApp. We confirm your driver and trip details before your pickup." },
+            { "question": "Do you provide airport transfers from Al Wakrah?", "answer": "Yes. We offer direct transfers from Al Wakrah to Hamad International Airport (DOH) for all flight departures and arrivals." },
+            { "question": "Can I get a taxi to Al Janoub Stadium from Al Wakrah?", "answer": "Yes. We provide dedicated event transfers to and from Al Janoub Stadium for matches and concerts." },
+            { "question": "What vehicles are available in Al Wakrah?", "answer": "We offer sedans, SUVs, and group vans for comfortable travel in Al Wakrah and across Qatar." }
+        ],
+        "bookingInfo": "Book a taxi in Al Wakrah for airport transfers, souq visits, stadium events, or intercity rides to Doha. Our service is available 24/7."
+    },
+    {
+        "slug": "salmiya-taxi",
+        "name": "Salmiya Taxi Service",
+        "country": "Kuwait",
+        "description": "Professional private taxi service in Salmiya, Kuwait. Airport transfers via Kuwait International Airport, shopping mall pickups, city-wide coverage, and intercity connections.",
+        "longDescription": "Salmiya is one of Kuwait's most vibrant and cosmopolitan districts, known for its busy shopping scene, seaside promenades, and diverse dining options along the Arabian Gulf coast. Our taxi service covers all parts of Salmiya including Marina Crescent, Marina Mall, Salem Al Mubarak Street, and nearby residential areas, with direct connections to Kuwait International Airport and other Kuwait City districts. We provide reliable and comfortable private transfers for residents, shoppers, and business visitors.",
+        "popularRoutes": [
+            { "to": "Kuwait City", "slug": "salmiya-to-kuwait-city-taxi" },
+            { "to": "Kuwait Airport", "slug": "kuwait-airport-taxi" }
+        ],
+        "attractions": [
+            "Marina Crescent",
+            "The Avenues (extension)",
+            "Marina Mall",
+            "Salmiya District Shopping",
+            "Kuwait City Waterfront"
+        ],
+        "airportCode": "KWI",
+        "airportName": "Kuwait International Airport",
+        "airportSlug": "kuwait-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Salmiya taxi services are used for airport transfers at Kuwait International Airport, shopping trips to Marina Mall and The Avenues, hotel pickups along Marina Crescent, corporate travel across Kuwait City, and intercity transfers.",
+        "faq": [
+            { "question": "How do I book a taxi in Salmiya?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details ahead of your journey." },
+            { "question": "Do you provide transfers from Salmiya to Kuwait International Airport?", "answer": "Yes. We offer direct airport transfers from Salmiya to Kuwait International Airport (KWI) at any hour." },
+            { "question": "Can I book a taxi for shopping trips in Salmiya?", "answer": "Yes. We provide flexible hourly or point-to-point transfers for shopping at Marina Mall, The Avenues, and other Salmiya destinations." },
+            { "question": "What vehicles are available in Salmiya?", "answer": "We offer sedans, SUVs, and passenger vans for individuals, families, and groups travelling in and around Salmiya." }
+        ],
+        "bookingInfo": "Arrange a taxi in Salmiya for airport transfers, shopping trips, Marina Crescent visits, or city-wide travel in Kuwait. Available 24/7."
+    },
+    {
+        "slug": "fahaheel-taxi",
+        "name": "Fahaheel Taxi Service",
+        "country": "Kuwait",
+        "description": "Reliable private taxi service in Fahaheel, Kuwait. Airport transfers via Kuwait International Airport, waterfront pickups, local shopping, and intercity connections across Kuwait.",
+        "longDescription": "Fahaheel is a vibrant coastal district in the southern part of Kuwait, offering a lively waterfront, traditional souqs, and convenient access to key industrial and commercial zones. Our taxi service covers Fahaheel district, the Marina Mall Fahaheel, the Fahaheel Souk, and surrounding areas, with reliable connections to Kuwait International Airport and Kuwait City. We provide professional private transfers for residents, business visitors, and leisure travellers in the southern Kuwait region.",
+        "popularRoutes": [
+            { "to": "Kuwait City", "slug": "fahaheel-to-kuwait-city-taxi" },
+            { "to": "Kuwait Airport", "slug": "kuwait-airport-taxi" }
+        ],
+        "attractions": [
+            "Marina Mall Fahaheel",
+            "Fahaheel Souk",
+            "Fahaheel Waterfront",
+            "Ahmadi Oil Town",
+            "Discover Kuwait Museum"
+        ],
+        "airportCode": "KWI",
+        "airportName": "Kuwait International Airport",
+        "airportSlug": "kuwait-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Fahaheel taxi services are used for airport pickups at Kuwait International Airport, waterfront leisure trips, shopping at Marina Mall Fahaheel, business travel to Ahmadi industrial zones, and intercity transfers to Kuwait City.",
+        "faq": [
+            { "question": "How do I book a taxi in Fahaheel?", "answer": "Book online or via WhatsApp. We will confirm your driver and trip details before your pickup." },
+            { "question": "Do you serve Kuwait International Airport from Fahaheel?", "answer": "Yes. We provide direct airport transfers from Fahaheel to Kuwait International Airport (KWI) any time of day." },
+            { "question": "Can I book a taxi from Fahaheel to Kuwait City?", "answer": "Yes. We offer intercity transfers between Fahaheel and Kuwait City, including hotel and residence pickups." },
+            { "question": "What vehicles are available in Fahaheel?", "answer": "We offer sedans, SUVs, and group vans to accommodate all travel requirements in and around Fahaheel." }
+        ],
+        "bookingInfo": "Book a taxi in Fahaheel for airport transfers, waterfront outings, or intercity rides to Kuwait City. Our service is available 24/7."
+    },
+    {
+        "slug": "riffa-taxi",
+        "name": "Riffa Taxi Service",
+        "country": "Bahrain",
+        "description": "Professional private taxi service in Riffa, Bahrain. Airport transfers via Bahrain International Airport, residential pickups, golf club transfers, and city-wide coverage.",
+        "longDescription": "Riffa is one of Bahrain's largest and most prestigious cities, home to the historic Riffa Fort, the Royal Golf Club, and exclusive residential communities. Our taxi service covers all areas of Riffa including East Riffa, West Riffa, Riffa Views, and the commercial districts, with seamless connections to Bahrain International Airport and Manama. We provide discreet and reliable private transfers for residents, business visitors, and leisure travellers throughout the Riffa area.",
+        "popularRoutes": [
+            { "to": "Manama", "slug": "riffa-to-manama-taxi" },
+            { "to": "Bahrain Airport", "slug": "manama-airport-taxi" }
+        ],
+        "attractions": [
+            "Riffa Fort",
+            "Royal Golf Club",
+            "Riffa Views",
+            "Riffa Souq",
+            "Al Areen Wildlife Park"
+        ],
+        "airportCode": "BAH",
+        "airportName": "Bahrain International Airport",
+        "airportSlug": "manama-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Riffa taxi services are used for airport pickups at Bahrain International Airport, transfers to and from the Royal Golf Club, hotel and residence pickups, corporate travel to Manama, and leisure trips across Bahrain island.",
+        "faq": [
+            { "question": "How do I book a taxi in Riffa?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your journey." },
+            { "question": "Do you serve Bahrain International Airport from Riffa?", "answer": "Yes. We provide direct airport transfers from Riffa to Bahrain International Airport (BAH) at any time." },
+            { "question": "Can I book a taxi from Riffa to Manama?", "answer": "Yes. We offer intercity transfers between Riffa and Manama, as well as all other areas of Bahrain." },
+            { "question": "What vehicles are available in Riffa?", "answer": "We offer sedans, executive saloons, SUVs, and group vans for all travel requirements in and around Riffa." }
+        ],
+        "bookingInfo": "Arrange a taxi in Riffa for airport transfers, Royal Golf Club pickups, Manama rides, or island-wide travel. Our service operates 24/7."
+    },
+    {
+        "slug": "muharraq-taxi",
+        "name": "Muharraq Taxi Service",
+        "country": "Bahrain",
+        "description": "Professional private taxi service in Muharraq, Bahrain. Airport transfers at Bahrain International Airport — located in Muharraq — city tours, UNESCO heritage walks, and island-wide connections.",
+        "longDescription": "Muharraq is Bahrain's second city and an island of rich cultural heritage, with its UNESCO-listed historic district of traditional pearling-era architecture sitting just steps from Bahrain International Airport. Our taxi service covers the Muharraq Old Town, Arad, Busaiteen, and the airport precinct, providing seamless arrivals and departures alongside local sightseeing and intercity transfers to Manama and Riffa. Muharraq's unique position as both a heritage destination and the gateway to Bahrain makes it ideal for travellers combining culture with convenience.",
+        "popularRoutes": [
+            { "to": "Manama", "slug": "muharraq-to-manama-taxi" },
+            { "to": "Bahrain Airport", "slug": "manama-airport-taxi" }
+        ],
+        "attractions": [
+            "Muharraq Old Town (UNESCO)",
+            "Shaikh Isa bin Ali House",
+            "Arad Fort",
+            "Bu Maher Fort",
+            "Bahrain International Airport"
+        ],
+        "airportCode": "BAH",
+        "airportName": "Bahrain International Airport",
+        "airportSlug": "manama-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Vito, Mercedes Sprinter, or a High-standard Bus are available.",
+        "travelUses": "Muharraq taxi services are used for arrivals and departures at Bahrain International Airport, heritage walking tour transfers, hotel pickups in Muharraq and Arad, intercity transfers to Manama and Riffa, and cross-island travel.",
+        "faq": [
+            { "question": "How do I book a taxi in Muharraq?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details well ahead of your journey." },
+            { "question": "Is Bahrain International Airport in Muharraq?", "answer": "Yes. Bahrain International Airport (BAH) is located on Muharraq Island and we provide instant pickups directly from all terminals." },
+            { "question": "Can I visit Muharraq Old Town by taxi?", "answer": "Yes. We offer heritage transfers to the UNESCO-listed Muharraq Old Town, including visits to Shaikh Isa bin Ali House and Arad Fort." },
+            { "question": "What vehicles are available in Muharraq?", "answer": "We offer sedans, executive saloons, SUVs, and group vans suitable for airport runs and sightseeing trips." }
+        ],
+        "bookingInfo": "Book a taxi in Muharraq for airport pickups, heritage site visits, or intercity rides to Manama. Our service is available 24/7."
+    },
+    {
+        "slug": "yanbu-taxi",
+        "name": "Yanbu Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Reliable private taxi service in Yanbu, Saudi Arabia. Airport transfers, Royal Commission area pickups, historic old town tours, and city-wide coverage along the Red Sea coast.",
+        "longDescription": "Yanbu is a major industrial and historic port city on the Red Sea coast of Saudi Arabia, home to a vast petrochemical and industrial complex alongside a beautifully preserved old town and picturesque beaches. Our taxi service covers Yanbu Al Bahr (Old Town), Yanbu Al Sinaiyah (Industrial), the Royal Commission area, and Prince Abdul Mohsin bin Abdulaziz Airport. We provide professional ground transportation for industrial workers, business visitors, and leisure travellers enjoying Yanbu's Red Sea location.",
+        "popularRoutes": [
+            { "to": "Madinah", "slug": "yanbu-to-madinah-taxi" },
+            { "to": "Yanbu Airport", "slug": "yanbu-airport-taxi" }
+        ],
+        "attractions": [
+            "Yanbu Old Town",
+            "Yanbu Beach",
+            "Royal Commission Area",
+            "Yanbu Waterfront Corniche",
+            "Yanbu Industrial Port"
+        ],
+        "airportCode": "YNB",
+        "airportName": "Prince Abdul Mohsin bin Abdulaziz Airport",
+        "airportSlug": "yanbu-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Yanbu taxi services are used for airport pickups at Prince Abdul Mohsin bin Abdulaziz Airport, transfers to Royal Commission facilities, hotel and compound pickups, Red Sea beach excursions, and intercity transfers to Madinah and Jeddah.",
+        "faq": [
+            { "question": "How do I book a taxi in Yanbu?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your trip." },
+            { "question": "Do you serve Prince Abdul Mohsin bin Abdulaziz Airport?", "answer": "Yes. We provide meet and greet and door-to-door transfers at Yanbu's Prince Abdul Mohsin bin Abdulaziz Airport (YNB)." },
+            { "question": "Can I travel from Yanbu to Madinah by taxi?", "answer": "Yes. We offer direct intercity transfers between Yanbu and Madinah for business and leisure travellers." },
+            { "question": "What vehicles are available in Yanbu?", "answer": "We offer sedans, SUVs, and passenger vans for individuals, families, and group travellers in Yanbu." }
+        ],
+        "bookingInfo": "Book a taxi in Yanbu for airport transfers, Royal Commission pickups, Red Sea trips, or intercity rides to Madinah. Available 24/7."
+    },
+    {
+        "slug": "jubail-taxi",
+        "name": "Jubail Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional private taxi service in Jubail, Saudi Arabia. Industrial city transfers, airport connections via King Fahd International Airport Dammam, beachside pickups, and Eastern Province coverage.",
+        "longDescription": "Jubail Industrial City is one of the largest industrial complexes in the world, located on the Arabian Gulf coast of Saudi Arabia's Eastern Province. Our taxi service covers all areas of Jubail including the industrial city, residential compounds, Al Fanateer Beach, Jubail Corniche, and provides seamless connections to King Fahd International Airport in Dammam for all flight transfers. We specialise in serving the large business and expatriate community based in Jubail.",
+        "popularRoutes": [
+            { "to": "Dammam Airport", "slug": "dammam-airport-taxi" },
+            { "to": "Khobar", "slug": "jubail-to-khobar-taxi" }
+        ],
+        "attractions": [
+            "Jubail Industrial City",
+            "Jubail Corniche",
+            "Al Fanateer Beach",
+            "Jubail Fish Market",
+            "Half Moon Bay (nearby)"
+        ],
+        "airportCode": "DMM",
+        "airportName": "King Fahd International Airport",
+        "airportSlug": "dammam-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Jubail taxi services are used for airport transfers to King Fahd International Airport, industrial site and compound pickups, beach and leisure trips to Al Fanateer, business travel to Khobar and Dammam, and intercity transfers across the Eastern Province.",
+        "faq": [
+            { "question": "How do I book a taxi in Jubail?", "answer": "Book online or via WhatsApp. We confirm your driver and trip details before your pickup." },
+            { "question": "Which airport serves Jubail?", "answer": "The nearest major airport to Jubail is King Fahd International Airport (DMM) in Dammam. We provide direct airport transfers." },
+            { "question": "Can I travel from Jubail to Khobar by taxi?", "answer": "Yes. We offer direct intercity transfers between Jubail and Khobar, Dammam, and other Eastern Province cities." },
+            { "question": "What vehicles are available in Jubail?", "answer": "We offer sedans, executive cars, SUVs, and group vans for business and leisure travellers in Jubail." }
+        ],
+        "bookingInfo": "Arrange a taxi in Jubail for airport transfers, industrial city pickups, beach outings, or Eastern Province intercity travel. Our service operates 24/7."
+    },
+    {
+        "slug": "khobar-taxi",
+        "name": "Khobar Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Professional private taxi service in Khobar, Saudi Arabia. Airport transfers via King Fahd International Airport, waterfront pickups, King Fahd Causeway trips to Bahrain, and Eastern Province coverage.",
+        "longDescription": "Khobar is a modern, cosmopolitan city in Saudi Arabia's Eastern Province, known for its stunning waterfront corniche, Half Moon Bay resort area, and its position as the Saudi gateway to Bahrain via the King Fahd Causeway. Our taxi service covers Al Khobar City, Thuqbah, Half Moon Bay, and the surrounding areas, with direct connections to King Fahd International Airport and cross-border transfers to Bahrain. We provide premium private transportation for business travellers, residents, and tourists in the Eastern Province.",
+        "popularRoutes": [
+            { "to": "Dammam Airport", "slug": "dammam-airport-taxi" },
+            { "to": "Bahrain", "slug": "khobar-to-bahrain-taxi" }
+        ],
+        "attractions": [
+            "Half Moon Bay",
+            "Khobar Waterfront",
+            "The Corniche",
+            "King Fahd Causeway",
+            "Al Rashid Mall"
+        ],
+        "airportCode": "DMM",
+        "airportName": "King Fahd International Airport",
+        "airportSlug": "dammam-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can choose from the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families can book the GMC Yukon XL or Cadillac Escalade. For groups, the Mercedes Sprinter or Toyota Hiace are available.",
+        "travelUses": "Khobar taxi services are used for airport transfers via King Fahd International Airport, waterfront and Half Moon Bay leisure trips, corporate travel to Dammam and Jubail, cross-border transfers to Bahrain via the King Fahd Causeway, and city-wide transportation.",
+        "faq": [
+            { "question": "How do I book a taxi in Khobar?", "answer": "Book online or via WhatsApp. We confirm your driver and pickup details before your journey." },
+            { "question": "Do you serve King Fahd International Airport from Khobar?", "answer": "Yes. We provide direct airport transfers from Khobar to King Fahd International Airport (DMM) at any time of day." },
+            { "question": "Can I travel from Khobar to Bahrain by taxi?", "answer": "Yes. We offer cross-border transfers from Khobar to Manama and other parts of Bahrain via the King Fahd Causeway." },
+            { "question": "What vehicles are available in Khobar?", "answer": "We offer sedans, executive saloons, SUVs, and group vans to suit all travel requirements in Khobar." }
+        ],
+        "bookingInfo": "Book a taxi in Khobar for airport transfers, Half Moon Bay trips, Bahrain cross-border rides, or Eastern Province travel. Our service is available 24/7."
+    },
+    {
+        "slug": "makkah-taxi",
+        "name": "Makkah Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Dedicated private taxi service in Makkah, Saudi Arabia. Hajj and Umrah pilgrim transfers, airport connections via King Abdulaziz International Airport Jeddah, and city-wide transport to the Holy Sites.",
+        "longDescription": "Makkah is the holiest city in Islam and the destination of millions of Hajj and Umrah pilgrims from around the world each year. Our taxi service in Makkah provides dedicated pilgrim transport between King Abdulaziz International Airport in Jeddah and Makkah, as well as transfers between the holy sites of Masjid al-Haram, Mina, Arafat, and Muzdalifah during Hajj season. We offer comfortable, air-conditioned vehicles with experienced drivers who understand the requirements and schedules of both Hajj and Umrah pilgrims.",
+        "popularRoutes": [
+            { "to": "Jeddah Airport", "slug": "jeddah-airport-taxi" },
+            { "to": "Madinah", "slug": "makkah-to-madinah-taxi" }
+        ],
+        "attractions": [
+            "Masjid al-Haram",
+            "Zamzam Well",
+            "Mina",
+            "Arafat",
+            "Muzdalifah"
+        ],
+        "airportCode": "JED",
+        "airportName": "King Abdulaziz International Airport",
+        "airportSlug": "jeddah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families and pilgrim groups can book the GMC Yukon XL, Cadillac Escalade, or Toyota Hiace. For larger pilgrim groups, the Mercedes Sprinter or a High-standard Bus are available.",
+        "travelUses": "Makkah taxi services are primarily used for Hajj and Umrah pilgrim transfers between Jeddah Airport and Makkah, Holy Site shuttle services between Masjid al-Haram, Mina, Arafat, and Muzdalifah, intercity transfers to Madinah and Jeddah, and hotel transfers within Makkah.",
+        "faq": [
+            { "question": "Do you provide Hajj and Umrah pilgrim transfers?", "answer": "Yes. We specialise in Hajj and Umrah pilgrim transport, including airport pickups from Jeddah and transfers between all Holy Sites in Makkah." },
+            { "question": "How do I get from Jeddah Airport to Makkah by taxi?", "answer": "Book online or via WhatsApp. We will arrange a private vehicle to collect you from King Abdulaziz International Airport and take you directly to your accommodation in Makkah." },
+            { "question": "Can you transfer pilgrims between Makkah, Mina, and Arafat?", "answer": "Yes. We provide dedicated shuttle transfers between Masjid al-Haram, Mina, Arafat, and Muzdalifah throughout the Hajj season." },
+            { "question": "What vehicles are available for pilgrim groups in Makkah?", "answer": "We offer sedans, SUVs, Toyota Hiace vans, Mercedes Sprinters, and buses to accommodate pilgrim groups of all sizes." }
+        ],
+        "bookingInfo": "Book a taxi in Makkah for Hajj and Umrah pilgrim transfers, Jeddah Airport connections, Holy Site shuttles, or intercity rides to Madinah. Our service operates 24/7."
+    },
+    {
+        "slug": "madinah-taxi",
+        "name": "Madinah Taxi Service",
+        "country": "Saudi Arabia",
+        "description": "Dedicated private taxi service in Madinah, Saudi Arabia. Hajj and Umrah pilgrim transfers, airport pickups at Prince Mohammad bin Abdulaziz Airport, and city-wide transport to the Prophet's Mosque and Islamic heritage sites.",
+        "longDescription": "Madinah is the second holiest city in Islam, home to Al-Masjid an-Nabawi (the Prophet's Mosque) and a key destination for Hajj and Umrah pilgrims travelling alongside their visit to Makkah. Our taxi service in Madinah provides dedicated pilgrim transport from Prince Mohammad bin Abdulaziz Airport, intercity transfers to Makkah, and local transfers to historic Islamic sites including Quba Mosque, Masjid al-Qiblatayn, and Ohud Mountain. We offer comfortable vehicles with courteous, knowledgeable drivers to serve the needs of pilgrims and visitors throughout the year.",
+        "popularRoutes": [
+            { "to": "Makkah", "slug": "madinah-to-makkah-taxi" },
+            { "to": "Madinah Airport", "slug": "madinah-airport-taxi" }
+        ],
+        "attractions": [
+            "Al-Masjid an-Nabawi",
+            "Quba Mosque",
+            "Ohud Mountain",
+            "Al-Baqi Cemetery",
+            "Masjid al-Qiblatayn"
+        ],
+        "airportCode": "MED",
+        "airportName": "Prince Mohammad bin Abdulaziz Airport",
+        "airportSlug": "madinah-airport-taxi",
+        "vehicleOptions": "Individual and business travellers can use the Mercedes S-Class, BMW 7 Series, Ford Taurus, or Toyota Camry. Families and pilgrim groups can book the GMC Yukon XL, Cadillac Escalade, or Toyota Hiace. For larger pilgrim groups, the Mercedes Sprinter or a High-standard Bus are available.",
+        "travelUses": "Madinah taxi services are used for Hajj and Umrah pilgrim airport pickups, intercity transfers to Makkah for pilgrims performing both cities, local transfers to Al-Masjid an-Nabawi and Islamic heritage sites, hotel pickups in the central Madinah area, and business travel.",
+        "faq": [
+            { "question": "Do you provide Hajj and Umrah pilgrim transfers in Madinah?", "answer": "Yes. We specialise in Hajj and Umrah pilgrim transport, including airport pickups from Prince Mohammad bin Abdulaziz Airport and transfers to the Prophet's Mosque." },
+            { "question": "How do I get from Madinah Airport to the Prophet's Mosque?", "answer": "Book online or via WhatsApp. We will arrange a private vehicle to collect you from Prince Mohammad bin Abdulaziz Airport and take you directly to your hotel or the mosque area." },
+            { "question": "Can I get a taxi from Madinah to Makkah?", "answer": "Yes. We provide direct intercity transfers between Madinah and Makkah for pilgrims completing both holy cities as part of their Hajj or Umrah journey." },
+            { "question": "What vehicles are available for pilgrim groups in Madinah?", "answer": "We offer sedans, SUVs, Toyota Hiace vans, Mercedes Sprinters, and buses to accommodate pilgrim groups of any size." }
+        ],
+        "bookingInfo": "Book a taxi in Madinah for Hajj and Umrah pilgrim transfers, airport pickups, Makkah intercity rides, or visits to Islamic heritage sites. Our service operates 24/7."
     }
 ];
 export const extraRoutes = [
