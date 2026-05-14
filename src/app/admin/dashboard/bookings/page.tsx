@@ -847,8 +847,9 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
             {/* Invoice / Quotation Modal */}
             {invoiceBooking && (
                 <div className="fixed inset-0 bg-surface-900/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-                    <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 animate-scale-in">
-                        <div className="flex items-center justify-between mb-6">
+                    <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col animate-scale-in overflow-hidden">
+                        {/* Fixed header */}
+                        <div className="flex items-center justify-between px-8 pt-8 pb-4 shrink-0">
                             <h3 className="text-2xl font-display font-bold text-surface-900">
                                 Send {invoiceType === 'invoice' ? 'Invoice' : 'Quotation'}
                             </h3>
@@ -857,43 +858,44 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                             </button>
                         </div>
 
-                        {!invoiceBooking.customer_email ? (
-                            <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium mb-6">
-                                ⚠️ This booking has no customer email. Please edit the booking to add an email first.
-                            </div>
-                        ) : (
-                            <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm mb-6">
-                                Will be sent to: <strong>{invoiceBooking.customer_email}</strong>
-                            </div>
-                        )}
+                        {/* Scrollable body */}
+                        <div className="overflow-y-auto flex-1 px-8 pb-4 space-y-5">
 
-                        <div className="p-4 bg-surface-50 rounded-xl border border-surface-200 mb-6">
-                            <p className="text-xs font-bold text-surface-500 uppercase tracking-widest mb-1">Booking</p>
-                            <p className="text-surface-900 font-bold">{invoiceBooking.pickup_location} → {invoiceBooking.dropoff_location}</p>
-                            <p className="text-sm text-surface-600">{invoiceBooking.customer_name} | {invoiceBooking.pickup_date}</p>
-
-                            {/* History */}
-                            {(invoiceBooking.quotation_sent_at || invoiceBooking.invoice_sent_at) && (
-                                <div className="mt-3 pt-3 border-t border-surface-200 flex flex-wrap gap-2">
-                                    {invoiceBooking.quotation_sent_at && (
-                                        <span className="flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-md px-2 py-1">
-                                            <FileText size={10} />
-                                            Quotation sent {new Date(invoiceBooking.quotation_sent_at).toLocaleDateString()}
-                                            {invoiceBooking.quotation_price && ` · ${invoiceBooking.currency || 'SAR'} ${invoiceBooking.quotation_price}`}
-                                        </span>
-                                    )}
-                                    {invoiceBooking.invoice_sent_at && (
-                                        <span className="flex items-center gap-1 text-[11px] font-semibold text-purple-700 bg-purple-50 border border-purple-200 rounded-md px-2 py-1">
-                                            <Receipt size={10} />
-                                            Invoice sent {new Date(invoiceBooking.invoice_sent_at).toLocaleDateString()}
-                                            {invoiceBooking.invoice_price && ` · ${invoiceBooking.currency || 'SAR'} ${invoiceBooking.invoice_price}`}
-                                        </span>
-                                    )}
+                            {!invoiceBooking.customer_email ? (
+                                <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium">
+                                    ⚠️ This booking has no customer email. Please edit the booking to add an email first.
+                                </div>
+                            ) : (
+                                <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
+                                    Will be sent to: <strong>{invoiceBooking.customer_email}</strong>
                                 </div>
                             )}
-                        </div>
 
-                        <form onSubmit={sendInvoice} className="space-y-5">
+                            <div className="p-4 bg-surface-50 rounded-xl border border-surface-200">
+                                <p className="text-xs font-bold text-surface-500 uppercase tracking-widest mb-1">Booking</p>
+                                <p className="text-surface-900 font-bold">{invoiceBooking.pickup_location} → {invoiceBooking.dropoff_location}</p>
+                                <p className="text-sm text-surface-600">{invoiceBooking.customer_name} | {invoiceBooking.pickup_date}</p>
+                                {(invoiceBooking.quotation_sent_at || invoiceBooking.invoice_sent_at) && (
+                                    <div className="mt-3 pt-3 border-t border-surface-200 flex flex-wrap gap-2">
+                                        {invoiceBooking.quotation_sent_at && (
+                                            <span className="flex items-center gap-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-md px-2 py-1">
+                                                <FileText size={10} />
+                                                Quotation sent {new Date(invoiceBooking.quotation_sent_at).toLocaleDateString()}
+                                                {invoiceBooking.quotation_price && ` · ${invoiceBooking.currency || 'SAR'} ${invoiceBooking.quotation_price}`}
+                                            </span>
+                                        )}
+                                        {invoiceBooking.invoice_sent_at && (
+                                            <span className="flex items-center gap-1 text-[11px] font-semibold text-purple-700 bg-purple-50 border border-purple-200 rounded-md px-2 py-1">
+                                                <Receipt size={10} />
+                                                Invoice sent {new Date(invoiceBooking.invoice_sent_at).toLocaleDateString()}
+                                                {invoiceBooking.invoice_price && ` · ${invoiceBooking.currency || 'SAR'} ${invoiceBooking.invoice_price}`}
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Type toggle */}
                             <div>
                                 <label className="label-text">Type</label>
                                 <div className="flex gap-3 mt-2">
@@ -910,6 +912,7 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                                 </div>
                             </div>
 
+                            {/* Price input */}
                             <div>
                                 <label className="label-text">
                                     Price ({invoiceBooking?.currency || 'SAR'}) — Optional
@@ -931,12 +934,12 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                                     <p className="text-[10px] font-bold uppercase tracking-widest text-surface-500 px-4 py-2 border-b border-surface-200 bg-white">
                                         Price in All Currencies
                                     </p>
-                                    <div className="divide-y divide-surface-100">
+                                    <div className="divide-y divide-surface-100 max-h-40 overflow-y-auto">
                                         {DISPLAY_CURRENCIES.map((code) => {
                                             const conversions = convertToAll(Number(invoicePrice), invoiceBooking?.currency || 'SAR');
                                             const isBase = code === (invoiceBooking?.currency || 'SAR');
                                             return (
-                                                <div key={code} className={`flex items-center justify-between px-4 py-2 ${isBase ? 'bg-amber-50' : ''}`}>
+                                                <div key={code} className={`flex items-center justify-between px-4 py-1.5 ${isBase ? 'bg-amber-50' : ''}`}>
                                                     <span className="text-sm text-surface-600 flex items-center gap-2">
                                                         <span>{CURRENCY_FLAGS[code]}</span>
                                                         <span>{CURRENCY_NAMES[code]}</span>
@@ -952,29 +955,36 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
                                 </div>
                             )}
 
-                            <div className="flex gap-3 pt-2">
-                                <button type="button" onClick={() => setInvoiceBooking(null)} className="btn-secondary flex-1">Cancel</button>
-                                <button
-                                    type="submit"
-                                    disabled={sendingInvoice || !invoiceBooking.customer_email}
-                                    className="btn-primary flex-1 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    {sendingInvoice ? (
-                                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                    ) : invoiceType === 'invoice' ? <Receipt size={18} /> : <FileText size={18} />}
-                                    {sendingInvoice ? 'Sending...' : `Send ${invoiceType === 'invoice' ? 'Invoice' : 'Quotation'}`}
-                                </button>
-                            </div>
+                            {/* WhatsApp notify */}
                             {invoiceBooking.customer_phone && (
                                 <a
                                     href={`https://wa.me/${invoiceBooking.customer_phone.replace(/[^0-9+]/g, '')}?text=${encodeURIComponent(`Hello ${invoiceBooking.customer_name}, please check your email — we have sent you a ${invoiceType} for your booking from ${invoiceBooking.pickup_location} to ${invoiceBooking.dropoff_location}.${invoicePrice ? ` Total: ${invoiceBooking.currency || 'SAR'} ${invoicePrice}` : ''} — Airport Travel Taxis`)}`}
                                     target="_blank" rel="noopener noreferrer"
-                                    className="mt-2 flex items-center justify-center gap-2 w-full py-2.5 bg-[#25D366]/10 text-[#25D366] font-bold text-sm rounded-xl border border-[#25D366]/30 hover:bg-[#25D366] hover:text-white transition-all"
+                                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#25D366]/10 text-[#25D366] font-bold text-sm rounded-xl border border-[#25D366]/30 hover:bg-[#25D366] hover:text-white transition-all"
                                 >
                                     <MessageCircle size={16} /> Also notify on WhatsApp
                                 </a>
                             )}
-                        </form>
+                        </div>
+
+                        {/* Sticky footer — always visible */}
+                        <div className="px-8 py-4 border-t border-surface-100 shrink-0 bg-white rounded-b-2xl">
+                            <form onSubmit={sendInvoice}>
+                                <div className="flex gap-3">
+                                    <button type="button" onClick={() => setInvoiceBooking(null)} className="btn-secondary flex-1">Cancel</button>
+                                    <button
+                                        type="submit"
+                                        disabled={sendingInvoice || !invoiceBooking.customer_email}
+                                        className="btn-primary flex-1 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {sendingInvoice ? (
+                                            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        ) : invoiceType === 'invoice' ? <Receipt size={18} /> : <FileText size={18} />}
+                                        {sendingInvoice ? 'Sending...' : `Send ${invoiceType === 'invoice' ? 'Invoice' : 'Quotation'}`}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             )}
