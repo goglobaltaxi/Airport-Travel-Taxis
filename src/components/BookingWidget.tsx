@@ -203,7 +203,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                 <div className="flex justify-between items-center relative">
                     <div className="absolute top-1/2 left-0 w-full h-1 bg-surface-200 -translate-y-1/2 rounded-full"></div>
                     <div
-                        className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-gold-400 to-gold-600 -translate-y-1/2 rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_rgba(212,175,55,0.5)]"
+                        className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-primary-400 to-primary-600 -translate-y-1/2 rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_rgba(249,115,22,0.4)]"
                         style={{ width: `${((step - 1) / (steps.length - 1)) * 100}%` }}
                     ></div>
 
@@ -217,13 +217,13 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 <div className={`
                                     w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500
                                     ${isActive
-                                        ? 'bg-primary-900 text-gold-400 shadow-xl border border-primary-800'
+                                        ? 'bg-primary-600 text-white shadow-xl border border-primary-700'
                                         : 'bg-white text-surface-400 border border-surface-200'}
-                                    ${isCurrent ? 'ring-4 ring-gold-500/20 scale-110' : ''}
+                                    ${isCurrent ? 'ring-4 ring-primary-500/20 scale-110' : ''}
                                 `}>
                                     <Icon className="w-5 h-5" />
                                 </div>
-                                <span className={`text-[11px] uppercase tracking-widest font-bold mt-4 transition-colors duration-300 ${isActive ? 'text-primary-900' : 'text-surface-400'}`}>
+                                <span className={`text-[11px] uppercase tracking-widest font-bold mt-4 transition-colors duration-300 ${isActive ? 'text-primary-600' : 'text-surface-400'}`}>
                                     {s.name}
                                 </span>
                             </div>
@@ -239,31 +239,31 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                     { icon: <Car className="w-4 h-4" />, label: 'Vetted Drivers' },
                     { icon: <Users className="w-4 h-4" />, label: 'VIP Experience' },
                 ].map((item, i) => (
-                    <div key={i} className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 px-4 py-3 bg-white/60 backdrop-blur-md border border-surface-200 rounded-xl shadow-sm hover:border-gold-300 transition-colors">
-                        <div className="text-gold-600 bg-gold-50 p-1.5 rounded-lg">{item.icon}</div>
-                        <span className="text-[10px] sm:text-[11px] font-bold text-primary-900 uppercase tracking-wider text-center sm:text-left">{item.label}</span>
+                    <div key={i} className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 px-4 py-3 bg-white border border-surface-200 rounded-xl shadow-sm hover:border-primary-300 transition-colors">
+                        <div className="text-primary-600 bg-primary-50 p-1.5 rounded-lg">{item.icon}</div>
+                        <span className="text-[10px] sm:text-[11px] font-bold text-surface-800 uppercase tracking-wider text-center sm:text-left">{item.label}</span>
                     </div>
                 ))}
             </div>
 
-            <div className="mb-8 p-5 bg-gradient-to-r from-primary-900 to-primary-800 rounded-2xl border border-primary-950 flex gap-4 text-left shadow-lg">
-                <div className="text-gold-400 shrink-0 mt-0.5">
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-sm border border-white/20">i</div>
+            <div className="mb-8 p-5 bg-primary-50 rounded-2xl border border-primary-100 flex gap-4 text-left shadow-sm">
+                <div className="text-primary-600 shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center font-bold text-sm text-primary-700">i</div>
                 </div>
-                <p className="text-sm text-surface-200 leading-relaxed font-light">
-                    <strong className="text-white font-medium">Exclusive Scope:</strong> We provide pre-booked executive airport transfers, intercity travel, and seamless cross-border journeys. Street hailing is not available.
+                <p className="text-sm text-surface-700 leading-relaxed">
+                    <strong className="text-primary-700 font-semibold">Exclusive Scope:</strong> We provide pre-booked executive airport transfers, intercity travel, and seamless cross-border journeys. Street hailing is not available.
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="glass-card bg-white/95 overflow-hidden min-h-[500px] flex flex-col relative border-t-4 border-t-gold-500">
+            <form onSubmit={handleSubmit} className="glass-card bg-white overflow-hidden min-h-[500px] flex flex-col relative border-t-4 border-t-primary-600">
                 {/* Header */}
                 <div className="bg-surface-50 px-6 lg:px-10 py-6 border-b border-surface-200 flex justify-between items-center">
-                    <h3 className="font-display text-2xl font-bold text-primary-900 tracking-tight">
+                    <h3 className="font-display text-2xl font-bold text-surface-800 tracking-tight">
                         {step === 1 && "Configure Your Journey"}
                         {step === 2 && "Select Executive Vehicle"}
                         {step === 3 && "Finalize Reservation"}
                     </h3>
-                    <span className="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-50 px-3 py-1.5 rounded-full border border-gold-200">
+                    <span className="text-xs font-bold uppercase tracking-widest text-primary-600 bg-primary-50 px-3 py-1.5 rounded-full border border-primary-200">
                         Step {step} of 3
                     </span>
                 </div>
@@ -275,7 +275,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-md bg-surface-100 flex items-center justify-center"><MapPin className="w-3.5 h-3.5 text-primary-900" /></div>
+                                        <div className="w-6 h-6 rounded-md bg-surface-100 flex items-center justify-center"><MapPin className="w-3.5 h-3.5 text-surface-800" /></div>
                                         Pickup Location
                                     </label>
                                     <input
@@ -296,7 +296,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <div className="w-6 h-6 rounded-md bg-gold-50 flex items-center justify-center"><MapPin className="w-3.5 h-3.5 text-gold-600" /></div>
+                                        <div className="w-6 h-6 rounded-md bg-primary-50 flex items-center justify-center"><MapPin className="w-3.5 h-3.5 text-primary-600" /></div>
                                         Drop-off Location
                                     </label>
                                     <input
@@ -316,7 +316,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <Calendar className="w-4 h-4 text-primary-900" /> Date
+                                        <Calendar className="w-4 h-4 text-surface-800" /> Date
                                     </label>
                                     <input
                                         required
@@ -330,7 +330,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <Clock className="w-4 h-4 text-primary-900" /> Time
+                                        <Clock className="w-4 h-4 text-surface-800" /> Time
                                     </label>
                                     <input
                                         required
@@ -344,7 +344,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <Users className="w-4 h-4 text-primary-900" /> Passengers
+                                        <Users className="w-4 h-4 text-surface-800" /> Passengers
                                     </label>
                                     <select
                                         value={passengers}
@@ -374,12 +374,12 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                         className={`
                                             group relative cursor-pointer rounded-2xl p-5 border-[1.5px] transition-all duration-300
                                             ${vehicle === v.id
-                                                ? 'border-gold-500 bg-gold-50/30 shadow-gold scale-[1.02]'
-                                                : 'border-surface-200 hover:border-primary-900 bg-white hover:shadow-lg'}
+                                                ? 'border-primary-500 bg-primary-50/30 shadow-gold scale-[1.02]'
+                                                : 'border-surface-200 hover:border-primary-500 bg-white hover:shadow-lg'}
                                         `}
                                     >
                                         {vehicle === v.id && (
-                                            <div className="absolute -top-3 -right-3 w-8 h-8 bg-gold-500 text-white rounded-full flex items-center justify-center shadow-lg transform rotate-12">
+                                            <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center shadow-lg transform rotate-12">
                                                 <Check className="w-4 h-4" />
                                             </div>
                                         )}
@@ -388,10 +388,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                                 w-14 h-14 rounded-xl flex items-center justify-center transition-colors
                                                 ${vehicle === v.id ? 'bg-white shadow-sm' : 'bg-surface-50 group-hover:bg-primary-50'}
                                             `}>
-                                                <Car className={`w-7 h-7 ${vehicle === v.id ? 'text-gold-600' : 'text-primary-900'}`} />
+                                                <Car className={`w-7 h-7 ${vehicle === v.id ? 'text-primary-600' : 'text-surface-600'}`} />
                                             </div>
                                             <div>
-                                                <h4 className="font-display font-bold text-lg text-primary-900 leading-tight mb-1">{v.category}</h4>
+                                                <h4 className="font-display font-bold text-lg text-surface-800 leading-tight mb-1">{v.category}</h4>
                                                 <p className="text-xs font-semibold text-surface-500 uppercase tracking-wider line-clamp-1">{v.name}</p>
                                                 <div className="flex items-center gap-2 mt-4">
                                                     <span className="text-[10px] px-2.5 py-1 bg-surface-100 border border-surface-200 text-surface-700 rounded-md font-bold uppercase tracking-wide flex items-center gap-1">
@@ -413,37 +413,37 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                     {step === 3 && (
                         <div className="space-y-7 animate-in fade-in slide-in-from-right-4 duration-500">
                             {/* Trip Summary */}
-                            <div className="bg-primary-900 p-6 rounded-2xl shadow-lg relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                                <h4 className="text-xs font-bold text-gold-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <div className="bg-primary-600 p-6 rounded-2xl shadow-lg relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                                <h4 className="text-xs font-bold text-orange-100 uppercase tracking-widest mb-4 flex items-center gap-2">
                                     <Check className="w-4 h-4" /> Selected Itinerary
                                 </h4>
                                 <div className="grid grid-cols-2 gap-x-4 gap-y-5 text-sm">
                                     <div className="flex items-start gap-3">
-                                        <MapPin className="w-4 h-4 text-surface-400 shrink-0 mt-0.5" />
+                                        <MapPin className="w-4 h-4 text-orange-200 shrink-0 mt-0.5" />
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-surface-400 uppercase tracking-wider font-bold mb-0.5">From</span>
+                                            <span className="text-[10px] text-orange-200 uppercase tracking-wider font-bold mb-0.5">From</span>
                                             <span className="text-white font-medium line-clamp-2">{pickup}</span>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Calendar className="w-4 h-4 text-surface-400 shrink-0 mt-0.5" />
+                                        <Calendar className="w-4 h-4 text-orange-200 shrink-0 mt-0.5" />
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-surface-400 uppercase tracking-wider font-bold mb-0.5">Date & Time</span>
+                                            <span className="text-[10px] text-orange-200 uppercase tracking-wider font-bold mb-0.5">Date & Time</span>
                                             <span className="text-white font-medium">{date} at {time}</span>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <MapPin className="w-4 h-4 text-gold-500 shrink-0 mt-0.5" />
+                                        <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-surface-400 uppercase tracking-wider font-bold mb-0.5">To</span>
+                                            <span className="text-[10px] text-orange-200 uppercase tracking-wider font-bold mb-0.5">To</span>
                                             <span className="text-white font-medium line-clamp-2">{dropoff}</span>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <Car className="w-4 h-4 text-surface-400 shrink-0 mt-0.5" />
+                                        <Car className="w-4 h-4 text-orange-200 shrink-0 mt-0.5" />
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] text-surface-400 uppercase tracking-wider font-bold mb-0.5">Vehicle</span>
+                                            <span className="text-[10px] text-orange-200 uppercase tracking-wider font-bold mb-0.5">Vehicle</span>
                                             <span className="text-white font-medium">{selectedVehicle?.category}</span>
                                         </div>
                                     </div>
@@ -452,10 +452,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
                             {/* Passenger Details */}
                             <div className="space-y-4">
-                                <h4 className="text-lg font-display font-bold text-primary-900 border-b border-surface-200 pb-2">Passenger Details</h4>
+                                <h4 className="text-lg font-display font-bold text-surface-800 border-b border-surface-200 pb-2">Passenger Details</h4>
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <User className="w-4 h-4 text-primary-900" /> Full Name
+                                        <User className="w-4 h-4 text-surface-800" /> Full Name
                                     </label>
                                     <input
                                         required
@@ -469,7 +469,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <label className="label-text flex items-center gap-2">
-                                            <Mail className="w-4 h-4 text-primary-900" /> Email Address
+                                            <Mail className="w-4 h-4 text-surface-800" /> Email Address
                                         </label>
                                         <input
                                             required
@@ -482,7 +482,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                     </div>
                                     <div className="space-y-2">
                                         <label className="label-text flex items-center gap-2">
-                                            <Phone className="w-4 h-4 text-primary-900" /> Contact Number
+                                            <Phone className="w-4 h-4 text-surface-800" /> Contact Number
                                         </label>
                                         <input
                                             required
@@ -498,7 +498,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 {/* Flight Number */}
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <Plane className="w-4 h-4 text-primary-900" /> Flight Number
+                                        <Plane className="w-4 h-4 text-surface-800" /> Flight Number
                                         <span className="text-surface-400 font-normal normal-case tracking-normal">(optional — for airport pickups)</span>
                                     </label>
                                     <input
@@ -513,12 +513,12 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
 
                             {/* Payment Options */}
                             <div className="space-y-3">
-                                <h4 className="text-lg font-display font-bold text-primary-900 border-b border-surface-200 pb-2">Payment Preferences</h4>
+                                <h4 className="text-lg font-display font-bold text-surface-800 border-b border-surface-200 pb-2">Payment Preferences</h4>
 
                                 {/* Currency */}
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <CreditCard className="w-4 h-4 text-primary-900" /> Preferred Currency
+                                        <CreditCard className="w-4 h-4 text-surface-800" /> Preferred Currency
                                     </label>
                                     <select
                                         value={currency}
@@ -534,7 +534,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                 {/* Payment Method */}
                                 <div className="space-y-2">
                                     <label className="label-text flex items-center gap-2">
-                                        <Banknote className="w-4 h-4 text-primary-900" /> Payment Method
+                                        <Banknote className="w-4 h-4 text-surface-800" /> Payment Method
                                     </label>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {[
@@ -545,7 +545,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                                 key={method.value}
                                                 className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                                                     paymentMethod === method.value
-                                                        ? 'border-primary-900 bg-primary-50'
+                                                        ? 'border-primary-600 bg-primary-50'
                                                         : 'border-surface-200 hover:border-primary-300 bg-white'
                                                 }`}
                                             >
@@ -559,10 +559,10 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                                 />
                                                 <span className="text-2xl">{method.icon}</span>
                                                 <div>
-                                                    <p className={`font-bold text-sm ${paymentMethod === method.value ? 'text-primary-900' : 'text-surface-700'}`}>{method.label}</p>
+                                                    <p className={`font-bold text-sm ${paymentMethod === method.value ? 'text-surface-800' : 'text-surface-700'}`}>{method.label}</p>
                                                     <p className="text-xs text-surface-500">{method.desc}</p>
                                                 </div>
-                                                <div className={`ml-auto w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === method.value ? 'border-primary-900 bg-primary-900' : 'border-surface-300'}`}>
+                                                <div className={`ml-auto w-5 h-5 rounded-full border-2 flex items-center justify-center ${paymentMethod === method.value ? 'border-primary-600 bg-primary-600' : 'border-surface-300'}`}>
                                                     {paymentMethod === method.value && <div className="w-2 h-2 bg-white rounded-full" />}
                                                 </div>
                                             </label>
@@ -574,7 +574,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                             {/* Promo Code */}
                             <div className="space-y-2">
                                 <label className="label-text flex items-center gap-2">
-                                    <ShieldCheck className="w-4 h-4 text-primary-900" /> Promo Code
+                                    <ShieldCheck className="w-4 h-4 text-surface-800" /> Promo Code
                                     <span className="text-surface-400 font-normal normal-case tracking-normal">(optional)</span>
                                 </label>
                                 {promoApplied ? (
@@ -603,7 +603,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                                             type="button"
                                             onClick={applyPromo}
                                             disabled={promoLoading || !promoCode.trim()}
-                                            className="px-5 py-2.5 bg-primary-900 text-white font-bold rounded-xl text-sm hover:bg-black transition-colors disabled:opacity-50"
+                                            className="px-5 py-2.5 bg-primary-600 text-white font-bold rounded-xl text-sm hover:bg-primary-700 transition-colors disabled:opacity-50"
                                         >
                                             {promoLoading ? '...' : 'Apply'}
                                         </button>
@@ -635,7 +635,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                         <button
                             type="button"
                             onClick={prevStep}
-                            className="bg-white text-primary-900 hover:bg-surface-100 px-6 rounded-xl border-2 border-surface-300 font-bold transition-all flex items-center gap-2 uppercase tracking-wide text-sm"
+                            className="bg-white text-surface-800 hover:bg-surface-100 px-6 rounded-xl border-2 border-surface-300 font-bold transition-all flex items-center gap-2 uppercase tracking-wide text-sm"
                         >
                             <ChevronLeft className="w-4 h-4" /> Back
                         </button>
@@ -645,19 +645,19 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                         <button
                             type="button"
                             onClick={nextStep}
-                            className="btn-primary flex-grow text-base shadow-xl flex items-center justify-center gap-3 w-full uppercase tracking-wider bg-primary-900 text-white hover:bg-black"
+                            className="btn-primary flex-grow text-base shadow-xl flex items-center justify-center gap-3 w-full uppercase tracking-wider"
                         >
-                            Continue <ChevronRight className="w-5 h-5 text-gold-400" />
+                            Continue <ChevronRight className="w-5 h-5 text-white/80" />
                         </button>
                     ) : (
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="btn-primary flex-grow text-base shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider bg-gradient-to-r from-gold-600 to-gold-400 text-primary-900 hover:from-gold-500 hover:to-gold-300 border border-gold-300"
+                            className="btn-primary flex-grow text-base shadow-xl flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed uppercase tracking-wider"
                         >
                             {isSubmitting ? (
                                 <>
-                                    <span className="w-5 h-5 border-2 border-primary-900/30 border-t-primary-900 rounded-full animate-spin" />
+                                    <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                     Processing...
                                 </>
                             ) : (
