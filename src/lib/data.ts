@@ -407,6 +407,9 @@ export interface Route {
     longDescription: string;
     highlights: string[];
     faq: { question: string; answer: string }[];
+    content?: string;
+    seoTitle?: string;
+    seoDescription?: string;
     
     // AI Search Optimization Fields
     highways?: string;
@@ -485,13 +488,226 @@ const baseRoutes: Route[] = [
         
         description: 'Comfortable cross-border taxi from Kuwait City to Dammam via the Al Nuwaiseeb (Kuwait) / Al Khafji (Saudi Arabia) border crossing. Expert service with experienced drivers.',
         longDescription: 'The Kuwait to Dammam route is a popular cross-border journey for business and leisure travelers. We cross via the official Al Nuwaiseeb border port on the Kuwait side and Al Khafji on the Saudi side — the primary Saudi–Kuwait land crossing. Our experienced drivers handle all customs formalities for a smooth, comfortable ride to Saudi Arabia\'s Eastern Province.',
+        seoTitle: 'Kuwait to Dammam Taxi | Cross-Border Transfer via Al Nuwaiseeb | Book 24/7',
+        seoDescription: 'Book a private taxi from Kuwait City to Dammam (380 km, ~5 hrs). Cross via Al Nuwaiseeb–Al Khafji border. Fixed fares from KWD 55. Sedans, SUVs & vans. 24/7 service.',
         highlights: ['Al Nuwaiseeb / Al Khafji Border Expertise', 'Comfortable Long-Distance Vehicles', 'Expert Service', 'Door-to-Door Service', 'Business Travel Ready', 'Return Trips Available'],
         faq: [
             { question: 'Which border crossing is used for Kuwait to Dammam?', answer: 'We cross via the Al Nuwaiseeb border port (Kuwait side) and Al Khafji border port (Saudi Arabia side) — the official and primary Saudi–Kuwait land crossing.' },
             { question: 'How long does the Al Nuwaiseeb / Al Khafji crossing take?', answer: 'The Al Nuwaiseeb / Al Khafji border crossing typically takes 30–45 minutes, depending on traffic volume.' },
             { question: 'What currency can I pay in?', answer: 'We accept payment in KWD, SAR, or USD. Card payment is also available.' },
             { question: 'Can I book a return trip?', answer: 'Yes, we offer return trip bookings at a exclusive service.' },
+            { question: 'How far is Kuwait City to Dammam?', answer: 'The road distance from Kuwait City to Dammam is approximately 380 km via the Al Nuwaiseeb–Al Khafji border crossing. The journey typically takes 4 to 5 hours depending on traffic and border wait times.' },
+            { question: 'Do I need a Saudi visa to travel from Kuwait to Dammam?', answer: 'GCC nationals (Kuwaiti, Saudi, Bahraini, Qatari, Emirati, Omani) can cross with their national ID card. Expatriates and other nationalities require a valid Saudi visa. We strongly recommend arranging your visa before travel.' },
+            { question: 'Can the taxi pick me up from Kuwait International Airport?', answer: 'Yes, we offer meet-and-greet pickups from Kuwait International Airport (KWI) and drive you directly to Dammam, Al Khobar, Dhahran, or any Eastern Province destination.' },
+            { question: 'What vehicles are available for this route?', answer: 'We offer Executive Sedans for solo travelers or couples, large SUVs (GMC Yukon, Cadillac Escalade) for families with luggage, and Executive Vans for groups of 5 or more.' },
         ],
+        content: `
+<h2>Kuwait City to Dammam Taxi — Complete Travel Guide (2026)</h2>
+<p>The Kuwait City to Dammam taxi route is one of the most traveled cross-border road journeys in the Arabian Gulf. Connecting Kuwait's capital with Saudi Arabia's largest Eastern Province city, this route is used daily by business professionals, oil industry workers, families, and expatriates seeking a comfortable, direct alternative to flying.</p>
+<p>This guide covers everything you need to know: distance, travel time, taxi fares, the Al Nuwaiseeb border crossing, vehicle options, and how to book your transfer.</p>
+
+<h2>Kuwait to Dammam: Distance, Travel Time & Fare at a Glance</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Road Distance</strong></td><td>Approximately 380 km</td></tr>
+    <tr><td><strong>Estimated Drive Time</strong></td><td>4 to 5 hours (excluding border)</td></tr>
+    <tr><td><strong>Border Crossing</strong></td><td>Al Nuwaiseeb (Kuwait) / Al Khafji (Saudi Arabia)</td></tr>
+    <tr><td><strong>Border Wait Time</strong></td><td>30 to 60 minutes (can be longer on weekends & public holidays)</td></tr>
+    <tr><td><strong>Total Journey Time</strong></td><td>5 to 6.5 hours (including border)</td></tr>
+    <tr><td><strong>Starting Fare (Sedan)</strong></td><td>From KWD 55 / SAR 680</td></tr>
+    <tr><td><strong>Starting Fare (SUV)</strong></td><td>From KWD 75 / SAR 930</td></tr>
+    <tr><td><strong>Payment Accepted</strong></td><td>KWD, SAR, USD — Cash & Card</td></tr>
+    <tr><td><strong>Service Hours</strong></td><td>24 / 7 — All days including public holidays</td></tr>
+  </tbody>
+</table>
+
+<h2>The Al Nuwaiseeb Border Crossing: What to Expect</h2>
+<p>The Al Nuwaiseeb – Al Khafji border port is the only official land crossing between Kuwait and Saudi Arabia. It is the gateway that all vehicles, trucks, and passengers must use when travelling by road between the two countries.</p>
+<h3>Key Facts About Al Nuwaiseeb Border</h3>
+<ul>
+  <li><strong>Location:</strong> Located approximately 70 km south of Kuwait City, on the coastal highway towards Saudi Arabia.</li>
+  <li><strong>Operating Hours:</strong> Open 24 hours a day, 7 days a week. However, processing can be slower at night due to reduced staff on some shifts.</li>
+  <li><strong>Peak Times to Avoid:</strong> Thursday evenings, Friday mornings, and the days before/after Eid holidays see the heaviest traffic and longest waiting times (often 2 to 3+ hours).</li>
+  <li><strong>Best Times to Cross:</strong> Sunday to Wednesday mornings (6 AM – 10 AM) typically have the shortest queues.</li>
+</ul>
+
+<h3>Step-by-Step Border Process</h3>
+<ol>
+  <li><strong>Kuwait Exit:</strong> Your driver presents vehicle documents while you present your passport (and Saudi visa if required). Kuwaiti exit stamp is applied.</li>
+  <li><strong>No Man's Land:</strong> A short drive through the neutral zone between the two countries.</li>
+  <li><strong>Saudi Entry (Al Khafji):</strong> Passport and visa inspection by Saudi Border Guard. Your luggage may be subject to a customs check.</li>
+  <li><strong>Continue to Dammam:</strong> Once cleared, your driver heads directly south toward Dammam via the Saudi coastal highway.</li>
+</ol>
+
+<h2>Kuwait City to Dammam: Vehicle Options & Fare Comparison</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Vehicle Type</th>
+      <th>Passengers</th>
+      <th>Luggage</th>
+      <th>Best For</th>
+      <th>Approx. Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Executive Sedan</strong><br/><em>(Mercedes E-Class, BMW 5 Series)</em></td>
+      <td>1 – 3</td>
+      <td>2 – 3 bags</td>
+      <td>Solo traveler, business professional</td>
+      <td>From KWD 55</td>
+    </tr>
+    <tr>
+      <td><strong>Large SUV</strong><br/><em>(GMC Yukon XL, Cadillac Escalade)</em></td>
+      <td>1 – 5</td>
+      <td>4 – 6 bags</td>
+      <td>Families, groups with luggage</td>
+      <td>From KWD 75</td>
+    </tr>
+    <tr>
+      <td><strong>Executive Van</strong><br/><em>(Mercedes V-Class, Toyota Hiace)</em></td>
+      <td>6 – 9</td>
+      <td>6 – 9 bags</td>
+      <td>Large families, corporate groups</td>
+      <td>From KWD 110</td>
+    </tr>
+  </tbody>
+</table>
+<p><em>All fares are inclusive of border crossing assistance, Saudi highway tolls, and door-to-door service. Prices are indicative — message us on WhatsApp for a fixed quote for your exact route and date.</em></p>
+
+<h2>Kuwait to Dammam Taxi vs. Other Transport Options</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Travel Time</th>
+      <th>Cost (Per Person)</th>
+      <th>Door-to-Door</th>
+      <th>Luggage</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Private Taxi</strong></td>
+      <td>5 – 6.5 hours</td>
+      <td>KWD 15 – 55+</td>
+      <td>✅ Yes</td>
+      <td>Unlimited</td>
+      <td>All travelers — maximum comfort</td>
+    </tr>
+    <tr>
+      <td><strong>Direct Flight</strong><br/><em>(Kuwait → Dammam)</em></td>
+      <td>~1 hour flight + 3h airport time</td>
+      <td>KWD 30 – 80+</td>
+      <td>❌ No</td>
+      <td>Baggage fees apply</td>
+      <td>Solo traveler, minimal luggage</td>
+    </tr>
+    <tr>
+      <td><strong>Shared Taxi / Bus</strong></td>
+      <td>6 – 8+ hours</td>
+      <td>KWD 8 – 15</td>
+      <td>❌ No</td>
+      <td>Very limited</td>
+      <td>Budget solo traveler</td>
+    </tr>
+    <tr>
+      <td><strong>Self-Drive Rental</strong></td>
+      <td>4.5 – 6 hours</td>
+      <td>KWD 25 – 60+</td>
+      <td>✅ Yes</td>
+      <td>Boot space only</td>
+      <td>Those familiar with border crossings</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Verdict:</strong> For families, groups, and professionals carrying luggage, a private taxi consistently delivers the best combination of comfort, value, and convenience. When the fare is split among 3–4 passengers, the per-person cost is often comparable to or cheaper than flying once airport transfers and baggage fees are factored in.</p>
+
+<h2>The Route: Kuwait City to Dammam Road Map</h2>
+<p>The road journey from Kuwait City to Dammam follows a well-maintained coastal and desert highway. Here is the approximate route breakdown:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Distance</th>
+      <th>Approx. Time</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Kuwait City → Al Nuwaiseeb Border</td><td>~70 km</td><td>45 – 60 min</td><td>Highway 40 south from Kuwait City</td></tr>
+    <tr><td>Al Nuwaiseeb Border Crossing</td><td>—</td><td>30 – 90 min</td><td>Wait time varies; weekends are longer</td></tr>
+    <tr><td>Al Khafji → Dammam City</td><td>~310 km</td><td>2.5 – 3.5 hours</td><td>Saudi coastal highway; well maintained</td></tr>
+    <tr><td><strong>Total (Kuwait City → Dammam)</strong></td><td><strong>~380 km</strong></td><td><strong>5 – 6.5 hours</strong></td><td>Including border wait</td></tr>
+  </tbody>
+</table>
+
+<h2>Cities & Areas We Serve in Dammam and Eastern Province</h2>
+<p>Our Kuwait to Dammam taxi service delivers you door-to-door to any destination in Saudi Arabia's Eastern Province, including:</p>
+<ul>
+  <li><strong>Dammam City</strong> — King Fahd Road, Al Faysaliyah, Prince Mohammed Bin Fahd Road</li>
+  <li><strong>Al Khobar</strong> — A vibrant commercial hub 15 km south of Dammam</li>
+  <li><strong>Dhahran</strong> — Home to Saudi Aramco headquarters</li>
+  <li><strong>Jubail</strong> — Major industrial city on the Arabian Gulf coast</li>
+  <li><strong>Qatif</strong> — Historic city and port town near Dammam</li>
+  <li><strong>King Fahd International Airport (DMM)</strong> — Direct drop-off or pickup</li>
+</ul>
+
+<h2>Who Uses This Route?</h2>
+<ul>
+  <li><strong>Oil & Gas Professionals:</strong> Workers commuting between Kuwait and Saudi Aramco or Jubail industrial facilities regularly use this land route due to its flexibility and cost-effectiveness for groups.</li>
+  <li><strong>Business Travelers:</strong> Executives and consultants who need door-to-door service between offices in Kuwait City and the Saudi Eastern Province prefer private taxis over the logistical complexity of flying.</li>
+  <li><strong>Families:</strong> Kuwaiti and Saudi families visiting relatives across the border, often with children and significant luggage, find the private taxi the most practical option.</li>
+  <li><strong>Expatriates:</strong> A large expatriate workforce in both Kuwait and the Eastern Province regularly travels between the two cities.</li>
+</ul>
+
+<h2>Documents Required to Cross Kuwait–Saudi Arabia Border</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Traveler Type</th>
+      <th>Required Documents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>GCC Nationals</strong><br/><em>(Kuwaiti, Saudi, UAE, Qatari, Bahraini, Omani)</em></td>
+      <td>Valid GCC National ID Card or Passport</td>
+    </tr>
+    <tr>
+      <td><strong>Expatriates Residing in Kuwait</strong></td>
+      <td>Valid Passport + Saudi Entry Visa + Kuwait Residence Permit (Iqama)</td>
+    </tr>
+    <tr>
+      <td><strong>Tourists</strong></td>
+      <td>Valid Passport + Saudi Tourist Visa (eVisa available for most nationalities at visa.visitsaudi.com)</td>
+    </tr>
+    <tr>
+      <td><strong>Children</strong></td>
+      <td>Passport or birth certificate; minors travelling without a parent require a notarized parental consent letter</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Important:</strong> Always carry printed copies of your visa documents. Digital/phone copies are generally not accepted at land border crossings.</p>
+
+<h2>Why Book With Airport Travel Taxis?</h2>
+<ul>
+  <li>✅ <strong>Fixed, All-Inclusive Fare:</strong> No hidden fees, no surge pricing. Your price is agreed upfront.</li>
+  <li>✅ <strong>Experienced Cross-Border Drivers:</strong> Our drivers do this route regularly and know Al Nuwaiseeb–Al Khafji border procedures inside out.</li>
+  <li>✅ <strong>24/7 Service:</strong> We operate around the clock, every day of the year including Eid and public holidays.</li>
+  <li>✅ <strong>All Vehicle Classes:</strong> Sedans for solo travelers, large SUVs for families, executive vans for groups.</li>
+  <li>✅ <strong>Real-Time WhatsApp Support:</strong> Your driver's number is shared before departure. We are contactable throughout your journey.</li>
+  <li>✅ <strong>Free Border Assistance:</strong> Your driver will guide you through the Kuwait exit and Saudi entry process step by step.</li>
+</ul>
+`,
     },
     {
         slug: 'bahrain-to-saudi-arabia-taxi',

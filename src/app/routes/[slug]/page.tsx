@@ -4,7 +4,7 @@ import { routes } from '@/lib/data';
 import FAQ from '@/components/FAQ';
 import RouteFinder from '@/components/RouteFinder';
 import { notFound } from 'next/navigation';
-import { ChevronRight, MapPin, Navigation, Car, Map, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, MapPin, Navigation, Car, Map, MessageSquare, CheckCircle2, Clock, Route, Globe } from 'lucide-react';
 import DynamicRouteSuggestions from '@/components/DynamicRouteSuggestions';
 
 export async function generateStaticParams() {
@@ -15,16 +15,32 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const route = routes.find((r) => r.slug === params.slug);
     if (!route) return {};
     
-    const pageTitle = `Taxi from ${route.from} to ${route.to} | Book Online`;
-    const pageDescription = `Direct taxi service from ${route.from} to ${route.to}. Simple private car travel. Message us on WhatsApp to get a quote today.`;
+    const pageTitle = route.seoTitle ?? `Taxi from ${route.from} to ${route.to} | Book Online`;
+    const pageDescription = route.seoDescription ?? `Direct taxi service from ${route.from} to ${route.to}. Simple private car travel. Message us on WhatsApp to get a quote today.`;
     
     return {
         title: pageTitle,
         description: pageDescription,
+        keywords: [
+            `${route.from} to ${route.to} taxi`,
+            `${route.from} to ${route.to} transfer`,
+            `${route.from} ${route.to} private taxi`,
+            `taxi from ${route.from} to ${route.to}`,
+            ...(route.fromCountry !== route.toCountry
+                ? [`cross-border taxi ${route.fromCountry} ${route.toCountry}`, `${route.from} ${route.to} border crossing`]
+                : []
+            ),
+        ].join(', '),
         openGraph: {
             title: pageTitle,
             description: pageDescription,
             url: `https://airporttraveltaxis.com/routes/${route.slug}`,
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary',
+            title: pageTitle,
+            description: pageDescription,
         },
         alternates: {
             canonical: `https://airporttraveltaxis.com/routes/${route.slug}`,
@@ -101,9 +117,10 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
 
     return (
         <div className="pt-20">
-            {/* DIRECT ANSWER (TOP) */}
+            {/* HERO */}
             <section className="section-padding bg-surface-100">
                 <div className="container-custom mx-auto max-w-4xl">
+                    {/* Breadcrumb */}
                     <div className="flex items-center gap-2 text-sm text-surface-500 mb-6 font-medium flex-wrap">
                         <Link href="/" className="hover:text-gold-600 transition-colors">Home</Link>
                         <ChevronRight className="w-4 h-4" />
@@ -113,19 +130,81 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                     </div>
 
                     <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
-                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
-                            Taxi from {route.from} to {route.to}
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-1.5 bg-primary-50 border border-primary-200 text-primary-700 text-xs font-semibold rounded-full px-3 py-1 mb-4">
+                            <Globe className="w-3.5 h-3.5" />
+                            {isCrossBorder ? `${route.fromCountry} → ${route.toCountry} Cross-Border Transfer` : 'Private Intercity Transfer'}
+                        </div>
+
+                        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-primary-900 mb-4 leading-tight">
+                            {route.from} to {route.to} Taxi
                         </h1>
-                        <p className="text-surface-700 text-lg leading-relaxed mb-6">
-                            Travel time from {route.from} to {route.to} takes about {route.duration}. {isCrossBorder ? 'Passing the border is easy with driver help. ' : 'The journey is direct via highway. '} 
-                            To get the exact quote, you can contact on WhatsApp.
+                        <p className="text-surface-600 text-lg leading-relaxed mb-6">
+                            {route.seoDescription ?? `Private door-to-door taxi from ${route.from} to ${route.to}. ${isCrossBorder ? 'Our experienced drivers handle the border crossing for you.' : 'Direct highway journey with no changes.'} Get a fixed quote on WhatsApp.`}
                         </p>
-                        
-                        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+
+                        {/* Stats Bar */}
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-7">
+                            <div className="flex items-center gap-3 bg-surface-50 border border-surface-200 rounded-xl p-3">
+                                <div className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
+                                    <Route className="w-4 h-4 text-primary-700" />
+                                </div>
+                                <div>
+                                    <p className="text-[11px] text-surface-500 font-medium uppercase tracking-wide">Distance</p>
+                                    <p className="font-bold text-surface-900 text-sm">{route.distance}</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-3 bg-surface-50 border border-surface-200 rounded-xl p-3">
+                                <div className="w-9 h-9 bg-primary-100 rounded-lg flex items-center justify-center shrink-0">
+                                    <Clock className="w-4 h-4 text-primary-700" />
+                                </div>
+                                <div>
+                                    <p className="text-[11px] text-surface-500 font-medium uppercase tracking-wide">Drive Time</p>
+                                    <p className="font-bold text-surface-900 text-sm">{route.duration}</p>
+                                </div>
+                            </div>
+                            {isCrossBorder ? (
+                                <div className="flex items-center gap-3 bg-surface-50 border border-surface-200 rounded-xl p-3 col-span-2 sm:col-span-1">
+                                    <div className="w-9 h-9 bg-amber-100 rounded-lg flex items-center justify-center shrink-0">
+                                        <Navigation className="w-4 h-4 text-amber-700" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[11px] text-surface-500 font-medium uppercase tracking-wide">Border</p>
+                                        <p className="font-bold text-surface-900 text-sm">Driver-assisted</p>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex items-center gap-3 bg-surface-50 border border-surface-200 rounded-xl p-3 col-span-2 sm:col-span-1">
+                                    <div className="w-9 h-9 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                                        <CheckCircle2 className="w-4 h-4 text-green-700" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[11px] text-surface-500 font-medium uppercase tracking-wide">Service</p>
+                                        <p className="font-bold text-surface-900 text-sm">Door-to-Door</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Highlights */}
+                        {route.highlights && route.highlights.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mb-7">
+                                {route.highlights.map((h) => (
+                                    <span key={h} className="inline-flex items-center gap-1.5 text-xs font-medium bg-green-50 text-green-800 border border-green-200 rounded-full px-3 py-1">
+                                        <CheckCircle2 className="w-3.5 h-3.5" />{h}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="flex flex-col sm:flex-row gap-3">
                             <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
                                 <MessageSquare className="w-5 h-5" />
-                                Get a quote on WhatsApp
+                                Get a Quote on WhatsApp
                             </a>
+                            <Link href="/booking" className="flex items-center justify-center gap-2 border-2 border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-white transition-colors px-8 py-3 rounded-xl font-bold w-full sm:w-auto">
+                                Book Online
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -134,11 +213,11 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
             {/* SIMPLE INTRO & HOW THIS TRIP WORKS */}
             <section className="section-padding bg-white border-b border-surface-200">
                 <div className="container-custom mx-auto max-w-4xl">
-                    <div className="grid md:grid-cols-2 gap-12">
+                    <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div>
                             <h2 className="font-display text-2xl text-primary-900 mb-4">About This Route</h2>
                             <p className="text-surface-600 leading-relaxed mb-6">
-                                This service is a private car ride from {route.from} to {route.to}. It is for people who want a direct road trip without changing cars.
+                                {route.longDescription || `This service is a private car ride from ${route.from} to ${route.to}. It is for people who want a direct road trip without changing cars.`}
                             </p>
                             
                             <h2 className="font-display text-2xl text-primary-900 mb-4">How This Trip Works</h2>
@@ -195,6 +274,13 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                             </a>
                         </div>
                     </div>
+
+                    {route.content && (
+                        <div 
+                            className="border-t border-surface-200 pt-10 text-surface-700 leading-relaxed text-base space-y-6 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:text-primary-900 [&_h2]:mt-8 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-xl [&_h3]:text-primary-900 [&_h3]:mt-6 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2 [&_a]:text-gold-600 [&_a]:underline [&_strong]:text-surface-900 [&_p]:mb-4 [&_table]:w-full [&_table]:border-collapse [&_table]:my-6 [&_table_th]:bg-primary-900 [&_table_th]:text-white [&_table_th]:border [&_table_th]:border-primary-900 [&_table_th]:p-3 [&_table_th]:text-left [&_table_th]:font-semibold [&_table_td]:border [&_table_td]:border-surface-200 [&_table_td]:p-3 [&_table_td]:text-surface-700 [&_table_tr:nth-child(even)]:bg-surface-50"
+                            dangerouslySetInnerHTML={{ __html: route.content }}
+                        />
+                    )}
                 </div>
             </section>
 
@@ -248,13 +334,29 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                         {
                             '@context': 'https://schema.org',
                             '@type': 'Service',
-                            name: `${route.from} to ${route.to} Taxi Service`,
-                            description: `Direct taxi ride from ${route.from} to ${route.to}. Professional drivers providing simple point to point travel.`,
-                            provider: { '@type': 'LocalBusiness', name: 'Airport Travel Taxis', url: 'https://airporttraveltaxis.com' },
+                            name: `${route.from} to ${route.to} Taxi Transfer`,
+                            description: route.seoDescription ?? `Private taxi from ${route.from} to ${route.to}. Door-to-door service with professional drivers.`,
+                            serviceType: isCrossBorder ? 'Cross-Border Private Taxi Transfer' : 'Private Intercity Taxi Transfer',
+                            provider: {
+                                '@type': 'LocalBusiness',
+                                name: 'Airport Travel Taxis',
+                                url: 'https://airporttraveltaxis.com',
+                                telephone: '+966569487569',
+                                areaServed: 'GCC — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain',
+                            },
                             areaServed: [
-                                { '@type': 'City', name: route.from },
-                                { '@type': 'City', name: route.to },
+                                { '@type': 'City', name: route.from, containedInPlace: { '@type': 'Country', name: route.fromCountry } },
+                                { '@type': 'City', name: route.to, containedInPlace: { '@type': 'Country', name: route.toCountry } },
                             ],
+                            offers: {
+                                '@type': 'Offer',
+                                availability: 'https://schema.org/InStock',
+                                availabilityStarts: '2026-01-01',
+                                priceSpecification: {
+                                    '@type': 'PriceSpecification',
+                                    priceCurrency: route.fromCountry === 'Kuwait' ? 'KWD' : route.fromCountry === 'Qatar' ? 'QAR' : 'AED',
+                                },
+                            },
                         },
                         {
                             '@context': 'https://schema.org',
@@ -271,7 +373,7 @@ export default function RoutePage({ params }: { params: { slug: string } }) {
                             itemListElement: [
                                 { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://airporttraveltaxis.com' },
                                 { '@type': 'ListItem', position: 2, name: 'Routes', item: 'https://airporttraveltaxis.com/routes' },
-                                { '@type': 'ListItem', position: 3, name: `${route.from} to ${route.to}` },
+                                { '@type': 'ListItem', position: 3, name: `${route.from} to ${route.to} Taxi`, item: `https://airporttraveltaxis.com/routes/${route.slug}` },
                             ],
                         },
                     ]),
