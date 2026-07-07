@@ -12,6 +12,11 @@ export type Border = {
     popularRoutes: string[];
     vehiclesInfo: string;
     bookingInfo: string;
+    seoTitle?: string;
+    seoDescription?: string;
+    seoHeading?: string;
+    pricingTable?: { route: string; sedanPrice: string; suvPrice: string; vanPrice: string }[];
+    detailedSeoContent?: { title: string; paragraphs: string[] }[];
 };
 
 export const extraCities = [
@@ -5133,6 +5138,39 @@ export const borderCrossings: Border[] = [
             { "question": "What documents are required?", "answer": "Passports and any required entry visas for Kuwait must be presented at the border stations." },
             { "question": "Can taxis cross the border directly?", "answer": "Yes, our service handles the entire cross-border journey without any vehicle transfers." },
             { "question": "Are airport pickups available?", "answer": "Yes, we can arrange for a pickup at King Fahd International Airport (DMM) for transit to Kuwait." }
+        ],
+        "seoTitle": "Al Khafji Border Taxi Service | Kuwait to Saudi Arabia Transfers",
+        "seoDescription": "Pre-book a private taxi crossing Al Khafji Border between Saudi Arabia and Kuwait. Door-to-door transfers, clear pricing tables, and luxury fleet with real car pictures.",
+        "seoHeading": "Professional Al Khafji Border Taxi & Chauffeur Services",
+        "pricingTable": [
+            { "route": "Khafji to Kuwait City", "sedanPrice": "KWD 40 / SAR 490", "suvPrice": "KWD 60 / SAR 730", "vanPrice": "KWD 90 / SAR 1,100" },
+            { "route": "Dammam to Kuwait City", "sedanPrice": "KWD 65 / SAR 800", "suvPrice": "KWD 85 / SAR 1,040", "vanPrice": "KWD 120 / SAR 1,470" },
+            { "route": "Khobar to Kuwait City", "sedanPrice": "KWD 65 / SAR 800", "suvPrice": "KWD 85 / SAR 1,040", "vanPrice": "KWD 120 / SAR 1,470" },
+            { "route": "Jubail to Kuwait City", "sedanPrice": "KWD 60 / SAR 730", "suvPrice": "KWD 80 / SAR 980", "vanPrice": "KWD 110 / SAR 1,350" },
+            { "route": "Riyadh to Kuwait City", "sedanPrice": "KWD 120 / SAR 1,470", "suvPrice": "KWD 150 / SAR 1,840", "vanPrice": "KWD 200 / SAR 2,450" }
+        ],
+        "detailedSeoContent": [
+            {
+                "title": "Complete Guide to Al Khafji Border Crossing (Saudi Arabia - Kuwait)",
+                "paragraphs": [
+                    "The Al Khafji Border Port is the principal land crossing between the Eastern Province of Saudi Arabia and the State of Kuwait. Directly corresponding to the Al Nuwaiseeb border post on the Kuwaiti side, this land gateway is critical for travelers commuting between Dammam, Jubail, Khobar, or Riyadh and Kuwait City. Our professional taxi service is designed to take the stress out of this cross-border journey, offering high-end, air-conditioned private transfers that stay with you from your doorstep all the way to your final destination.",
+                    "Unlike public buses or shared taxis that require you to exit the vehicle, carry all your luggage across checkposts, and board a different vehicle on the other side, our private transfer keeps you and your belongings inside the same premium vehicle throughout the journey. Our experienced chauffeurs are fully accustomed to the border protocols, vehicle registration procedures, and customs requirements, ensuring a swift and hassle-free transit."
+                ]
+            },
+            {
+                "title": "Required Documents for the Saudi-Kuwait Border",
+                "paragraphs": [
+                    "Crossing the Al Khafji-Nuwaiseeb border requires proper documentation to avoid delays. For GCC citizens (Saudi, Kuwaiti, Bahraini, Qatari, UAE, and Omani nationals), a national Civil ID card is generally sufficient for travel, though carrying a valid passport is always recommended. For residents and international tourists, you must present a valid passport with at least six months of validity remaining, along with a pre-arranged entry visa or eVisa for your destination country.",
+                    "If you are traveling from Saudi Arabia to Kuwait, you must have a valid Kuwait visa. Similarly, travelers heading into Saudi Arabia must hold a valid Saudi tourist eVisa, business visa, or GCC resident visa. Additionally, our vehicles carry all necessary commercial transit permits, third-party liability insurance, and customs clearance papers, which our drivers manage at the vehicle checkpoints while you complete passport stamp checks at the passenger terminal."
+                ]
+            },
+            {
+                "title": "Step-by-Step Border Clearance Process",
+                "paragraphs": [
+                    "When traveling via our private taxi service, the border crossing process is divided into clear stages. First, the vehicle approaches the Saudi departure terminal at Al Khafji, where passports are inspected and exit stamps are applied. Next, the car drives through the neutral zone to the Kuwaiti arrival terminal at Al Nuwaiseeb. Here, passengers undergo biometric fingerprinting and passport verification at the immigration counters, while the driver coordinates the vehicle inspection and customs declarations.",
+                    "The entire process usually takes between 30 and 60 minutes, though wait times can be longer during weekend peak hours, public holidays, or Eid breaks. Our drivers are trained to optimize the timing, recommending departure hours that avoid heavy congestion so that your cross-border travel remains as quick and comfortable as possible."
+                ]
+            }
         ]
     }
 ];

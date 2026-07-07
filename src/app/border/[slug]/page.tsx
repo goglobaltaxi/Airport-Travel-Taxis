@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { borderCrossings } from '@/lib/data';
+import { borderCrossings, vehicles } from '@/lib/data';
 import FAQ from '@/components/FAQ';
 import RouteFinder from '@/components/RouteFinder';
 import { notFound } from 'next/navigation';
@@ -13,12 +13,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const border = borderCrossings.find((b) => b.slug === params.slug);
     if (!border) return {};
+    const title = border.seoTitle || `${border.name} Taxi Service | Cross-Border Gulf`;
+    const description = border.seoDescription || `Direct taxi service crossing ${border.name}. Private car, driver guides you through the border. Message us on WhatsApp to get a quote.`;
     return {
-        title: `${border.name} Taxi Service | Cross-Border Gulf`,
-        description: `Direct taxi service crossing ${border.name}. Private car, driver guides you through the border. Message us on WhatsApp to get a quote.`,
+        title,
+        description,
         openGraph: {
-            title: `${border.name} Taxi Service`,
-            description: `Direct taxi service crossing ${border.name}. Private car, driver guides you through the border.`,
+            title,
+            description,
             url: `https://airporttraveltaxis.com/border/${border.slug}`,
         },
         alternates: {
@@ -62,8 +64,8 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                             <Globe className="w-4 h-4 text-gold-500" />
                             Official Border Crossing
                         </div>
-                        <h1 className="font-display text-4xl text-primary-900 mb-6 leading-tight">
-                            {border.name} Taxi Transfer
+                        <h1 className="font-display text-3xl md:text-4xl text-primary-900 mb-6 leading-tight">
+                            {border.seoHeading || `${border.name} Taxi Transfer`}
                         </h1>
                         <p className="text-surface-700 text-lg leading-relaxed mb-6">
                             This service takes you through {border.name} in a private car. The driver knows this crossing well and will guide you. Border wait times vary by day. To get the exact quote, you can contact on WhatsApp.
@@ -85,7 +87,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                         <div>
                             <h2 className="font-display text-2xl text-primary-900 mb-4">About This Service</h2>
                             <p className="text-surface-600 leading-relaxed mb-6">
-                                This is a private car service that crosses {border.name} between {border.countryA} and {border.countryB}. You stay in the same car the whole way. It is for people who want a simple, direct road trip with no transfers.
+                                {border.longDescription || `This is a private car service that crosses ${border.name} between ${border.countryA} and ${border.countryB}. You stay in the same car the whole way. It is for people who want a simple, direct road trip with no transfers.`}
                             </p>
 
                             <h2 className="font-display text-2xl text-primary-900 mb-4">How This Trip Works</h2>
@@ -151,6 +153,157 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            {/* PRICING CHART */}
+            {border.pricingTable && border.pricingTable.length > 0 && (
+                <section className="section-padding bg-surface-50 border-b border-surface-200">
+                    <div className="container-custom mx-auto max-w-4xl">
+                        <div className="text-center mb-10">
+                            <h2 className="font-display text-3xl text-primary-900 mb-4">
+                                {border.name} Taxi Price Chart
+                            </h2>
+                            <p className="text-surface-600 max-w-2xl mx-auto">
+                                Check out our flat-rate estimates for popular cross-border routes passing through the {border.name}. Prices are all-inclusive of toll charges and driver border transit support.
+                            </p>
+                        </div>
+                        
+                        <div className="overflow-x-auto rounded-2xl border border-surface-200 shadow-sm bg-white">
+                            <table className="w-full text-left border-collapse">
+                                <thead>
+                                    <tr className="bg-primary-900 text-white">
+                                        <th className="p-4 md:p-5 font-semibold text-sm">Route</th>
+                                        <th className="p-4 md:p-5 font-semibold text-sm text-center">Executive Sedan</th>
+                                        <th className="p-4 md:p-5 font-semibold text-sm text-center">Large SUV</th>
+                                        <th className="p-4 md:p-5 font-semibold text-sm text-center">Executive Van</th>
+                                        <th className="p-4 md:p-5 font-semibold text-sm text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-surface-200">
+                                    {border.pricingTable.map((row, index) => (
+                                        <tr key={index} className="hover:bg-surface-50 transition-colors">
+                                            <td className="p-4 md:p-5 font-medium text-surface-900 text-sm md:text-base">
+                                                🚗 {row.route}
+                                            </td>
+                                            <td className="p-4 md:p-5 text-center font-medium text-surface-700 text-sm md:text-base">
+                                                {row.sedanPrice}
+                                            </td>
+                                            <td className="p-4 md:p-5 text-center font-medium text-surface-700 text-sm md:text-base">
+                                                {row.suvPrice}
+                                            </td>
+                                            <td className="p-4 md:p-5 text-center font-medium text-surface-700 text-sm md:text-base">
+                                                {row.vanPrice}
+                                            </td>
+                                            <td className="p-4 md:p-5 text-center">
+                                                <a 
+                                                    href={`https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I want to book a taxi for route: ${row.route}`)}`}
+                                                    className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all shadow-sm"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Book Now
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        <p className="text-xs text-surface-500 mt-4 text-center italic">
+                            *Prices are indicative and subject to seasonal adjustments or special events. Contact us via WhatsApp for a final, guaranteed quote.
+                        </p>
+                    </div>
+                </section>
+            )}
+
+            {/* FLEET GALLERY WITH CAR IMAGES */}
+            <section className="section-padding bg-white border-b border-surface-200">
+                <div className="container-custom mx-auto max-w-5xl">
+                    <div className="text-center mb-10">
+                        <h2 className="font-display text-3xl text-primary-900 mb-4">
+                            Premium Fleet for {border.name} Crossing
+                        </h2>
+                        <p className="text-surface-600 max-w-2xl mx-auto">
+                            Travel in ultimate luxury, comfort, and safety. We offer a curated selection of late-model, air-conditioned vehicles driven by professional bilingual chauffeurs.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {vehicles.filter(v => ['s-class', 'gmc', 'vito', 'sprinter'].includes(v.id)).map((vehicle) => (
+                            <div key={vehicle.id} className="group overflow-hidden flex flex-col h-full border border-surface-200 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 bg-white rounded-2xl">
+                                {/* Image Box */}
+                                <div className="h-44 bg-gradient-to-br from-surface-50 to-surface-100 relative overflow-hidden flex items-center justify-center p-4">
+                                    {vehicle.image && (
+                                        <img 
+                                            src={vehicle.image} 
+                                            alt={vehicle.name} 
+                                            className="max-w-[90%] max-h-[85%] object-contain group-hover:scale-105 transition-transform duration-500 animate-fade-in"
+                                        />
+                                    )}
+                                    <div className="absolute top-3 right-3 bg-primary-900 text-gold-400 text-[9px] uppercase tracking-wider font-bold px-2 py-1 rounded">
+                                        {vehicle.category}
+                                    </div>
+                                </div>
+
+                                {/* Content Box */}
+                                <div className="p-5 flex flex-col flex-grow">
+                                    <h3 className="font-display text-base text-primary-900 font-bold mb-1 group-hover:text-gold-600 transition-colors">
+                                        {vehicle.name}
+                                    </h3>
+                                    <p className="text-xs text-surface-500 line-clamp-2 min-h-[32px] mb-4">
+                                        {vehicle.description}
+                                    </p>
+
+                                    {/* Capacity specs */}
+                                    <div className="flex gap-4 mb-4 text-xs text-surface-700 font-semibold border-t border-b border-surface-100 py-2">
+                                        <span className="flex items-center gap-1">👤 {vehicle.passengers} Pax</span>
+                                        <span className="flex items-center gap-1">🧳 {vehicle.luggage} Bags</span>
+                                    </div>
+
+                                    {/* Features list */}
+                                    <div className="flex flex-wrap gap-1.5 mb-6 mt-auto">
+                                        {vehicle.features.slice(0, 2).map((feat) => (
+                                            <span key={feat} className="text-[10px] bg-surface-50 border border-surface-200 text-surface-600 px-2 py-0.5 rounded">
+                                                {feat}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <a 
+                                        href={`https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I want to book the ${vehicle.name} taxi crossing the ${border.name}`)}`}
+                                        className="btn-primary text-center text-xs py-2.5 rounded-xl w-full font-bold bg-primary-900 border-primary-900 text-white hover:bg-gold-600 hover:border-gold-600 transition-colors shadow-sm block mt-auto"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Book {vehicle.name.split(' ')[0]}
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* DETAILED SEO ARTICLE SECTION */}
+            {border.detailedSeoContent && border.detailedSeoContent.length > 0 && (
+                <section className="section-padding bg-surface-50 border-b border-surface-200">
+                    <div className="container-custom mx-auto max-w-3xl">
+                        <article className="prose prose-surface max-w-none">
+                            {border.detailedSeoContent.map((section, sIndex) => (
+                                <div key={sIndex} className="mb-10 last:mb-0">
+                                    <h2 className="font-display text-2xl md:text-3xl text-primary-900 font-bold mb-4">
+                                        {section.title}
+                                    </h2>
+                                    {section.paragraphs.map((para, pIndex) => (
+                                        <p key={pIndex} className="text-surface-700 text-base md:text-lg leading-relaxed mb-4 last:mb-0">
+                                            {para}
+                                        </p>
+                                    ))}
+                                </div>
+                            ))}
+                        </article>
+                    </div>
+                </section>
+            )}
 
             {/* BOOKING / GET QUOTE */}
             <section className="section-padding bg-primary-900 text-white text-center">
