@@ -438,5 +438,316 @@ export const travelGuidePages: TravelGuidePage[] = [
             { name: 'King Fahd Causeway Taxi', url: '/border/king-fahd-causeway-taxi' },
             { name: 'Nuwaiseeb Border Taxi', url: '/border/nuwaiseeb-crossing-taxi' }
         ]
+    },
+    {
+        slug: 'how-to-get-to-burj-khalifa',
+        topic: 'Burj Khalifa Guide',
+        title: 'How to Get to Burj Khalifa: Everything You Need to Know',
+        overview: 'As the world\'s tallest building, the Burj Khalifa is Dubai\'s most iconic landmark and a must-visit destination. Reaching the Burj Khalifa is incredibly straightforward whether you are traveling from the airport, your hotel, or another emirate. Our direct taxi and chauffeur services provide a hassle-free way to arrive right at the entrance without navigating the complex metro system or walking long distances in the heat.',
+        howItWorks: [
+            'Book a private taxi or chauffeur pickup from your location directly to the Burj Khalifa.',
+            'Your driver will navigate the optimal route, typically via Sheikh Zayed Road (E11).',
+            'You will be dropped off at the most convenient entrance, usually the Dubai Mall lower ground parking which provides direct access to the "At the Top" ticket counters.',
+            'Enjoy your visit without worrying about parking or public transport schedules.'
+        ],
+        commonSituations: [
+            'Direct transfers from Dubai International Airport (DXB) to the Burj Khalifa.',
+            'Hotel pickups from areas like Dubai Marina, Palm Jumeirah, or Deira.',
+            'Intercity transfers from Abu Dhabi or Sharjah directly to Downtown Dubai.',
+            'Pre-booked return trips to ensure you have a ride waiting after your visit.'
+        ],
+        considerations: [
+            'Traffic around Downtown Dubai can be heavy during peak hours (5 PM - 8 PM) and weekends.',
+            'If you have timed tickets for "At the Top", book your taxi to arrive at least 30 minutes early.',
+            'The main entrance for the observation deck is actually located inside the Dubai Mall, not the tower itself.',
+            'Inform your driver if you are visiting the Armani Hotel or At.mosphere restaurant, as these require a different drop-off point.'
+        ],
+        faq: [
+            { question: 'Is it better to take a taxi or the metro to Burj Khalifa?', answer: 'While the metro is cost-effective, a taxi is significantly faster and more convenient, dropping you directly at the entrance rather than requiring a 15-minute walk from the metro station.' },
+            { question: 'How much time do I need for the Burj Khalifa?', answer: 'Plan for at least 1.5 to 2 hours for the observation deck experience, plus travel time.' },
+            { question: 'Can the taxi drop me off exactly at the Burj Khalifa?', answer: 'For the observation deck, you are dropped off at the designated Dubai Mall entrance. For the hotel or residential areas, we drop you at the main tower entrance.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Burj Khalifa', url: '/taxi-to-landmark/burj-khalifa-dubai' },
+            { name: 'Taxi to Dubai Mall', url: '/taxi-to-mall/dubai-mall-dubai' }
+        ]
+    },
+    {
+        slug: 'how-to-reach-dubai-mall',
+        topic: 'Dubai Mall Transport Guide',
+        title: 'How to Reach Dubai Mall: A Complete Transportation Guide',
+        overview: 'Dubai Mall is one of the largest and most visited shopping destinations globally, located in the heart of Downtown Dubai. With hundreds of stores, the Dubai Aquarium, and the iconic Dubai Fountain, it is a bustling hub day and night. The easiest and most comfortable way to reach Dubai Mall is via our dedicated taxi and chauffeur services, ensuring you arrive stress-free and ready to explore.',
+        howItWorks: [
+            'Schedule your ride specifying Dubai Mall as your destination.',
+            'Our driver will pick you up from any hotel, residence, or airport in the UAE.',
+            'We drop you off at your preferred entrance (Fashion Avenue, Grand Parking, or Cinema Parking depending on your primary interest).',
+            'When you are ready to leave, book a return trip for a seamless exit from the busy mall area.'
+        ],
+        commonSituations: [
+            'Family trips requiring spacious SUVs or Minivans for comfortable travel.',
+            'Shopping excursions where you need trunk space for your purchases on the return trip.',
+            'Evening visits to watch the Dubai Fountain shows.',
+            'Transfers from Dubai Airport directly to the mall for travelers on long layovers.'
+        ],
+        considerations: [
+            'The mall has multiple entrances; let the driver know if you have a specific store or attraction in mind so they can use the closest drop-off point.',
+            'Evening traffic around the mall, especially on weekends (Friday to Sunday), can be very dense. Plan extra travel time.',
+            'Finding an immediate taxi at the mall\'s official ranks during peak hours can involve long queues; pre-booking a private transfer is highly recommended.'
+        ],
+        faq: [
+            { question: 'Which Dubai Mall entrance is best for the Aquarium?', answer: 'The Grand Parking or the main entrance on the ground floor is closest to the Dubai Aquarium.' },
+            { question: 'Can I book a van if we have a lot of shopping bags?', answer: 'Absolutely! Our fleet includes spacious SUVs and Vans perfectly suited for families and large shopping hauls.' },
+            { question: 'How long does it take to reach from Dubai Marina?', answer: 'The drive from Dubai Marina to Dubai Mall typically takes 20-30 minutes, depending on Sheikh Zayed Road traffic.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Dubai Mall', url: '/taxi-to-mall/dubai-mall-dubai' },
+            { name: 'Taxi to Burj Khalifa', url: '/taxi-to-landmark/burj-khalifa-dubai' }
+        ]
+    },
+    {
+        slug: 'dubai-safari-park-visitor-guide',
+        topic: 'Dubai Safari Park',
+        title: 'Dubai Safari Park: Tickets, Transport & Travel Tips',
+        overview: 'Dubai Safari Park is a sprawling wildlife reserve home to thousands of animals from around the world, spread across various themed villages (African, Asian, Explorer). Located in Al Warqa, it is somewhat removed from the central city hubs like Downtown or Marina, making a reliable private taxi the best transportation choice for visitors.',
+        howItWorks: [
+            'Book a comfortable vehicle suited for your family size (Sedan, SUV, or Van).',
+            'We provide a direct, air-conditioned ride from your hotel to the main gates of Dubai Safari Park.',
+            'Avoid the complexity of multi-leg public transport journeys.',
+            'Schedule a pickup for the afternoon when the park closes, ensuring a smooth ride back to your hotel.'
+        ],
+        commonSituations: [
+            'Families with young children who need a comfortable and direct ride.',
+            'Groups of friends visiting the park for a full-day excursion.',
+            'Tourists staying in areas like Palm Jumeirah or Dubai Marina who need a direct transfer to the Al Warqa area.'
+        ],
+        considerations: [
+            'The park is massive, so expect to do a lot of walking. A comfortable ride back to your hotel is essential.',
+            'It is highly recommended to book your park tickets online in advance to avoid queues at the gate.',
+            'There are no direct metro stations near the Safari Park; a taxi is the only direct mode of transport.',
+            'The best time to visit is during the cooler months (October to April).'
+        ],
+        faq: [
+            { question: 'Is there a metro station near Dubai Safari Park?', answer: 'No, the closest metro is quite far (Rashidiya), and you would still need a taxi from there. Booking a direct taxi from your hotel is much more efficient.' },
+            { question: 'How much time should we spend at the park?', answer: 'Most families spend around 4 to 6 hours exploring the different villages and watching the live shows.' },
+            { question: 'Can we book a return trip in advance?', answer: 'Yes! We highly recommend booking your return trip in advance, as finding taxis outside the park at closing time can be difficult.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Dubai Safari Park', url: '/taxi-to-attraction/dubai-safari-park-dubai' },
+            { name: 'Our Fleet', url: '/fleet' }
+        ]
+    },
+    {
+        slug: 'dubai-miracle-garden-visitor-guide',
+        topic: 'Dubai Miracle Garden',
+        title: 'Dubai Miracle Garden: A Complete Visitor Guide',
+        overview: 'Dubai Miracle Garden is the world\'s largest natural flower garden, featuring spectacular floral displays, heart-shaped arches, and life-size structures covered in millions of blooms. Located in Dubailand, it is a seasonal attraction that draws massive crowds. Reaching the garden is easiest with our dedicated taxi service.',
+        howItWorks: [
+            'Reserve a taxi for your desired date and time (the garden is open typically from October to April).',
+            'Your driver will take the most efficient route, usually via Sheikh Mohammed Bin Zayed Road (E311).',
+            'You will be dropped off right at the main entrance ticketing area.',
+            'Enjoy the vibrant floral displays and book a ride back when you are done.'
+        ],
+        commonSituations: [
+            'Couples seeking a romantic outing and a comfortable ride.',
+            'Photography enthusiasts needing a direct trip to catch the best lighting.',
+            'Families combining a visit to the Miracle Garden with the nearby Dubai Butterfly Garden.'
+        ],
+        considerations: [
+            'The garden is an outdoor attraction; mornings or late afternoons are the best times to visit to avoid the midday heat.',
+            'Weekends (Friday to Sunday) are extremely busy. Traffic around the Dubailand area can build up, so allow extra travel time.',
+            'The garden is closed during the hot summer months (usually May to September), so verify it is open before booking.'
+        ],
+        faq: [
+            { question: 'Can we visit the Butterfly Garden on the same trip?', answer: 'Yes, the Dubai Butterfly Garden is located right next to the Miracle Garden. You can easily walk between them.' },
+            { question: 'How far is Miracle Garden from Dubai Mall?', answer: 'It is approximately a 20-25 minute drive from Downtown Dubai depending on traffic.' },
+            { question: 'Do you offer round-trip services for Miracle Garden?', answer: 'Absolutely. Booking a round-trip ensures your driver is waiting for you when you finish your visit.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Miracle Garden', url: '/taxi-to-attraction/dubai-miracle-garden-dubai' }
+        ]
+    },
+    {
+        slug: 'museum-of-the-future-visitor-guide',
+        topic: 'Museum of the Future',
+        title: 'Museum of the Future: Everything You Need to Know Before You Visit',
+        overview: 'The Museum of the Future is a striking architectural marvel and one of Dubai\'s most innovative attractions. Located prominently on Sheikh Zayed Road, this torus-shaped building invites visitors to experience the world of 2071. Getting there seamlessly is key to enjoying this futuristic journey, and our premium taxi transfers are the perfect solution.',
+        howItWorks: [
+            'Book your ride online and specify Museum of the Future as your destination.',
+            'Our chauffeur will pick you up and drive you directly to the museum\'s dedicated drop-off zone.',
+            'Enjoy the exhibitions without worrying about parking your own vehicle in the busy Trade Centre area.',
+            'Easily arrange a pickup after your visit to continue your Dubai itinerary.'
+        ],
+        commonSituations: [
+            'Corporate travelers combining a museum visit with meetings in the nearby Financial District (DIFC).',
+            'Tourists staying in Deira or Marina wanting a direct, air-conditioned transfer.',
+            'Families looking for an educational and awe-inspiring day out.'
+        ],
+        considerations: [
+            'Tickets for the Museum of the Future sell out weeks in advance; you MUST book your tickets online before planning your transport.',
+            'The museum operates on strict timed-entry slots. We advise booking your taxi to arrive at least 20 minutes before your slot.',
+            'Traffic on Sheikh Zayed Road can be heavy, especially during morning and evening rush hours.'
+        ],
+        faq: [
+            { question: 'Is parking available at the Museum of the Future?', answer: 'Yes, but it is limited. Taking a private taxi is highly recommended to avoid the stress of finding parking.' },
+            { question: 'How long does a visit usually take?', answer: 'Most visitors spend between 2 to 3 hours exploring the different floors and interactive exhibits.' },
+            { question: 'Can the taxi wait for me?', answer: 'Yes, you can book our services on an hourly basis, allowing the chauffeur to wait for you while you tour the museum.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Museum of the Future', url: '/taxi-to-landmark/museum-of-the-future-dubai' }
+        ]
+    },
+    {
+        slug: 'dubai-frame-visitor-guide',
+        topic: 'Dubai Frame',
+        title: 'Dubai Frame: Timings, Tickets & How to Reach',
+        overview: 'The Dubai Frame is an architectural landmark in Zabeel Park, offering sweeping views of both old and new Dubai from its 150-meter-high glass bridge. It perfectly frames the city\'s evolution. Located centrally, it is highly accessible, and our taxi services provide the most convenient way to reach the entrance directly.',
+        howItWorks: [
+            'Schedule a pickup from your location to Zabeel Park Gate 4, where the Dubai Frame entrance is located.',
+            'Enjoy a comfortable ride with our experienced drivers who know the best routes.',
+            'Be dropped off directly at the ticketing gates.',
+            'Pre-book your return trip to smoothly head to your next destination.'
+        ],
+        commonSituations: [
+            'Tourists wanting to see the sunset view from the glass bridge.',
+            'Families spending a day out at Zabeel Park.',
+            'Visitors combining the Dubai Frame with a trip to the nearby Dubai Creek or Karama.'
+        ],
+        considerations: [
+            'The best time to visit is during the late afternoon to catch the sunset, though this is also the busiest time.',
+            'Zabeel Park is large; ensure your driver drops you specifically at Gate 4 for the Dubai Frame.',
+            'Online ticketing is recommended to skip the queues at the entrance.'
+        ],
+        faq: [
+            { question: 'Where exactly is the Dubai Frame located?', answer: 'It is situated in Zabeel Park. The specific access point for visitors is Zabeel Park Gate 4.' },
+            { question: 'How long is the experience?', answer: 'The entire experience, including the gallery, the elevator ride, and the bridge, takes about 1.5 hours.' },
+            { question: 'Can I take a taxi from the airport directly to Dubai Frame?', answer: 'Yes, the Dubai Frame is relatively close to DXB Airport (about a 15-minute drive), making it a great first stop.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Dubai Frame', url: '/taxi-to-landmark/dubai-frame-dubai' }
+        ]
+    },
+    {
+        slug: 'palm-jumeirah-travel-guide',
+        topic: 'Palm Jumeirah Guide',
+        title: 'Palm Jumeirah: A Complete Travel Guide',
+        overview: 'The Palm Jumeirah is Dubai\'s world-famous man-made island, known for its luxury hotels, stunning beaches, and upscale dining. Whether you are heading to Atlantis The Palm, The Pointe, or a private villa, navigating the Palm\'s fronds and crescent can be confusing for newcomers. Our specialized chauffeur service ensures you reach your exact destination on the Palm with elegance and ease.',
+        howItWorks: [
+            'Book a ride specifying your exact destination on the Palm (e.g., a specific hotel, beach club, or frond number).',
+            'Your driver will take the Palm Jumeirah Gateway bridge onto the island.',
+            'We navigate the trunk, the crescent, or the private fronds directly to your drop-off point.',
+            'Enjoy a luxurious arrival fitting for the destination.'
+        ],
+        commonSituations: [
+            'Transfers to Atlantis The Palm or Aquaventure Waterpark.',
+            'Dining reservations at The Pointe or Club Vista Mare.',
+            'Attending private parties or events in the residential villas on the fronds.',
+            'Airport transfers from DXB directly to a Palm Jumeirah resort.'
+        ],
+        considerations: [
+            'Traffic on the Palm\'s main trunk can get heavy, especially on weekends and during evening dining hours.',
+            'If you are visiting a private villa on the fronds, security clearance is required at the gate; your driver will assist, but ensure you have the villa details ready.',
+            'The Palm Monorail is an option, but a private taxi provides point-to-point service without the need to walk or transfer.'
+        ],
+        faq: [
+            { question: 'How long does it take from Dubai Airport to Palm Jumeirah?', answer: 'The drive usually takes around 30 to 40 minutes, depending on traffic on Sheikh Zayed Road.' },
+            { question: 'Can taxis go onto the private fronds?', answer: 'Yes, our taxis can enter the fronds provided you have the exact address and the resident has cleared you with security.' },
+            { question: 'Is it easy to get a taxi for the return trip from Atlantis?', answer: 'Atlantis has a taxi rank, but queues can be long. Pre-booking a private transfer with us guarantees immediate pickup.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Atlantis The Palm', url: '/taxi-to-destination/atlantis-the-palm-dubai' },
+            { name: 'Airport to Palm Jumeirah', url: '/routes/dubai-airport-to-palm-jumeirah' }
+        ]
+    },
+    {
+        slug: 'dubai-marina-travel-guide',
+        topic: 'Dubai Marina Guide',
+        title: 'Dubai Marina: Things to Do & How to Reach',
+        overview: 'Dubai Marina is an affluent residential and leisure neighborhood famous for The Beach at JBR, the Marina Walk, and towering skyscrapers. It is one of the most vibrant areas in Dubai for dining, shopping, and nightlife. Due to its dense layout, navigating the Marina requires local expertise, which our drivers provide perfectly.',
+        howItWorks: [
+            'Select your specific destination within Dubai Marina (e.g., Dubai Marina Mall, Pier 7, JBR, or a specific tower).',
+            'Our driver will use the most efficient access point from Sheikh Zayed Road to avoid the worst of the Marina traffic.',
+            'You will be dropped off directly at your tower\'s lobby, the mall entrance, or the restaurant valet.',
+            'Book an hourly chauffeur if you plan to visit multiple spots across the Marina.'
+        ],
+        commonSituations: [
+            'Going for a dinner cruise departing from the Marina.',
+            'Spending a day at The Beach at JBR.',
+            'Shopping at Dubai Marina Mall.',
+            'Night out at the various lounges and clubs in the area.'
+        ],
+        considerations: [
+            'Traffic in Dubai Marina and JBR can be notoriously slow, especially on Friday and Saturday evenings. Always allow generous buffer time for your travel.',
+            'There are multiple bridges and one-way systems in the Marina; our experienced drivers know how to navigate them efficiently.',
+            'If you are heading to a yacht cruise, confirm the exact Pier number (e.g., Pier 7) so the driver can drop you at the correct location.'
+        ],
+        faq: [
+            { question: 'Is JBR the same as Dubai Marina?', answer: 'JBR (Jumeirah Beach Residence) is a community located directly adjacent to the water in the Dubai Marina district. We service both areas extensively.' },
+            { question: 'How do I avoid traffic in the Marina?', answer: 'Pre-booking a private driver who knows the back routes and optimal drop-off points is the best way to minimize delays.' },
+            { question: 'Can I book a van for a large group going to a yacht party?', answer: 'Yes, our spacious vans are perfect for transporting groups to yacht charters in the Marina.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Dubai Marina', url: '/taxi-to-destination/dubai-marina' },
+            { name: 'Dubai Airport to Marina', url: '/routes/dubai-airport-to-dubai-marina' }
+        ]
+    },
+    {
+        slug: 'global-village-dubai-visitor-guide',
+        topic: 'Global Village Dubai',
+        title: 'Global Village Dubai: Visitor Guide, Tickets & Travel Tips',
+        overview: 'Global Village is Dubai\'s premier multicultural family destination for shopping, dining, and entertainment, featuring pavilions representing countries from around the world. Located on Sheikh Mohammed Bin Zayed Road (E311), it operates seasonally (typically October to April) and attracts massive crowds. A pre-booked taxi is the smartest way to manage the journey.',
+        howItWorks: [
+            'Book your ride for a late afternoon or evening pickup (Global Village typically opens at 4:00 PM).',
+            'Enjoy a smooth highway drive directly to the VIP or general drop-off zones at Global Village.',
+            'Explore the world pavilions and enjoy international street food.',
+            'Most importantly, pre-book your return journey to avoid the massive taxi queues at closing time.'
+        ],
+        commonSituations: [
+            'Families looking for an evening of entertainment and international dining.',
+            'Shoppers returning with multiple bags of unique goods from different pavilions.',
+            'Tourists wanting to experience a vibrant, festival-like atmosphere.'
+        ],
+        considerations: [
+            'Global Village is an evening destination; traffic on E311 heading towards the venue can be heavy between 6 PM and 8 PM.',
+            'Weekends (Friday to Sunday) are exceptionally crowded. Visit on a weekday if you prefer a quieter experience.',
+            'Finding a regular taxi at the end of the night can take over an hour. Booking our private return transfer ensures a car is waiting for you.'
+        ],
+        faq: [
+            { question: 'What time does Global Village open?', answer: 'It usually opens at 4:00 PM daily during its operational season.' },
+            { question: 'Can the driver wait for us?', answer: 'Due to parking restrictions and the duration of a typical visit (3-5 hours), we recommend booking separate drop-off and pickup rides.' },
+            { question: 'Do you have vehicles large enough for our shopping?', answer: 'Yes, we recommend booking one of our SUVs or Vans if you plan on doing a lot of shopping at the pavilions.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to Global Village', url: '/taxi-to-attraction/global-village-dubai' }
+        ]
+    },
+    {
+        slug: 'img-worlds-of-adventure-visitor-guide',
+        topic: 'IMG Worlds of Adventure',
+        title: 'IMG Worlds of Adventure: Everything You Need to Know',
+        overview: 'IMG Worlds of Adventure is Dubai\'s largest indoor theme park, featuring thrilling rides based on Marvel and Cartoon Network characters, plus the Lost Valley dinosaur zone. Being completely indoors and air-conditioned, it is a perfect year-round attraction. Located in the City of Arabia along E311, booking a direct taxi transfer is the most reliable way to get there.',
+        howItWorks: [
+            'Arrange a pickup from your hotel to the City of Arabia district.',
+            'Our driver will drop you off right at the main entrance of the theme park.',
+            'Spend the day enjoying the rollercoasters, 3D rides, and attractions.',
+            'Schedule a pickup for when you are exhausted from a day of fun, ensuring a relaxing ride back.'
+        ],
+        commonSituations: [
+            'Families with kids escaping the summer heat for an indoor adventure.',
+            'Groups of teenagers and adults looking for thrill rides like the Velociraptor.',
+            'Visitors combining a trip to IMG Worlds with a later visit to the nearby Global Village.'
+        ],
+        considerations: [
+            'The park is huge, and a full visit usually takes 5 to 7 hours.',
+            'Since it is located on a major highway outside the city center, public transport options are very limited; a private taxi is highly recommended.',
+            'Weekends and school holidays are the busiest times. Arrive early right at opening time to beat the crowds.'
+        ],
+        faq: [
+            { question: 'Is IMG Worlds suitable for all ages?', answer: 'Yes, it has zones specifically for young children (Cartoon Network) as well as extreme thrill rides for adults.' },
+            { question: 'How far is IMG Worlds from Dubai Marina?', answer: 'It is approximately a 30-35 minute drive from Dubai Marina, depending on traffic.' },
+            { question: 'Can we book a transfer from Abu Dhabi to IMG Worlds?', answer: 'Absolutely. We provide intercity transfers from Abu Dhabi directly to the theme park in Dubai.' }
+        ],
+        relatedPages: [
+            { name: 'Taxi to IMG Worlds', url: '/taxi-to-attraction/img-worlds-of-adventure-dubai' }
+        ]
     }
 ];
