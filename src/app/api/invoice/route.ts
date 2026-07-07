@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { resend, FROM_BOOKING, generateBookingRef, formatTime12h } from '@/lib/resend';
 import { generateInvoiceEmail, generateQuotationEmail } from '@/lib/invoiceTemplate';
 import { htmlToPdf } from '@/lib/generatePdf';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // POST /api/invoice
 // Admin sends invoice or quotation to customer on demand
 export async function POST(req: NextRequest) {
+    if (!(await isAuthorizedAdmin(req))) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
     try {
         const body = await req.json();
         const { type, booking, price, vat_rate } = body;

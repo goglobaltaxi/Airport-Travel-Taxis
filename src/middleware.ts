@@ -1,24 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createServerClient } from '@supabase/ssr';
 
-export function middleware(request: NextRequest) {
-    const { pathname } = request.nextUrl;
+export async function middleware(request: NextRequest) {
+    let response = NextResponse.next({ request });
 
-    // Protect all dashboard routes
-    // Temporarily disabled cookie-based check because standard Supabase client uses localStorage
-    /*
-    if (pathname.startsWith('/admin/dashboard')) {
-        const cookies = request.cookies.getAll();
-        const hasSession = cookies.some(
-            (c) => c.name.startsWith('sb-') && c.name.includes('auth-token')
-        );
-
-        if (!hasSession) {
-            return NextResponse.redirect(new URL('/admin/login/', request.url));
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co',
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy-key',
+        {
+            cookies: {
+                getAll() {
+                    return request.cookies.getAll();
+                },
+                setAll(cookiesToSet) {
+                    cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
+                    response = NextResponse.next({ request });
+                    cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
+                },
+            },
         }
-    }
-    */
+    );
 
-    return NextResponse.next();
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+        return NextResponse.redirect(new URL('/admin/login/', request.url));
+    }
+
+    return response;
 }
 
 export const config = {

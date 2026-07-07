@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 import { UserPlus, Shield, CheckCircle } from 'lucide-react';
 
 export default function AdminSetup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [secret, setSecret] = useState('');
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
@@ -20,17 +20,13 @@ export default function AdminSetup() {
         setMessage('');
 
         try {
-            const { data, error: signUpError } = await supabase.auth.signUp({
-                email,
-                password,
-                options: {
-                    data: {
-                        role: 'admin',
-                    },
-                },
+            const res = await fetch('/api/admin-setup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, secret }),
             });
-
-            if (signUpError) throw signUpError;
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.error || 'Failed to create admin');
 
             setMessage('Account created successfully! You can now log in at the admin portal.');
             setTimeout(() => {
@@ -95,6 +91,19 @@ export default function AdminSetup() {
                                 minLength={6}
                             />
                             <p className="text-[10px] text-surface-500 italic mt-1 px-1">Must be at least 6 characters.</p>
+                        </div>
+
+                        <div className="space-y-1.5">
+                            <label className="label-text">Setup Secret</label>
+                            <input
+                                required
+                                type="password"
+                                value={secret}
+                                onChange={(e) => setSecret(e.target.value)}
+                                className="input-field"
+                                placeholder="Server-configured setup secret"
+                            />
+                            <p className="text-[10px] text-surface-500 italic mt-1 px-1">Provided by whoever manages this deployment's environment variables.</p>
                         </div>
 
                         <button

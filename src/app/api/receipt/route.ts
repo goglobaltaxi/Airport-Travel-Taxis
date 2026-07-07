@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend, FROM_BOOKING, formatTime12h } from '@/lib/resend';
 import { supabaseAdmin } from '@/lib/supabase';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // POST /api/receipt  { booking_id: "uuid" }
 // Called automatically when booking status changes to "completed"
 export async function POST(req: NextRequest) {
+    if (!(await isAuthorizedAdmin(req))) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
     try {
         const { booking_id } = await req.json();
         if (!booking_id) return NextResponse.json({ error: 'booking_id required' }, { status: 400 });

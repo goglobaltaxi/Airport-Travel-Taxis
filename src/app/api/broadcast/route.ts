@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { resend, FROM_INFO } from '@/lib/resend';
+import { isAuthorizedAdmin } from '@/lib/adminAuth';
 
 // POST /api/broadcast  { subject, html, preview_only? }
 export async function POST(req: NextRequest) {
+    if (!(await isAuthorizedAdmin(req))) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
     try {
         const { subject, html, preview_only } = await req.json();
         if (!subject || !html) return NextResponse.json({ error: 'subject and html required' }, { status: 400 });

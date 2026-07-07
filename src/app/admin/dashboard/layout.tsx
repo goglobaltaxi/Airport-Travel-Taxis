@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabase, supabaseBrowser } from '@/lib/supabase';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { LayoutDashboard, Calendar, Users, LogOut, ChevronRight, Mail, Car, BarChart2, DollarSign, Star, FileText, Tag, Shield, Menu, X } from 'lucide-react';
@@ -33,7 +33,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         }
 
         const checkUser = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
+            const { data: { session } } = await supabaseBrowser.auth.getSession();
             if (!session) {
                 router.push('/admin/login/');
             } else {
@@ -45,7 +45,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         checkUser();
 
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+        const { data: { subscription } } = supabaseBrowser.auth.onAuthStateChange((_event, session) => {
             if (!session) {
                 router.push('/admin/login/');
             } else if (session) {
@@ -86,7 +86,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     }, [pathname]);
 
     const handleSignOut = async () => {
-        await supabase.auth.signOut();
+        await supabaseBrowser.auth.signOut();
         router.push('/admin/login');
     };
 

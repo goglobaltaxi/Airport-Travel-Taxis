@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabase, supabaseBrowser } from '@/lib/supabase';
 import { MapPin, User, Phone, Clock, Send, CheckCircle, XCircle, AlertCircle, Search, ChevronRight, Copy, MessageCircle, Edit3, Trash2, FileText, Receipt } from 'lucide-react';
 import { convertToAll, formatAmount, CURRENCY_FLAGS, CURRENCY_NAMES } from '@/lib/currency';
 
@@ -81,18 +81,28 @@ export default function BookingsManagement() {
             showToast('❌ Error updating status');
         } else {
             showToast(`✅ Status updated to ${status}`);
-            
+
             // Auto Receipt Email on Completion
             if (status === 'completed' && booking && booking.customer_email) {
                 try {
-                    fetch('/api/receipt', {
+                    const { data: { session } } = await supabaseBrowser.auth.getSession();
+                    const res = await fetch('/api/receipt', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ booking }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                            ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}),
+                        },
+                        body: JSON.stringify({ booking_id: booking.id }),
                     });
-                    showToast('📧 Receipt email sent to customer');
+                    const data = await res.json();
+                    if (data.success) {
+                        showToast('📧 Receipt email sent to customer');
+                    } else {
+                        showToast(`⚠️ Receipt email failed: ${data.error || 'Unknown error'}`);
+                    }
                 } catch (err) {
                     console.error('Failed to trigger receipt email:', err);
+                    showToast('⚠️ Receipt email failed to send');
                 }
             }
             
@@ -231,9 +241,13 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
         }
         setSendingInvoice(true);
         try {
+            const { data: { session } } = await supabaseBrowser.auth.getSession();
             const res = await fetch('/api/invoice', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}),
+                },
                 body: JSON.stringify({ type: invoiceType, booking: invoiceBooking, price: invoicePrice }),
             });
             const data = await res.json();
