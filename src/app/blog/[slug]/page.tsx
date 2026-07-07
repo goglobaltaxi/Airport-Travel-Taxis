@@ -1,12 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase as supabaseServer } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-
-const supabaseServer = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const { data: post } = await supabaseServer

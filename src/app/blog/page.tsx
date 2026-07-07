@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 import { blogPosts as staticPosts } from '@/lib/data';
 import NewsletterForm from '@/components/NewsletterForm';
 
@@ -30,10 +30,7 @@ interface PostCard {
 }
 
 export default async function BlogPage() {
-    const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
+    
 
     const { data: dbPosts } = await supabase
         .from('blog_posts')

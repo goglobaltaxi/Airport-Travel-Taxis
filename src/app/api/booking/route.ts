@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend, FROM_BOOKING, ADMIN_EMAIL, formatTime12h, generateBookingRef } from '@/lib/resend';
-import { createClient } from '@supabase/supabase-js';
+import { supabaseAdmin } from '@/lib/supabase';
 import { generateAdminBookingEmail, generateBookingConfirmationEmail } from '@/lib/invoiceTemplate';
 import { rateLimit, getClientIp } from '@/lib/rateLimit';
-
-const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 export async function POST(req: NextRequest) {
     if (!rateLimit(getClientIp(req), 10, 60_000)) {

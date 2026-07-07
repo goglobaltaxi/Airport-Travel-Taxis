@@ -1,11 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 import TestimonialSlider from './TestimonialSlider';
 
 export default async function TestimonialsWrapper() {
-    const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
 
     const { data: reviews } = await supabase
         .from('reviews')

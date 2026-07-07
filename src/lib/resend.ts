@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-export const resend = new Resend(process.env.RESEND_API);
+export const resend = new Resend(process.env.RESEND_API || 're_12345678');
 
 export const FROM_BOOKING = 'Airport Travel Taxis <booking@airporttraveltaxis.com>';
 export const FROM_INFO = 'Airport Travel Taxis <info@airporttraveltaxis.com>';
