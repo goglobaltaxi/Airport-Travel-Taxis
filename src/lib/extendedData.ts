@@ -17,6 +17,8 @@ export type Border = {
     seoHeading?: string;
     pricingTable?: { route: string; sedanPrice: string; suvPrice: string; vanPrice: string }[];
     detailedSeoContent?: { title: string; paragraphs: string[] }[];
+    image?: string;
+    waitTimeChart?: { label: string; level: number; text: string }[];
 };
 
 export const extraCities = [
@@ -5109,6 +5111,48 @@ export const borderCrossings: Border[] = [
             { "question": "What documents are required?", "answer": "Valid passports and the appropriate entry visas for Saudi Arabia are mandatory." },
             { "question": "Can taxis cross the border directly?", "answer": "Yes, our private transfer service stays with you for the entire journey from Kuwait to Saudi Arabia." },
             { "question": "Are airport pickups available?", "answer": "Yes, we provide pickup services from Kuwait International Airport (KWI) for direct transit." }
+        ],
+        "seoTitle": "Al Nuwaiseeb Border Taxi Service | Kuwait to Saudi Arabia Transfers",
+        "seoDescription": "Pre-book a private taxi crossing Al Nuwaiseeb Border between Kuwait and Saudi Arabia. Door-to-door transfers, clear pricing tables, and a luxury fleet with real car pictures.",
+        "seoHeading": "Professional Al Nuwaiseeb Border Taxi & Chauffeur Services",
+        "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80",
+        "pricingTable": [
+            { "route": "Kuwait City to Khafji", "sedanPrice": "KWD 40 / SAR 490", "suvPrice": "KWD 60 / SAR 730", "vanPrice": "KWD 90 / SAR 1,100" },
+            { "route": "Kuwait City to Dammam", "sedanPrice": "KWD 65 / SAR 800", "suvPrice": "KWD 85 / SAR 1,040", "vanPrice": "KWD 120 / SAR 1,470" },
+            { "route": "Kuwait City to Khobar", "sedanPrice": "KWD 65 / SAR 800", "suvPrice": "KWD 85 / SAR 1,040", "vanPrice": "KWD 120 / SAR 1,470" },
+            { "route": "Kuwait City to Jubail", "sedanPrice": "KWD 60 / SAR 730", "suvPrice": "KWD 80 / SAR 980", "vanPrice": "KWD 110 / SAR 1,350" },
+            { "route": "Kuwait City to Riyadh", "sedanPrice": "KWD 120 / SAR 1,470", "suvPrice": "KWD 150 / SAR 1,840", "vanPrice": "KWD 200 / SAR 2,450" },
+            { "route": "Kuwait Airport (KWI) to Dammam", "sedanPrice": "KWD 70 / SAR 855", "suvPrice": "KWD 90 / SAR 1,100", "vanPrice": "KWD 125 / SAR 1,530" }
+        ],
+        "waitTimeChart": [
+            { "label": "Weekday Mornings", "level": 30, "text": "Low — Fastest Crossing" },
+            { "label": "Weekday Afternoons", "level": 50, "text": "Moderate" },
+            { "label": "Thursday Evenings", "level": 75, "text": "Busy — Weekend Rush Begins" },
+            { "label": "Friday & Saturday", "level": 95, "text": "Very Busy — Longest Waits" },
+            { "label": "Public Holidays / Eid", "level": 100, "text": "Peak — Plan Extra Time" }
+        ],
+        "detailedSeoContent": [
+            {
+                "title": "Complete Guide to Al Nuwaiseeb Border Crossing (Kuwait - Saudi Arabia)",
+                "paragraphs": [
+                    "The Al Nuwaiseeb Border Port is Kuwait's principal southern land gateway into the Kingdom of Saudi Arabia, sitting directly opposite the Al Khafji checkpoint on the Saudi side. It is the route used by the vast majority of travelers driving between Kuwait City and the Eastern Province — Khafji, Dammam, Jubail, and Khobar — as well as those continuing further south to Riyadh. Our professional taxi service removes the stress from this cross-border journey, offering premium, air-conditioned private transfers that stay with you from your Kuwait pickup point all the way to your final Saudi destination.",
+                    "Unlike shared taxis or public transport, where you disembark at the border, carry your own luggage across the checkposts, and board a different vehicle on the Saudi side, our private transfer keeps you and your belongings in the same vehicle for the entire trip. Our chauffeurs cross this specific border regularly, know the vehicle registration and customs procedures well, and are able to keep the transit as fast and predictable as border conditions allow."
+                ]
+            },
+            {
+                "title": "Required Documents for the Kuwait-Saudi Border",
+                "paragraphs": [
+                    "Crossing at Al Nuwaiseeb requires the correct documentation to avoid unnecessary delays. GCC nationals (Kuwaiti, Saudi, Bahraini, Qatari, Emirati, and Omani citizens) can generally travel using a national Civil ID card, though carrying a valid passport is still recommended for smoother processing. Residents and international visitors must present a passport valid for at least six months, along with a pre-arranged Saudi entry visa, eVisa, or valid GCC residency permit.",
+                    "Travelers departing Kuwait for Saudi Arabia must hold a valid Saudi tourist eVisa, business visa, or equivalent entry permit before arriving at the checkpoint — visas cannot reliably be arranged on the spot. Our vehicles carry all required commercial transit permits, cross-border insurance, and customs paperwork, which our drivers handle at the vehicle inspection lanes while you complete passport control at the passenger terminal."
+                ]
+            },
+            {
+                "title": "Step-by-Step Border Clearance Process",
+                "paragraphs": [
+                    "Travelling with our private taxi service, the crossing unfolds in clear stages. The vehicle first approaches the Kuwaiti departure terminal at Al Nuwaiseeb, where passports are checked and exit stamps applied. From there, the car proceeds through the buffer zone to the Saudi arrival terminal at Al Khafji, where passengers complete fingerprint and passport verification at the immigration counters while the driver manages vehicle inspection and customs declarations.",
+                    "The full process typically takes 45 to 60 minutes under normal conditions, though it can extend significantly during Thursday evenings, Friday and Saturday weekends, and public holidays such as Eid, when outbound traffic from Kuwait peaks. Our drivers know these patterns and will advise on the best departure window for your trip, helping you avoid the worst of the queues."
+                ]
+            }
         ]
     },
     {

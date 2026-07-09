@@ -60,6 +60,13 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                     </div>
 
                     <div className="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-surface-200">
+                        {border.image && (
+                            <img
+                                src={border.image}
+                                alt={`${border.name} — ${border.countryA} to ${border.countryB} crossing`}
+                                className="w-full h-auto max-h-96 object-cover rounded-2xl mb-6"
+                            />
+                        )}
                         <div className="inline-flex items-center gap-2 mb-4 text-sm font-semibold text-primary-900 bg-surface-100 px-4 py-1.5 rounded-full border border-surface-200">
                             <Globe className="w-4 h-4 text-gold-500" />
                             Official Border Crossing
@@ -211,6 +218,37 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                         <p className="text-xs text-surface-500 mt-4 text-center italic">
                             *Prices are indicative and subject to seasonal adjustments or special events. Contact us via WhatsApp for a final, guaranteed quote.
                         </p>
+                    </div>
+                </section>
+            )}
+
+            {/* BEST TIME TO CROSS CHART */}
+            {border.waitTimeChart && border.waitTimeChart.length > 0 && (
+                <section className="section-padding bg-white border-b border-surface-200">
+                    <div className="container-custom mx-auto max-w-4xl">
+                        <div className="text-center mb-10">
+                            <h2 className="font-display text-3xl text-primary-900 mb-4">
+                                Best Time to Cross {border.name}
+                            </h2>
+                            <p className="text-surface-600 max-w-2xl mx-auto">
+                                Wait times at {border.name} vary by day and time. Use this guide to plan your crossing and avoid the busiest queues.
+                            </p>
+                        </div>
+                        <div className="bg-surface-50 rounded-2xl border border-surface-200 p-6 md:p-8 space-y-4">
+                            {border.waitTimeChart.map((row, index) => {
+                                const barColor = row.level >= 85 ? 'bg-red-500' : row.level >= 60 ? 'bg-orange-500' : row.level >= 40 ? 'bg-amber-400' : 'bg-green-500';
+                                const textColor = row.level >= 85 ? 'text-red-600' : row.level >= 60 ? 'text-orange-600' : row.level >= 40 ? 'text-amber-600' : 'text-green-600';
+                                return (
+                                    <div key={index} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                        <span className="text-sm font-medium text-surface-700 sm:w-44 shrink-0">{row.label}</span>
+                                        <div className="flex-1 bg-surface-200 rounded-full h-3.5 overflow-hidden">
+                                            <div className={`h-full rounded-full ${barColor}`} style={{ width: `${row.level}%` }} />
+                                        </div>
+                                        <span className={`text-xs font-semibold ${textColor} sm:w-48 shrink-0`}>{row.text}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </section>
             )}
