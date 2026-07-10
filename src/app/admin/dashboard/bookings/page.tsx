@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase, supabaseBrowser } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { MapPin, User, Phone, Clock, Send, CheckCircle, XCircle, AlertCircle, Search, ChevronRight, Copy, MessageCircle, Edit3, Trash2, FileText, Receipt } from 'lucide-react';
 import { convertToAll, formatAmount, CURRENCY_FLAGS, CURRENCY_NAMES } from '@/lib/currency';
 
@@ -85,7 +85,7 @@ export default function BookingsManagement() {
             // Auto Receipt Email on Completion
             if (status === 'completed' && booking && booking.customer_email) {
                 try {
-                    const { data: { session } } = await supabaseBrowser.auth.getSession();
+                    const { data: { session } } = await supabase.auth.getSession();
                     const res = await fetch('/api/receipt', {
                         method: 'POST',
                         headers: {
@@ -241,7 +241,7 @@ Vehicle: ${booking.vehicle_type} | Passengers: ${booking.passengers}${booking.fl
         }
         setSendingInvoice(true);
         try {
-            const { data: { session } } = await supabaseBrowser.auth.getSession();
+            const { data: { session } } = await supabase.auth.getSession();
             const res = await fetch('/api/invoice', {
                 method: 'POST',
                 headers: {

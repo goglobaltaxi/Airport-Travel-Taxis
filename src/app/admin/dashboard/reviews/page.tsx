@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { Star, Plus, Trash2, Eye, EyeOff, CheckCircle } from 'lucide-react';
 
 interface Review {

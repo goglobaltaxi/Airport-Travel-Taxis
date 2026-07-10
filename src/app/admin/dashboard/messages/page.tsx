@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { Mail, Phone, Calendar, CheckCircle, Clock, Trash2, Search, XCircle } from 'lucide-react';
 
 export default function MessagesManagement() {

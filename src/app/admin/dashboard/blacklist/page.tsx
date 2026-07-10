@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { Shield, ShieldAlert, UserPlus, Trash2, Search, CheckCircle, XCircle } from 'lucide-react';
 
 export default function BlacklistManagement() {

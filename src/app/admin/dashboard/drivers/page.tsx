@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { Car, Phone, Mail, Calendar, Search, Trash2, CheckCircle, Clock, XCircle, MapPin } from 'lucide-react';
 
 export default function DriversManagement() {

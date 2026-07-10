@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { User, Calendar, MapPin, ExternalLink, Clock, Copy, Search } from 'lucide-react';
 
 export default function LeadsManagement() {

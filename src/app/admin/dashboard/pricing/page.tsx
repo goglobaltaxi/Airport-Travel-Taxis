@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { supabaseBrowser as supabase } from '@/lib/supabase';
 import { Plus, Trash2, Edit3, CheckCircle, XCircle, DollarSign } from 'lucide-react';
 
 interface PriceRule {
