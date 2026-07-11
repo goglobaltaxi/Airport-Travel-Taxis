@@ -85,77 +85,79 @@ const pressLogos = [
 export default function HomePage() {
     return (
         <>
-            {/* ─── HERO ─────────────────────────────────────────────────── */}
-            <section className="bg-white pt-24 pb-8 lg:pt-32 lg:pb-12">
-                <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            {/* ─── HERO (full-bleed photo) ──────────────────────────────── */}
+            <section className="relative bg-surface-900 pt-20">
+                <div className="relative h-[560px] sm:h-[620px] lg:h-[680px] w-full overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1600"
+                        alt="Passenger enjoying a private chauffeur ride"
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/60 to-surface-900/10" />
 
-                        {/* Left content */}
-                        <div className="lg:col-span-7 animate-slide-up">
-                            {/* Service type tabs */}
-                            <div className="flex flex-wrap gap-2 mb-8">
-                                <button className="flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-full text-sm font-semibold shadow-sm">
-                                    <Plane className="w-4 h-4" /> Transfers
-                                </button>
-                                <button className="flex items-center gap-2 px-5 py-2.5 bg-surface-100 text-surface-700 rounded-full text-sm font-semibold hover:bg-surface-200 transition-colors">
-                                    <Clock className="w-4 h-4" /> Hourly Driver
-                                </button>
-                                <button className="flex items-center gap-2 px-5 py-2.5 bg-surface-100 text-surface-700 rounded-full text-sm font-semibold hover:bg-surface-200 transition-colors">
-                                    <Globe className="w-4 h-4" /> City Tours
-                                </button>
-                            </div>
+                    <div className="relative h-full container-custom mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center animate-slide-up">
+                        {/* Service type tabs */}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                            <button className="flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-full text-sm font-semibold shadow-sm">
+                                <Plane className="w-4 h-4" /> Transfers
+                            </button>
+                            <button className="flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white rounded-full text-sm font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/20">
+                                <Clock className="w-4 h-4" /> Hourly Driver
+                            </button>
+                            <button className="flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white rounded-full text-sm font-semibold hover:bg-white/20 transition-colors backdrop-blur-sm border border-white/20">
+                                <Globe className="w-4 h-4" /> City Tours
+                            </button>
+                        </div>
 
-                            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-surface-900 leading-[1.1] mb-6 tracking-tight">
-                                Private car transfers<br />
-                                with professional<br />
-                                <span className="text-primary-600">drivers.</span>
-                            </h1>
+                        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-5 tracking-tight max-w-3xl">
+                            Airport transfers.<br />
+                            Simpler than ever.
+                        </h1>
 
-                            <p className="text-lg text-surface-500 mb-8 leading-relaxed max-w-xl">
-                                Pre-booked airport transfers, intercity rides and cross-border journeys across Saudi Arabia, UAE, Qatar, Kuwait and Bahrain.
-                            </p>
+                        <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-xl">
+                            Pre-booked private car transfers, intercity rides and cross-border journeys across Saudi Arabia, UAE, Qatar, Kuwait and Bahrain.
+                        </p>
 
-                            {/* Search form */}
-                            <HeroSearch />
-
-                            {/* Trust badges */}
-                            <div className="flex flex-wrap items-center gap-6 mt-6">
-                                <div className="flex items-center gap-2">
-                                    <div className="flex text-yellow-400 text-sm">★★★★★</div>
-                                    <span className="text-sm font-semibold text-surface-700">TripAdvisor</span>
-                                    <span className="text-xs text-surface-400">5,000+ reviews</span>
+                        {/* Stat badges */}
+                        <div className="flex flex-wrap items-center gap-8">
+                            <div className="flex items-center gap-3">
+                                <div className="w-11 h-11 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 shrink-0">
+                                    <CheckCircle className="w-5 h-5 text-white" />
                                 </div>
-                                <div className="w-px h-4 bg-surface-200" />
-                                <div className="flex items-center gap-2">
-                                    <div className="flex text-green-500 text-sm">★★★★★</div>
-                                    <span className="text-sm font-semibold text-surface-700">Trustpilot</span>
-                                    <span className="text-xs text-surface-400">Excellent</span>
+                                <div>
+                                    <p className="font-display font-bold text-white text-xl leading-none">{stats[0].value}</p>
+                                    <p className="text-white/70 text-xs mt-1">Trips completed</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-11 h-11 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 shrink-0">
+                                    <Globe className="w-5 h-5 text-white" />
+                                </div>
+                                <div>
+                                    <p className="font-display font-bold text-white text-xl leading-none">{stats[2].value}</p>
+                                    <p className="text-white/70 text-xs mt-1">Countries served</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        {/* Right photo */}
-                        <div className="hidden lg:block lg:col-span-5 animate-slide-in-right">
-                            <div className="relative">
-                                <div className="absolute -inset-4 bg-primary-100/40 blur-3xl rounded-full" />
-                                <img
-                                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=800"
-                                    alt="Professional chauffeur service"
-                                    className="relative rounded-3xl shadow-2xl w-full h-[480px] object-cover"
-                                />
-                                {/* Floating stats card */}
-                                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-surface-100">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center">
-                                            <CheckCircle className="w-5 h-5 text-primary-600" />
-                                        </div>
-                                        <div>
-                                            <p className="font-bold text-surface-900 text-sm">50,000+ trips</p>
-                                            <p className="text-xs text-surface-500">completed across GCC</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                {/* Search form — floats over the bottom edge of the hero photo */}
+                <div className="relative z-20 container-custom mx-auto px-4 sm:px-6 lg:px-8 -mt-8 lg:-mt-10">
+                    <HeroSearch />
+
+                    {/* Trust badges */}
+                    <div className="flex flex-wrap items-center justify-center gap-6 mt-6 pb-8">
+                        <div className="flex items-center gap-2">
+                            <div className="flex text-yellow-400 text-sm">★★★★★</div>
+                            <span className="text-sm font-semibold text-surface-100">TripAdvisor</span>
+                            <span className="text-xs text-surface-400">5,000+ reviews</span>
+                        </div>
+                        <div className="w-px h-4 bg-surface-700" />
+                        <div className="flex items-center gap-2">
+                            <div className="flex text-green-500 text-sm">★★★★★</div>
+                            <span className="text-sm font-semibold text-surface-100">Trustpilot</span>
+                            <span className="text-xs text-surface-400">Excellent</span>
                         </div>
                     </div>
                 </div>
