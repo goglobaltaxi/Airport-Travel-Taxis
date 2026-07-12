@@ -277,7 +277,7 @@ export default function HomePage() {
                     {/* Why choose us cards */}
                     <div className="grid lg:grid-cols-4 gap-6">
                         {/* Large card */}
-                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden min-h-[320px] group">
+                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden h-80 lg:h-[380px] group">
                             <img
                                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
                                 alt="Professional driver"
