@@ -1,10 +1,20 @@
 import Link from 'next/link';
-import { Shield, Clock, Globe, Star, CheckCircle, Car, Users, MapPin, ChevronRight, Plane } from 'lucide-react';
+import { Shield, Clock, Globe, Star, CheckCircle, Car, Users, MapPin, ChevronRight, Plane, Hotel, Building2, Globe2, Briefcase, CarFront, Heart, Crown, MessageCircle } from 'lucide-react';
 import RouteCard from '@/components/RouteCard';
 import FAQ from '@/components/FAQ';
 import HeroSearch from '@/components/HeroSearch';
 import NewsletterForm from '@/components/NewsletterForm';
-import { popularRoutes, generalFAQ, gccCountries } from '@/lib/data';
+import { popularRoutes, generalFAQ, gccCountries, services } from '@/lib/data';
+
+const serviceIconMap: Record<string, React.ReactNode> = {
+    'airport': <Plane className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'hotel': <Hotel className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'city-to-city': <Building2 className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'cross-border': <Globe2 className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'corporate': <Briefcase className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'events': <Heart className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+    'vip-chauffeur': <Crown className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />,
+};
 
 const heroFeatures = [
     { icon: <Plane className="w-5 h-5" />, title: 'Airport Transfers', desc: 'Seamless pickups & drop-offs' },
@@ -178,6 +188,66 @@ export default function HomePage() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ─── OUR SERVICES ─────────────────────────────────────────── */}
+            <section className="bg-white py-16 lg:py-20">
+                <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="mb-10">
+                        <h2 className="font-display text-3xl lg:text-4xl font-bold text-surface-900 mb-2">
+                            Our services
+                        </h2>
+                        <p className="text-surface-500">Everything you need to move around the GCC, covered</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                        {services.slice(0, 6).map((service) => (
+                            <Link
+                                key={service.id}
+                                href={service.href}
+                                className="group flex items-center justify-between gap-4 bg-surface-50 hover:bg-primary-50/30 rounded-2xl p-6 border border-surface-200 hover:border-primary-200 transition-all duration-200"
+                            >
+                                <div>
+                                    <h3 className="font-display font-bold text-surface-900 text-lg mb-2">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-surface-500 text-sm leading-relaxed mb-4 max-w-xs">
+                                        {service.description}
+                                    </p>
+                                    <span className="inline-flex items-center px-4 py-2 bg-white rounded-full text-sm font-semibold text-surface-900 border border-surface-200 group-hover:border-primary-300 group-hover:text-primary-600 transition-colors">
+                                        Learn more
+                                    </span>
+                                </div>
+                                <div className="shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                    {serviceIconMap[service.id] || <CarFront className="w-10 h-10 text-primary-600/70" strokeWidth={1.5} />}
+                                </div>
+                            </Link>
+                        ))}
+
+                        {/* WhatsApp promo tile */}
+                        <a
+                            href="https://wa.me/966569487569"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-between gap-4 bg-primary-600 hover:bg-primary-700 rounded-2xl p-6 transition-colors duration-200"
+                        >
+                            <div>
+                                <span className="inline-block px-3 py-1 bg-white/15 text-white text-xs font-semibold rounded-full mb-3">
+                                    Instant booking
+                                </span>
+                                <h3 className="font-display font-bold text-white text-lg mb-2">
+                                    Book anywhere.<br />WhatsApp makes it easy
+                                </h3>
+                                <span className="inline-flex items-center gap-1 text-white text-sm font-semibold">
+                                    Chat now <ChevronRight className="w-4 h-4" />
+                                </span>
+                            </div>
+                            <div className="shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <MessageCircle className="w-10 h-10 text-white/80" strokeWidth={1.5} />
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
