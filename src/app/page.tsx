@@ -277,18 +277,42 @@ export default function HomePage() {
                     {/* Why choose us cards */}
                     <div className="grid lg:grid-cols-4 gap-6">
                         {/* Large card */}
-                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden h-80 lg:h-[380px] bg-surface-900 group">
-                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.35),transparent_60%)]" />
-                            <Users className="absolute -bottom-8 -right-8 w-56 h-56 text-white/5 group-hover:text-white/10 group-hover:scale-105 transition-all duration-700" strokeWidth={1} />
-                            <div className="relative h-full p-8 flex flex-col justify-between text-left">
-                                <div className="flex items-center gap-1 text-yellow-400">
-                                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400" />)}
+                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden h-auto sm:h-80 lg:h-[380px] bg-surface-900 group flex flex-row">
+                            {/* Photo panel — desktop/tablet only, narrow enough to frame the face safely */}
+                            <div className="relative hidden sm:block sm:w-[36%] shrink-0 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600"
+                                    alt="Professional chauffeur"
+                                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface-900/60" />
+                                <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm rounded-full pl-1.5 pr-3 py-1 shadow-lg">
+                                    <div className="w-5 h-5 bg-primary-600 rounded-full flex items-center justify-center shrink-0">
+                                        <CheckCircle className="w-3.5 h-3.5 text-white" />
+                                    </div>
+                                    <span className="text-[11px] font-bold text-surface-900 tracking-wide">ID-VERIFIED</span>
                                 </div>
-                                <div>
-                                    <h3 className="text-white font-display font-bold text-2xl lg:text-3xl mb-3 max-w-xs">English-speaking drivers</h3>
-                                    <p className="text-surface-300 text-sm max-w-sm leading-relaxed">
-                                        Our professional chauffeurs speak English and are trained to handle airport pickups, border crossings, and VIP travel.
+                            </div>
+
+                            {/* Content panel */}
+                            <div className="relative flex-1 p-6 lg:p-8 flex flex-col justify-between text-left">
+                                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.3),transparent_65%)] pointer-events-none" />
+                                <div className="relative flex items-center gap-1">
+                                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
+                                    <span className="text-surface-400 text-xs font-medium ml-1.5">4.9 driver rating</span>
+                                </div>
+                                <div className="relative">
+                                    <h3 className="text-white font-display font-bold text-2xl lg:text-3xl mb-3">English-speaking drivers</h3>
+                                    <p className="text-surface-300 text-sm leading-relaxed mb-5 max-w-sm">
+                                        Every chauffeur is background-checked, licensed, and trained for airport pickups, border crossings, and VIP travel.
                                     </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {['English', 'Arabic', 'Urdu'].map((lang) => (
+                                            <span key={lang} className="px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs font-medium text-white">
+                                                {lang}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
