@@ -277,16 +277,19 @@ export default function HomePage() {
                     {/* Why choose us cards */}
                     <div className="grid lg:grid-cols-4 gap-6">
                         {/* Large card */}
-                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden h-80 lg:h-[380px] group">
-                            <img
-                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
-                                alt="Professional driver"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-surface-900/80 to-transparent" />
-                            <div className="absolute bottom-0 left-0 p-6 text-left">
-                                <h3 className="text-white font-display font-bold text-xl mb-2">English-speaking drivers</h3>
-                                <p className="text-surface-300 text-sm">Professional, licensed, and multilingual</p>
+                        <div className="lg:col-span-2 relative rounded-2xl overflow-hidden h-80 lg:h-[380px] bg-surface-900 group">
+                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.35),transparent_60%)]" />
+                            <Users className="absolute -bottom-8 -right-8 w-56 h-56 text-white/5 group-hover:text-white/10 group-hover:scale-105 transition-all duration-700" strokeWidth={1} />
+                            <div className="relative h-full p-8 flex flex-col justify-between text-left">
+                                <div className="flex items-center gap-1 text-yellow-400">
+                                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400" />)}
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-display font-bold text-2xl lg:text-3xl mb-3 max-w-xs">English-speaking drivers</h3>
+                                    <p className="text-surface-300 text-sm max-w-sm leading-relaxed">
+                                        Our professional chauffeurs speak English and are trained to handle airport pickups, border crossings, and VIP travel.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
