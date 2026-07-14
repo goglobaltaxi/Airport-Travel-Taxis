@@ -4,6 +4,7 @@ import RouteCard from '@/components/RouteCard';
 import FAQ from '@/components/FAQ';
 import HeroSearch from '@/components/HeroSearch';
 import NewsletterForm from '@/components/NewsletterForm';
+import AirportGuidesCarousel from '@/components/AirportGuidesCarousel';
 import { popularRoutes, generalFAQ, gccCountries, services } from '@/lib/data';
 
 const serviceIconMap: Record<string, React.ReactNode> = {
@@ -364,6 +365,19 @@ export default function HomePage() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ─── AIRPORT TRANSPORTATION GUIDES ───────────────────────────── */}
+            <section className="bg-white py-16 lg:py-20">
+                <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="font-display text-3xl lg:text-4xl font-bold text-surface-900 mb-2 text-center">
+                        Airport transportation guides
+                    </h2>
+                    <p className="text-surface-500 text-center mb-10">
+                        Everything you need to know before you land
+                    </p>
+                    <AirportGuidesCarousel />
                 </div>
             </section>
 
