@@ -62,7 +62,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-surface-500 text-sm leading-relaxed mb-4">
-                            Pre-booked taxi and transfer services across Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain. Airport transfers, intercity travel, and cross-border transportation.
+                            Pre-booked taxi and transfer services across Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman. Airport transfers, intercity travel, and cross-border transportation.
                         </p>
                         <div className="flex gap-2 text-2xl">
                             {gccCountries.map((c) => (

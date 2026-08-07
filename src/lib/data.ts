@@ -1148,6 +1148,7 @@ export const gccCountries = [
     { name: 'Qatar', code: 'QA', flag: '🇶🇦' },
     { name: 'Kuwait', code: 'KW', flag: '🇰🇼' },
     { name: 'Bahrain', code: 'BH', flag: '🇧🇭' },
+    { name: 'Oman', code: 'OM', flag: '🇴🇲' },
 ];
 
 // ─── Navigation Links ───────────────────────────────────────────────

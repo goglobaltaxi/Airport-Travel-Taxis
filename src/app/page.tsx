@@ -123,10 +123,13 @@ export default function HomePage() {
                         <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-5 tracking-tight max-w-3xl">
                             Airport transfers.<br />
                             Simpler than ever.
+                            <span className="block text-base sm:text-lg lg:text-xl font-semibold text-white/85 mt-4 tracking-normal">
+                                Now serving all 6 GCC countries — Saudi Arabia, UAE, Qatar, Kuwait, Bahrain &amp; Oman
+                            </span>
                         </h1>
 
                         <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-xl">
-                            Pre-booked private car transfers, intercity rides and cross-border journeys across Saudi Arabia, UAE, Qatar, Kuwait and Bahrain.
+                            Pre-booked private car transfers, intercity rides and cross-border journeys — simple, reliable travel across the Gulf.
                         </p>
 
                         {/* Stat badges */}
