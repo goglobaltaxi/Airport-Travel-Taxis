@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { navLinks } from '@/lib/data';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -15,12 +17,18 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Homepage has a full-bleed dark hero photo, so the nav can float
+    // transparently over it until the user scrolls past it.
+    const isTransparent = pathname === '/' && !isScrolled;
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isScrolled
-                    ? 'bg-white/95 backdrop-blur-xl border-b border-surface-200 shadow-sm'
-                    : 'bg-white border-b border-surface-100'
+                isTransparent
+                    ? 'bg-transparent border-b border-transparent'
+                    : isScrolled
+                        ? 'bg-white/95 backdrop-blur-xl border-b border-surface-200 shadow-sm'
+                        : 'bg-white border-b border-surface-100'
             }`}
         >
             <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,8 +39,8 @@ export default function Navbar() {
                             <span className="text-white font-bold text-base">A</span>
                         </div>
                         <div className="flex flex-col leading-tight">
-                            <span className="font-display font-bold text-surface-900 text-base tracking-tight">Airport Travel</span>
-                            <span className="text-primary-600 text-[10px] font-bold tracking-[0.15em] uppercase">TAXIS</span>
+                            <span className={`font-display font-bold text-base tracking-tight ${isTransparent ? 'text-white' : 'text-surface-900'}`}>Airport Travel</span>
+                            <span className={`text-[10px] font-bold tracking-[0.15em] uppercase ${isTransparent ? 'text-white/80' : 'text-primary-600'}`}>TAXIS</span>
                         </div>
                     </Link>
 
@@ -47,7 +55,11 @@ export default function Navbar() {
                             >
                                 <Link
                                     href={link.href}
-                                    className="px-3.5 py-2 text-sm font-medium text-surface-600 hover:text-surface-900 transition-colors rounded-lg hover:bg-surface-100 flex items-center gap-1"
+                                    className={`px-3.5 py-2 text-sm font-semibold uppercase tracking-wide transition-colors rounded-lg flex items-center gap-1 whitespace-nowrap ${
+                                        isTransparent
+                                            ? 'text-white/90 hover:text-white hover:bg-white/10'
+                                            : 'text-surface-600 hover:text-surface-900 hover:bg-surface-100'
+                                    }`}
                                 >
                                     {link.label}
                                     {link.children && (
@@ -80,7 +92,11 @@ export default function Navbar() {
                             href="https://wa.me/966569487569"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden md:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-surface-700 hover:text-surface-900 hover:bg-surface-100 rounded-lg transition-colors"
+                            className={`hidden md:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${
+                                isTransparent
+                                    ? 'text-white/90 hover:text-white hover:bg-white/10'
+                                    : 'text-surface-700 hover:text-surface-900 hover:bg-surface-100'
+                            }`}
                         >
                             <span className="text-base">💬</span> WhatsApp
                         </a>
@@ -93,7 +109,11 @@ export default function Navbar() {
 
                         <button
                             onClick={() => setIsMobileOpen(!isMobileOpen)}
-                            className="lg:hidden p-2 text-surface-600 hover:text-surface-900 hover:bg-surface-100 rounded-lg transition-colors"
+                            className={`lg:hidden p-2 rounded-lg transition-colors ${
+                                isTransparent
+                                    ? 'text-white hover:text-white hover:bg-white/10'
+                                    : 'text-surface-600 hover:text-surface-900 hover:bg-surface-100'
+                            }`}
                             aria-label="Toggle menu"
                         >
                             {isMobileOpen ? (

@@ -97,7 +97,7 @@ export default function HomePage() {
     return (
         <>
             {/* ─── HERO (full-bleed photo) ──────────────────────────────── */}
-            <section className="relative bg-surface-900 pt-20">
+            <section className="relative bg-surface-900">
                 <div className="relative h-[560px] sm:h-[620px] lg:h-[680px] w-full overflow-hidden">
                     <img
                         src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1600"
@@ -106,7 +106,7 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/60 to-surface-900/10" />
 
-                    <div className="relative h-full container-custom mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center animate-slide-up">
+                    <div className="relative h-full container-custom mx-auto px-4 sm:px-6 lg:px-8 pt-16 flex flex-col justify-center animate-slide-up">
                         {/* Service type tabs */}
                         <div className="flex flex-wrap gap-2 mb-6">
                             <button className="flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-full text-sm font-semibold shadow-sm">
