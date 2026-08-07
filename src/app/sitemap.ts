@@ -1,4 +1,4 @@
-import { airports, routes, cities, borderCrossings } from '@/lib/data';
+import { airports, routes, cities, borderCrossings, gccCountries } from '@/lib/data';
 import { embassyPages } from '@/lib/embassyData';
 import { hospitalPages } from '@/lib/hospitalData';
 import { destinationPages } from '@/lib/destinationData';
@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${baseUrl}/events-and-weddings`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
         { url: `${baseUrl}/vip-chauffeur`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
         { url: `${baseUrl}/drive-with-us`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
+        // GCC country pages
+        ...gccCountries.map((c) => ({ url: `${baseUrl}/${c.slug}`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 })),
         // Hajj taxi routes
         { url: `${baseUrl}/hajj-taxi-jeddah-airport-to-makkah`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.9 },
         { url: `${baseUrl}/hajj-taxi-makkah-to-mina`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.9 },

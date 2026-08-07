@@ -123,10 +123,10 @@ export default function AboutPage() {
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                         {gccCountries.map((country) => (
-                            <div key={country.code} className="glass-card-hover p-6 text-center">
+                            <Link key={country.code} href={`/${country.slug}`} className="glass-card-hover p-6 text-center block">
                                 <span className="block mb-3 flex justify-center"><img src={`https://flagcdn.com/w80/${country.code.toLowerCase()}.png`} width={40} height={30} alt={`${country.name} flag`} className="rounded-md shadow-sm" /></span>
                                 <p className="font-semibold text-surface-900 text-sm">{country.name}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -460,10 +460,10 @@ export default function HomePage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
                         {gccCountries.map((c) => (
-                            <div key={c.code} className="flex items-center gap-2 px-4 py-2 bg-surface-50 rounded-full border border-surface-200 hover:border-primary-200 transition-colors">
+                            <Link key={c.code} href={`/${c.slug}`} className="flex items-center gap-2 px-4 py-2 bg-surface-50 rounded-full border border-surface-200 hover:border-primary-300 hover:bg-primary-50 transition-colors">
                                 <img src={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`} width={20} height={14} alt={c.name} className="rounded-sm" />
                                 <span className="text-sm font-medium text-surface-700">{c.name}</span>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -1143,12 +1143,12 @@ export const popularRoutes = [
 
 // ─── Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain ──────────────────────────────────────────────────
 export const gccCountries = [
-    { name: 'Saudi Arabia', code: 'SA', flag: '🇸🇦' },
-    { name: 'United Arab Emirates', code: 'AE', flag: '🇦🇪' },
-    { name: 'Qatar', code: 'QA', flag: '🇶🇦' },
-    { name: 'Kuwait', code: 'KW', flag: '🇰🇼' },
-    { name: 'Bahrain', code: 'BH', flag: '🇧🇭' },
-    { name: 'Oman', code: 'OM', flag: '🇴🇲' },
+    { name: 'Saudi Arabia', slug: 'saudi-arabia', code: 'SA', flag: '🇸🇦', aliases: ['Saudi Arabia', 'KSA'] },
+    { name: 'United Arab Emirates', slug: 'uae', code: 'AE', flag: '🇦🇪', aliases: ['United Arab Emirates', 'UAE'] },
+    { name: 'Qatar', slug: 'qatar', code: 'QA', flag: '🇶🇦', aliases: ['Qatar'] },
+    { name: 'Kuwait', slug: 'kuwait', code: 'KW', flag: '🇰🇼', aliases: ['Kuwait'] },
+    { name: 'Bahrain', slug: 'bahrain', code: 'BH', flag: '🇧🇭', aliases: ['Bahrain'] },
+    { name: 'Oman', slug: 'oman', code: 'OM', flag: '🇴🇲', aliases: ['Oman'] },
 ];
 
 // ─── Navigation Links ───────────────────────────────────────────────
