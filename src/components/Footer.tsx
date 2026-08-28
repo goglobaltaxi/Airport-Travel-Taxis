@@ -128,7 +128,7 @@ export default function Footer() {
                         <h4 className="font-display font-semibold text-white mb-4">Need our help?</h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href="https://wa.me/966569487569" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-surface-300 hover:text-primary-400 transition-colors">
+                                <a href="https://wa.me/966590209905" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-surface-300 hover:text-primary-400 transition-colors">
                                     <span>💬 Chat on WhatsApp</span>
                                     <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-green-400">
                                         <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" /> Online
@@ -136,8 +136,8 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+966569487569" className="flex items-center gap-2 text-sm text-surface-300 hover:text-primary-400 transition-colors">
-                                    📞 +966 56 948 7569
+                                <a href="tel:+966590209905" className="flex items-center gap-2 text-sm text-surface-300 hover:text-primary-400 transition-colors">
+                                    📞 +966 59 020 9905
                                 </a>
                             </li>
                             <li>
@@ -180,7 +180,7 @@ export default function Footer() {
                         <div className="flex items-center gap-4 bg-primary-600 rounded-2xl p-4">
                             <div className="bg-white rounded-xl p-1.5 shrink-0">
                                 <img
-                                    src="https://api.qrserver.com/v1/create-qr-code/?size=112x112&margin=0&data=https://wa.me/966569487569"
+                                    src="https://api.qrserver.com/v1/create-qr-code/?size=112x112&margin=0&data=https://wa.me/966590209905"
                                     alt="Scan to chat with Airport Travel Taxis on WhatsApp"
                                     width={72}
                                     height={72}
@@ -191,7 +191,7 @@ export default function Footer() {
                                 <p className="text-white font-display font-bold text-sm leading-snug mb-1">
                                     Scan to book anywhere.<br />WhatsApp makes it easy.
                                 </p>
-                                <a href="https://wa.me/966569487569" target="_blank" rel="noopener noreferrer" className="text-primary-100 text-xs font-semibold hover:text-white transition-colors">
+                                <a href="https://wa.me/966590209905" target="_blank" rel="noopener noreferrer" className="text-primary-100 text-xs font-semibold hover:text-white transition-colors">
                                     Or tap to chat now →
                                 </a>
                             </div>

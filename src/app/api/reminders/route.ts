@@ -79,9 +79,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;margin:0;padding
     <div class="info-row"><span class="lbl">Passengers</span><span class="val">${booking.passengers}</span></div>
     ${booking.flight_number ? `<div class="info-row"><span class="lbl">Flight</span><span class="val">✈ ${booking.flight_number}</span></div>` : ''}
     <p style="margin-top:20px;font-size:14px;color:#475569">Please ensure you are ready at the pickup location 5 minutes before your scheduled time. Our driver will contact you shortly before arrival.</p>
-    <a href="https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I have a booking tomorrow. Reference: ${ref}`)}" class="cta">💬 Contact Us on WhatsApp</a>
+    <a href="https://wa.me/966590209905?text=${encodeURIComponent(`Hi, I have a booking tomorrow. Reference: ${ref}`)}" class="cta">💬 Contact Us on WhatsApp</a>
   </div>
-  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 56 948 7569</div>
+  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 59 020 9905</div>
 </div>
 </body></html>`;
 

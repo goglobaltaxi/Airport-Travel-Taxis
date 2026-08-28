@@ -78,7 +78,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                             This service takes you through {border.name} in a private car. The driver knows this crossing well and will guide you. Border wait times vary by day. To get the exact quote, you can contact on WhatsApp.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
+                            <a href="https://wa.me/966590209905" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
                                 <MessageSquare className="w-5 h-5" />
                                 Get a quote on WhatsApp
                             </a>
@@ -153,7 +153,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                                 </>
                             )}
 
-                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-2">
+                            <a href="https://wa.me/966590209905" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-2">
                                 Message now to check availability <ChevronRight className="w-4 h-4" />
                             </a>
                         </div>
@@ -202,7 +202,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                                             </td>
                                             <td className="p-4 md:p-5 text-center">
                                                 <a 
-                                                    href={`https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I want to book a taxi for route: ${row.route}`)}`}
+                                                    href={`https://wa.me/966590209905?text=${encodeURIComponent(`Hi, I want to book a taxi for route: ${row.route}`)}`}
                                                     className="inline-flex items-center justify-center bg-green-600 hover:bg-green-500 text-white font-bold text-xs px-4 py-2 rounded-lg transition-all shadow-sm"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -307,7 +307,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                                     </div>
 
                                     <a 
-                                        href={`https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I want to book the ${vehicle.name} taxi crossing the ${border.name}`)}`}
+                                        href={`https://wa.me/966590209905?text=${encodeURIComponent(`Hi, I want to book the ${vehicle.name} taxi crossing the ${border.name}`)}`}
                                         className="btn-primary text-center text-xs py-2.5 rounded-xl w-full font-bold bg-primary-900 border-primary-900 text-white hover:bg-gold-600 hover:border-gold-600 transition-colors shadow-sm block mt-auto"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -350,7 +350,7 @@ export default function BorderPage({ params }: { params: { slug: string } }) {
                     <p className="text-surface-300 leading-relaxed mb-8">
                         Click the WhatsApp button below. Send your pickup location, drop-off city, and travel date. We will reply fast. To get exact fare and availability, message on WhatsApp.
                     </p>
-                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                    <a href="https://wa.me/966590209905" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
                         <MessageSquare className="w-5 h-5 text-green-600" />
                         Contact now for quick response
                     </a>

@@ -24,7 +24,7 @@ const BRAND = {
     name: 'Airport Travel Taxis',
     website: 'www.airporttraveltaxis.com',
     email: 'booking@airporttraveltaxis.com',
-    whatsapp: '+966 56 948 7569',
+    whatsapp: '+966 59 020 9905',
     primary: '#0f172a',
     accent: '#ca8a04',
     green: '#25d366',
@@ -102,7 +102,7 @@ const letterheadHtml = `
                     <div class="lh-contact">
                         <div>🌐 www.airporttraveltaxis.com</div>
                         <div>📧 booking@airporttraveltaxis.com</div>
-                        <div>📱 +966 56 948 7569</div>
+                        <div>📱 +966 59 020 9905</div>
                     </div>
                 </td>
             </tr>
@@ -224,7 +224,7 @@ export function generateInvoiceEmail(data: BookingData): string {
             • This invoice serves as your booking confirmation.</p>
         </div>
 
-        <a href="https://wa.me/966569487569" class="whatsapp-btn">💬 Contact Us on WhatsApp</a>
+        <a href="https://wa.me/966590209905" class="whatsapp-btn">💬 Contact Us on WhatsApp</a>
     </div></div>
     <div class="footer">
         <p><strong>${BRAND.name}</strong><br>
@@ -365,7 +365,7 @@ export function generateQuotationEmail(data: BookingData): string {
             • To confirm this booking, please reply via WhatsApp or email.</p>
         </div>
 
-        <a href="https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I'd like to confirm booking ${data.booking_ref} — ${data.pickup_location} to ${data.dropoff_location} on ${data.pickup_date}`)}" class="whatsapp-btn">✅ Accept & Confirm via WhatsApp</a>
+        <a href="https://wa.me/966590209905?text=${encodeURIComponent(`Hi, I'd like to confirm booking ${data.booking_ref} — ${data.pickup_location} to ${data.dropoff_location} on ${data.pickup_date}`)}" class="whatsapp-btn">✅ Accept & Confirm via WhatsApp</a>
     </div></div>
     <div class="footer">
         <p><strong>${BRAND.name}</strong><br>
@@ -496,7 +496,7 @@ export function generateBookingConfirmationEmail(data: BookingData): string {
             </table>
         </div>
 
-        <a href="https://wa.me/966569487569" class="whatsapp-btn">💬 Contact Us on WhatsApp</a>
+        <a href="https://wa.me/966590209905" class="whatsapp-btn">💬 Contact Us on WhatsApp</a>
     </div></div>
     <div class="footer">
         <p><strong>${BRAND.name}</strong><br>

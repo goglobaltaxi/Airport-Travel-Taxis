@@ -89,7 +89,7 @@ export default function Navbar() {
                     {/* CTA + Mobile Toggle */}
                     <div className="flex items-center gap-2.5">
                         <a
-                            href="https://wa.me/966569487569"
+                            href="https://wa.me/966590209905"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`hidden md:flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${
@@ -168,7 +168,7 @@ export default function Navbar() {
                                 Book now
                             </Link>
                             <a
-                                href="https://wa.me/966569487569"
+                                href="https://wa.me/966590209905"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-secondary text-center text-sm"

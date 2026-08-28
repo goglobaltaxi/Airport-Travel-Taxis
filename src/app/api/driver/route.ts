@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
                 <p style="color:#334155;font-size:15px;line-height:1.7;margin-top:12px;">Thank you for your interest in joining Airport Travel Taxis. We have received your driver application for your <strong>${vehicle_year} ${vehicle_make}</strong>.</p>
                 <p style="color:#334155;font-size:15px;line-height:1.7;margin-top:12px;">Our fleet management team will review your application and get back to you within <strong>24–48 hours</strong>.</p>
                 <div style="text-align:center;margin:28px 0;">
-                    <a href="https://wa.me/966569487569" style="display:inline-block;padding:14px 32px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:15px;">💬 Contact Us on WhatsApp</a>
+                    <a href="https://wa.me/966590209905" style="display:inline-block;padding:14px 32px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:15px;">💬 Contact Us on WhatsApp</a>
                 </div>
             </div>
             <div style="background:#f8fafc;padding:18px;text-align:center;border-radius:0 0 12px 12px;border:1px solid #e2e8f0;border-top:none;">

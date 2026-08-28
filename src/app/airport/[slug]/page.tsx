@@ -105,7 +105,7 @@ export default function AirportPage({ params }: { params: { slug: string } }) {
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
+                            <a href="https://wa.me/966590209905" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
                                 <MessageSquare className="w-5 h-5" />
                                 Get a quote on WhatsApp
                             </a>
@@ -167,7 +167,7 @@ export default function AirportPage({ params }: { params: { slug: string } }) {
                                 </li>
                             </ul>
                             
-                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors">
+                            <a href="https://wa.me/966590209905" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors">
                                 Message now to check availability <ChevronRight className="w-4 h-4" />
                             </a>
                         </div>
@@ -182,7 +182,7 @@ export default function AirportPage({ params }: { params: { slug: string } }) {
                     <p className="text-surface-300 leading-relaxed mb-8">
                         Click the WhatsApp button below. Send your flight number, arrival date, and drop-off address. We will reply fast. To get exact fare and availability, message on WhatsApp.
                     </p>
-                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                    <a href="https://wa.me/966590209905" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
                         <MessageSquare className="w-5 h-5 text-green-600" />
                         Contact now for quick response
                     </a>
@@ -204,7 +204,7 @@ export default function AirportPage({ params }: { params: { slug: string } }) {
                                         <span className="text-sm text-surface-900 font-semibold">{route.to}</span>
                                     </div>
                                     <p className="text-xs text-surface-500 mb-3">About {route.duration}</p>
-                                    <a href="https://wa.me/966569487569" className="text-gold-600 text-sm font-bold hover:text-gold-500 transition-colors inline-flex items-center gap-1">
+                                    <a href="https://wa.me/966590209905" className="text-gold-600 text-sm font-bold hover:text-gold-500 transition-colors inline-flex items-center gap-1">
                                         Get a quote <ChevronRight className="w-3 h-3" />
                                     </a>
                                 </div>

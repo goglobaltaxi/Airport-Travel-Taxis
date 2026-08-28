@@ -41,7 +41,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
 
                 <div className="mt-10">
                     <a
-                        href="https://wa.me/966569487569"
+                        href="https://wa.me/966590209905"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-[#25D366] font-semibold hover:underline"

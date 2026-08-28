@@ -57,7 +57,7 @@ export default function FeedbackPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <a
-                            href="https://wa.me/966569487569"
+                            href="https://wa.me/966590209905"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 py-3 px-5 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#128C7E] transition-colors text-sm"

@@ -8,6 +8,7 @@ export default function JsonLd() {
                 name: 'Airport Travel Taxis',
                 url: 'https://airporttraveltaxis.com',
                 description: 'Pre-booked airport transfers, intercity travel, cross-border transfers, Umrah transportation, and Hajj transfers across Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, and Oman.',
+                telephone: '+966590209905',
                 areaServed: [
                     { '@type': 'Country', name: 'Saudi Arabia' },
                     { '@type': 'Country', name: 'United Arab Emirates' },
@@ -19,6 +20,7 @@ export default function JsonLd() {
                 serviceType: 'Transportation',
                 contactPoint: {
                     '@type': 'ContactPoint',
+                    telephone: '+966590209905',
                     contactType: 'customer service',
                     availableLanguage: 'English',
                 },

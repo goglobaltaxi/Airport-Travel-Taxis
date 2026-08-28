@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
                     <p style="color:#64748b;font-size:13px;margin:0;"><strong>Your message:</strong><br><span style="color:#475569;">${message.substring(0, 200)}${message.length > 200 ? '...' : ''}</span></p>
                 </div>
                 <div style="text-align:center;margin:24px 0;">
-                    <a href="https://wa.me/966569487569" style="display:inline-block;padding:14px 32px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:15px;">💬 Chat on WhatsApp</a>
+                    <a href="https://wa.me/966590209905" style="display:inline-block;padding:14px 32px;background:#25d366;color:#fff;text-decoration:none;border-radius:8px;font-weight:700;font-size:15px;">💬 Chat on WhatsApp</a>
                 </div>
             </div>
             <div style="background:#f8fafc;padding:18px;text-align:center;border-radius:0 0 12px 12px;border:1px solid #e2e8f0;border-top:none;">

@@ -57,7 +57,7 @@ export default function CorporateChauffeurPage({ params }: Props) {
                         <p className="text-surface-700 text-lg leading-relaxed mb-6">
                             We provide private car service for business travelers in {page.city}. This is for airport transfers, client meetings, and office-to-office trips. To get the exact quote, you can contact on WhatsApp.
                         </p>
-                        <a href="https://wa.me/966569487569" className="btn-primary inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg">
+                        <a href="https://wa.me/966590209905" className="btn-primary inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg">
                             <MessageSquare className="w-5 h-5" />
                             Get a quote on WhatsApp
                         </a>
@@ -104,7 +104,7 @@ export default function CorporateChauffeurPage({ params }: Props) {
                                     </ul>
                                 </>
                             )}
-                            <a href="https://wa.me/966569487569" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-4 block">
+                            <a href="https://wa.me/966590209905" className="text-gold-600 font-bold hover:text-gold-500 inline-flex items-center gap-1 transition-colors mt-4 block">
                                 Message now to check availability <ChevronRight className="w-4 h-4 inline" />
                             </a>
                         </div>
@@ -116,7 +116,7 @@ export default function CorporateChauffeurPage({ params }: Props) {
                 <div className="container-custom mx-auto max-w-2xl">
                     <h2 className="font-display text-3xl mb-4 text-gold-400">Want to know the fare?</h2>
                     <p className="text-surface-300 leading-relaxed mb-8">Send your pickup address and drop-off location on WhatsApp. We will reply fast. To get exact fare and availability, message on WhatsApp.</p>
-                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                    <a href="https://wa.me/966590209905" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
                         <MessageSquare className="w-5 h-5 text-green-600" />
                         Contact now for quick response
                     </a>

@@ -65,7 +65,7 @@ export default function BookingConfirmed({
                 {/* Actions */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <a
-                        href={`https://wa.me/966569487569?text=${encodeURIComponent(`Hi, I just made a booking. My reference is ${ref}. I'd like to confirm my trip details.`)}`}
+                        href={`https://wa.me/966590209905?text=${encodeURIComponent(`Hi, I just made a booking. My reference is ${ref}. I'd like to confirm my trip details.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#128C7E] transition-colors text-sm"

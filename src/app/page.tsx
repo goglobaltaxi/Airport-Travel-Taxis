@@ -232,7 +232,7 @@ export default function HomePage() {
 
                         {/* WhatsApp promo tile */}
                         <a
-                            href="https://wa.me/966569487569"
+                            href="https://wa.me/966590209905"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-center justify-between gap-4 bg-primary-600 hover:bg-primary-700 rounded-2xl p-6 transition-colors duration-200"
@@ -428,7 +428,7 @@ export default function HomePage() {
                                     Book Now
                                 </Link>
                                 <a
-                                    href="https://wa.me/966569487569"
+                                    href="https://wa.me/966590209905"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-all duration-200 text-sm border border-white/20"
@@ -533,7 +533,7 @@ export default function HomePage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="https://wa.me/966569487569"
+                            href="https://wa.me/966590209905"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 transition-all duration-200 shadow-xl text-sm"
@@ -586,7 +586,7 @@ export default function HomePage() {
                             name: 'Airport Travel Taxis',
                             description: 'Pre-booked airport taxi and transfer services across Saudi Arabia, UAE, Kuwait, Qatar, and Bahrain.',
                             url: 'https://airporttraveltaxis.com',
-                            telephone: '+966569487569',
+                            telephone: '+966590209905',
                             email: 'info@airporttraveltaxis.com',
                             areaServed: gccCountries.map((c) => ({ '@type': 'Country', name: c.name })),
                             serviceType: 'Airport Taxi Service',

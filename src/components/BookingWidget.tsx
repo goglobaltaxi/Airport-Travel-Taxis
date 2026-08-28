@@ -625,7 +625,7 @@ export default function BookingWidget({ compact = false }: { compact?: boolean }
                     {submitError && (
                         <p className="text-sm font-semibold text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-2.5 text-center flex items-center justify-center gap-2">
                             {submitError}
-                            <a href="https://wa.me/966569487569" target="_blank" rel="noopener noreferrer" className="underline text-primary-600 font-bold">
+                            <a href="https://wa.me/966590209905" target="_blank" rel="noopener noreferrer" className="underline text-primary-600 font-bold">
                                 WhatsApp
                             </a>
                         </p>

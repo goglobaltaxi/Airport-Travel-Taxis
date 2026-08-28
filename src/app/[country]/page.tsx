@@ -67,7 +67,7 @@ export default function CountryPage({ params }: { params: { country: string } })
                             Pre-booked private car transfers, intercity rides and cross-border journeys across {country.name}. Professional drivers, fixed prices and 24/7 availability.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="https://wa.me/966569487569" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
+                            <a href="https://wa.me/966590209905" className="btn-primary flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 border-green-600 text-white shadow-lg w-full sm:w-auto px-8 py-3 rounded-xl font-bold">
                                 💬 Get a quote on WhatsApp
                             </a>
                         </div>
@@ -162,7 +162,7 @@ export default function CountryPage({ params }: { params: { country: string } })
                     <p className="text-surface-300 leading-relaxed mb-8">
                         Send your pickup location, drop-off and travel date on WhatsApp for a fast, fixed-price quote.
                     </p>
-                    <a href="https://wa.me/966569487569" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
+                    <a href="https://wa.me/966590209905" className="bg-white text-primary-900 font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all inline-flex items-center gap-3">
                         💬 Contact now for a quick response
                     </a>
                 </div>

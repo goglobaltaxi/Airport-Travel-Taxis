@@ -72,7 +72,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;margin:0;padding
     <a href="https://airporttraveltaxis.com/feedback/${ref}/" class="cta">Leave a Review</a>
     <a href="https://airporttraveltaxis.com/" class="cta2">Book Your Next Journey</a>
   </div>
-  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 56 948 7569</div>
+  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 59 020 9905</div>
 </div>
 </body></html>`;
 

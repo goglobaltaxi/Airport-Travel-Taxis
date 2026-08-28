@@ -87,9 +87,9 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;margin:0;padding
     <div class="info-row"><span class="lbl">Route</span><span class="val">${booking.pickup_location} → ${booking.dropoff_location}</span></div>
     <div class="info-row"><span class="lbl">Was Scheduled</span><span class="val">${new Date(booking.pickup_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}</span></div>
     <p style="margin-top:20px;font-size:14px;color:#475569">If you'd like to book again or need assistance, please don't hesitate to contact us.</p>
-    <a href="https://wa.me/966569487569" class="cta">Book a New Ride</a>
+    <a href="https://wa.me/966590209905" class="cta">Book a New Ride</a>
   </div>
-  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 56 948 7569</div>
+  <div class="footer">Airport Travel Taxis · booking@airporttraveltaxis.com · +966 59 020 9905</div>
 </div>
 </body></html>`;
 
