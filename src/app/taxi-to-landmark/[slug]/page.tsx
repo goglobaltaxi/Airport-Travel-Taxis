@@ -47,18 +47,18 @@ export default function LandmarkTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for visits to iconic landmarks.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for visits to ${page.landmarkName}.` },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for sightseeing.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your landmark tour.' },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Refined comfort for your tour of ${page.landmarkName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for tourist groups.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for families visiting major city attractions.' },
+        { name: 'GMC', type: 'Large SUV', desc: `Ideal for families visiting ${page.landmarkName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for landmark visits and sightseeing.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger tourist groups and sightseeing tours.' },
-        { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for tourist excursions.' },
+        { name: 'Executive Bus', type: 'Coach', desc: `Large group transport for excursions to ${page.landmarkName}.` },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Comfortable and efficient for daily tourist trips.' },
         { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for groups up to 7 passengers.' },
-        { name: 'Hiace', type: 'Passenger Van', desc: 'Practical group transport for tour parties.' },
+        { name: 'Hiace', type: 'Passenger Van', desc: `Practical group transport for tour parties around ${page.city}.` },
         { name: 'Coaster', type: 'Minibus', desc: 'Efficient transport for larger sightseeing groups.' },
     ];
 

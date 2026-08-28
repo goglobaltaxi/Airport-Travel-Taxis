@@ -44,16 +44,16 @@ export default function EmbassyTaxiPage({ params }: { params: { slug: string } }
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Suitable for individual business travelers.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Suitable for individual business travelers visiting ${page.embassyName}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Comfortable and spacious for solo or couple travel.' },
-        { name: 'Genesis G90', type: 'Executive Sedan', desc: 'A refined option for professional trips.' },
-        { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Practical sedan for everyday embassy visits.' },
+        { name: 'Genesis G90', type: 'Executive Sedan', desc: `A refined option for professional trips to ${page.embassyName} in ${page.city}.` },
+        { name: 'Ford Taurus', type: 'Standard Sedan', desc: `Practical sedan for everyday visits to ${page.embassyName}.` },
         { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable and reliable for city transfers.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious for families or groups with luggage.' },
         { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Ideal for families with children or extra documents.' },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Suitable for small groups traveling together.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Fits up to 8 passengers with luggage.' },
-        { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'For larger groups requiring shared embassy transport.' },
+        { name: 'Mercedes Sprinter', type: 'Minibus', desc: `For larger groups requiring shared transport to ${page.embassyName}.` },
     ];
 
     return (

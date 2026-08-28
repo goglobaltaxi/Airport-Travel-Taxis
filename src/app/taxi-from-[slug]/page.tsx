@@ -111,19 +111,19 @@ export default function TransferTaxiPage({ params }: { params: { slug: string } 
     }
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'High-standard comfort for airport pickups.' },
-        { name: 'BMW', type: 'Executive Sedan', desc: 'Professional and refined travel from the airport.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Sleek and comfortable airport transfer.' },
-        { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious SUV for travelers with multiple suitcases.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for group and family airport arrivals.' },
-        { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable and efficient city transit.' },
-        { name: 'Mercedes Vito', type: 'Passenger van', desc: 'Professional group transport for up to 8 passengers.' },
-        { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger groups and heavy luggage requirements.' },
-        { name: 'Comfortable Bus', type: 'Coach', desc: 'Large group airport transfers and shuttle services.' },
-        { name: 'Camry', type: 'Standard Sedan', desc: 'Convenient and practical airport to city transfer.' },
-        { name: 'Staria', type: 'Passenger van', desc: 'Spacious and modern seating for group travel.' },
-        { name: 'Hiace', type: 'Passenger van', desc: 'Efficient and reliable group airport pickup.' },
-        { name: 'Coaster', type: 'Minibus', desc: 'Trusted transport for larger passenger groups.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `High-standard comfort for the ${startLocation} to ${endLocation} route.` },
+        { name: 'BMW', type: 'Executive Sedan', desc: `A professional, refined ride for business travelers heading to ${endLocation}.` },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Sleek and quiet — a comfortable option for the ${page.distance} trip to ${endLocation}.` },
+        { name: 'Cadillac Escalade', type: 'Large SUV', desc: `Spacious enough for extra luggage on the journey from ${startLocation}.` },
+        { name: 'GMC', type: 'Large SUV', desc: `Well suited to families and small groups travelling to ${endLocation}.` },
+        { name: 'Ford Taurus', type: 'Standard Sedan', desc: `A practical, efficient choice for the ${page.travelTime} ride to ${endLocation}.` },
+        { name: 'Mercedes Vito', type: 'Passenger van', desc: `Seats up to 8 — useful for larger groups making the ${startLocation} to ${endLocation} trip.` },
+        { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Built for bigger groups and heavier luggage on longer transfers like this one.' },
+        { name: 'Comfortable Bus', type: 'Coach', desc: `Shuttle-style transport for large groups travelling together to ${endLocation}.` },
+        { name: 'Camry', type: 'Standard Sedan', desc: `A dependable everyday option for the ${startLocation} to ${endLocation} transfer.` },
+        { name: 'Staria', type: 'Passenger van', desc: `Modern, roomy seating for group travel over the ${page.distance} distance.` },
+        { name: 'Hiace', type: 'Passenger van', desc: 'Reliable group transport, well suited to this route.' },
+        { name: 'Coaster', type: 'Minibus', desc: `Handles larger passenger groups comfortably on transfers like ${startLocation} to ${endLocation}.` },
     ];
 
     const isDeparture = isHotelTransfer || isAreaTransfer || (isCityRoute && endLocation.toLowerCase().includes('airport'));

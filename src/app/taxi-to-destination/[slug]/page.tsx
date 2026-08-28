@@ -47,18 +47,18 @@ export default function DestinationTaxiPage({ params }: { params: { slug: string
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable for individuals and couples.' },
+        { name: 'Toyota Camry', type: 'Standard Sedan', desc: `Comfortable for individuals and couples travelling to ${page.destinationName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Spacious boot for luggage or shopping bags.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Refined and smooth for notable destinations.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Refined and smooth for the trip to ${page.destinationName} in ${page.city}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Comfortable and quiet for longer city trips.' },
         { name: 'Genesis G90', type: 'Executive Sedan', desc: 'A smart choice for business or leisure travel.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Roomy for families with luggage.' },
-        { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Ideal for families and small groups.' },
+        { name: 'GMC Yukon XL', type: 'Large SUV', desc: `Ideal for families and small groups visiting ${page.destinationName}.` },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Fits up to 7 passengers with luggage.' },
         { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Practical and spacious for group transfers.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in comfort.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'For larger tour groups and families.' },
-        { name: 'Toyota Coaster', type: 'Minibus', desc: 'Seats up to 30 for group day trips.' },
+        { name: 'Toyota Coaster', type: 'Minibus', desc: `Seats up to 30 for group day trips to ${page.destinationName}.` },
     ];
 
     const typeIcon = () => {

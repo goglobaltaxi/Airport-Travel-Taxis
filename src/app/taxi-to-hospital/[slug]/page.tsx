@@ -46,18 +46,18 @@ export default function HospitalTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable for individuals and couples.' },
+        { name: 'Toyota Camry', type: 'Standard Sedan', desc: `Comfortable for individuals and couples travelling to ${page.hospitalName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Spacious boot for medical equipment or luggage.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Smooth, quiet ride suitable for sensitive journeys.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Smooth, quiet ride suitable for a sensitive journey to ${page.hospitalName} in ${page.city}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Comfortable for patients requiring a relaxed transfer.' },
-        { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined and comfortable for medical visits.' },
+        { name: 'Genesis G90', type: 'Executive Sedan', desc: `Refined and comfortable for medical visits in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Roomy for patients with mobility aids or extra luggage.' },
-        { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Suitable for families accompanying patients.' },
+        { name: 'GMC Yukon XL', type: 'Large SUV', desc: `Suitable for families accompanying patients to ${page.hospitalName}.` },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Fits up to 7 passengers with luggage.' },
-        { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Practical for group hospital transfers.' },
+        { name: 'Toyota Hiace', type: 'Passenger Van', desc: `Practical for group transfers to ${page.hospitalName}.` },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers with comfortable seating.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'For larger groups requiring a shared transfer.' },
-        { name: 'Toyota Coaster', type: 'Minibus', desc: 'Seats up to 30 passengers for group medical trips.' },
+        { name: 'Toyota Coaster', type: 'Minibus', desc: `Seats up to 30 passengers for group trips to ${page.hospitalName}.` },
     ];
 
     return (

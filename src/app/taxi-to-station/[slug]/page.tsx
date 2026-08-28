@@ -48,18 +48,18 @@ export default function StationTaxiPage({ params }: { params: { slug: string } }
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major railway hubs.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for travel to ${page.stationName}.` },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for station transfers.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the station.' },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Refined comfort for your journey to ${page.stationName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for groups with luggage.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for families traveling to metro and train stations.' },
+        { name: 'GMC', type: 'Large SUV', desc: `Ideal for families traveling to ${page.stationName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for professional station collections.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger travel groups and delegations.' },
-        { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for station excursions.' },
+        { name: 'Executive Bus', type: 'Coach', desc: `Large group transport for excursions to ${page.stationName}.` },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Comfortable and efficient for daily station trips.' },
         { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for groups up to 7 passengers.' },
-        { name: 'Hiace', type: 'Passenger Van', desc: 'Practical group transport for station travel.' },
+        { name: 'Hiace', type: 'Passenger Van', desc: `Practical group transport for travel around ${page.city}.` },
         { name: 'Coaster', type: 'Minibus', desc: 'Efficient transport for larger passenger groups.' },
     ];
 

@@ -49,16 +49,16 @@ export default function PortTaxiPage({ params }: { params: { slug: string } }) {
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for transfers to ports and terminals.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for transfers to ${page.portName}.` },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for maritime passengers.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the port.' },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Refined comfort for your journey to ${page.portName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for cruise groups with luggage.' },
         { name: 'GMC', type: 'Large SUV', desc: 'Ideal for families traveling with multiple suitcases.' },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for professional and passenger transfers.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
-        { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger cruise groups and maritime crews.' },
+        { name: 'Mercedes Sprinter', type: 'Minibus', desc: `Perfect for larger cruise groups arriving at ${page.portName}.` },
         { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for maritime excursions.' },
-        { name: 'Camry', type: 'Standard Sedan', desc: 'Comfortable and efficient for daily port transfers.' },
+        { name: 'Camry', type: 'Standard Sedan', desc: `Comfortable and efficient for daily transfers to ${page.portName}.` },
         { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for groups up to 7 passengers.' },
         { name: 'Hiace', type: 'Passenger Van', desc: 'Practical group transport for maritime parties.' },
         { name: 'Coaster', type: 'Minibus', desc: 'Efficient transport for larger group transfers.' },

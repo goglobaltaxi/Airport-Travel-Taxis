@@ -48,18 +48,18 @@ export default function StadiumTaxiPage({ params }: { params: { slug: string } }
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major sports events.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for travel to ${page.stadiumName}.` },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for stadium VIPs.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the sports venue.' },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Refined comfort for your journey to ${page.stadiumName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for groups and fan parties.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for families traveling to matches and sports events.' },
+        { name: 'GMC', type: 'Large SUV', desc: `Ideal for families traveling to matches at ${page.stadiumName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for professional and fan transfers.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger fan groups and corporate delegations.' },
-        { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for sports team supporters.' },
+        { name: 'Executive Bus', type: 'Coach', desc: `Large group transport for supporters heading to ${page.stadiumName}.` },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Comfortable and efficient for daily stadium trips.' },
         { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for groups up to 7 passengers.' },
-        { name: 'Hiace', type: 'Passenger Van', desc: 'Practical group transport for matchday parties.' },
+        { name: 'Hiace', type: 'Passenger Van', desc: `Practical group transport for matchday trips in ${page.city}.` },
         { name: 'Coaster', type: 'Minibus', desc: 'Efficient transport for larger spectator groups.' },
     ];
 

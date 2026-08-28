@@ -46,18 +46,18 @@ export default function UniversityTaxiPage({ params }: { params: { slug: string 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Toyata Camry', type: 'Standard Sedan', desc: 'Comfortable and reliable for student commutes.' },
+        { name: 'Toyata Camry', type: 'Standard Sedan', desc: `Comfortable and reliable for commutes to ${page.universityName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Efficient city car for faculty and campus travel.' },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Comfortable seating for up to 7 students or staff.' },
-        { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Efficient group transport for university departments.' },
+        { name: 'Toyota Hiace', type: 'Passenger Van', desc: `Efficient group transport for ${page.universityName} departments.` },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers for visiting academic teams.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger student delegations or events.' },
-        { name: 'Toyota Coaster', type: 'Minibus', desc: 'Spacious transport for large university groups.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for visiting professors and guests.' },
+        { name: 'Toyota Coaster', type: 'Minibus', desc: `Spacious transport for large groups visiting ${page.city}.` },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for visiting professors and guests of ${page.universityName}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'High-standard executive travel for campus dignitaries.' },
         { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined and comfortable for professional arrivals.' },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious for parents or academic guests with luggage.' },
-        { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Ideal for families or groups visiting the campus.' },
+        { name: 'GMC Yukon XL', type: 'Large SUV', desc: `Ideal for families or groups visiting the ${page.universityName} campus.` },
         { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for university conferences.' },
     ];
 

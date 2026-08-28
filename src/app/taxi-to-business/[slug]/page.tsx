@@ -47,16 +47,16 @@ export default function BusinessTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort and professional appearance for business travel.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort and professional appearance for travel to ${page.districtName}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Executive choice for high-profile meetings and corporate visits.' },
-        { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined comfort for a professional arrival.' },
+        { name: 'Genesis G90', type: 'Executive Sedan', desc: `Refined comfort for a professional arrival at ${page.districtName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for business teams.' },
         { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Reliable and spacious for group corporate travel.' },
-        { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Efficient and professional city car for office visits.' },
+        { name: 'Ford Taurus', type: 'Standard Sedan', desc: `Efficient and professional city car for visits to ${page.districtName}.` },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Ideal for larger business delegations and shuttle services.' },
         { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for conferences and events.' },
-        { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable and reliable for daily business trips.' },
+        { name: 'Toyota Camry', type: 'Standard Sedan', desc: `Comfortable and reliable for daily trips to ${page.districtName}.` },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Spacious seating for business teams up to 7 people.' },
         { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Practical group transport for corporate departments.' },
         { name: 'Toyota Coaster', type: 'Minibus', desc: 'Efficient transport for larger corporate groups.' },

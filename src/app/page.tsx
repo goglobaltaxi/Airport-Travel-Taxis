@@ -85,14 +85,6 @@ const testimonials = [
     },
 ];
 
-const pressLogos = [
-    { name: 'Forbes', text: 'FORBES' },
-    { name: 'CNN Travel', text: 'CNN' },
-    { name: 'Bloomberg', text: 'Bloomberg' },
-    { name: 'Business Insider', text: 'Business Insider' },
-    { name: 'Yahoo Finance', text: 'Yahoo Finance' },
-];
-
 export default function HomePage() {
     return (
         <>
@@ -157,23 +149,8 @@ export default function HomePage() {
                 </div>
 
                 {/* Search form — floats over the bottom edge of the hero photo */}
-                <div className="relative z-20 container-custom mx-auto px-4 sm:px-6 lg:px-8 -mt-8 lg:-mt-10">
+                <div className="relative z-20 container-custom mx-auto px-4 sm:px-6 lg:px-8 -mt-8 lg:-mt-10 pb-8">
                     <HeroSearch />
-
-                    {/* Trust badges */}
-                    <div className="flex flex-wrap items-center justify-center gap-6 mt-6 pb-8">
-                        <div className="flex items-center gap-2">
-                            <div className="flex text-yellow-400 text-sm">★★★★★</div>
-                            <span className="text-sm font-semibold text-surface-100">TripAdvisor</span>
-                            <span className="text-xs text-surface-400">5,000+ reviews</span>
-                        </div>
-                        <div className="w-px h-4 bg-surface-700" />
-                        <div className="flex items-center gap-2">
-                            <div className="flex text-green-500 text-sm">★★★★★</div>
-                            <span className="text-sm font-semibold text-surface-100">Trustpilot</span>
-                            <span className="text-xs text-surface-400">Excellent</span>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -464,22 +441,6 @@ export default function HomePage() {
                                 <img src={`https://flagcdn.com/w40/${c.code.toLowerCase()}.png`} width={20} height={14} alt={c.name} className="rounded-sm" />
                                 <span className="text-sm font-medium text-surface-700">{c.name}</span>
                             </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ─── PRESS LOGOS ──────────────────────────────────────────── */}
-            <section className="bg-surface-50 py-12">
-                <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-center text-sm font-medium text-surface-400 mb-8 uppercase tracking-wider">
-                        As featured in
-                    </p>
-                    <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
-                        {pressLogos.map((p) => (
-                            <span key={p.name} className="text-xl lg:text-2xl font-bold text-surface-300 hover:text-surface-500 transition-colors cursor-default tracking-tight">
-                                {p.text}
-                            </span>
                         ))}
                     </div>
                 </div>

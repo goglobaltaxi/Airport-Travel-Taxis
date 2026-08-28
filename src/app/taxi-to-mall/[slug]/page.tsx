@@ -46,15 +46,15 @@ export default function MallTaxiPage({ params }: { params: { slug: string } }) {
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable for individuals and small groups.' },
+        { name: 'Toyota Camry', type: 'Standard Sedan', desc: `Comfortable for individuals and small groups heading to ${page.mallName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for shopping and city trips.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Comfortable and smooth for shopping excursions.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Comfortable and smooth for shopping trips to ${page.mallName} in ${page.city}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Quiet and comfortable choice for city travel.' },
-        { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Refined comfort for your mall visit.' },
+        { name: 'Genesis G90', type: 'Executive Sedan', desc: `Refined comfort for your visit to ${page.mallName}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Plenty of space for shopping bags and groups.' },
         { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Ideal for families or groups shopping together.' },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Roomy seating for up to 7 passengers.' },
-        { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Efficient group transport for multiple shoppers.' },
+        { name: 'Toyota Hiace', type: 'Passenger Van', desc: `Efficient group transport for shoppers visiting ${page.mallName}.` },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in comfortable seating.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger groups and families.' },
         { name: 'Toyota Coaster', type: 'Minibus', desc: 'Seats up to 30 passengers for group trips.' },

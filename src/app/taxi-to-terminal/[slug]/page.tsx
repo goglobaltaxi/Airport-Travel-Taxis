@@ -47,18 +47,18 @@ export default function TerminalTaxiPage({ params }: { params: { slug: string } 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for travel to major airport terminals.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for travel to ${page.airportName} Terminal ${page.terminalNumber}.` },
         { name: 'BMW', type: 'Executive Sedan', desc: 'Elegant and professional travel for official flight departures.' },
-        { name: 'Genesis', type: 'Executive Sedan', desc: 'Refined comfort for your journey to the airport terminal.' },
+        { name: 'Genesis', type: 'Executive Sedan', desc: `Refined comfort for your journey to ${page.airportName}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious and executive SUV for travelers with heavy luggage.' },
-        { name: 'GMC', type: 'Large SUV', desc: 'Ideal for families traveling to international airport terminals.' },
+        { name: 'GMC', type: 'Large SUV', desc: `Ideal for families traveling to Terminal ${page.terminalNumber} in ${page.city}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for professional terminal collections.' },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in an executive van setting.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for larger travel groups and official delegations.' },
-        { name: 'Executive Bus', type: 'Coach', desc: 'Large group transport for terminal transfers and excursions.' },
+        { name: 'Executive Bus', type: 'Coach', desc: `Large group transport for transfers to ${page.airportName}.` },
         { name: 'Camry', type: 'Standard Sedan', desc: 'Comfortable and efficient for daily airport terminal trips.' },
         { name: 'Staria', type: 'Passenger Van', desc: 'Spacious seating for groups up to 7 passengers.' },
-        { name: 'Hiace', type: 'Passenger Van', desc: 'Practical group transport for airport terminal travel.' },
+        { name: 'Hiace', type: 'Passenger Van', desc: `Practical group transport to Terminal ${page.terminalNumber}.` },
         { name: 'Coaster', type: 'Minibus', desc: 'Efficient transport for larger passenger groups.' },
     ];
 

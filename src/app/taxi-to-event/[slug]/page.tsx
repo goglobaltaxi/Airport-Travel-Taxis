@@ -47,18 +47,18 @@ export default function EventTaxiPage({ params }: { params: { slug: string } }) 
     if (!page) notFound();
 
     const vehicles = [
-        { name: 'Toyota Camry', type: 'Standard Sedan', desc: 'Comfortable for individuals and small groups.' },
+        { name: 'Toyota Camry', type: 'Standard Sedan', desc: `Comfortable for individuals and small groups heading to ${page.venueName}.` },
         { name: 'Ford Taurus', type: 'Standard Sedan', desc: 'Reliable city car for business or event travel.' },
-        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: 'Executive comfort for corporate guests and delegates.' },
+        { name: 'Mercedes S-Class', type: 'Executive Sedan', desc: `Executive comfort for corporate guests and delegates at ${page.venueName}.` },
         { name: 'BMW 7 Series', type: 'Executive Sedan', desc: 'Executive choice for high-profile events.' },
-        { name: 'Genesis G90', type: 'Executive Sedan', desc: 'Comfortable and spacious for event arrivals.' },
+        { name: 'Genesis G90', type: 'Executive Sedan', desc: `Comfortable and spacious for arrivals at ${page.venueName} in ${page.city}.` },
         { name: 'Cadillac Escalade', type: 'Large SUV', desc: 'Spacious for groups or guests with extra gear.' },
         { name: 'GMC Yukon XL', type: 'Large SUV', desc: 'Ideal for families or groups attending together.' },
         { name: 'Hyundai Staria', type: 'Passenger Van', desc: 'Comfortable seating for up to 7 passengers.' },
-        { name: 'Toyota Hiace', type: 'Passenger Van', desc: 'Efficient group transport for teams or fans.' },
+        { name: 'Toyota Hiace', type: 'Passenger Van', desc: `Efficient group transport for teams or fans heading to ${page.venueName}.` },
         { name: 'Mercedes Vito', type: 'Passenger Van', desc: 'Up to 8 passengers in executive van style.' },
         { name: 'Mercedes Sprinter', type: 'Minibus', desc: 'Perfect for business delegations and large groups.' },
-        { name: 'Toyota Coaster', type: 'Minibus', desc: 'Seats up to 30 passengers for group events.' },
+        { name: 'Toyota Coaster', type: 'Minibus', desc: `Seats up to 30 passengers for group events at ${page.venueName}.` },
     ];
 
     return (
