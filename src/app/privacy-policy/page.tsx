@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
                             <br />
                             <strong>Email:</strong> info@airporttraveltaxis.com
                             <br />
-                            <strong>WhatsApp:</strong> +966 59 020 9905
+                            <strong>WhatsApp:</strong> +966 57 580 6733
                         </p>
                     </section>
                 </div>
